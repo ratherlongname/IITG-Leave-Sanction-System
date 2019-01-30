@@ -2,6 +2,13 @@
 
 ### 29<sup>th</sup> January 2019 - Milestone 0
 
+##### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Hansraj Patel
+* Shivam Bansal
+
 ##### Assignment
 To make a leave sanction system that handles the entire leave application procedure in IIT Guwahati.
 
