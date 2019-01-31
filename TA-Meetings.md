@@ -1,18 +1,19 @@
 # TA Meetings
+A log of all the TA Meetings, including attendees and things discussed.
 
-### 29<sup>th</sup> January 2019 - Milestone 0
+## 29<sup>th</sup> January 2019 - Milestone 0
 
-##### Attendees
+### Attendees
 * Kapil Jangid
 * Lucky Singh
 * Vakul Gupta
 * Hansraj Patel
 * Shivam Bansal
 
-##### Assignment
+### Assignment
 To make a leave sanction system that handles the entire leave application procedure in IIT Guwahati.
 
-##### Tasks
+### Tasks
 * Figure out how the current leave system works
 * Evaluate who the users of our system will be. These can be -
     * M. Tech students
@@ -20,7 +21,7 @@ To make a leave sanction system that handles the entire leave application proced
     * Professors
 * Decide upon the services our system will provide to each category of users
 
-##### Other Information
+### Other Information
 * Use Visual Basic, MySQL and Microsoft Access
 * Properly document every TA meeting and team meeting
 * Keep track of each team member's duties
