@@ -1,4 +1,5 @@
-﻿Public Class Form2
+﻿Imports System.Data.OleDb
+Public Class Form2
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Student_Checkbox.Checked = False Then
             Label5.Visible = False
@@ -73,7 +74,14 @@
     End Sub
 
     Private Sub SUBMIT_Click(sender As Object, e As EventArgs) Handles SUBMIT.Click
-        'Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Leave_Database.accdb"
-        'Dim conn As OleDbconnection = New Oledbconnection()
+        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Leave_Database.accdb"
+        Dim conn As OleDbConnection = New OleDbConnection(connectionString)
+        conn.Open()
+        Dim cmd As New OleDb.OleDbCommand
+        cmd.Connection = conn
+        cmd.CommandText = "INSERT INTO Student_DB (Username, Password, Roll_no, Programme, Department, First_name)" & _
+            "VALUES (" & Me.USERNAME.Text & ", " & Me.PASSWORD.Text & " , " & Me.ROLL_NO.Text & ", " & Me.PROGRAMME.Text & ", " & Me.DEPARTMENT.Text & ", " & Me.FIRST_NAME.Text & ")"
+        cmd.ExecuteNonQuery()
+        conn.Close()
     End Sub
 End Class
