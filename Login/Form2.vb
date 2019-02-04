@@ -74,14 +74,33 @@ Public Class Form2
     End Sub
 
     Private Sub SUBMIT_Click(sender As Object, e As EventArgs) Handles SUBMIT.Click
-        Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Leave_Database.accdb"
-        Dim conn As OleDbConnection = New OleDbConnection(connectionString)
-        conn.Open()
-        Dim cmd As New OleDb.OleDbCommand
-        cmd.Connection = conn
-        cmd.CommandText = "INSERT INTO Student_DB (Username, Password, Roll_no, Programme, Department, First_name)" & _
-            "VALUES (" & Me.USERNAME.Text & ", " & Me.PASSWORD.Text & " , " & Me.ROLL_NO.Text & ", " & Me.PROGRAMME.Text & ", " & Me.DEPARTMENT.Text & ", " & Me.FIRST_NAME.Text & ")"
-        cmd.ExecuteNonQuery()
-        conn.Close()
+        'Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\DataBase.accdb"
+        'Dim conn As OleDbConnection = New OleDbConnection(connectionString)
+        'conn.Open()
+
+
+        'Dim sqlQu As String
+        'sqlQu = "INSERT INTO Student_DB(Username, Password, Roll_no, Programme, Department, First_name)" & _
+        '" VALUES (' " & Me.USERNAME.Text & " ', ' " & Me.PASSWORD.Text & " ' ,  " & Me.ROLL_NO.Text & " , ' " & Me.PROGRAMME.Text & " ', ' " & Me.DEPARTMENT.Text & " ', ' " & Me.FIRST_NAME.Text & " ')"
+        'Dim cmd As New OleDb.OleDbCommand(sqlQu, conn)
+        'cmd.ExecuteNonQuery()
+        'conn.Close()
+
+        Try
+            Dim sqlconn As New OleDb.OleDbConnection
+            Dim sqlquery As New OleDb.OleDbCommand
+            Dim connString As String
+            connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Vakul Gupta\Desktop\IITG-Leave-Sanction-System\Login\DataBase.accdb"
+            sqlconn.ConnectionString = connString
+            sqlquery.Connection = sqlconn
+            sqlconn.Open()
+            sqlquery.CommandText = "INSERT INTO Student_DB([Username], [Password])VALUES(@Username, @Password)"
+            sqlquery.Parameters.AddWithValue("@Username", USERNAME.Text)
+            sqlquery.Parameters.AddWithValue("@Password", PASSWORD.Text)
+            sqlquery.ExecuteNonQuery()
+            sqlconn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

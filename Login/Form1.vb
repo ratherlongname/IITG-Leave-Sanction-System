@@ -28,7 +28,5 @@ Public Class Form1
                 Form3.Label4.Text = reader("Year_of_joining")
             End If
         End While
-
-
     End Sub
 End Class
