@@ -63,3 +63,45 @@ A log of all the team meetings held, including meeting attendees and work discus
     * Cancellation of leave by student
     * Rejection / approval of leave by higher authority
     * Remark added to leave application by higher authority
+    
+    
+## 2<sup>th</sup> February 2019
+
+### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Shivam Bansal
+
+### Database Structures,GUI components and Database Inter-Linking
+
+####1 Basic Overview
+#####1.1 Deciding the number,names of databases
+
+#####1.2 Deciding the number of columns in each database
+      #######1.2.1 Checking common columns and deciding basic implementation of data types.
+      
+####2 Deciding the interlink between each type of database
+      * 2.1 Completely Finalsing the control flow of Software.
+      * 2.2 Finalising the rough work distrubution in each database.
+      * 2.3 Decided working of timings and place.
+####3 Finalising the GUI basic components and Keeping up scope for adding some components if necessary.
+    #####3.1 Elaborated discussion on working of each form and its components.
+    ######3.1.1  Login/SignUp page
+          * It provides the option for user to Login if it is a existing user ,else register for a new user .
+          * Login  
+            **  It takes username and password and validate against a present database.
+          * SignUp
+            ** It prompts the user to register as a new user.
+            ** It takes the necessary information and enter into an appropriate datbase.
+           
+   ####### 3.1.2 Profile Page
+         * It provides the user and option to apply for new leave, view old leaves,view notification, and view incmoing list(only
+         for professors)
+         * It displays the basic info on the same page.
+         * It contains an panel which by default shows the old leaves.
+         * When other option is selected , a new information is diplayed in panel.
+         
+            
+               
+    
