@@ -79,7 +79,7 @@ A log of all the team meetings held, including meeting attendees and work discus
 ##### 1.1 Deciding the number,names of databases
 
 ##### 1.2 Deciding the number of columns in each database
-      ##### 1.2.1 Checking common columns and deciding basic implementation of data types.
+      * 1.2.1 Checking common columns and deciding basic implementation of data types.
       
 #### 2 Deciding the interlink between each type of database
       * 2.1 Completely Finalsing the control flow of Software.
