@@ -95,7 +95,7 @@ A log of all the team meetings held, including meeting attendees and work discus
             ** It prompts the user to register as a new user.
             ** It takes the necessary information and enter into an appropriate datbase.
            
-   ####### 3.1.2 Profile Page
+   ###### 3.1.2 Profile Page
          * It provides the user and option to apply for new leave, view old leaves,view notification, and view incmoing list(only
          for professors)
          * It displays the basic info on the same page.
