@@ -100,6 +100,7 @@ Partial Class Form1
         Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TextBox3.BackColor = System.Drawing.Color.White
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.Enabled = False
         Me.TextBox3.Location = New System.Drawing.Point(380, 253)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
@@ -111,6 +112,7 @@ Partial Class Form1
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TextBox2.BackColor = System.Drawing.Color.Teal
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
         Me.TextBox2.Location = New System.Drawing.Point(365, 238)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
@@ -122,11 +124,11 @@ Partial Class Form1
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Teal
-        Me.Label4.Font = New System.Drawing.Font("Museo Sans For Dell", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(236, 142)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(670, 35)
+        Me.Label4.Size = New System.Drawing.Size(738, 36)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "SOFTWARE ENGINEERING LAB ASSIGNMENT 2"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
