@@ -119,11 +119,22 @@ Public Class Form2
                 sqlconn.ConnectionString = connString
                 sqlquery.Connection = sqlconn
                 sqlconn.Open()
-                sqlquery.CommandText = "INSERT INTO Student_DB([Username], [Password])VALUES(@Username, @Password)"
-                sqlquery.Parameters.AddWithValue("@Username", USERNAME.Text)
-                sqlquery.Parameters.AddWithValue("@Password", PASSWORD.Text)
-                sqlquery.ExecuteNonQuery()
+                Dim query As String = "SELECT * FROM Student_DB WHERE Username= '" & USERNAME.Text & "'"
+                Dim query1 As String = "SELECT * FROM Faculty_DB WHERE Username= '" & USERNAME.Text & "'"
+                Dim cmd As OleDbCommand = New OleDbCommand(query, sqlconn)
+                Dim cmd1 As OleDbCommand = New OleDbCommand(query1, sqlconn)
+                Dim reader As OleDbDataReader = cmd.ExecuteReader()
+                Dim reader1 As OleDbDataReader = cmd1.ExecuteReader()
+                If (reader1.HasRows() Or reader.HasRows()) Then
+                    MessageBox.Show("User already exists with the same username try entering a differnet username", "USER EXISTS")
+                Else
+                    sqlquery.CommandText = "INSERT INTO Student_DB([Username], [Password])VALUES(@Username, @Password)"
+                    sqlquery.Parameters.AddWithValue("@Username", USERNAME.Text)
+                    sqlquery.Parameters.AddWithValue("@Password", PASSWORD.Text)
+                    sqlquery.ExecuteNonQuery()
+                End If
                 sqlconn.Close()
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
