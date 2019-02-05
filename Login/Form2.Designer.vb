@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.DataBaseDataSet = New Login.DataBaseDataSet()
         Me.DataBaseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataBaseDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
@@ -54,9 +55,20 @@ Partial Class Form2
         Me.Faculty_Checkbox = New System.Windows.Forms.CheckBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.SUBMIT = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblLeaSanSys = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataBaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataBaseDataSet
@@ -76,202 +88,264 @@ Partial Class Form2
         '
         'USERNAME
         '
-        Me.USERNAME.Location = New System.Drawing.Point(135, 37)
+        Me.USERNAME.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.USERNAME.Location = New System.Drawing.Point(416, 169)
         Me.USERNAME.Name = "USERNAME"
         Me.USERNAME.Size = New System.Drawing.Size(222, 22)
         Me.USERNAME.TabIndex = 0
         '
         'PASSWORD
         '
-        Me.PASSWORD.Location = New System.Drawing.Point(135, 81)
+        Me.PASSWORD.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PASSWORD.Location = New System.Drawing.Point(416, 197)
         Me.PASSWORD.Name = "PASSWORD"
         Me.PASSWORD.Size = New System.Drawing.Size(222, 22)
         Me.PASSWORD.TabIndex = 1
         '
         'FIRST_NAME
         '
-        Me.FIRST_NAME.Location = New System.Drawing.Point(135, 128)
+        Me.FIRST_NAME.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.FIRST_NAME.Location = New System.Drawing.Point(416, 225)
         Me.FIRST_NAME.Name = "FIRST_NAME"
         Me.FIRST_NAME.Size = New System.Drawing.Size(222, 22)
         Me.FIRST_NAME.TabIndex = 2
         '
         'LAST_NAME
         '
-        Me.LAST_NAME.Location = New System.Drawing.Point(135, 174)
+        Me.LAST_NAME.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.LAST_NAME.Location = New System.Drawing.Point(416, 253)
         Me.LAST_NAME.Name = "LAST_NAME"
         Me.LAST_NAME.Size = New System.Drawing.Size(222, 22)
         Me.LAST_NAME.TabIndex = 3
         '
         'YEAR
         '
-        Me.YEAR.Location = New System.Drawing.Point(190, 268)
+        Me.YEAR.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.YEAR.Location = New System.Drawing.Point(416, 318)
         Me.YEAR.Name = "YEAR"
         Me.YEAR.Size = New System.Drawing.Size(167, 22)
         Me.YEAR.TabIndex = 4
         '
         'ROLL_NO
         '
-        Me.ROLL_NO.Location = New System.Drawing.Point(190, 296)
+        Me.ROLL_NO.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ROLL_NO.Location = New System.Drawing.Point(416, 346)
         Me.ROLL_NO.Name = "ROLL_NO"
         Me.ROLL_NO.Size = New System.Drawing.Size(167, 22)
         Me.ROLL_NO.TabIndex = 5
         '
         'PROGRAMME
         '
-        Me.PROGRAMME.Location = New System.Drawing.Point(190, 324)
+        Me.PROGRAMME.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PROGRAMME.Location = New System.Drawing.Point(416, 374)
         Me.PROGRAMME.Name = "PROGRAMME"
         Me.PROGRAMME.Size = New System.Drawing.Size(167, 22)
         Me.PROGRAMME.TabIndex = 6
         '
         'DEPARTMENT
         '
-        Me.DEPARTMENT.Location = New System.Drawing.Point(190, 353)
+        Me.DEPARTMENT.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.DEPARTMENT.Location = New System.Drawing.Point(416, 403)
         Me.DEPARTMENT.Name = "DEPARTMENT"
         Me.DEPARTMENT.Size = New System.Drawing.Size(167, 22)
         Me.DEPARTMENT.TabIndex = 7
         '
         'TA_SUPERVISER
         '
-        Me.TA_SUPERVISER.Location = New System.Drawing.Point(190, 381)
+        Me.TA_SUPERVISER.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TA_SUPERVISER.Location = New System.Drawing.Point(416, 431)
         Me.TA_SUPERVISER.Name = "TA_SUPERVISER"
         Me.TA_SUPERVISER.Size = New System.Drawing.Size(167, 22)
         Me.TA_SUPERVISER.TabIndex = 8
         '
         'GUIDE
         '
-        Me.GUIDE.Location = New System.Drawing.Point(190, 409)
+        Me.GUIDE.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GUIDE.Location = New System.Drawing.Point(416, 459)
         Me.GUIDE.Name = "GUIDE"
         Me.GUIDE.Size = New System.Drawing.Size(167, 22)
         Me.GUIDE.TabIndex = 9
         '
         'DEPARTMENT_FAC
         '
-        Me.DEPARTMENT_FAC.Location = New System.Drawing.Point(570, 259)
+        Me.DEPARTMENT_FAC.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.DEPARTMENT_FAC.Location = New System.Drawing.Point(688, 375)
         Me.DEPARTMENT_FAC.Name = "DEPARTMENT_FAC"
         Me.DEPARTMENT_FAC.Size = New System.Drawing.Size(177, 22)
         Me.DEPARTMENT_FAC.TabIndex = 10
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 37)
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label1.Location = New System.Drawing.Point(334, 172)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 17)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Username"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(56, 86)
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label2.Location = New System.Drawing.Point(338, 200)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 17)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Password"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 133)
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label3.Location = New System.Drawing.Point(334, 228)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 17)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "First Name"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(53, 179)
+        Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label4.Location = New System.Drawing.Point(334, 258)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 17)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Last Name"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(142, 271)
+        Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label5.Location = New System.Drawing.Point(368, 321)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(38, 17)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Year"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(126, 301)
+        Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label6.Location = New System.Drawing.Point(352, 351)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 17)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Roll No."
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(103, 329)
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label7.Location = New System.Drawing.Point(329, 379)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 17)
         Me.Label7.TabIndex = 18
         Me.Label7.Text = "Programme"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label8
         '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(98, 358)
+        Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label8.Location = New System.Drawing.Point(324, 408)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(82, 17)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Department"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label9
         '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(79, 386)
+        Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label9.Location = New System.Drawing.Point(305, 436)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(98, 17)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "TA Superviser"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label10
         '
+        Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(126, 412)
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label10.Location = New System.Drawing.Point(352, 462)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(46, 17)
         Me.Label10.TabIndex = 21
         Me.Label10.Text = "Guide"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label11
         '
+        Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(482, 264)
+        Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label11.Location = New System.Drawing.Point(600, 378)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(82, 17)
         Me.Label11.TabIndex = 22
         Me.Label11.Text = "Department"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label12
         '
+        Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(481, 303)
+        Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label12.Location = New System.Drawing.Point(599, 408)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(83, 17)
         Me.Label12.TabIndex = 23
         Me.Label12.Text = "Designation"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'DESIGNATION
         '
+        Me.DESIGNATION.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DESIGNATION.FormattingEnabled = True
         Me.DESIGNATION.Items.AddRange(New Object() {"HOD", "ADOAA", "Professor", "Associate Professor", "Assistant Professor"})
-        Me.DESIGNATION.Location = New System.Drawing.Point(570, 296)
+        Me.DESIGNATION.Location = New System.Drawing.Point(688, 405)
         Me.DESIGNATION.Name = "DESIGNATION"
         Me.DESIGNATION.Size = New System.Drawing.Size(177, 24)
         Me.DESIGNATION.TabIndex = 24
         '
         'Student_Checkbox
         '
+        Me.Student_Checkbox.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Student_Checkbox.AutoSize = True
-        Me.Student_Checkbox.Location = New System.Drawing.Point(223, 219)
+        Me.Student_Checkbox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Student_Checkbox.Location = New System.Drawing.Point(435, 285)
         Me.Student_Checkbox.Name = "Student_Checkbox"
         Me.Student_Checkbox.Size = New System.Drawing.Size(79, 21)
         Me.Student_Checkbox.TabIndex = 25
@@ -280,8 +354,9 @@ Partial Class Form2
         '
         'Faculty_Checkbox
         '
+        Me.Faculty_Checkbox.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Faculty_Checkbox.AutoSize = True
-        Me.Faculty_Checkbox.Location = New System.Drawing.Point(327, 219)
+        Me.Faculty_Checkbox.Location = New System.Drawing.Point(536, 285)
         Me.Faculty_Checkbox.Name = "Faculty_Checkbox"
         Me.Faculty_Checkbox.Size = New System.Drawing.Size(75, 21)
         Me.Faculty_Checkbox.TabIndex = 26
@@ -290,27 +365,189 @@ Partial Class Form2
         '
         'Label13
         '
+        Me.Label13.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(114, 223)
+        Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
+        Me.Label13.Location = New System.Drawing.Point(323, 285)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(86, 17)
         Me.Label13.TabIndex = 27
         Me.Label13.Text = "USER TYPE"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SUBMIT
         '
-        Me.SUBMIT.Location = New System.Drawing.Point(570, 367)
+        Me.SUBMIT.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.SUBMIT.BackColor = System.Drawing.Color.Gray
+        Me.SUBMIT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.SUBMIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SUBMIT.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SUBMIT.ForeColor = System.Drawing.SystemColors.InactiveBorder
+        Me.SUBMIT.Location = New System.Drawing.Point(614, 519)
         Me.SUBMIT.Name = "SUBMIT"
-        Me.SUBMIT.Size = New System.Drawing.Size(123, 51)
+        Me.SUBMIT.Size = New System.Drawing.Size(154, 62)
         Me.SUBMIT.TabIndex = 28
-        Me.SUBMIT.Text = "Submit"
-        Me.SUBMIT.UseVisualStyleBackColor = True
+        Me.SUBMIT.Text = "SUBMIT"
+        Me.SUBMIT.UseVisualStyleBackColor = False
+        '
+        'Label14
+        '
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Teal
+        Me.Label14.Font = New System.Drawing.Font("Museo Sans For Dell", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(176, 103)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(535, 28)
+        Me.Label14.TabIndex = 33
+        Me.Label14.Text = "SOFTWARE ENGINEERING LAB ASSIGNMENT 2"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'TextBox1
+        '
+        Me.TextBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.BackColor = System.Drawing.Color.Teal
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(-103, 95)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(1182, 41)
+        Me.TextBox1.TabIndex = 32
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(114, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(92, 77)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 31
+        Me.PictureBox1.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.White
+        Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Teal
+        Me.Label15.Location = New System.Drawing.Point(256, 53)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(195, 36)
+        Me.Label15.TabIndex = 30
+        Me.Label15.Text = "IIT Guwahati"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblLeaSanSys
+        '
+        Me.lblLeaSanSys.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblLeaSanSys.AutoSize = True
+        Me.lblLeaSanSys.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblLeaSanSys.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLeaSanSys.ForeColor = System.Drawing.Color.DarkSlateGray
+        Me.lblLeaSanSys.Location = New System.Drawing.Point(254, 12)
+        Me.lblLeaSanSys.Name = "lblLeaSanSys"
+        Me.lblLeaSanSys.Size = New System.Drawing.Size(516, 46)
+        Me.lblLeaSanSys.TabIndex = 29
+        Me.lblLeaSanSys.Text = "Leave Sanctioning System"
+        Me.lblLeaSanSys.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TextBox2
+        '
+        Me.TextBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.TextBox2.BackColor = System.Drawing.Color.Lavender
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(-103, 136)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(343, 480)
+        Me.TextBox2.TabIndex = 34
+        '
+        'TextBox3
+        '
+        Me.TextBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.TextBox3.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Location = New System.Drawing.Point(-3, 136)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
+        Me.TextBox3.Multiline = True
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(243, 37)
+        Me.TextBox3.TabIndex = 35
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label16.Location = New System.Drawing.Point(11, 139)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(33, 29)
+        Me.Label16.TabIndex = 36
+        Me.Label16.Text = "O"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.Label17.Font = New System.Drawing.Font("Microsoft YaHei", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.MintCream
+        Me.Label17.Location = New System.Drawing.Point(50, 143)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(3, 7, 3, 5)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(155, 24)
+        Me.Label17.TabIndex = 37
+        Me.Label17.Text = "New User Signup"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.InactiveBorder
+        Me.Button1.Location = New System.Drawing.Point(416, 519)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(154, 62)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "CANCEL"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(823, 443)
+        Me.AutoScrollMargin = New System.Drawing.Size(0, 50)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(932, 628)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.lblLeaSanSys)
         Me.Controls.Add(Me.SUBMIT)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Faculty_Checkbox)
@@ -339,11 +576,15 @@ Partial Class Form2
         Me.Controls.Add(Me.FIRST_NAME)
         Me.Controls.Add(Me.PASSWORD)
         Me.Controls.Add(Me.USERNAME)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(950, 675)
         Me.Name = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
         CType(Me.DataBaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -379,4 +620,14 @@ Partial Class Form2
     Friend WithEvents Faculty_Checkbox As System.Windows.Forms.CheckBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents SUBMIT As System.Windows.Forms.Button
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents lblLeaSanSys As System.Windows.Forms.Label
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

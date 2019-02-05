@@ -10,8 +10,8 @@ Public Class Form1
 
         Me.Hide()
         Form3.Show()
-        Dim user_name As String = RichTextBox1.Text
-        Dim password As String = RichTextBox3.Text
+        Dim user_name As String = txtUsername.Text()
+        Dim password As String = txtPassword.Text
 
         Dim connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Database.accdb"
         Dim conn As OleDbConnection = New OleDbConnection(connectionString)
