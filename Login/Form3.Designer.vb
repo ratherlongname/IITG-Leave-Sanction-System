@@ -28,6 +28,10 @@ Partial Class Form3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tabctrlMainTabs = New System.Windows.Forms.TabControl()
         Me.tabpgViewLeaves = New System.Windows.Forms.TabPage()
+        Me.rdiobtnViewLeavesOldestFirst = New System.Windows.Forms.RadioButton()
+        Me.rdiobtnViewLeavesNewestFirst = New System.Windows.Forms.RadioButton()
+        Me.lblViewLeavesAscOrDesc = New System.Windows.Forms.Label()
+        Me.btnViewLeavesRefresh = New System.Windows.Forms.Button()
         Me.chkdlsbxViewLeavesStatus = New System.Windows.Forms.CheckedListBox()
         Me.lblViewLeavesStatus = New System.Windows.Forms.Label()
         Me.chkdlsbxViewLeavesTypeOfLeave = New System.Windows.Forms.CheckedListBox()
@@ -45,12 +49,20 @@ Partial Class Form3
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.btnLogout = New System.Windows.Forms.Button()
-        Me.btnViewLeavesRefresh = New System.Windows.Forms.Button()
-        Me.lblViewLeavesAscOrDesc = New System.Windows.Forms.Label()
-        Me.rdiobtnViewLeavesNewestFirst = New System.Windows.Forms.RadioButton()
-        Me.rdiobtnViewLeavesOldestFirst = New System.Windows.Forms.RadioButton()
+        Me.E_Date = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.S_Date = New System.Windows.Forms.TextBox()
+        Me.Submit_new = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Remark_Box = New System.Windows.Forms.RichTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Date_Calc = New System.Windows.Forms.MonthCalendar()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Type_Of_Leave = New System.Windows.Forms.ComboBox()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
+        Me.tabpgNewLeaves.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -101,7 +113,7 @@ Partial Class Form3
         Me.tabctrlMainTabs.Location = New System.Drawing.Point(150, 12)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
         Me.tabctrlMainTabs.SelectedIndex = 0
-        Me.tabctrlMainTabs.Size = New System.Drawing.Size(723, 277)
+        Me.tabctrlMainTabs.Size = New System.Drawing.Size(723, 584)
         Me.tabctrlMainTabs.TabIndex = 4
         '
         'tabpgViewLeaves
@@ -119,10 +131,50 @@ Partial Class Form3
         Me.tabpgViewLeaves.Controls.Add(Me.lsviewViewLeavesListOfLeaves)
         Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgViewLeaves.Name = "tabpgViewLeaves"
-        Me.tabpgViewLeaves.Size = New System.Drawing.Size(715, 251)
+        Me.tabpgViewLeaves.Size = New System.Drawing.Size(715, 380)
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
+        '
+        'rdiobtnViewLeavesOldestFirst
+        '
+        Me.rdiobtnViewLeavesOldestFirst.AutoSize = True
+        Me.rdiobtnViewLeavesOldestFirst.Location = New System.Drawing.Point(86, 55)
+        Me.rdiobtnViewLeavesOldestFirst.Name = "rdiobtnViewLeavesOldestFirst"
+        Me.rdiobtnViewLeavesOldestFirst.Size = New System.Drawing.Size(77, 17)
+        Me.rdiobtnViewLeavesOldestFirst.TabIndex = 10
+        Me.rdiobtnViewLeavesOldestFirst.Text = "Oldest First"
+        Me.rdiobtnViewLeavesOldestFirst.UseVisualStyleBackColor = True
+        '
+        'rdiobtnViewLeavesNewestFirst
+        '
+        Me.rdiobtnViewLeavesNewestFirst.AutoSize = True
+        Me.rdiobtnViewLeavesNewestFirst.Checked = True
+        Me.rdiobtnViewLeavesNewestFirst.Location = New System.Drawing.Point(86, 32)
+        Me.rdiobtnViewLeavesNewestFirst.Name = "rdiobtnViewLeavesNewestFirst"
+        Me.rdiobtnViewLeavesNewestFirst.Size = New System.Drawing.Size(83, 17)
+        Me.rdiobtnViewLeavesNewestFirst.TabIndex = 9
+        Me.rdiobtnViewLeavesNewestFirst.TabStop = True
+        Me.rdiobtnViewLeavesNewestFirst.Text = "Newest First"
+        Me.rdiobtnViewLeavesNewestFirst.UseVisualStyleBackColor = True
+        '
+        'lblViewLeavesAscOrDesc
+        '
+        Me.lblViewLeavesAscOrDesc.AutoSize = True
+        Me.lblViewLeavesAscOrDesc.Location = New System.Drawing.Point(1, 32)
+        Me.lblViewLeavesAscOrDesc.Name = "lblViewLeavesAscOrDesc"
+        Me.lblViewLeavesAscOrDesc.Size = New System.Drawing.Size(36, 13)
+        Me.lblViewLeavesAscOrDesc.TabIndex = 8
+        Me.lblViewLeavesAscOrDesc.Text = "Order:"
+        '
+        'btnViewLeavesRefresh
+        '
+        Me.btnViewLeavesRefresh.Location = New System.Drawing.Point(3, 225)
+        Me.btnViewLeavesRefresh.Name = "btnViewLeavesRefresh"
+        Me.btnViewLeavesRefresh.Size = New System.Drawing.Size(167, 23)
+        Me.btnViewLeavesRefresh.TabIndex = 7
+        Me.btnViewLeavesRefresh.Text = "Refresh"
+        Me.btnViewLeavesRefresh.UseVisualStyleBackColor = True
         '
         'chkdlsbxViewLeavesStatus
         '
@@ -223,9 +275,20 @@ Partial Class Form3
         '
         'tabpgNewLeaves
         '
+        Me.tabpgNewLeaves.Controls.Add(Me.E_Date)
+        Me.tabpgNewLeaves.Controls.Add(Me.Date_Calc)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label9)
+        Me.tabpgNewLeaves.Controls.Add(Me.Type_Of_Leave)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label8)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label5)
+        Me.tabpgNewLeaves.Controls.Add(Me.S_Date)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label6)
+        Me.tabpgNewLeaves.Controls.Add(Me.Submit_new)
+        Me.tabpgNewLeaves.Controls.Add(Me.Remark_Box)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label7)
         Me.tabpgNewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNewLeaves.Name = "tabpgNewLeaves"
-        Me.tabpgNewLeaves.Size = New System.Drawing.Size(715, 210)
+        Me.tabpgNewLeaves.Size = New System.Drawing.Size(715, 558)
         Me.tabpgNewLeaves.TabIndex = 1
         Me.tabpgNewLeaves.Text = "New Leaves"
         Me.tabpgNewLeaves.UseVisualStyleBackColor = True
@@ -234,7 +297,7 @@ Partial Class Form3
         '
         Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 22)
         Me.tabpgLeavesToApprove.Name = "tabpgLeavesToApprove"
-        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(1155, 328)
+        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(715, 251)
         Me.tabpgLeavesToApprove.TabIndex = 2
         Me.tabpgLeavesToApprove.Text = "Leaves to Approve"
         Me.tabpgLeavesToApprove.UseVisualStyleBackColor = True
@@ -243,7 +306,7 @@ Partial Class Form3
         '
         Me.tabpgNotifications.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNotifications.Name = "tabpgNotifications"
-        Me.tabpgNotifications.Size = New System.Drawing.Size(1155, 328)
+        Me.tabpgNotifications.Size = New System.Drawing.Size(715, 251)
         Me.tabpgNotifications.TabIndex = 3
         Me.tabpgNotifications.Text = "Notifications"
         Me.tabpgNotifications.UseVisualStyleBackColor = True
@@ -257,51 +320,105 @@ Partial Class Form3
         Me.btnLogout.Text = "LOGOUT"
         Me.btnLogout.UseVisualStyleBackColor = True
         '
-        'btnViewLeavesRefresh
+        'E_Date
         '
-        Me.btnViewLeavesRefresh.Location = New System.Drawing.Point(3, 225)
-        Me.btnViewLeavesRefresh.Name = "btnViewLeavesRefresh"
-        Me.btnViewLeavesRefresh.Size = New System.Drawing.Size(167, 23)
-        Me.btnViewLeavesRefresh.TabIndex = 7
-        Me.btnViewLeavesRefresh.Text = "Refresh"
-        Me.btnViewLeavesRefresh.UseVisualStyleBackColor = True
+        Me.E_Date.Enabled = False
+        Me.E_Date.Location = New System.Drawing.Point(197, 261)
+        Me.E_Date.Name = "E_Date"
+        Me.E_Date.Size = New System.Drawing.Size(120, 20)
+        Me.E_Date.TabIndex = 21
         '
-        'lblViewLeavesAscOrDesc
+        'Label9
         '
-        Me.lblViewLeavesAscOrDesc.AutoSize = True
-        Me.lblViewLeavesAscOrDesc.Location = New System.Drawing.Point(1, 32)
-        Me.lblViewLeavesAscOrDesc.Name = "lblViewLeavesAscOrDesc"
-        Me.lblViewLeavesAscOrDesc.Size = New System.Drawing.Size(36, 13)
-        Me.lblViewLeavesAscOrDesc.TabIndex = 8
-        Me.lblViewLeavesAscOrDesc.Text = "Order:"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(33, 261)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "Ending Date"
         '
-        'rdiobtnViewLeavesNewestFirst
+        'Label8
         '
-        Me.rdiobtnViewLeavesNewestFirst.AutoSize = True
-        Me.rdiobtnViewLeavesNewestFirst.Checked = True
-        Me.rdiobtnViewLeavesNewestFirst.Location = New System.Drawing.Point(86, 32)
-        Me.rdiobtnViewLeavesNewestFirst.Name = "rdiobtnViewLeavesNewestFirst"
-        Me.rdiobtnViewLeavesNewestFirst.Size = New System.Drawing.Size(83, 17)
-        Me.rdiobtnViewLeavesNewestFirst.TabIndex = 9
-        Me.rdiobtnViewLeavesNewestFirst.TabStop = True
-        Me.rdiobtnViewLeavesNewestFirst.Text = "Newest First"
-        Me.rdiobtnViewLeavesNewestFirst.UseVisualStyleBackColor = True
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(33, 232)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 13)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "Starting Date"
         '
-        'rdiobtnViewLeavesOldestFirst
+        'S_Date
         '
-        Me.rdiobtnViewLeavesOldestFirst.AutoSize = True
-        Me.rdiobtnViewLeavesOldestFirst.Location = New System.Drawing.Point(86, 55)
-        Me.rdiobtnViewLeavesOldestFirst.Name = "rdiobtnViewLeavesOldestFirst"
-        Me.rdiobtnViewLeavesOldestFirst.Size = New System.Drawing.Size(77, 17)
-        Me.rdiobtnViewLeavesOldestFirst.TabIndex = 10
-        Me.rdiobtnViewLeavesOldestFirst.Text = "Oldest First"
-        Me.rdiobtnViewLeavesOldestFirst.UseVisualStyleBackColor = True
+        Me.S_Date.Enabled = False
+        Me.S_Date.Location = New System.Drawing.Point(197, 232)
+        Me.S_Date.Name = "S_Date"
+        Me.S_Date.Size = New System.Drawing.Size(120, 20)
+        Me.S_Date.TabIndex = 18
+        '
+        'Submit_new
+        '
+        Me.Submit_new.Location = New System.Drawing.Point(239, 415)
+        Me.Submit_new.Name = "Submit_new"
+        Me.Submit_new.Size = New System.Drawing.Size(114, 31)
+        Me.Submit_new.TabIndex = 17
+        Me.Submit_new.Text = "SUBMIT"
+        Me.Submit_new.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(33, 291)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(83, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Remarks (if any)"
+        '
+        'Remark_Box
+        '
+        Me.Remark_Box.Location = New System.Drawing.Point(197, 291)
+        Me.Remark_Box.Name = "Remark_Box"
+        Me.Remark_Box.Size = New System.Drawing.Size(227, 96)
+        Me.Remark_Box.TabIndex = 15
+        Me.Remark_Box.Text = ""
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(33, 57)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Duration of Leave"
+        '
+        'Date_Calc
+        '
+        Me.Date_Calc.Location = New System.Drawing.Point(197, 57)
+        Me.Date_Calc.MaxSelectionCount = 365
+        Me.Date_Calc.Name = "Date_Calc"
+        Me.Date_Calc.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(33, 22)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "Type of Leave"
+        '
+        'Type_Of_Leave
+        '
+        Me.Type_Of_Leave.FormattingEnabled = True
+        Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
+        Me.Type_Of_Leave.Location = New System.Drawing.Point(197, 14)
+        Me.Type_Of_Leave.Name = "Type_Of_Leave"
+        Me.Type_Of_Leave.Size = New System.Drawing.Size(135, 21)
+        Me.Type_Of_Leave.TabIndex = 11
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(885, 301)
+        Me.ClientSize = New System.Drawing.Size(885, 608)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.tabctrlMainTabs)
         Me.Controls.Add(Me.Label4)
@@ -313,6 +430,8 @@ Partial Class Form3
         Me.tabctrlMainTabs.ResumeLayout(False)
         Me.tabpgViewLeaves.ResumeLayout(False)
         Me.tabpgViewLeaves.PerformLayout()
+        Me.tabpgNewLeaves.ResumeLayout(False)
+        Me.tabpgNewLeaves.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -344,4 +463,15 @@ Partial Class Form3
     Friend WithEvents rdiobtnViewLeavesNewestFirst As System.Windows.Forms.RadioButton
     Friend WithEvents lblViewLeavesAscOrDesc As System.Windows.Forms.Label
     Friend WithEvents rdiobtnViewLeavesOldestFirst As System.Windows.Forms.RadioButton
+    Friend WithEvents E_Date As System.Windows.Forms.TextBox
+    Friend WithEvents Date_Calc As System.Windows.Forms.MonthCalendar
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Type_Of_Leave As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents S_Date As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Submit_new As System.Windows.Forms.Button
+    Friend WithEvents Remark_Box As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class
