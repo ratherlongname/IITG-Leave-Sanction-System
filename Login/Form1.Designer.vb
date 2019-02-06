@@ -80,8 +80,10 @@ Partial Class Form1
         Me.TextBox6.Location = New System.Drawing.Point(463, 251)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(1, 2, 2, 2)
         Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(71, 19)
         Me.TextBox6.TabIndex = 22
+        Me.TextBox6.TabStop = False
         Me.TextBox6.Text = "@iitg.ac.in"
         '
         'Label3
