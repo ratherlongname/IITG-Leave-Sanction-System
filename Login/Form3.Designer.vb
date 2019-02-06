@@ -32,7 +32,19 @@ Partial Class Form3
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.btnLogout = New System.Windows.Forms.Button()
+        Me.Type_Of_Leave = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Date_Calc = New System.Windows.Forms.MonthCalendar()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Remark_Box = New System.Windows.Forms.RichTextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Submit_new = New System.Windows.Forms.Button()
+        Me.S_Date = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.E_Date = New System.Windows.Forms.TextBox()
         Me.tabctrlMainTabs.SuspendLayout()
+        Me.tabpgNewLeaves.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -83,23 +95,34 @@ Partial Class Form3
         Me.tabctrlMainTabs.Location = New System.Drawing.Point(150, 12)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
         Me.tabctrlMainTabs.SelectedIndex = 0
-        Me.tabctrlMainTabs.Size = New System.Drawing.Size(692, 354)
+        Me.tabctrlMainTabs.Size = New System.Drawing.Size(720, 513)
         Me.tabctrlMainTabs.TabIndex = 4
         '
         'tabpgViewLeaves
         '
         Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgViewLeaves.Name = "tabpgViewLeaves"
-        Me.tabpgViewLeaves.Size = New System.Drawing.Size(684, 328)
+        Me.tabpgViewLeaves.Size = New System.Drawing.Size(712, 487)
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
         '
         'tabpgNewLeaves
         '
+        Me.tabpgNewLeaves.Controls.Add(Me.E_Date)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label9)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label8)
+        Me.tabpgNewLeaves.Controls.Add(Me.S_Date)
+        Me.tabpgNewLeaves.Controls.Add(Me.Submit_new)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label7)
+        Me.tabpgNewLeaves.Controls.Add(Me.Remark_Box)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label6)
+        Me.tabpgNewLeaves.Controls.Add(Me.Date_Calc)
+        Me.tabpgNewLeaves.Controls.Add(Me.Label5)
+        Me.tabpgNewLeaves.Controls.Add(Me.Type_Of_Leave)
         Me.tabpgNewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNewLeaves.Name = "tabpgNewLeaves"
-        Me.tabpgNewLeaves.Size = New System.Drawing.Size(684, 328)
+        Me.tabpgNewLeaves.Size = New System.Drawing.Size(712, 487)
         Me.tabpgNewLeaves.TabIndex = 1
         Me.tabpgNewLeaves.Text = "New Leaves"
         Me.tabpgNewLeaves.UseVisualStyleBackColor = True
@@ -108,7 +131,7 @@ Partial Class Form3
         '
         Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 22)
         Me.tabpgLeavesToApprove.Name = "tabpgLeavesToApprove"
-        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(684, 328)
+        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(712, 487)
         Me.tabpgLeavesToApprove.TabIndex = 2
         Me.tabpgLeavesToApprove.Text = "Leaves to Approve"
         Me.tabpgLeavesToApprove.UseVisualStyleBackColor = True
@@ -124,18 +147,112 @@ Partial Class Form3
         '
         'btnLogout
         '
-        Me.btnLogout.Location = New System.Drawing.Point(12, 338)
+        Me.btnLogout.Location = New System.Drawing.Point(12, 483)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Size = New System.Drawing.Size(132, 23)
         Me.btnLogout.TabIndex = 5
         Me.btnLogout.Text = "LOGOUT"
         Me.btnLogout.UseVisualStyleBackColor = True
         '
+        'Type_Of_Leave
+        '
+        Me.Type_Of_Leave.FormattingEnabled = True
+        Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
+        Me.Type_Of_Leave.Location = New System.Drawing.Point(279, 27)
+        Me.Type_Of_Leave.Name = "Type_Of_Leave"
+        Me.Type_Of_Leave.Size = New System.Drawing.Size(135, 21)
+        Me.Type_Of_Leave.TabIndex = 0
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(115, 35)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Type of Leave"
+        '
+        'Date_Calc
+        '
+        Me.Date_Calc.Location = New System.Drawing.Point(279, 70)
+        Me.Date_Calc.MaxSelectionCount = 365
+        Me.Date_Calc.Name = "Date_Calc"
+        Me.Date_Calc.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(115, 70)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 13)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Duration of Leave"
+        '
+        'Remark_Box
+        '
+        Me.Remark_Box.Location = New System.Drawing.Point(279, 304)
+        Me.Remark_Box.Name = "Remark_Box"
+        Me.Remark_Box.Size = New System.Drawing.Size(227, 96)
+        Me.Remark_Box.TabIndex = 4
+        Me.Remark_Box.Text = ""
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(115, 304)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(83, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Remarks (if any)"
+        '
+        'Submit_new
+        '
+        Me.Submit_new.Location = New System.Drawing.Point(321, 428)
+        Me.Submit_new.Name = "Submit_new"
+        Me.Submit_new.Size = New System.Drawing.Size(114, 31)
+        Me.Submit_new.TabIndex = 6
+        Me.Submit_new.Text = "SUBMIT"
+        Me.Submit_new.UseVisualStyleBackColor = True
+        '
+        'S_Date
+        '
+        Me.S_Date.Enabled = False
+        Me.S_Date.Location = New System.Drawing.Point(279, 245)
+        Me.S_Date.Name = "S_Date"
+        Me.S_Date.Size = New System.Drawing.Size(120, 20)
+        Me.S_Date.TabIndex = 7
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(115, 245)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 13)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Starting Date"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(115, 274)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 13)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Ending Date"
+        '
+        'E_Date
+        '
+        Me.E_Date.Enabled = False
+        Me.E_Date.Location = New System.Drawing.Point(279, 274)
+        Me.E_Date.Name = "E_Date"
+        Me.E_Date.Size = New System.Drawing.Size(120, 20)
+        Me.E_Date.TabIndex = 10
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(854, 378)
+        Me.ClientSize = New System.Drawing.Size(882, 537)
         Me.Controls.Add(Me.btnLogout)
         Me.Controls.Add(Me.tabctrlMainTabs)
         Me.Controls.Add(Me.Label4)
@@ -145,6 +262,8 @@ Partial Class Form3
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.tabctrlMainTabs.ResumeLayout(False)
+        Me.tabpgNewLeaves.ResumeLayout(False)
+        Me.tabpgNewLeaves.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,4 +278,15 @@ Partial Class Form3
     Friend WithEvents tabpgLeavesToApprove As System.Windows.Forms.TabPage
     Friend WithEvents tabpgNotifications As System.Windows.Forms.TabPage
     Friend WithEvents btnLogout As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Type_Of_Leave As System.Windows.Forms.ComboBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Date_Calc As System.Windows.Forms.MonthCalendar
+    Friend WithEvents Submit_new As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Remark_Box As System.Windows.Forms.RichTextBox
+    Friend WithEvents S_Date As System.Windows.Forms.TextBox
+    Friend WithEvents E_Date As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

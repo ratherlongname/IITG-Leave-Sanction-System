@@ -2,12 +2,12 @@ BSBE : Biotechnology and sciences
 CL   : Chemical 		
 DD   : Department of Design	
 CSE  : Computer Science
-MNC  : Mathematics and computing
-EE   : Electrical
+EE   : Electrical and electronics
 HSS  : Humanities and Social Sciences
 PH   : Physics
 MA   : Mathematics
 ME   : Mechanical
-CE   : Civil	
+CE   : Civil
+CH   : Chemistry	
 
 
