@@ -29,20 +29,20 @@ Partial Class Form3
         Me.tabctrlMainTabs = New System.Windows.Forms.TabControl()
         Me.tabpgViewLeaves = New System.Windows.Forms.TabPage()
         Me.tabpgNewLeaves = New System.Windows.Forms.TabPage()
+        Me.E_Date = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.S_Date = New System.Windows.Forms.TextBox()
+        Me.Submit_new = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Remark_Box = New System.Windows.Forms.RichTextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Date_Calc = New System.Windows.Forms.MonthCalendar()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Type_Of_Leave = New System.Windows.Forms.ComboBox()
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.btnLogout = New System.Windows.Forms.Button()
-        Me.Type_Of_Leave = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Date_Calc = New System.Windows.Forms.MonthCalendar()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Remark_Box = New System.Windows.Forms.RichTextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Submit_new = New System.Windows.Forms.Button()
-        Me.S_Date = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.E_Date = New System.Windows.Forms.TextBox()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
         Me.SuspendLayout()
@@ -127,6 +127,100 @@ Partial Class Form3
         Me.tabpgNewLeaves.Text = "New Leaves"
         Me.tabpgNewLeaves.UseVisualStyleBackColor = True
         '
+        'E_Date
+        '
+        Me.E_Date.Enabled = False
+        Me.E_Date.Location = New System.Drawing.Point(279, 274)
+        Me.E_Date.Name = "E_Date"
+        Me.E_Date.Size = New System.Drawing.Size(120, 20)
+        Me.E_Date.TabIndex = 10
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(115, 274)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 13)
+        Me.Label9.TabIndex = 9
+        Me.Label9.Text = "Ending Date"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(115, 245)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(69, 13)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "Starting Date"
+        '
+        'S_Date
+        '
+        Me.S_Date.Enabled = False
+        Me.S_Date.Location = New System.Drawing.Point(279, 245)
+        Me.S_Date.Name = "S_Date"
+        Me.S_Date.Size = New System.Drawing.Size(120, 20)
+        Me.S_Date.TabIndex = 7
+        '
+        'Submit_new
+        '
+        Me.Submit_new.Location = New System.Drawing.Point(321, 428)
+        Me.Submit_new.Name = "Submit_new"
+        Me.Submit_new.Size = New System.Drawing.Size(114, 31)
+        Me.Submit_new.TabIndex = 6
+        Me.Submit_new.Text = "SUBMIT"
+        Me.Submit_new.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(115, 304)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(83, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Remarks (if any)"
+        '
+        'Remark_Box
+        '
+        Me.Remark_Box.Location = New System.Drawing.Point(279, 304)
+        Me.Remark_Box.Name = "Remark_Box"
+        Me.Remark_Box.Size = New System.Drawing.Size(227, 96)
+        Me.Remark_Box.TabIndex = 4
+        Me.Remark_Box.Text = ""
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(115, 70)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 13)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Duration of Leave"
+        '
+        'Date_Calc
+        '
+        Me.Date_Calc.Location = New System.Drawing.Point(279, 70)
+        Me.Date_Calc.MaxSelectionCount = 365
+        Me.Date_Calc.Name = "Date_Calc"
+        Me.Date_Calc.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(115, 35)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(76, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Type of Leave"
+        '
+        'Type_Of_Leave
+        '
+        Me.Type_Of_Leave.FormattingEnabled = True
+        Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
+        Me.Type_Of_Leave.Location = New System.Drawing.Point(279, 27)
+        Me.Type_Of_Leave.Name = "Type_Of_Leave"
+        Me.Type_Of_Leave.Size = New System.Drawing.Size(135, 21)
+        Me.Type_Of_Leave.TabIndex = 0
+        '
         'tabpgLeavesToApprove
         '
         Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 22)
@@ -140,7 +234,7 @@ Partial Class Form3
         '
         Me.tabpgNotifications.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNotifications.Name = "tabpgNotifications"
-        Me.tabpgNotifications.Size = New System.Drawing.Size(684, 328)
+        Me.tabpgNotifications.Size = New System.Drawing.Size(712, 487)
         Me.tabpgNotifications.TabIndex = 3
         Me.tabpgNotifications.Text = "Notifications"
         Me.tabpgNotifications.UseVisualStyleBackColor = True
@@ -153,100 +247,6 @@ Partial Class Form3
         Me.btnLogout.TabIndex = 5
         Me.btnLogout.Text = "LOGOUT"
         Me.btnLogout.UseVisualStyleBackColor = True
-        '
-        'Type_Of_Leave
-        '
-        Me.Type_Of_Leave.FormattingEnabled = True
-        Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
-        Me.Type_Of_Leave.Location = New System.Drawing.Point(279, 27)
-        Me.Type_Of_Leave.Name = "Type_Of_Leave"
-        Me.Type_Of_Leave.Size = New System.Drawing.Size(135, 21)
-        Me.Type_Of_Leave.TabIndex = 0
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(115, 35)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 13)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Type of Leave"
-        '
-        'Date_Calc
-        '
-        Me.Date_Calc.Location = New System.Drawing.Point(279, 70)
-        Me.Date_Calc.MaxSelectionCount = 365
-        Me.Date_Calc.Name = "Date_Calc"
-        Me.Date_Calc.TabIndex = 2
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(115, 70)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(92, 13)
-        Me.Label6.TabIndex = 3
-        Me.Label6.Text = "Duration of Leave"
-        '
-        'Remark_Box
-        '
-        Me.Remark_Box.Location = New System.Drawing.Point(279, 304)
-        Me.Remark_Box.Name = "Remark_Box"
-        Me.Remark_Box.Size = New System.Drawing.Size(227, 96)
-        Me.Remark_Box.TabIndex = 4
-        Me.Remark_Box.Text = ""
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(115, 304)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(83, 13)
-        Me.Label7.TabIndex = 5
-        Me.Label7.Text = "Remarks (if any)"
-        '
-        'Submit_new
-        '
-        Me.Submit_new.Location = New System.Drawing.Point(321, 428)
-        Me.Submit_new.Name = "Submit_new"
-        Me.Submit_new.Size = New System.Drawing.Size(114, 31)
-        Me.Submit_new.TabIndex = 6
-        Me.Submit_new.Text = "SUBMIT"
-        Me.Submit_new.UseVisualStyleBackColor = True
-        '
-        'S_Date
-        '
-        Me.S_Date.Enabled = False
-        Me.S_Date.Location = New System.Drawing.Point(279, 245)
-        Me.S_Date.Name = "S_Date"
-        Me.S_Date.Size = New System.Drawing.Size(120, 20)
-        Me.S_Date.TabIndex = 7
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(115, 245)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 13)
-        Me.Label8.TabIndex = 8
-        Me.Label8.Text = "Starting Date"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(115, 274)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(66, 13)
-        Me.Label9.TabIndex = 9
-        Me.Label9.Text = "Ending Date"
-        '
-        'E_Date
-        '
-        Me.E_Date.Enabled = False
-        Me.E_Date.Location = New System.Drawing.Point(279, 274)
-        Me.E_Date.Name = "E_Date"
-        Me.E_Date.Size = New System.Drawing.Size(120, 20)
-        Me.E_Date.TabIndex = 10
         '
         'Form3
         '
