@@ -24,7 +24,6 @@ Partial Class Form2
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
-        Me.DataBaseDataSet = New Login.DataBaseDataSet()
         Me.DataBaseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataBaseDataSetBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.USERNAME = New System.Windows.Forms.TextBox()
@@ -66,7 +65,6 @@ Partial Class Form2
         Me.PROGRAMME = New System.Windows.Forms.ComboBox()
         Me.HOD_CheckBox = New System.Windows.Forms.CheckBox()
         Me.DEPARTMENT_FAC = New System.Windows.Forms.ComboBox()
-        CType(Me.DataBaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,17 +72,13 @@ Partial Class Form2
         '
         'DataBaseDataSet
         '
-        Me.DataBaseDataSet.DataSetName = "DataBaseDataSet"
-        Me.DataBaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'DataBaseDataSetBindingSource
         '
-        Me.DataBaseDataSetBindingSource.DataSource = Me.DataBaseDataSet
         Me.DataBaseDataSetBindingSource.Position = 0
         '
         'DataBaseDataSetBindingSource1
         '
-        Me.DataBaseDataSetBindingSource1.DataSource = Me.DataBaseDataSet
         Me.DataBaseDataSetBindingSource1.Position = 0
         '
         'USERNAME
@@ -626,7 +620,6 @@ Partial Class Form2
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
-        CType(Me.DataBaseDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -634,7 +627,6 @@ Partial Class Form2
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataBaseDataSet As Login.DataBaseDataSet
     Friend WithEvents DataBaseDataSetBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataBaseDataSetBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents USERNAME As System.Windows.Forms.TextBox
