@@ -82,6 +82,7 @@
     End Sub
 
     Private Sub Edit_Click(sender As Object, e As EventArgs) Handles Edit.Click
-
+        Me.Close()
+        Form2.Show()
     End Sub
 End Class

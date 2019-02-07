@@ -67,6 +67,7 @@ Partial Class Form2
         Me.DEPARTMENT_FAC = New System.Windows.Forms.ComboBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.VALIDATION = New System.Windows.Forms.TextBox()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -305,7 +306,7 @@ Partial Class Form2
         '
         Me.DESIGNATION.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DESIGNATION.FormattingEnabled = True
-        Me.DESIGNATION.Items.AddRange(New Object() {"HOD", "ADOAA", "Professor", "Associate Professor", "Assistant Professor"})
+        Me.DESIGNATION.Items.AddRange(New Object() {"ADOAA", "Professor", "Associate Professor", "Assistant Professor"})
         Me.DESIGNATION.Location = New System.Drawing.Point(688, 405)
         Me.DESIGNATION.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DESIGNATION.Name = "DESIGNATION"
@@ -541,7 +542,7 @@ Partial Class Form2
         '
         'DEPARTMENT_FAC
         '
-        Me.DEPARTMENT_FAC.Items.AddRange(New Object() {"BSBE ", "CL    " & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9), "DD   ", "CSE  ", "MNC  ", "EE   ", "HSS  ", "PH   ", "MA   ", "ME   ", "CE", ""})
+        Me.DEPARTMENT_FAC.Items.AddRange(New Object() {"BSBE", "CL", "DD", "CSE", "MNC", "EE", "HSS", "PH", "MA", "ME", "CE"})
         Me.DEPARTMENT_FAC.Location = New System.Drawing.Point(688, 374)
         Me.DEPARTMENT_FAC.Margin = New System.Windows.Forms.Padding(4)
         Me.DEPARTMENT_FAC.Name = "DEPARTMENT_FAC"
@@ -566,6 +567,13 @@ Partial Class Form2
         Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'VALIDATION
+        '
+        Me.VALIDATION.Location = New System.Drawing.Point(745, 299)
+        Me.VALIDATION.Name = "VALIDATION"
+        Me.VALIDATION.Size = New System.Drawing.Size(100, 22)
+        Me.VALIDATION.TabIndex = 45
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -573,6 +581,7 @@ Partial Class Form2
         Me.AutoScrollMargin = New System.Drawing.Size(0, 50)
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(933, 636)
+        Me.Controls.Add(Me.VALIDATION)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.DEPARTMENT_FAC)
@@ -671,4 +680,5 @@ Partial Class Form2
     Friend WithEvents DEPARTMENT_FAC As System.Windows.Forms.ComboBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents VALIDATION As System.Windows.Forms.TextBox
 End Class

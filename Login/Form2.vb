@@ -1,6 +1,9 @@
 ﻿Imports System.Drawing.Drawing2D
+
 Public Class Form2
     Private Access As New DBControl
+    Dim str As String = Nothing
+
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button2.PerformClick()
@@ -100,21 +103,67 @@ Public Class Form2
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
-
         If uname = Nothing Then
             MessageBox.Show("Please Enter some Username")
+            Button2.PerformClick()
             Exit Sub
         End If
         If pwd = Nothing Then
             MessageBox.Show("Please Enter the Password")
+            Button2.PerformClick()
             Exit Sub
         End If
         If fname = Nothing Then
             MessageBox.Show("Please Enter the First Name")
+            Button2.PerformClick()
             Exit Sub
         End If
         If lname = Nothing Then
             MessageBox.Show("Please Enter the Last Name")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+
+        If uname.Length < 2 Then
+            MessageBox.Show("Username should contain atleast 2 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+        If uname.Length > 50 Then
+            MessageBox.Show("Username can contain a maximum of 50 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+        If pwd.Length < 2 Then
+            MessageBox.Show("Password should contain atleast 2 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+        If pwd.Length > 50 Then
+            MessageBox.Show("Password can contain a maximum of 50 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+
+        If fname.Length < 2 Then
+            MessageBox.Show("First Name should contain atleast 2 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+        If fname.Length > 50 Then
+            MessageBox.Show("First Name can contain a maximum of 50 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+
+        If lname.Length < 2 Then
+            MessageBox.Show("Last Name should contain atleast 2 characters")
+            Button2.PerformClick()
+            Exit Sub
+        End If
+        If lname.Length > 50 Then
+            MessageBox.Show("Last Name can contain a maximum of 50 characters")
+            Button2.PerformClick()
             Exit Sub
         End If
 
@@ -122,6 +171,7 @@ Public Class Form2
             If (Char.IsLetterOrDigit(c)) Then
             Else
                 MessageBox.Show("Username can contain only alphanumeric characters")
+                Button2.PerformClick()
                 Exit Sub
             End If
         Next
@@ -130,6 +180,7 @@ Public Class Form2
             If (Char.IsLetter(c)) Then
             Else
                 MessageBox.Show("Firstname can contain only Uppercase and LowerCase Letters")
+                Button2.PerformClick()
                 Exit Sub
             End If
         Next
@@ -138,6 +189,7 @@ Public Class Form2
             If (Char.IsLetter(c)) Then
             Else
                 MessageBox.Show("Last name can contain only Uppercase and LowerCase Letters")
+                Button2.PerformClick()
                 Exit Sub
             End If
         Next
@@ -145,24 +197,29 @@ Public Class Form2
         If Student_Checkbox.Checked = True Then
             If y = Nothing Then
                 MessageBox.Show("Please Enter your Year of Joining")
+                Button2.PerformClick()
                 Exit Sub
             End If
 
 
             If roll = Nothing Then
                 MessageBox.Show("Please Enter your Roll No.")
+                Button2.PerformClick()
                 Exit Sub
             End If
             If prog = Nothing Then
                 MessageBox.Show("Please Enter in which Programme you are enrolled")
+                Button2.PerformClick()
                 Exit Sub
             End If
             If dept_stu = Nothing Then
                 MessageBox.Show("Please Enter your Department")
+                Button2.PerformClick()
                 Exit Sub
             End If
             If ta = Nothing And guide_2 = Nothing Then
                 MessageBox.Show("Please Mention either your TA Superviser or Guide")
+                Button2.PerformClick()
                 Exit Sub
             End If
 
@@ -170,11 +227,13 @@ Public Class Form2
                 If (Char.IsNumber(c)) Then
                 Else
                     MessageBox.Show("Please enter a Valid Year")
+                    Button2.PerformClick()
                     Exit Sub
                 End If
             Next
             If y.Length() <> 4 Then
                 MessageBox.Show("Please enter a Valid Year")
+                Button2.PerformClick()
                 Exit Sub
             End If
 
@@ -183,11 +242,13 @@ Public Class Form2
                 If (Char.IsNumber(c)) Then
                 Else
                     MessageBox.Show("Roll No. should contain only digits")
+                    Button2.PerformClick()
                     Exit Sub
                 End If
             Next
             If roll.Length() <> 9 Then
                 MessageBox.Show("Roll No. should contain exactly 9 digits")
+                Button2.PerformClick()
                 Exit Sub
             End If
         End If
@@ -195,10 +256,12 @@ Public Class Form2
         If Faculty_Checkbox.Checked = True Then
             If dept_fac = Nothing Then
                 MessageBox.Show("Please Enter your Department")
+                Button2.PerformClick()
                 Exit Sub
             End If
             If desg = Nothing Then
                 MessageBox.Show("Please Enter your Designation")
+                Button2.PerformClick()
                 Exit Sub
             End If
         End If
@@ -206,11 +269,16 @@ Public Class Form2
         If HOD_CheckBox.Checked = True Then
             If dept_fac = Nothing Then
                 MessageBox.Show("Please Enter your Department")
+                Button2.PerformClick()
                 Exit Sub
             End If
         End If
 
-
+        If str <> VALIDATION.Text Then
+            MessageBox.Show("Invalid Validation, Please Try Again")
+            Button2.PerformClick()
+            Exit Sub
+        End If
         'PLEASE USE fname.Trim() and lname.Trim() to feed in the database
         Try
             Dim userAlreadyExists As Boolean = False
@@ -225,17 +293,20 @@ Public Class Form2
 
             If userAlreadyExists Then
                 MessageBox.Show("User already exists with the same username try entering a differnet username", "USER EXISTS")
+                Button2.PerformClick()
+                Exit Sub
             Else
                 If Student_Checkbox.Checked = True Then
-                    roll = CInt(roll)
-                    y = CInt(y)
+                    Dim roll_2 As Integer = Convert.ToInt64(roll)
+                    MessageBox.Show(roll_2)
+                    Dim y_2 As Integer = Convert.ToInt64(y)
 
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
                     Access.AddParam("@fname", fname)
                     Access.AddParam("@lname", lname)
-                    Access.AddParam("@y", y)
-                    Access.AddParam("@roll", roll)
+                    Access.AddParam("@y", y_2)
+                    Access.AddParam("@roll", roll_2)
                     Access.AddParam("@ta", ta)
                     Access.AddParam("@guide", guide_2)
                     Access.AddParam("@dept_stu", dept_stu)
@@ -251,9 +322,16 @@ Public Class Form2
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days_3", days_3)
 
+                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password],  [Programme], [Department], [First_name], [Last_name], [TA_Superviser], [Guide], [List_of_leaves],  [Notification])VALUES(@user, @pwd, @prog, @dept_stu, @fname, @lname, @ta, @guide, @dum, @dum)")
 
-                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum, @days_2, @days_3)")
+                    'Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum,  @days_2, @days_3)")
+                    'Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum, @days_2, @days_3)")
+
+                    'Form1.Show()
+                    'Me.Close()
+
                 End If
+
 
                 If Faculty_Checkbox.Checked = True Then
                     Access.AddParam("@user", uname)
@@ -262,15 +340,23 @@ Public Class Form2
                     Access.AddParam("@lname", lname)
                     Access.AddParam("@dept", dept_fac)
                     Access.AddParam("@desg", desg)
-                    Dim days As Integer = 0
-                    Access.AddParam("@days", days)
+
+                    Dim dum As String = Nothing
+                    dum = ""
+                    Access.AddParam("@dum", dum)
+
                     Dim days_1 As Integer = 120
-                    Access.AddParam("@days_1", days_1)
+                    Access.AddParam("@days1", days_1)
                     Dim days_2 As Integer = 15
-                    Access.AddParam("@days_2", days_2)
+                    Access.AddParam("@days2", days_2)
                     Dim days_3 As Integer = 30
-                    Access.AddParam("@days_3", days_3)
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [Department], [First_name], [Last_name], [List_of_Leaves_Applied], [Academic], [Notifications], [Ordinary], [Medical], [List_of_Incoming_Leaves], [Designation])VALUES(@user, @pwd, @roll, @dept, @fname, @lname, @dum, @days_1, @dum, @days_2, @days_3, @dum, @desg)")
+                    Access.AddParam("@days3", days_3)
+
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name], [Department], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @days2, @days3, @days1)")
+
+                    'Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum, @dum, @desg, @days_2, @days_3, @days_1)")
+                    Form1.Show()
+                    Me.Close()
                 End If
 
                 If HOD_CheckBox.Checked = True Then
@@ -283,15 +369,22 @@ Public Class Form2
                     Access.AddParam("@dept", dept_fac)
                     Access.AddParam("@desg_2", desg_2)
 
-                    Dim days As Integer = 0
-                    Access.AddParam("@days", days)
+                    Dim dum As String = Nothing
+                    dum = ""
+                    Access.AddParam("@dum", dum)
+
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days_1", days_1)
                     Dim days_2 As Integer = 15
                     Access.AddParam("@days_2", days_2)
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days_3", days_3)
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [Department], [First_name], [Last_name], [List_of_Leaves_Applied], [Academic], [Notifications], [Ordinary], [Medical], [List_of_Incoming_Leaves], [Designation])VALUES(@user, @pwd, @roll, @dept, @fname, @lname, @dum, @days_1, @dum, @days_2, @days_3, @dum, @desg_2)")
+
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [Department], [First_Name], [Last_Name], [List_of_Leaves_Applied], [Academic], [Notifications], [Ordinary], [Medical], [List_of_Incoming_Leaves], [Designation])VALUES(@user, @pwd, @dept, @fname, @lname, @dum, @days_1, @dum, @days_2, @days_3, @dum, @desg_2)")
+                    Form1.Show()
+                    Me.Close()
+
+
                 End If
             End If
 
@@ -301,11 +394,6 @@ Public Class Form2
 
 
     End Sub
-    'Public Function ContainsSpecialChars(s As String) As Boolean
-    '    Return s.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?\]1234567890 ".ToCharArray) <> -1
-    'End Function
-
-
 
     Private Sub HOD_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles HOD_CheckBox.CheckedChanged
         'Making appropriate controls hidden
@@ -326,33 +414,8 @@ Public Class Form2
     End Sub
 
 
-
-
-    'Dim roll As String = ROLL_NO.Text
-    'Dim y As String = YEAR.Text
-    ''Checking whether the entered roll number is valid or not 
-    '    If (Not (IsNumeric(roll)) And roll <> "") Then
-    '        MessageBox.Show("The roll number entered is invalid", roll)
-    '        flag = 1
-    '    End If
-    ''Checking whether the entered year is valid or not
-    '    If (Not (IsNumeric(y)) And y <> "") Then
-    '        MessageBox.Show("The year entered is invalid", y)
-    '        flag = 1
-    '    End If
-    ''After removing the leading and trailing spaces from name ,checking whether the name contains special characters or not
-    '    If ((ContainsSpecialChars(fname.Trim()) Or ContainsSpecialChars(lname.Trim())) And fname <> "" And lname <> "") Then
-    '        MessageBox.Show("The Name is not in a valid format,contains unacceptable characters", "INVALID DATA ENTERED")
-    '        flag = 1
-    '    End If
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        Dim Str As String = Nothing
         Str = ""
         Dim R As New Random
         For i As Integer = 0 To 5
@@ -363,5 +426,10 @@ Public Class Form2
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
         g.DrawString(Str, New Font("Arial", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         PictureBox2.Image = b
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        Form1.Show()
     End Sub
 End Class
