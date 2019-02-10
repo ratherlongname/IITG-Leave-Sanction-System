@@ -955,7 +955,68 @@
 
     End Sub
 
-    Private Sub ACCEPTED_Click(sender As Object, e As EventArgs) Handles ACCEPTED.Click
-        RefreshViewLeaves()
+    Private Function viewleaves_SelectedItem() As ListViewItem
+        Dim selectedLeave As New ListViewItem
+        If lsviewViewLeavesListOfLeaves.SelectedItems.Count > 0 Then
+            selectedLeave = lsviewViewLeavesListOfLeaves.SelectedItems(0)
+        End If
+
+        Return selectedLeave
+    End Function
+   
+    Private Sub btnViewLeavesView_Click(sender As Object, e As EventArgs) Handles btnViewLeavesView.Click
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = viewleaves_SelectedItem()
+
+        Form5.txtDateTime.Text() = selectedLeave.SubItems(0).Text()
+        Form5.txtLeaveID.Text() = selectedLeave.SubItems(1).Text()
+        Form5.txtTypeofLeave.Text() = selectedLeave.SubItems(2).Text()
+        Form5.txtStartDate.Text() = selectedLeave.SubItems(3).Text()
+        Form5.txtEndDate.Text() = selectedLeave.SubItems(4).Text()
+        Form5.txtCurrentStatus.Text() = selectedLeave.SubItems(5).Text()
+        Form5.Show()
+    End Sub
+
+    Private Sub btnViewLeavesCancel_Click(sender As Object, e As EventArgs) Handles btnViewLeavesCancel.Click
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = viewleaves_SelectedItem()
+        If selectedLeave.SubItems(1).Text() = "" Then
+            MsgBox("No leave selected!")
+            Exit Sub
+        End If
+
+        Dim leave_ID As String = selectedLeave.SubItems(0).Text()
+        Dim update_ID As String = ""
+
+        Dim date_Time As Date = System.DateTime.Now()
+        Dim user As String = Label1.Text()
+        Dim remark As String = richtxtboxViewLeaves.Text()
+
+        Dim status As String = "Cancelled"
+
+        Dim user_action As String = user
+
+        'Generating Update_ID
+        update_ID = user(0) + user(1) + user_action(0) + user_action(1)
+        Dim d As String = date_Time.ToString()
+        For Each c As Char In d
+            If c <> " " And c <> "-" And c <> ":" Then
+                update_ID = update_ID + c
+            End If
+        Next
+
+        'Adding parameters for the Insert query in Update DB
+        Access.AddParam("@LID", leave_ID)
+        Access.AddParam("@UID", update_ID)
+        Access.AddParam("@date", date_Time)
+        Access.AddParam("@user", user)
+        Access.AddParam("@remark", remark)
+        Access.AddParam("@status", status)
+        Access.AddParam("@user_act", user_action)
+        'Insert Command for the Update_DB
+        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
+        MsgBox("Leave status updated.")
+        richtxtboxViewLeaves.Clear()
+
     End Sub
 End Class
