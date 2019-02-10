@@ -139,3 +139,28 @@ To make a leave sanction system that handles the entire leave application proced
 * It displays the basic info on the same page.
 * It contains an panel which by default shows the old leaves.
 * When other option is selected , a new information is diplayed in panel.
+
+## 08<sup>th</sup> February 2019 - Milestone 2
+
+### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Shivam Bansal
+
+#### 1 New Features Added
+
+##### 1.1 Captcha 
+* Added in signup page as a security check to ensure only human users can pass through.
+
+##### 1.2 Update Button
+* Added in signup page to edit user profile.
+
+#### 2 Database Inter-Linking
+* Completely Finalsing the control flow of Software.
+* Finalising the work distrubution in each database.
+
+#### 3 New Suggestions
+
+##### 3.1 Super-User/Admin
+* Add a Superuser who will be able to view any user profile and will approve/disapprove a new user profile.
