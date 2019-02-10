@@ -863,6 +863,7 @@
         'Insert Command for the Update_DB
         Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
         MsgBox("Leave status updated.")
+        richtxtboxLeavestobeApprovedRemarks.Clear()
 
     End Sub
 
