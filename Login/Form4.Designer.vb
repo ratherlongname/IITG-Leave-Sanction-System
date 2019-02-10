@@ -23,10 +23,8 @@ Partial Class Form4
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form4))
-        Me.BACK = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblLeaSanSys = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -44,7 +42,6 @@ Partial Class Form4
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -64,23 +61,13 @@ Partial Class Form4
         Me.FIRST_NAME_TB = New System.Windows.Forms.Label()
         Me.USERNAME_TB = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BACK = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'BACK
-        '
-        Me.BACK.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BACK.BackColor = System.Drawing.Color.Transparent
-        Me.BACK.BackgroundImage = CType(resources.GetObject("BACK.BackgroundImage"), System.Drawing.Image)
-        Me.BACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BACK.Location = New System.Drawing.Point(986, 205)
-        Me.BACK.Margin = New System.Windows.Forms.Padding(2)
-        Me.BACK.Name = "BACK"
-        Me.BACK.Size = New System.Drawing.Size(50, 50)
-        Me.BACK.TabIndex = 29
-        Me.BACK.UseVisualStyleBackColor = False
         '
         'Label4
         '
@@ -112,18 +99,6 @@ Partial Class Form4
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(1067, 44)
         Me.TextBox1.TabIndex = 34
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(284, 11)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(102, 96)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 33
-        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
@@ -362,18 +337,6 @@ Partial Class Form4
         Me.Label13.Text = "Designation"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(120, 183)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(90, 90)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 54
-        Me.PictureBox2.TabStop = False
-        '
         'Label14
         '
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -585,6 +548,43 @@ Partial Class Form4
         Me.Panel3.Size = New System.Drawing.Size(1067, 369)
         Me.Panel3.TabIndex = 55
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.a
+        Me.PictureBox2.Location = New System.Drawing.Point(120, 183)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(90, 90)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 54
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(284, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(102, 96)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
+        '
+        'BACK
+        '
+        Me.BACK.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.BACK.BackColor = System.Drawing.Color.Transparent
+        Me.BACK.BackgroundImage = Global.Login.My.Resources.Resources.back_50
+        Me.BACK.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BACK.Location = New System.Drawing.Point(986, 205)
+        Me.BACK.Margin = New System.Windows.Forms.Padding(2)
+        Me.BACK.Name = "BACK"
+        Me.BACK.Size = New System.Drawing.Size(50, 50)
+        Me.BACK.TabIndex = 29
+        Me.BACK.UseVisualStyleBackColor = False
+        '
         'Form4
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -609,11 +609,11 @@ Partial Class Form4
         Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form4"
         Me.Text = "Form4"
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Panel1.ResumeLayout(false)
-        Me.Panel1.PerformLayout
-        CType(Me.PictureBox2,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
