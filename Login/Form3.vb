@@ -10,15 +10,14 @@
         End If
 
         ' INITIALIZE VIEW LEAVES TAB
-        cmbbxViewLeavesSortBy.SelectedIndex = 0
-        chkdlsbxViewLeavesTypeOfLeave.SetItemChecked(0, True)
-        chkdlsbxViewLeavesTypeOfLeave.SetItemChecked(1, True)
-        chkdlsbxViewLeavesTypeOfLeave.SetItemChecked(2, True)
-
-        chkdlsbxViewLeavesStatus.SetItemChecked(0, True)
-        chkdlsbxViewLeavesStatus.SetItemChecked(1, True)
-        chkdlsbxViewLeavesStatus.SetItemChecked(2, True)
-        chkdlsbxViewLeavesStatus.SetItemChecked(3, True)
+        SORT_DROPBOX.SelectedIndex = 0
+        ORDINARY.Checked = True
+        MEDICAL.Checked = True
+        ACADEMIC.Checked = True
+        ACCEPTED.Checked = True
+        REJECTED.Checked = True
+        PENDING.Checked = True
+        CANCELLED.Checked = True
 
         RefreshViewLeaves()
 
@@ -88,11 +87,387 @@
         lsviewViewLeavesListOfLeaves.Items.Clear()
 
         ' REPOPULATE LISTVIEW
-        Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "'")
-        If Access.RecordCount > 0 Then
+
+        If NEWEST_CHECKBOX.Checked = True Then
+            If SORT_DROPBOX.Text = "Date / Time Applied" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [Date/Time Applied] DESC")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            ElseIf SORT_DROPBOX.Text = "Start Date" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [Start_Date] DESC")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            ElseIf SORT_DROPBOX.Text = "End Date" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [End_Date] DESC")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            Else
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "')")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            End If
+
+        Else
+            If SORT_DROPBOX.Text = "Date / Time Applied" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [Date/Time Applied]")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            ElseIf SORT_DROPBOX.Text = "Start Date" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [Start_Date]")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            ElseIf SORT_DROPBOX.Text = "End Date" Then
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "') ORDER BY [End_Date]")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            Else
+                'FOR STATUS
+                Dim dum1 As String = ""
+                Dim dum2 As String = ""
+                Dim dum3 As String = ""
+                Dim dum4 As String = ""
+                If ACCEPTED.Checked = True Then
+                    dum1 = "Accepted"
+                End If
+                If REJECTED.Checked = True Then
+                    dum2 = "Rejected"
+                End If
+                If PENDING.Checked = True Then
+                    dum3 = "Pending"
+                End If
+                If CANCELLED.Checked = True Then
+                    dum4 = "Cancelled"
+                End If
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "' and Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') and Current_Status IN ('" & dum1 & "','" & dum2 & "','" & dum3 & "','" & dum4 & "')")
+                If Access.RecordCount > 0 Then
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim dum As String = r(1)
+                        Dim v As New ListViewItem(dum)
+                        v.SubItems.Add(r(6))
+                        v.SubItems.Add(r(3))
+                        v.SubItems.Add(r(4))
+                        v.SubItems.Add(r(5))
+                        v.SubItems.Add(r(2))
+                        lsviewViewLeavesListOfLeaves.Items.Add(v)
+                    Next
+                End If
+            End If
 
         End If
 
+
+
+
+
+
+
+
+        'Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "'")
+        'If Access.RecordCount > 0 Then
+        '    For Each r As DataRow In Access.DBDT.Rows
+        '        Dim dum As String = r(1)
+        '        Dim v As New ListViewItem(dum)
+        '        v.SubItems.Add(r(6))
+        '        v.SubItems.Add(r(3))
+        '        v.SubItems.Add(r(4))
+        '        v.SubItems.Add(r(5))
+        '        v.SubItems.Add(r(2))
+        '        lsviewViewLeavesListOfLeaves.Items.Add(v)
+        '    Next
+        'End If
         ' TODO
 
     End Sub

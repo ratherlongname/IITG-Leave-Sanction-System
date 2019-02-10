@@ -27,15 +27,13 @@ Partial Class Form3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tabctrlMainTabs = New System.Windows.Forms.TabControl()
         Me.tabpgViewLeaves = New System.Windows.Forms.TabPage()
-        Me.rdiobtnViewLeavesOldestFirst = New System.Windows.Forms.RadioButton()
-        Me.rdiobtnViewLeavesNewestFirst = New System.Windows.Forms.RadioButton()
+        Me.OLD_CHECKBOX = New System.Windows.Forms.RadioButton()
+        Me.NEWEST_CHECKBOX = New System.Windows.Forms.RadioButton()
         Me.lblViewLeavesAscOrDesc = New System.Windows.Forms.Label()
         Me.btnViewLeavesRefresh = New System.Windows.Forms.Button()
-        Me.chkdlsbxViewLeavesStatus = New System.Windows.Forms.CheckedListBox()
         Me.lblViewLeavesStatus = New System.Windows.Forms.Label()
-        Me.chkdlsbxViewLeavesTypeOfLeave = New System.Windows.Forms.CheckedListBox()
         Me.lblViewLeavesTypeOfLeave = New System.Windows.Forms.Label()
-        Me.cmbbxViewLeavesSortBy = New System.Windows.Forms.ComboBox()
+        Me.SORT_DROPBOX = New System.Windows.Forms.ComboBox()
         Me.lblViewLeavesSortBy = New System.Windows.Forms.Label()
         Me.lsviewViewLeavesListOfLeaves = New System.Windows.Forms.ListView()
         Me.colhdrDateTimeOfApplication = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -71,6 +69,13 @@ Partial Class Form3
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ORDINARY = New System.Windows.Forms.CheckBox()
+        Me.PENDING = New System.Windows.Forms.CheckBox()
+        Me.REJECTED = New System.Windows.Forms.CheckBox()
+        Me.ACCEPTED = New System.Windows.Forms.CheckBox()
+        Me.ACADEMIC = New System.Windows.Forms.CheckBox()
+        Me.MEDICAL = New System.Windows.Forms.CheckBox()
+        Me.CANCELLED = New System.Windows.Forms.CheckBox()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
@@ -127,15 +132,20 @@ Partial Class Form3
         '
         'tabpgViewLeaves
         '
-        Me.tabpgViewLeaves.Controls.Add(Me.rdiobtnViewLeavesOldestFirst)
-        Me.tabpgViewLeaves.Controls.Add(Me.rdiobtnViewLeavesNewestFirst)
+        Me.tabpgViewLeaves.Controls.Add(Me.CANCELLED)
+        Me.tabpgViewLeaves.Controls.Add(Me.MEDICAL)
+        Me.tabpgViewLeaves.Controls.Add(Me.ACADEMIC)
+        Me.tabpgViewLeaves.Controls.Add(Me.ACCEPTED)
+        Me.tabpgViewLeaves.Controls.Add(Me.REJECTED)
+        Me.tabpgViewLeaves.Controls.Add(Me.PENDING)
+        Me.tabpgViewLeaves.Controls.Add(Me.ORDINARY)
+        Me.tabpgViewLeaves.Controls.Add(Me.OLD_CHECKBOX)
+        Me.tabpgViewLeaves.Controls.Add(Me.NEWEST_CHECKBOX)
         Me.tabpgViewLeaves.Controls.Add(Me.lblViewLeavesAscOrDesc)
         Me.tabpgViewLeaves.Controls.Add(Me.btnViewLeavesRefresh)
-        Me.tabpgViewLeaves.Controls.Add(Me.chkdlsbxViewLeavesStatus)
         Me.tabpgViewLeaves.Controls.Add(Me.lblViewLeavesStatus)
-        Me.tabpgViewLeaves.Controls.Add(Me.chkdlsbxViewLeavesTypeOfLeave)
         Me.tabpgViewLeaves.Controls.Add(Me.lblViewLeavesTypeOfLeave)
-        Me.tabpgViewLeaves.Controls.Add(Me.cmbbxViewLeavesSortBy)
+        Me.tabpgViewLeaves.Controls.Add(Me.SORT_DROPBOX)
         Me.tabpgViewLeaves.Controls.Add(Me.lblViewLeavesSortBy)
         Me.tabpgViewLeaves.Controls.Add(Me.lsviewViewLeavesListOfLeaves)
         Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 25)
@@ -146,29 +156,29 @@ Partial Class Form3
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
         '
-        'rdiobtnViewLeavesOldestFirst
+        'OLD_CHECKBOX
         '
-        Me.rdiobtnViewLeavesOldestFirst.AutoSize = True
-        Me.rdiobtnViewLeavesOldestFirst.Location = New System.Drawing.Point(115, 68)
-        Me.rdiobtnViewLeavesOldestFirst.Margin = New System.Windows.Forms.Padding(4)
-        Me.rdiobtnViewLeavesOldestFirst.Name = "rdiobtnViewLeavesOldestFirst"
-        Me.rdiobtnViewLeavesOldestFirst.Size = New System.Drawing.Size(101, 21)
-        Me.rdiobtnViewLeavesOldestFirst.TabIndex = 10
-        Me.rdiobtnViewLeavesOldestFirst.Text = "Oldest First"
-        Me.rdiobtnViewLeavesOldestFirst.UseVisualStyleBackColor = True
+        Me.OLD_CHECKBOX.AutoSize = True
+        Me.OLD_CHECKBOX.Location = New System.Drawing.Point(115, 68)
+        Me.OLD_CHECKBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.OLD_CHECKBOX.Name = "OLD_CHECKBOX"
+        Me.OLD_CHECKBOX.Size = New System.Drawing.Size(101, 21)
+        Me.OLD_CHECKBOX.TabIndex = 10
+        Me.OLD_CHECKBOX.Text = "Oldest First"
+        Me.OLD_CHECKBOX.UseVisualStyleBackColor = True
         '
-        'rdiobtnViewLeavesNewestFirst
+        'NEWEST_CHECKBOX
         '
-        Me.rdiobtnViewLeavesNewestFirst.AutoSize = True
-        Me.rdiobtnViewLeavesNewestFirst.Checked = True
-        Me.rdiobtnViewLeavesNewestFirst.Location = New System.Drawing.Point(115, 39)
-        Me.rdiobtnViewLeavesNewestFirst.Margin = New System.Windows.Forms.Padding(4)
-        Me.rdiobtnViewLeavesNewestFirst.Name = "rdiobtnViewLeavesNewestFirst"
-        Me.rdiobtnViewLeavesNewestFirst.Size = New System.Drawing.Size(106, 21)
-        Me.rdiobtnViewLeavesNewestFirst.TabIndex = 9
-        Me.rdiobtnViewLeavesNewestFirst.TabStop = True
-        Me.rdiobtnViewLeavesNewestFirst.Text = "Newest First"
-        Me.rdiobtnViewLeavesNewestFirst.UseVisualStyleBackColor = True
+        Me.NEWEST_CHECKBOX.AutoSize = True
+        Me.NEWEST_CHECKBOX.Checked = True
+        Me.NEWEST_CHECKBOX.Location = New System.Drawing.Point(115, 39)
+        Me.NEWEST_CHECKBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.NEWEST_CHECKBOX.Name = "NEWEST_CHECKBOX"
+        Me.NEWEST_CHECKBOX.Size = New System.Drawing.Size(106, 21)
+        Me.NEWEST_CHECKBOX.TabIndex = 9
+        Me.NEWEST_CHECKBOX.TabStop = True
+        Me.NEWEST_CHECKBOX.Text = "Newest First"
+        Me.NEWEST_CHECKBOX.UseVisualStyleBackColor = True
         '
         'lblViewLeavesAscOrDesc
         '
@@ -182,7 +192,7 @@ Partial Class Form3
         '
         'btnViewLeavesRefresh
         '
-        Me.btnViewLeavesRefresh.Location = New System.Drawing.Point(4, 277)
+        Me.btnViewLeavesRefresh.Location = New System.Drawing.Point(4, 355)
         Me.btnViewLeavesRefresh.Margin = New System.Windows.Forms.Padding(4)
         Me.btnViewLeavesRefresh.Name = "btnViewLeavesRefresh"
         Me.btnViewLeavesRefresh.Size = New System.Drawing.Size(223, 28)
@@ -190,37 +200,15 @@ Partial Class Form3
         Me.btnViewLeavesRefresh.Text = "Refresh"
         Me.btnViewLeavesRefresh.UseVisualStyleBackColor = True
         '
-        'chkdlsbxViewLeavesStatus
-        '
-        Me.chkdlsbxViewLeavesStatus.CheckOnClick = True
-        Me.chkdlsbxViewLeavesStatus.FormattingEnabled = True
-        Me.chkdlsbxViewLeavesStatus.Items.AddRange(New Object() {"Pending", "Accepted", "Rejected", "Cancelled"})
-        Me.chkdlsbxViewLeavesStatus.Location = New System.Drawing.Point(115, 164)
-        Me.chkdlsbxViewLeavesStatus.Margin = New System.Windows.Forms.Padding(4)
-        Me.chkdlsbxViewLeavesStatus.Name = "chkdlsbxViewLeavesStatus"
-        Me.chkdlsbxViewLeavesStatus.Size = New System.Drawing.Size(112, 72)
-        Me.chkdlsbxViewLeavesStatus.TabIndex = 6
-        '
         'lblViewLeavesStatus
         '
         Me.lblViewLeavesStatus.AutoSize = True
-        Me.lblViewLeavesStatus.Location = New System.Drawing.Point(1, 164)
+        Me.lblViewLeavesStatus.Location = New System.Drawing.Point(7, 177)
         Me.lblViewLeavesStatus.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblViewLeavesStatus.Name = "lblViewLeavesStatus"
         Me.lblViewLeavesStatus.Size = New System.Drawing.Size(52, 17)
         Me.lblViewLeavesStatus.TabIndex = 5
         Me.lblViewLeavesStatus.Text = "Status:"
-        '
-        'chkdlsbxViewLeavesTypeOfLeave
-        '
-        Me.chkdlsbxViewLeavesTypeOfLeave.CheckOnClick = True
-        Me.chkdlsbxViewLeavesTypeOfLeave.FormattingEnabled = True
-        Me.chkdlsbxViewLeavesTypeOfLeave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
-        Me.chkdlsbxViewLeavesTypeOfLeave.Location = New System.Drawing.Point(115, 96)
-        Me.chkdlsbxViewLeavesTypeOfLeave.Margin = New System.Windows.Forms.Padding(4)
-        Me.chkdlsbxViewLeavesTypeOfLeave.Name = "chkdlsbxViewLeavesTypeOfLeave"
-        Me.chkdlsbxViewLeavesTypeOfLeave.Size = New System.Drawing.Size(112, 55)
-        Me.chkdlsbxViewLeavesTypeOfLeave.TabIndex = 4
         '
         'lblViewLeavesTypeOfLeave
         '
@@ -232,16 +220,16 @@ Partial Class Form3
         Me.lblViewLeavesTypeOfLeave.TabIndex = 3
         Me.lblViewLeavesTypeOfLeave.Text = "Type of Leave:"
         '
-        'cmbbxViewLeavesSortBy
+        'SORT_DROPBOX
         '
-        Me.cmbbxViewLeavesSortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbbxViewLeavesSortBy.FormattingEnabled = True
-        Me.cmbbxViewLeavesSortBy.Items.AddRange(New Object() {"Date / Time Applied", "Start Date", "End Date"})
-        Me.cmbbxViewLeavesSortBy.Location = New System.Drawing.Point(115, 7)
-        Me.cmbbxViewLeavesSortBy.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmbbxViewLeavesSortBy.Name = "cmbbxViewLeavesSortBy"
-        Me.cmbbxViewLeavesSortBy.Size = New System.Drawing.Size(112, 24)
-        Me.cmbbxViewLeavesSortBy.TabIndex = 2
+        Me.SORT_DROPBOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SORT_DROPBOX.FormattingEnabled = True
+        Me.SORT_DROPBOX.Items.AddRange(New Object() {"Date / Time Applied", "Start Date", "End Date"})
+        Me.SORT_DROPBOX.Location = New System.Drawing.Point(115, 7)
+        Me.SORT_DROPBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.SORT_DROPBOX.Name = "SORT_DROPBOX"
+        Me.SORT_DROPBOX.Size = New System.Drawing.Size(112, 24)
+        Me.SORT_DROPBOX.TabIndex = 2
         '
         'lblViewLeavesSortBy
         '
@@ -539,6 +527,76 @@ Partial Class Form3
         Me.Button1.Text = "Balances"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ORDINARY
+        '
+        Me.ORDINARY.AutoSize = True
+        Me.ORDINARY.Location = New System.Drawing.Point(111, 96)
+        Me.ORDINARY.Name = "ORDINARY"
+        Me.ORDINARY.Size = New System.Drawing.Size(102, 21)
+        Me.ORDINARY.TabIndex = 11
+        Me.ORDINARY.Text = "ORDINARY"
+        Me.ORDINARY.UseVisualStyleBackColor = True
+        '
+        'PENDING
+        '
+        Me.PENDING.AutoSize = True
+        Me.PENDING.Location = New System.Drawing.Point(68, 230)
+        Me.PENDING.Name = "PENDING"
+        Me.PENDING.Size = New System.Drawing.Size(82, 21)
+        Me.PENDING.TabIndex = 12
+        Me.PENDING.Text = "Pending"
+        Me.PENDING.UseVisualStyleBackColor = True
+        '
+        'REJECTED
+        '
+        Me.REJECTED.AutoSize = True
+        Me.REJECTED.Location = New System.Drawing.Point(68, 203)
+        Me.REJECTED.Name = "REJECTED"
+        Me.REJECTED.Size = New System.Drawing.Size(86, 21)
+        Me.REJECTED.TabIndex = 13
+        Me.REJECTED.Text = "Rejected"
+        Me.REJECTED.UseVisualStyleBackColor = True
+        '
+        'ACCEPTED
+        '
+        Me.ACCEPTED.AutoSize = True
+        Me.ACCEPTED.Location = New System.Drawing.Point(68, 177)
+        Me.ACCEPTED.Name = "ACCEPTED"
+        Me.ACCEPTED.Size = New System.Drawing.Size(89, 21)
+        Me.ACCEPTED.TabIndex = 14
+        Me.ACCEPTED.Text = "Accepted"
+        Me.ACCEPTED.UseVisualStyleBackColor = True
+        '
+        'ACADEMIC
+        '
+        Me.ACADEMIC.AutoSize = True
+        Me.ACADEMIC.Location = New System.Drawing.Point(111, 150)
+        Me.ACADEMIC.Name = "ACADEMIC"
+        Me.ACADEMIC.Size = New System.Drawing.Size(99, 21)
+        Me.ACADEMIC.TabIndex = 15
+        Me.ACADEMIC.Text = "ACADEMIC"
+        Me.ACADEMIC.UseVisualStyleBackColor = True
+        '
+        'MEDICAL
+        '
+        Me.MEDICAL.AutoSize = True
+        Me.MEDICAL.Location = New System.Drawing.Point(111, 123)
+        Me.MEDICAL.Name = "MEDICAL"
+        Me.MEDICAL.Size = New System.Drawing.Size(89, 21)
+        Me.MEDICAL.TabIndex = 16
+        Me.MEDICAL.Text = "MEDICAL"
+        Me.MEDICAL.UseVisualStyleBackColor = True
+        '
+        'CANCELLED
+        '
+        Me.CANCELLED.AutoSize = True
+        Me.CANCELLED.Location = New System.Drawing.Point(68, 257)
+        Me.CANCELLED.Name = "CANCELLED"
+        Me.CANCELLED.Size = New System.Drawing.Size(92, 21)
+        Me.CANCELLED.TabIndex = 17
+        Me.CANCELLED.Text = "Cancelled"
+        Me.CANCELLED.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -583,16 +641,14 @@ Partial Class Form3
     Friend WithEvents colhdrStartDate As System.Windows.Forms.ColumnHeader
     Friend WithEvents colhdrEndDate As System.Windows.Forms.ColumnHeader
     Friend WithEvents colhdrStatus As System.Windows.Forms.ColumnHeader
-    Friend WithEvents cmbbxViewLeavesSortBy As System.Windows.Forms.ComboBox
+    Friend WithEvents SORT_DROPBOX As System.Windows.Forms.ComboBox
     Friend WithEvents lblViewLeavesSortBy As System.Windows.Forms.Label
-    Friend WithEvents chkdlsbxViewLeavesTypeOfLeave As System.Windows.Forms.CheckedListBox
     Friend WithEvents lblViewLeavesTypeOfLeave As System.Windows.Forms.Label
-    Friend WithEvents chkdlsbxViewLeavesStatus As System.Windows.Forms.CheckedListBox
     Friend WithEvents lblViewLeavesStatus As System.Windows.Forms.Label
     Friend WithEvents btnViewLeavesRefresh As System.Windows.Forms.Button
-    Friend WithEvents rdiobtnViewLeavesNewestFirst As System.Windows.Forms.RadioButton
+    Friend WithEvents NEWEST_CHECKBOX As System.Windows.Forms.RadioButton
     Friend WithEvents lblViewLeavesAscOrDesc As System.Windows.Forms.Label
-    Friend WithEvents rdiobtnViewLeavesOldestFirst As System.Windows.Forms.RadioButton
+    Friend WithEvents OLD_CHECKBOX As System.Windows.Forms.RadioButton
     Friend WithEvents E_Date As System.Windows.Forms.TextBox
     Friend WithEvents Date_Calc As System.Windows.Forms.MonthCalendar
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -616,4 +672,11 @@ Partial Class Form3
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
     Friend WithEvents NOTIFICATIONS As System.Windows.Forms.ListView
+    Friend WithEvents CANCELLED As System.Windows.Forms.CheckBox
+    Friend WithEvents MEDICAL As System.Windows.Forms.CheckBox
+    Friend WithEvents ACADEMIC As System.Windows.Forms.CheckBox
+    Friend WithEvents ACCEPTED As System.Windows.Forms.CheckBox
+    Friend WithEvents REJECTED As System.Windows.Forms.CheckBox
+    Friend WithEvents PENDING As System.Windows.Forms.CheckBox
+    Friend WithEvents ORDINARY As System.Windows.Forms.CheckBox
 End Class
