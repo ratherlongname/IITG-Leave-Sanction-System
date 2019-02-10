@@ -40,6 +40,7 @@
                     Form3.Label2.Text = Access.DBDT.Rows(0).Item("Department")
                     Form3.Label3.Text = Access.DBDT.Rows(0).Item("Designation")
                     Form3.Label4.Text = ""
+
                 Else
                     MsgBox("Invalid Username/ Password")
                 End If

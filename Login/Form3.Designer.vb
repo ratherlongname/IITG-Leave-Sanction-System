@@ -22,12 +22,6 @@ Partial Class Form3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("A")
-        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("b")
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("c")
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("d")
-        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("e")
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("f")
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -65,7 +59,14 @@ Partial Class Form3
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
         Me.APPROVED = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
+        Me.NOTIFICATIONS = New System.Windows.Forms.ListView()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -75,6 +76,7 @@ Partial Class Form3
         Me.tabpgNewLeaves.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabpgLeavesToApprove.SuspendLayout()
+        Me.tabpgNotifications.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -116,7 +118,7 @@ Partial Class Form3
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgNewLeaves)
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgLeavesToApprove)
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgNotifications)
-        Me.tabctrlMainTabs.Location = New System.Drawing.Point(200, 15)
+        Me.tabctrlMainTabs.Location = New System.Drawing.Point(203, 16)
         Me.tabctrlMainTabs.Margin = New System.Windows.Forms.Padding(4)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
         Me.tabctrlMainTabs.SelectedIndex = 0
@@ -441,15 +443,47 @@ Partial Class Form3
         '
         'APPROVED
         '
-        Me.APPROVED.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6})
-        Me.APPROVED.Location = New System.Drawing.Point(236, 72)
+        Me.APPROVED.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.APPROVED.Location = New System.Drawing.Point(244, 54)
         Me.APPROVED.Name = "APPROVED"
         Me.APPROVED.Size = New System.Drawing.Size(572, 319)
         Me.APPROVED.TabIndex = 0
         Me.APPROVED.UseCompatibleStateImageBehavior = False
+        Me.APPROVED.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "LEAVE_ID"
+        Me.ColumnHeader1.Width = 85
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "APPLICANT"
+        Me.ColumnHeader2.Width = 93
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "DATE/TIME APPLIED"
+        Me.ColumnHeader3.Width = 97
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "START DATE"
+        Me.ColumnHeader4.Width = 137
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "END DATE"
+        Me.ColumnHeader5.Width = 84
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "TYPE OF LEAVE"
+        Me.ColumnHeader6.Width = 267
         '
         'tabpgNotifications
         '
+        Me.tabpgNotifications.Controls.Add(Me.NOTIFICATIONS)
         Me.tabpgNotifications.Location = New System.Drawing.Point(4, 25)
         Me.tabpgNotifications.Margin = New System.Windows.Forms.Padding(4)
         Me.tabpgNotifications.Name = "tabpgNotifications"
@@ -457,6 +491,15 @@ Partial Class Form3
         Me.tabpgNotifications.TabIndex = 3
         Me.tabpgNotifications.Text = "Notifications"
         Me.tabpgNotifications.UseVisualStyleBackColor = True
+        '
+        'NOTIFICATIONS
+        '
+        Me.NOTIFICATIONS.Location = New System.Drawing.Point(235, 55)
+        Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
+        Me.NOTIFICATIONS.Size = New System.Drawing.Size(572, 319)
+        Me.NOTIFICATIONS.TabIndex = 1
+        Me.NOTIFICATIONS.UseCompatibleStateImageBehavior = False
+        Me.NOTIFICATIONS.View = System.Windows.Forms.View.Details
         '
         'btnLogout
         '
@@ -519,6 +562,7 @@ Partial Class Form3
         Me.tabpgNewLeaves.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabpgLeavesToApprove.ResumeLayout(False)
+        Me.tabpgNotifications.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -565,4 +609,11 @@ Partial Class Form3
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents APPROVED As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents NOTIFICATIONS As System.Windows.Forms.ListView
 End Class

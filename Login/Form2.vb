@@ -55,7 +55,9 @@ Public Class Form2
 
     End Sub
 
+    'handling the case when student checkbox is Selected
     Private Sub Student_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Student_Checkbox.CheckedChanged
+        'Making appropriate controls hidden
         If Student_Checkbox.Checked = False Then
             Label5.Visible = False
             Label6.Visible = False
@@ -70,6 +72,7 @@ Public Class Form2
             TA_SUPERVISER.Visible = False
             GUIDE.Visible = False
         End If
+
         If Student_Checkbox.Checked = True Then
             Faculty_Checkbox.Checked = False
             HOD_CheckBox.Checked = False
@@ -89,6 +92,7 @@ Public Class Form2
     End Sub
 
     Private Sub Faculty_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Faculty_Checkbox.CheckedChanged
+        'Making Appropriate Controls Hidden
         If Faculty_Checkbox.Checked = False Then
             Label11.Visible = False
             Label12.Visible = False
@@ -106,7 +110,7 @@ Public Class Form2
     End Sub
 
     Private Sub SUBMIT_Click(sender As Object, e As EventArgs) Handles SUBMIT.Click
-
+        'Storing Data in variables 
         Dim flag As Integer = 0
         Dim fname As String = FIRST_NAME.Text
         Dim lname As String = LAST_NAME.Text
@@ -120,12 +124,13 @@ Public Class Form2
         Dim dept_fac As String = DEPARTMENT_FAC.Text
         Dim desg As String = DESIGNATION.Text
         Dim y As String = YEAR.Text
-
+        'Allowing user to enter Spaces along with the details
         uname = uname.Trim()
         fname = fname.Trim()
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
+        'Validating the user Details NOT ALLOWING TO EMPTY data
         If uname = Nothing Then
             MessageBox.Show("Please Enter some Username")
             Button2.PerformClick()
@@ -147,16 +152,19 @@ Public Class Form2
             Exit Sub
         End If
 
+        'NOT ALLOWING USERNAME LESS THAN TWO CHARACTERS
         If uname.Length < 2 Then
             MessageBox.Show("Username should contain atleast 2 characters")
             Button2.PerformClick()
             Exit Sub
         End If
+        'NOT ALLOWING USERNAME GREATER THAN 50 CHARACTERS
         If uname.Length > 50 Then
             MessageBox.Show("Username can contain a maximum of 50 characters")
             Button2.PerformClick()
             Exit Sub
         End If
+        'PASSWORD LENGTH BETWEEN 2 TO 50 INCLUSIVE
         If pwd.Length < 2 Then
             MessageBox.Show("Password should contain atleast 2 characters")
             Button2.PerformClick()
@@ -168,6 +176,7 @@ Public Class Form2
             Exit Sub
         End If
 
+        'FIRST NAME  AND LAST NAME BETWEEN 2 TO 50 CHARCATERS ONLY
         If fname.Length < 2 Then
             MessageBox.Show("First Name should contain atleast 2 characters")
             Button2.PerformClick()
@@ -190,6 +199,7 @@ Public Class Form2
             Exit Sub
         End If
 
+        'ALLOWING ONLY ALPHANUMERIC CHARCTERS IN USERNAME,FIRST NAME,LAST NAME
         For Each c As Char In uname
             If (Char.IsLetterOrDigit(c)) Then
             Else
@@ -217,6 +227,7 @@ Public Class Form2
             End If
         Next
 
+        'EMPTY ROLL NUMBER,YEAR OF JOINING,PROGRAMME,DEPARTMENT,GUIDE/TA_SUPERVISER IS NOT ALLOWED
         If Student_Checkbox.Checked = True Then
             If y = Nothing Then
                 MessageBox.Show("Please Enter your Year of Joining")
@@ -246,6 +257,7 @@ Public Class Form2
                 Exit Sub
             End If
 
+            'VALIDATION OF YEAR , RANGE = 0000-9999
             For Each c As Char In y
                 If (Char.IsNumber(c)) Then
                 Else
@@ -260,7 +272,7 @@ Public Class Form2
                 Exit Sub
             End If
 
-
+            'VALIDATION OF ROLL NUMBER
             For Each c As Char In roll
                 If (Char.IsNumber(c)) Then
                 Else
@@ -277,6 +289,7 @@ Public Class Form2
         End If
 
         If Faculty_Checkbox.Checked = True Then
+            'VALIDATION OF DEPARTMENT,DESIGNATION  OF FACULTY
             If dept_fac = Nothing Then
                 MessageBox.Show("Please Enter your Department")
                 Button2.PerformClick()
@@ -288,7 +301,7 @@ Public Class Form2
                 Exit Sub
             End If
         End If
-
+        'VALIDATION OF FIELDS OF HOD
         If HOD_CheckBox.Checked = True Then
             If dept_fac = Nothing Then
                 MessageBox.Show("Please Enter your Department")
@@ -297,13 +310,15 @@ Public Class Form2
             End If
         End If
 
+        'Validating the CAPTCHA
         If str <> VALIDATION.Text Then
             MessageBox.Show("Invalid Validation, Please Try Again")
             Button2.PerformClick()
             Exit Sub
         End If
-        'PLEASE USE fname.Trim() and lname.Trim() to feed in the database
+
         Try
+            'Checking for duplicate username
             Dim userAlreadyExists As Boolean = False
 
             Access.AddParam("@user", USERNAME.Text)
@@ -319,6 +334,7 @@ Public Class Form2
                 Button2.PerformClick()
                 Exit Sub
             Else
+                'Adding parameters for the insert query
                 If Student_Checkbox.Checked = True Then
                     Dim roll_2 As Integer = Convert.ToInt64(roll)
                     Dim y_2 As Integer = Convert.ToInt64(y)
@@ -346,7 +362,7 @@ Public Class Form2
                     Access.AddParam("@days_2", days_2)
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days_3", days_3)
-
+                    'Inerst query for the Student_DB
                     Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum2, @days_2, @days_3)")
 
                     Form1.Show()
@@ -356,6 +372,7 @@ Public Class Form2
 
 
                 If Faculty_Checkbox.Checked = True Then
+                    'Adding parameters
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
                     Access.AddParam("@fname", fname)
@@ -377,6 +394,7 @@ Public Class Form2
                     Access.AddParam("@days3", days_3)
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days1", days_1)
+                    'Insert command for Faculty_DB 
                     Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1)")
                     Form1.Show()
                     Me.Close()
@@ -384,7 +402,7 @@ Public Class Form2
 
                 If HOD_CheckBox.Checked = True Then
                     Dim desg_2 As String = "HOD"
-
+                    'Adding Parameters
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
                     Access.AddParam("@fname", fname)
@@ -406,6 +424,7 @@ Public Class Form2
                     Access.AddParam("@days3", days_3)
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days1", days_1)
+                    'Insert Query for the HOD
                     Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1)")
                     Form1.Show()
                     Me.Close()
@@ -438,7 +457,7 @@ Public Class Form2
         End If
     End Sub
 
-
+    'CODE FOR GENERATING THE CAPTCHA
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         Str = ""
@@ -459,6 +478,10 @@ Public Class Form2
     End Sub
 
     Private Sub UPDATE_Click(sender As Object, e As EventArgs) Handles UPDATE.Click
+        'Code for validation
+        'Copied from line 113-311
+        'For detailed commenting please visit above mentioned lines
+        'It's again validating whether the user has not entered invalid data
         Dim flag As Integer = 0
         Dim fname As String = FIRST_NAME.Text
         Dim lname As String = LAST_NAME.Text
@@ -526,7 +549,7 @@ Public Class Form2
             Button2.PerformClick()
             Exit Sub
         End If
-
+        '###### For detailed commenting please visit 113-311 ##############
         If lname.Length < 2 Then
             MessageBox.Show("Last Name should contain atleast 2 characters")
             Button2.PerformClick()
@@ -564,6 +587,7 @@ Public Class Form2
                 Exit Sub
             End If
         Next
+        '####### for deatiled commenting of this section please visit 113-311
         If Student_Checkbox.Checked = True Then
             If y = Nothing Then
                 MessageBox.Show("Please Enter your Year of Joining")
@@ -643,13 +667,14 @@ Public Class Form2
                 Exit Sub
             End If
         End If
-
+        'Captcha validation
         If str <> VALIDATION.Text Then
             MessageBox.Show("Invalid Validation, Please Try Again")
             Button2.PerformClick()
             Exit Sub
         End If
 
+        'Updating DATABASE based on type of user
         Try
             If Student_Checkbox.Checked = True Then
                 Access.ExecQuery("UPDATE Student_DB SET Roll_no=" & ROLL_NO.Text & ", Programme='" & PROGRAMME.Text & "', Guide='" & GUIDE.Text & "', TA_Superviser='" & TA_SUPERVISER.Text & "', First_name='" & FIRST_NAME.Text & "', Last_name='" & LAST_NAME.Text & "', Department='" & DEPARTMENT.Text & "', Year_of_joining='" & YEAR.Text & "' WHERE Username='" & USERNAME.Text & "'")
