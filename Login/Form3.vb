@@ -88,9 +88,10 @@
         lsviewViewLeavesListOfLeaves.Items.Clear()
 
         ' REPOPULATE LISTVIEW
-        'Access.AddParam("@user", Label1.Text)
-        'Access.ExecQuery("SELECT Date/Time Applied, Leave_ID, Type_of_leave, Start_Date, End_Date, Current_Status FROM Leave_DB WHERE Username=@user")
+        Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "'")
+        If Access.RecordCount > 0 Then
 
+        End If
 
         ' TODO
 
