@@ -8,6 +8,22 @@ Public Class Form2
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button2.PerformClick()
 
+        'Making appropriate controls hidden
+        If HOD_CheckBox.Checked = False Then
+            Label11.Visible = False
+            Label12.Visible = False
+            DEPARTMENT_FAC.Visible = False
+            DESIGNATION.Visible = False
+        End If
+        If HOD_CheckBox.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            Label11.Visible = True
+            Label12.Visible = False
+            DEPARTMENT_FAC.Visible = True
+            DESIGNATION.Visible = False
+        End If
+
         If Student_Checkbox.Checked = False Then
             Label5.Visible = False
             Label6.Visible = False
@@ -298,37 +314,36 @@ Public Class Form2
             Else
                 If Student_Checkbox.Checked = True Then
                     Dim roll_2 As Integer = Convert.ToInt64(roll)
-                    MessageBox.Show(roll_2)
                     Dim y_2 As Integer = Convert.ToInt64(y)
 
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
+                    Access.AddParam("@roll", roll_2)
+                    Access.AddParam("@prog", prog)
+                    Access.AddParam("@dept_stu", dept_stu)
                     Access.AddParam("@fname", fname)
                     Access.AddParam("@lname", lname)
                     Access.AddParam("@y", y_2)
-                    Access.AddParam("@roll", roll_2)
-                    Access.AddParam("@ta", ta)
-                    Access.AddParam("@guide", guide_2)
-                    Access.AddParam("@dept_stu", dept_stu)
-                    Access.AddParam("@prog", prog)
-                    Dim dum As String = ""
-                    Access.AddParam("@dum", dum)
                     Dim days As Integer = 0
                     Access.AddParam("@days", days)
+                    Access.AddParam("@ta", ta)
+                    Access.AddParam("@guide", guide_2)
+                    Dim dum As String = ""
+                    Access.AddParam("@dum", dum)
+                    
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days_1", days_1)
+                    Dim dum2 As String = ""
+                    Access.AddParam("@dum2", dum2)
                     Dim days_2 As Integer = 15
                     Access.AddParam("@days_2", days_2)
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days_3", days_3)
 
-                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password],  [Programme], [Department], [First_name], [Last_name], [TA_Superviser], [Guide], [List_of_leaves],  [Notification])VALUES(@user, @pwd, @prog, @dept_stu, @fname, @lname, @ta, @guide, @dum, @dum)")
+                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum2, @days_2, @days_3)")
 
-                    'Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum,  @days_2, @days_3)")
-                    'Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum, @days_2, @days_3)")
-
-                    'Form1.Show()
-                    'Me.Close()
+                    Form1.Show()
+                    Me.Close()
 
                 End If
 
@@ -339,22 +354,23 @@ Public Class Form2
                     Access.AddParam("@fname", fname)
                     Access.AddParam("@lname", lname)
                     Access.AddParam("@dept", dept_fac)
-                    Access.AddParam("@desg", desg)
-
                     Dim dum As String = Nothing
                     dum = ""
                     Access.AddParam("@dum", dum)
-
-                    Dim days_1 As Integer = 120
-                    Access.AddParam("@days1", days_1)
+                    Dim dum2 As String = Nothing
+                    dum2 = ""
+                    Access.AddParam("@dum2", dum2)
+                    Dim dum3 As String = Nothing
+                    dum3 = ""
+                    Access.AddParam("@dum3", dum3)
+                    Access.AddParam("@desg", desg)
                     Dim days_2 As Integer = 15
                     Access.AddParam("@days2", days_2)
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days3", days_3)
-
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name], [Department], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @days2, @days3, @days1)")
-
-                    'Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum, @dum, @desg, @days_2, @days_3, @days_1)")
+                    Dim days_1 As Integer = 120
+                    Access.AddParam("@days1", days_1)
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1)")
                     Form1.Show()
                     Me.Close()
                 End If
@@ -367,23 +383,25 @@ Public Class Form2
                     Access.AddParam("@fname", fname)
                     Access.AddParam("@lname", lname)
                     Access.AddParam("@dept", dept_fac)
-                    Access.AddParam("@desg_2", desg_2)
-
                     Dim dum As String = Nothing
                     dum = ""
                     Access.AddParam("@dum", dum)
-
-                    Dim days_1 As Integer = 120
-                    Access.AddParam("@days_1", days_1)
+                    Dim dum2 As String = Nothing
+                    dum2 = ""
+                    Access.AddParam("@dum2", dum2)
+                    Dim dum3 As String = Nothing
+                    dum3 = ""
+                    Access.AddParam("@dum3", dum3)
+                    Access.AddParam("@desg", desg_2)
                     Dim days_2 As Integer = 15
-                    Access.AddParam("@days_2", days_2)
+                    Access.AddParam("@days2", days_2)
                     Dim days_3 As Integer = 30
-                    Access.AddParam("@days_3", days_3)
-
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [Department], [First_Name], [Last_Name], [List_of_Leaves_Applied], [Academic], [Notifications], [Ordinary], [Medical], [List_of_Incoming_Leaves], [Designation])VALUES(@user, @pwd, @dept, @fname, @lname, @dum, @days_1, @dum, @days_2, @days_3, @dum, @desg_2)")
+                    Access.AddParam("@days3", days_3)
+                    Dim days_1 As Integer = 120
+                    Access.AddParam("@days1", days_1)
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1)")
                     Form1.Show()
                     Me.Close()
-
 
                 End If
             End If
@@ -431,5 +449,9 @@ Public Class Form2
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
         Form1.Show()
+    End Sub
+
+    Private Sub UPDATE_Click(sender As Object, e As EventArgs) Handles UPDATE.Click
+
     End Sub
 End Class

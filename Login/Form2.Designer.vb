@@ -68,6 +68,7 @@ Partial Class Form2
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.VALIDATION = New System.Windows.Forms.TextBox()
+        Me.UPDATE = New System.Windows.Forms.Button()
         CType(Me.DataBaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataBaseDataSetBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -574,6 +575,15 @@ Partial Class Form2
         Me.VALIDATION.Size = New System.Drawing.Size(100, 22)
         Me.VALIDATION.TabIndex = 45
         '
+        'UPDATE
+        '
+        Me.UPDATE.Location = New System.Drawing.Point(726, 466)
+        Me.UPDATE.Name = "UPDATE"
+        Me.UPDATE.Size = New System.Drawing.Size(75, 23)
+        Me.UPDATE.TabIndex = 46
+        Me.UPDATE.Text = "UPDATE"
+        Me.UPDATE.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -581,6 +591,7 @@ Partial Class Form2
         Me.AutoScrollMargin = New System.Drawing.Size(0, 50)
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(933, 636)
+        Me.Controls.Add(Me.UPDATE)
         Me.Controls.Add(Me.VALIDATION)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.PictureBox2)
@@ -681,4 +692,5 @@ Partial Class Form2
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents VALIDATION As System.Windows.Forms.TextBox
+    Friend WithEvents UPDATE As System.Windows.Forms.Button
 End Class
