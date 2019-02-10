@@ -27,15 +27,17 @@ Partial Class Form1
         Me.btnSignUp = New System.Windows.Forms.Button()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblLeaSanSys = New System.Windows.Forms.Label()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,12 +48,12 @@ Partial Class Form1
         Me.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnLogin.FlatAppearance.BorderSize = 0
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogin.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.Black
-        Me.btnLogin.Location = New System.Drawing.Point(593, 379)
-        Me.btnLogin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLogin.Location = New System.Drawing.Point(260, 152)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(117, 36)
+        Me.btnLogin.Size = New System.Drawing.Size(163, 49)
         Me.btnLogin.TabIndex = 24
         Me.btnLogin.Text = "LOGIN"
         Me.btnLogin.UseVisualStyleBackColor = False
@@ -61,12 +63,13 @@ Partial Class Form1
         Me.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnSignUp.BackColor = System.Drawing.Color.LimeGreen
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSignUp.Font = New System.Drawing.Font("Arial Rounded MT Bold", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSignUp.ForeColor = System.Drawing.SystemColors.InactiveBorder
-        Me.btnSignUp.Location = New System.Drawing.Point(464, 379)
-        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnSignUp.Location = New System.Drawing.Point(82, 151)
+        Me.btnSignUp.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(117, 36)
+        Me.btnSignUp.Padding = New System.Windows.Forms.Padding(5)
+        Me.btnSignUp.Size = New System.Drawing.Size(163, 50)
         Me.btnSignUp.TabIndex = 23
         Me.btnSignUp.Text = "SIGNUP"
         Me.btnSignUp.UseVisualStyleBackColor = False
@@ -75,13 +78,14 @@ Partial Class Form1
         '
         Me.TextBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TextBox6.Location = New System.Drawing.Point(617, 309)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(1, 2, 3, 2)
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TextBox6.Location = New System.Drawing.Point(309, 64)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(1, 2, 2, 2)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(94, 22)
+        Me.TextBox6.Size = New System.Drawing.Size(114, 32)
         Me.TextBox6.TabIndex = 22
         Me.TextBox6.TabStop = False
         Me.TextBox6.Text = "@iitg.ac.in"
@@ -90,51 +94,27 @@ Partial Class Form1
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label3.Location = New System.Drawing.Point(512, 263)
+        Me.Label3.Location = New System.Drawing.Point(166, 26)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 18)
+        Me.Label3.Size = New System.Drawing.Size(185, 21)
         Me.Label3.TabIndex = 21
         Me.Label3.Text = "Please Login or Sign Up"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.TextBox3.BackColor = System.Drawing.Color.White
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(380, 254)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(415, 174)
-        Me.TextBox3.TabIndex = 20
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.TextBox2.BackColor = System.Drawing.Color.Teal
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Location = New System.Drawing.Point(365, 238)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(445, 202)
-        Me.TextBox2.TabIndex = 19
         '
         'Label4
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Teal
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(236, 142)
+        Me.Label4.Location = New System.Drawing.Point(261, 120)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(738, 36)
+        Me.Label4.Size = New System.Drawing.Size(533, 30)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "SOFTWARE ENGINEERING LAB ASSIGNMENT 2"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -147,25 +127,13 @@ Partial Class Form1
         Me.TextBox1.BackColor = System.Drawing.Color.Teal
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(-45, 142)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TextBox1.Location = New System.Drawing.Point(-34, 115)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(1268, 41)
+        Me.TextBox1.Size = New System.Drawing.Size(1132, 44)
         Me.TextBox1.TabIndex = 17
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(213, 4)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(136, 118)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 16
-        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
@@ -173,11 +141,12 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Teal
-        Me.Label5.Location = New System.Drawing.Point(433, 62)
+        Me.Label5.Location = New System.Drawing.Point(416, 56)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(195, 36)
+        Me.Label5.Size = New System.Drawing.Size(160, 30)
         Me.Label5.TabIndex = 15
         Me.Label5.Text = "IIT Guwahati"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -187,11 +156,12 @@ Partial Class Form1
         Me.lblLeaSanSys.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.lblLeaSanSys.AutoSize = True
         Me.lblLeaSanSys.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblLeaSanSys.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLeaSanSys.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLeaSanSys.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.lblLeaSanSys.Location = New System.Drawing.Point(431, 15)
+        Me.lblLeaSanSys.Location = New System.Drawing.Point(414, 18)
+        Me.lblLeaSanSys.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLeaSanSys.Name = "lblLeaSanSys"
-        Me.lblLeaSanSys.Size = New System.Drawing.Size(516, 46)
+        Me.lblLeaSanSys.Size = New System.Drawing.Size(420, 38)
         Me.lblLeaSanSys.TabIndex = 14
         Me.lblLeaSanSys.Text = "Leave Sanctioning System"
         Me.lblLeaSanSys.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -201,12 +171,12 @@ Partial Class Form1
         Me.txtPassword.AcceptsReturn = True
         Me.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(464, 337)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPassword.Location = New System.Drawing.Point(82, 103)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(247, 22)
+        Me.txtPassword.Size = New System.Drawing.Size(341, 32)
         Me.txtPassword.TabIndex = 26
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtPassword.UseSystemPasswordChar = True
@@ -218,41 +188,74 @@ Partial Class Form1
         Me.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
-        Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.txtUsername.Location = New System.Drawing.Point(464, 309)
-        Me.txtUsername.Margin = New System.Windows.Forms.Padding(3, 2, 1, 2)
+        Me.txtUsername.ImeMode = System.Windows.Forms.ImeMode.[On]
+        Me.txtUsername.Location = New System.Drawing.Point(82, 64)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(0)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtUsername.Size = New System.Drawing.Size(151, 22)
+        Me.txtUsername.Size = New System.Drawing.Size(226, 32)
         Me.txtUsername.TabIndex = 25
         Me.txtUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.txtPassword)
+        Me.Panel1.Controls.Add(Me.txtUsername)
+        Me.Panel1.Controls.Add(Me.btnLogin)
+        Me.Panel1.Controls.Add(Me.btnSignUp)
+        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Location = New System.Drawing.Point(16, 16)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(523, 238)
+        Me.Panel1.TabIndex = 27
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel2.BackColor = System.Drawing.Color.Teal
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Location = New System.Drawing.Point(266, 264)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(555, 272)
+        Me.Panel2.TabIndex = 28
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(251, 9)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(102, 96)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1177, 513)
-        Me.Controls.Add(Me.txtPassword)
-        Me.Controls.Add(Me.txtUsername)
-        Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.btnSignUp)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
+        Me.ClientSize = New System.Drawing.Size(1064, 681)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblLeaSanSys)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.MinimumSize = New System.Drawing.Size(949, 518)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -262,8 +265,6 @@ Partial Class Form1
     Friend WithEvents btnSignUp As System.Windows.Forms.Button
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
@@ -271,5 +272,7 @@ Partial Class Form1
     Friend WithEvents lblLeaSanSys As System.Windows.Forms.Label
     Friend WithEvents txtPassword As System.Windows.Forms.TextBox
     Friend WithEvents txtUsername As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 
 End Class
