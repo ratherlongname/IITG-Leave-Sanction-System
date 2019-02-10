@@ -119,30 +119,27 @@ Partial Class Form3
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(49, 95)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(37, 77)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Label2"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(49, 123)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(37, 100)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 17)
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Label3"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(49, 150)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(37, 122)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Label4"
         '
@@ -156,11 +153,10 @@ Partial Class Form3
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgLeavesToApprove)
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgNotifications)
         Me.tabctrlMainTabs.Controls.Add(Me.TabPage1)
-        Me.tabctrlMainTabs.Location = New System.Drawing.Point(203, 16)
-        Me.tabctrlMainTabs.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabctrlMainTabs.Location = New System.Drawing.Point(152, 13)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
         Me.tabctrlMainTabs.SelectedIndex = 0
-        Me.tabctrlMainTabs.Size = New System.Drawing.Size(1214, 719)
+        Me.tabctrlMainTabs.Size = New System.Drawing.Size(910, 584)
         Me.tabctrlMainTabs.TabIndex = 4
         '
         'tabpgViewLeaves
@@ -184,10 +180,9 @@ Partial Class Form3
         Me.tabpgViewLeaves.Controls.Add(Me.SORT_DROPBOX)
         Me.tabpgViewLeaves.Controls.Add(Me.lblViewLeavesSortBy)
         Me.tabpgViewLeaves.Controls.Add(Me.lsviewViewLeavesListOfLeaves)
-        Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 25)
-        Me.tabpgViewLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgViewLeaves.Name = "tabpgViewLeaves"
-        Me.tabpgViewLeaves.Size = New System.Drawing.Size(1206, 690)
+        Me.tabpgViewLeaves.Size = New System.Drawing.Size(902, 558)
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
@@ -195,36 +190,36 @@ Partial Class Form3
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(304, 285)
+        Me.Label12.Location = New System.Drawing.Point(228, 232)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(128, 17)
+        Me.Label12.Size = New System.Drawing.Size(100, 13)
         Me.Label12.TabIndex = 26
         Me.Label12.Text = "REMARKS(IF ANY)"
         '
         'btnViewLeavesView
         '
-        Me.btnViewLeavesView.Location = New System.Drawing.Point(841, 382)
-        Me.btnViewLeavesView.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewLeavesView.Location = New System.Drawing.Point(631, 310)
         Me.btnViewLeavesView.Name = "btnViewLeavesView"
-        Me.btnViewLeavesView.Size = New System.Drawing.Size(100, 28)
+        Me.btnViewLeavesView.Size = New System.Drawing.Size(75, 23)
         Me.btnViewLeavesView.TabIndex = 25
         Me.btnViewLeavesView.Text = "View"
         Me.btnViewLeavesView.UseVisualStyleBackColor = True
         '
         'richtxtboxViewLeaves
         '
-        Me.richtxtboxViewLeaves.Location = New System.Drawing.Point(439, 279)
-        Me.richtxtboxViewLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.richtxtboxViewLeaves.Location = New System.Drawing.Point(329, 227)
         Me.richtxtboxViewLeaves.Name = "richtxtboxViewLeaves"
-        Me.richtxtboxViewLeaves.Size = New System.Drawing.Size(301, 117)
+        Me.richtxtboxViewLeaves.Size = New System.Drawing.Size(227, 96)
         Me.richtxtboxViewLeaves.TabIndex = 24
         Me.richtxtboxViewLeaves.Text = ""
         '
         'btnViewLeavesCancel
         '
-        Me.btnViewLeavesCancel.Location = New System.Drawing.Point(886, 306)
+        Me.btnViewLeavesCancel.Location = New System.Drawing.Point(664, 249)
+        Me.btnViewLeavesCancel.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnViewLeavesCancel.Name = "btnViewLeavesCancel"
-        Me.btnViewLeavesCancel.Size = New System.Drawing.Size(116, 45)
+        Me.btnViewLeavesCancel.Size = New System.Drawing.Size(87, 37)
         Me.btnViewLeavesCancel.TabIndex = 18
         Me.btnViewLeavesCancel.Text = "CANCEL LEAVE"
         Me.btnViewLeavesCancel.UseVisualStyleBackColor = True
@@ -232,9 +227,10 @@ Partial Class Form3
         'CANCELLED
         '
         Me.CANCELLED.AutoSize = True
-        Me.CANCELLED.Location = New System.Drawing.Point(68, 257)
+        Me.CANCELLED.Location = New System.Drawing.Point(51, 209)
+        Me.CANCELLED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CANCELLED.Name = "CANCELLED"
-        Me.CANCELLED.Size = New System.Drawing.Size(92, 21)
+        Me.CANCELLED.Size = New System.Drawing.Size(73, 17)
         Me.CANCELLED.TabIndex = 17
         Me.CANCELLED.Text = "Cancelled"
         Me.CANCELLED.UseVisualStyleBackColor = True
@@ -242,9 +238,10 @@ Partial Class Form3
         'MEDICAL
         '
         Me.MEDICAL.AutoSize = True
-        Me.MEDICAL.Location = New System.Drawing.Point(111, 123)
+        Me.MEDICAL.Location = New System.Drawing.Point(83, 100)
+        Me.MEDICAL.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MEDICAL.Name = "MEDICAL"
-        Me.MEDICAL.Size = New System.Drawing.Size(89, 21)
+        Me.MEDICAL.Size = New System.Drawing.Size(73, 17)
         Me.MEDICAL.TabIndex = 16
         Me.MEDICAL.Text = "MEDICAL"
         Me.MEDICAL.UseVisualStyleBackColor = True
@@ -252,9 +249,10 @@ Partial Class Form3
         'ACADEMIC
         '
         Me.ACADEMIC.AutoSize = True
-        Me.ACADEMIC.Location = New System.Drawing.Point(111, 150)
+        Me.ACADEMIC.Location = New System.Drawing.Point(83, 122)
+        Me.ACADEMIC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ACADEMIC.Name = "ACADEMIC"
-        Me.ACADEMIC.Size = New System.Drawing.Size(99, 21)
+        Me.ACADEMIC.Size = New System.Drawing.Size(81, 17)
         Me.ACADEMIC.TabIndex = 15
         Me.ACADEMIC.Text = "ACADEMIC"
         Me.ACADEMIC.UseVisualStyleBackColor = True
@@ -262,9 +260,10 @@ Partial Class Form3
         'ACCEPTED
         '
         Me.ACCEPTED.AutoSize = True
-        Me.ACCEPTED.Location = New System.Drawing.Point(68, 177)
+        Me.ACCEPTED.Location = New System.Drawing.Point(51, 144)
+        Me.ACCEPTED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ACCEPTED.Name = "ACCEPTED"
-        Me.ACCEPTED.Size = New System.Drawing.Size(89, 21)
+        Me.ACCEPTED.Size = New System.Drawing.Size(72, 17)
         Me.ACCEPTED.TabIndex = 14
         Me.ACCEPTED.Text = "Accepted"
         Me.ACCEPTED.UseVisualStyleBackColor = True
@@ -272,9 +271,10 @@ Partial Class Form3
         'REJECTED
         '
         Me.REJECTED.AutoSize = True
-        Me.REJECTED.Location = New System.Drawing.Point(68, 203)
+        Me.REJECTED.Location = New System.Drawing.Point(51, 165)
+        Me.REJECTED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.REJECTED.Name = "REJECTED"
-        Me.REJECTED.Size = New System.Drawing.Size(86, 21)
+        Me.REJECTED.Size = New System.Drawing.Size(69, 17)
         Me.REJECTED.TabIndex = 13
         Me.REJECTED.Text = "Rejected"
         Me.REJECTED.UseVisualStyleBackColor = True
@@ -282,9 +282,10 @@ Partial Class Form3
         'PENDING
         '
         Me.PENDING.AutoSize = True
-        Me.PENDING.Location = New System.Drawing.Point(68, 230)
+        Me.PENDING.Location = New System.Drawing.Point(51, 187)
+        Me.PENDING.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PENDING.Name = "PENDING"
-        Me.PENDING.Size = New System.Drawing.Size(82, 21)
+        Me.PENDING.Size = New System.Drawing.Size(65, 17)
         Me.PENDING.TabIndex = 12
         Me.PENDING.Text = "Pending"
         Me.PENDING.UseVisualStyleBackColor = True
@@ -292,9 +293,10 @@ Partial Class Form3
         'ORDINARY
         '
         Me.ORDINARY.AutoSize = True
-        Me.ORDINARY.Location = New System.Drawing.Point(111, 96)
+        Me.ORDINARY.Location = New System.Drawing.Point(83, 78)
+        Me.ORDINARY.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ORDINARY.Name = "ORDINARY"
-        Me.ORDINARY.Size = New System.Drawing.Size(102, 21)
+        Me.ORDINARY.Size = New System.Drawing.Size(83, 17)
         Me.ORDINARY.TabIndex = 11
         Me.ORDINARY.Text = "ORDINARY"
         Me.ORDINARY.UseVisualStyleBackColor = True
@@ -302,10 +304,9 @@ Partial Class Form3
         'OLD_CHECKBOX
         '
         Me.OLD_CHECKBOX.AutoSize = True
-        Me.OLD_CHECKBOX.Location = New System.Drawing.Point(115, 68)
-        Me.OLD_CHECKBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.OLD_CHECKBOX.Location = New System.Drawing.Point(86, 55)
         Me.OLD_CHECKBOX.Name = "OLD_CHECKBOX"
-        Me.OLD_CHECKBOX.Size = New System.Drawing.Size(101, 21)
+        Me.OLD_CHECKBOX.Size = New System.Drawing.Size(77, 17)
         Me.OLD_CHECKBOX.TabIndex = 10
         Me.OLD_CHECKBOX.Text = "Oldest First"
         Me.OLD_CHECKBOX.UseVisualStyleBackColor = True
@@ -314,10 +315,9 @@ Partial Class Form3
         '
         Me.NEWEST_CHECKBOX.AutoSize = True
         Me.NEWEST_CHECKBOX.Checked = True
-        Me.NEWEST_CHECKBOX.Location = New System.Drawing.Point(115, 39)
-        Me.NEWEST_CHECKBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.NEWEST_CHECKBOX.Location = New System.Drawing.Point(86, 32)
         Me.NEWEST_CHECKBOX.Name = "NEWEST_CHECKBOX"
-        Me.NEWEST_CHECKBOX.Size = New System.Drawing.Size(106, 21)
+        Me.NEWEST_CHECKBOX.Size = New System.Drawing.Size(83, 17)
         Me.NEWEST_CHECKBOX.TabIndex = 9
         Me.NEWEST_CHECKBOX.TabStop = True
         Me.NEWEST_CHECKBOX.Text = "Newest First"
@@ -326,30 +326,27 @@ Partial Class Form3
         'lblViewLeavesAscOrDesc
         '
         Me.lblViewLeavesAscOrDesc.AutoSize = True
-        Me.lblViewLeavesAscOrDesc.Location = New System.Drawing.Point(1, 39)
-        Me.lblViewLeavesAscOrDesc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblViewLeavesAscOrDesc.Location = New System.Drawing.Point(1, 32)
         Me.lblViewLeavesAscOrDesc.Name = "lblViewLeavesAscOrDesc"
-        Me.lblViewLeavesAscOrDesc.Size = New System.Drawing.Size(49, 17)
+        Me.lblViewLeavesAscOrDesc.Size = New System.Drawing.Size(36, 13)
         Me.lblViewLeavesAscOrDesc.TabIndex = 8
         Me.lblViewLeavesAscOrDesc.Text = "Order:"
         '
         'lblViewLeavesStatus
         '
         Me.lblViewLeavesStatus.AutoSize = True
-        Me.lblViewLeavesStatus.Location = New System.Drawing.Point(7, 177)
-        Me.lblViewLeavesStatus.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblViewLeavesStatus.Location = New System.Drawing.Point(5, 144)
         Me.lblViewLeavesStatus.Name = "lblViewLeavesStatus"
-        Me.lblViewLeavesStatus.Size = New System.Drawing.Size(52, 17)
+        Me.lblViewLeavesStatus.Size = New System.Drawing.Size(40, 13)
         Me.lblViewLeavesStatus.TabIndex = 5
         Me.lblViewLeavesStatus.Text = "Status:"
         '
         'lblViewLeavesTypeOfLeave
         '
         Me.lblViewLeavesTypeOfLeave.AutoSize = True
-        Me.lblViewLeavesTypeOfLeave.Location = New System.Drawing.Point(1, 96)
-        Me.lblViewLeavesTypeOfLeave.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblViewLeavesTypeOfLeave.Location = New System.Drawing.Point(1, 78)
         Me.lblViewLeavesTypeOfLeave.Name = "lblViewLeavesTypeOfLeave"
-        Me.lblViewLeavesTypeOfLeave.Size = New System.Drawing.Size(103, 17)
+        Me.lblViewLeavesTypeOfLeave.Size = New System.Drawing.Size(79, 13)
         Me.lblViewLeavesTypeOfLeave.TabIndex = 3
         Me.lblViewLeavesTypeOfLeave.Text = "Type of Leave:"
         '
@@ -358,19 +355,17 @@ Partial Class Form3
         Me.SORT_DROPBOX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SORT_DROPBOX.FormattingEnabled = True
         Me.SORT_DROPBOX.Items.AddRange(New Object() {"Date / Time Applied", "Start Date", "End Date"})
-        Me.SORT_DROPBOX.Location = New System.Drawing.Point(115, 7)
-        Me.SORT_DROPBOX.Margin = New System.Windows.Forms.Padding(4)
+        Me.SORT_DROPBOX.Location = New System.Drawing.Point(86, 6)
         Me.SORT_DROPBOX.Name = "SORT_DROPBOX"
-        Me.SORT_DROPBOX.Size = New System.Drawing.Size(112, 24)
+        Me.SORT_DROPBOX.Size = New System.Drawing.Size(85, 21)
         Me.SORT_DROPBOX.TabIndex = 2
         '
         'lblViewLeavesSortBy
         '
         Me.lblViewLeavesSortBy.AutoSize = True
-        Me.lblViewLeavesSortBy.Location = New System.Drawing.Point(1, 11)
-        Me.lblViewLeavesSortBy.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblViewLeavesSortBy.Location = New System.Drawing.Point(1, 9)
         Me.lblViewLeavesSortBy.Name = "lblViewLeavesSortBy"
-        Me.lblViewLeavesSortBy.Size = New System.Drawing.Size(58, 17)
+        Me.lblViewLeavesSortBy.Size = New System.Drawing.Size(44, 13)
         Me.lblViewLeavesSortBy.TabIndex = 1
         Me.lblViewLeavesSortBy.Text = "Sort By:"
         '
@@ -382,10 +377,9 @@ Partial Class Form3
         Me.lsviewViewLeavesListOfLeaves.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colhdrDateTimeOfApplication, Me.colhdrLeaveID, Me.colhdrTypeOfLeave, Me.colhdrStartDate, Me.colhdrEndDate, Me.colhdrStatus})
         Me.lsviewViewLeavesListOfLeaves.FullRowSelect = True
         Me.lsviewViewLeavesListOfLeaves.HideSelection = False
-        Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(236, 7)
-        Me.lsviewViewLeavesListOfLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(177, 6)
         Me.lsviewViewLeavesListOfLeaves.Name = "lsviewViewLeavesListOfLeaves"
-        Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(621, 258)
+        Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(467, 210)
         Me.lsviewViewLeavesListOfLeaves.TabIndex = 0
         Me.lsviewViewLeavesListOfLeaves.UseCompatibleStateImageBehavior = False
         Me.lsviewViewLeavesListOfLeaves.View = System.Windows.Forms.View.Details
@@ -429,10 +423,9 @@ Partial Class Form3
         Me.tabpgNewLeaves.Controls.Add(Me.Submit_new)
         Me.tabpgNewLeaves.Controls.Add(Me.Remark_Box)
         Me.tabpgNewLeaves.Controls.Add(Me.Label7)
-        Me.tabpgNewLeaves.Location = New System.Drawing.Point(4, 25)
-        Me.tabpgNewLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpgNewLeaves.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNewLeaves.Name = "tabpgNewLeaves"
-        Me.tabpgNewLeaves.Size = New System.Drawing.Size(1206, 690)
+        Me.tabpgNewLeaves.Size = New System.Drawing.Size(902, 558)
         Me.tabpgNewLeaves.TabIndex = 1
         Me.tabpgNewLeaves.Text = "New Leaves"
         Me.tabpgNewLeaves.UseVisualStyleBackColor = True
@@ -440,16 +433,14 @@ Partial Class Form3
         'E_Date
         '
         Me.E_Date.Enabled = False
-        Me.E_Date.Location = New System.Drawing.Point(263, 388)
-        Me.E_Date.Margin = New System.Windows.Forms.Padding(4)
+        Me.E_Date.Location = New System.Drawing.Point(197, 315)
         Me.E_Date.Name = "E_Date"
-        Me.E_Date.Size = New System.Drawing.Size(159, 22)
+        Me.E_Date.Size = New System.Drawing.Size(120, 20)
         Me.E_Date.TabIndex = 21
         '
         'Date_Calc
         '
-        Me.Date_Calc.Location = New System.Drawing.Point(263, 70)
-        Me.Date_Calc.Margin = New System.Windows.Forms.Padding(12, 11, 12, 11)
+        Me.Date_Calc.Location = New System.Drawing.Point(197, 57)
         Me.Date_Calc.MaxSelectionCount = 365
         Me.Date_Calc.Name = "Date_Calc"
         Me.Date_Calc.TabIndex = 13
@@ -457,10 +448,9 @@ Partial Class Form3
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(152, 393)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(114, 319)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(86, 17)
+        Me.Label9.Size = New System.Drawing.Size(66, 13)
         Me.Label9.TabIndex = 20
         Me.Label9.Text = "Ending Date"
         '
@@ -469,77 +459,69 @@ Partial Class Form3
         Me.Type_Of_Leave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Type_Of_Leave.FormattingEnabled = True
         Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
-        Me.Type_Of_Leave.Location = New System.Drawing.Point(263, 17)
-        Me.Type_Of_Leave.Margin = New System.Windows.Forms.Padding(4)
+        Me.Type_Of_Leave.Location = New System.Drawing.Point(197, 14)
         Me.Type_Of_Leave.Name = "Type_Of_Leave"
-        Me.Type_Of_Leave.Size = New System.Drawing.Size(179, 24)
+        Me.Type_Of_Leave.Size = New System.Drawing.Size(135, 21)
         Me.Type_Of_Leave.TabIndex = 11
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(147, 336)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(110, 273)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(91, 17)
+        Me.Label8.Size = New System.Drawing.Size(69, 13)
         Me.Label8.TabIndex = 19
         Me.Label8.Text = "Starting Date"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(44, 27)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(33, 22)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 17)
+        Me.Label5.Size = New System.Drawing.Size(76, 13)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Type of Leave"
         '
         'S_Date
         '
         Me.S_Date.Enabled = False
-        Me.S_Date.Location = New System.Drawing.Point(263, 333)
-        Me.S_Date.Margin = New System.Windows.Forms.Padding(4)
+        Me.S_Date.Location = New System.Drawing.Point(197, 271)
         Me.S_Date.Name = "S_Date"
-        Me.S_Date.Size = New System.Drawing.Size(159, 22)
+        Me.S_Date.Size = New System.Drawing.Size(120, 20)
         Me.S_Date.TabIndex = 18
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(44, 70)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(33, 57)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(121, 17)
+        Me.Label6.Size = New System.Drawing.Size(92, 13)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Duration of Leave"
         '
         'Submit_new
         '
-        Me.Submit_new.Location = New System.Drawing.Point(332, 608)
-        Me.Submit_new.Margin = New System.Windows.Forms.Padding(4)
+        Me.Submit_new.Location = New System.Drawing.Point(249, 494)
         Me.Submit_new.Name = "Submit_new"
-        Me.Submit_new.Size = New System.Drawing.Size(152, 38)
+        Me.Submit_new.Size = New System.Drawing.Size(114, 31)
         Me.Submit_new.TabIndex = 17
         Me.Submit_new.Text = "SUBMIT"
         Me.Submit_new.UseVisualStyleBackColor = True
         '
         'Remark_Box
         '
-        Me.Remark_Box.Location = New System.Drawing.Point(243, 433)
-        Me.Remark_Box.Margin = New System.Windows.Forms.Padding(4)
+        Me.Remark_Box.Location = New System.Drawing.Point(182, 352)
         Me.Remark_Box.Name = "Remark_Box"
-        Me.Remark_Box.Size = New System.Drawing.Size(301, 117)
+        Me.Remark_Box.Size = New System.Drawing.Size(227, 96)
         Me.Remark_Box.TabIndex = 15
         Me.Remark_Box.Text = ""
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(90, 477)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(68, 388)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(112, 17)
+        Me.Label7.Size = New System.Drawing.Size(83, 13)
         Me.Label7.TabIndex = 16
         Me.Label7.Text = "Remarks (if any)"
         '
@@ -560,10 +542,9 @@ Partial Class Form3
         Me.tabpgLeavesToApprove.Controls.Add(Me.btnLeavestobeApprovedAccept)
         Me.tabpgLeavesToApprove.Controls.Add(Me.btnLeavestobeApprovedView)
         Me.tabpgLeavesToApprove.Controls.Add(Me.APPROVED)
-        Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 25)
-        Me.tabpgLeavesToApprove.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 22)
         Me.tabpgLeavesToApprove.Name = "tabpgLeavesToApprove"
-        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(1206, 690)
+        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(902, 558)
         Me.tabpgLeavesToApprove.TabIndex = 2
         Me.tabpgLeavesToApprove.Text = "Leaves to Approve"
         Me.tabpgLeavesToApprove.UseVisualStyleBackColor = True
@@ -571,9 +552,10 @@ Partial Class Form3
         'MEDICAL_2
         '
         Me.MEDICAL_2.AutoSize = True
-        Me.MEDICAL_2.Location = New System.Drawing.Point(125, 162)
+        Me.MEDICAL_2.Location = New System.Drawing.Point(94, 132)
+        Me.MEDICAL_2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.MEDICAL_2.Name = "MEDICAL_2"
-        Me.MEDICAL_2.Size = New System.Drawing.Size(89, 21)
+        Me.MEDICAL_2.Size = New System.Drawing.Size(73, 17)
         Me.MEDICAL_2.TabIndex = 38
         Me.MEDICAL_2.Text = "MEDICAL"
         Me.MEDICAL_2.UseVisualStyleBackColor = True
@@ -581,9 +563,10 @@ Partial Class Form3
         'ACADEMIC_2
         '
         Me.ACADEMIC_2.AutoSize = True
-        Me.ACADEMIC_2.Location = New System.Drawing.Point(125, 189)
+        Me.ACADEMIC_2.Location = New System.Drawing.Point(94, 154)
+        Me.ACADEMIC_2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ACADEMIC_2.Name = "ACADEMIC_2"
-        Me.ACADEMIC_2.Size = New System.Drawing.Size(99, 21)
+        Me.ACADEMIC_2.Size = New System.Drawing.Size(81, 17)
         Me.ACADEMIC_2.TabIndex = 37
         Me.ACADEMIC_2.Text = "ACADEMIC"
         Me.ACADEMIC_2.UseVisualStyleBackColor = True
@@ -591,9 +574,10 @@ Partial Class Form3
         'ORDINARY_2
         '
         Me.ORDINARY_2.AutoSize = True
-        Me.ORDINARY_2.Location = New System.Drawing.Point(125, 135)
+        Me.ORDINARY_2.Location = New System.Drawing.Point(94, 110)
+        Me.ORDINARY_2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ORDINARY_2.Name = "ORDINARY_2"
-        Me.ORDINARY_2.Size = New System.Drawing.Size(102, 21)
+        Me.ORDINARY_2.Size = New System.Drawing.Size(83, 17)
         Me.ORDINARY_2.TabIndex = 33
         Me.ORDINARY_2.Text = "ORDINARY"
         Me.ORDINARY_2.UseVisualStyleBackColor = True
@@ -601,10 +585,9 @@ Partial Class Form3
         'OLDEST_2
         '
         Me.OLDEST_2.AutoSize = True
-        Me.OLDEST_2.Location = New System.Drawing.Point(129, 107)
-        Me.OLDEST_2.Margin = New System.Windows.Forms.Padding(4)
+        Me.OLDEST_2.Location = New System.Drawing.Point(97, 87)
         Me.OLDEST_2.Name = "OLDEST_2"
-        Me.OLDEST_2.Size = New System.Drawing.Size(101, 21)
+        Me.OLDEST_2.Size = New System.Drawing.Size(77, 17)
         Me.OLDEST_2.TabIndex = 32
         Me.OLDEST_2.Text = "Oldest First"
         Me.OLDEST_2.UseVisualStyleBackColor = True
@@ -613,10 +596,9 @@ Partial Class Form3
         '
         Me.NEWEST_2.AutoSize = True
         Me.NEWEST_2.Checked = True
-        Me.NEWEST_2.Location = New System.Drawing.Point(129, 78)
-        Me.NEWEST_2.Margin = New System.Windows.Forms.Padding(4)
+        Me.NEWEST_2.Location = New System.Drawing.Point(97, 63)
         Me.NEWEST_2.Name = "NEWEST_2"
-        Me.NEWEST_2.Size = New System.Drawing.Size(106, 21)
+        Me.NEWEST_2.Size = New System.Drawing.Size(83, 17)
         Me.NEWEST_2.TabIndex = 31
         Me.NEWEST_2.TabStop = True
         Me.NEWEST_2.Text = "Newest First"
@@ -625,20 +607,18 @@ Partial Class Form3
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(15, 78)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(11, 63)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(49, 17)
+        Me.Label11.Size = New System.Drawing.Size(36, 13)
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Order:"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(15, 135)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(11, 110)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(103, 17)
+        Me.Label13.Size = New System.Drawing.Size(79, 13)
         Me.Label13.TabIndex = 28
         Me.Label13.Text = "Type of Leave:"
         '
@@ -647,67 +627,60 @@ Partial Class Form3
         Me.DROPBOX_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DROPBOX_2.FormattingEnabled = True
         Me.DROPBOX_2.Items.AddRange(New Object() {"Date / Time Applied", "Start Date", "End Date"})
-        Me.DROPBOX_2.Location = New System.Drawing.Point(129, 46)
-        Me.DROPBOX_2.Margin = New System.Windows.Forms.Padding(4)
+        Me.DROPBOX_2.Location = New System.Drawing.Point(97, 37)
         Me.DROPBOX_2.Name = "DROPBOX_2"
-        Me.DROPBOX_2.Size = New System.Drawing.Size(112, 24)
+        Me.DROPBOX_2.Size = New System.Drawing.Size(85, 21)
         Me.DROPBOX_2.TabIndex = 27
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(15, 50)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(11, 41)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 17)
+        Me.Label14.Size = New System.Drawing.Size(44, 13)
         Me.Label14.TabIndex = 26
         Me.Label14.Text = "Sort By:"
         '
         'btnLeavestobeApprovedReject
         '
-        Me.btnLeavestobeApprovedReject.Location = New System.Drawing.Point(527, 605)
-        Me.btnLeavestobeApprovedReject.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedReject.Location = New System.Drawing.Point(395, 492)
         Me.btnLeavestobeApprovedReject.Name = "btnLeavestobeApprovedReject"
-        Me.btnLeavestobeApprovedReject.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedReject.Size = New System.Drawing.Size(75, 23)
         Me.btnLeavestobeApprovedReject.TabIndex = 25
         Me.btnLeavestobeApprovedReject.Text = "Reject"
         Me.btnLeavestobeApprovedReject.UseVisualStyleBackColor = True
         '
         'richtxtboxLeavestobeApprovedRemarks
         '
-        Me.richtxtboxLeavestobeApprovedRemarks.Location = New System.Drawing.Point(580, 387)
-        Me.richtxtboxLeavestobeApprovedRemarks.Margin = New System.Windows.Forms.Padding(4)
+        Me.richtxtboxLeavestobeApprovedRemarks.Location = New System.Drawing.Point(435, 314)
         Me.richtxtboxLeavestobeApprovedRemarks.Name = "richtxtboxLeavestobeApprovedRemarks"
-        Me.richtxtboxLeavestobeApprovedRemarks.Size = New System.Drawing.Size(301, 117)
+        Me.richtxtboxLeavestobeApprovedRemarks.Size = New System.Drawing.Size(227, 96)
         Me.richtxtboxLeavestobeApprovedRemarks.TabIndex = 23
         Me.richtxtboxLeavestobeApprovedRemarks.Text = ""
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(456, 453)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(342, 368)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(116, 17)
+        Me.Label10.Size = New System.Drawing.Size(86, 13)
         Me.Label10.TabIndex = 24
         Me.Label10.Text = "Remarks (if any):"
         '
         'btnLeavestobeApprovedAccept
         '
-        Me.btnLeavestobeApprovedAccept.Location = New System.Drawing.Point(419, 605)
-        Me.btnLeavestobeApprovedAccept.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedAccept.Location = New System.Drawing.Point(314, 492)
         Me.btnLeavestobeApprovedAccept.Name = "btnLeavestobeApprovedAccept"
-        Me.btnLeavestobeApprovedAccept.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedAccept.Size = New System.Drawing.Size(75, 23)
         Me.btnLeavestobeApprovedAccept.TabIndex = 22
         Me.btnLeavestobeApprovedAccept.Text = "Accept"
         Me.btnLeavestobeApprovedAccept.UseVisualStyleBackColor = True
         '
         'btnLeavestobeApprovedView
         '
-        Me.btnLeavestobeApprovedView.Location = New System.Drawing.Point(351, 404)
-        Me.btnLeavestobeApprovedView.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedView.Location = New System.Drawing.Point(263, 328)
         Me.btnLeavestobeApprovedView.Name = "btnLeavestobeApprovedView"
-        Me.btnLeavestobeApprovedView.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedView.Size = New System.Drawing.Size(75, 23)
         Me.btnLeavestobeApprovedView.TabIndex = 21
         Me.btnLeavestobeApprovedView.Text = "View"
         Me.btnLeavestobeApprovedView.UseVisualStyleBackColor = True
@@ -717,11 +690,11 @@ Partial Class Form3
         Me.APPROVED.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.APPROVED.FullRowSelect = True
         Me.APPROVED.HideSelection = False
-        Me.APPROVED.Location = New System.Drawing.Point(255, 41)
-        Me.APPROVED.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.APPROVED.Location = New System.Drawing.Point(191, 33)
+        Me.APPROVED.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.APPROVED.MultiSelect = False
         Me.APPROVED.Name = "APPROVED"
-        Me.APPROVED.Size = New System.Drawing.Size(852, 319)
+        Me.APPROVED.Size = New System.Drawing.Size(640, 260)
         Me.APPROVED.TabIndex = 20
         Me.APPROVED.UseCompatibleStateImageBehavior = False
         Me.APPROVED.View = System.Windows.Forms.View.Details
@@ -760,19 +733,19 @@ Partial Class Form3
         '
         Me.tabpgNotifications.Controls.Add(Me.VIEW_2)
         Me.tabpgNotifications.Controls.Add(Me.NOTIFICATIONS)
-        Me.tabpgNotifications.Location = New System.Drawing.Point(4, 25)
-        Me.tabpgNotifications.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabpgNotifications.Location = New System.Drawing.Point(4, 22)
         Me.tabpgNotifications.Name = "tabpgNotifications"
-        Me.tabpgNotifications.Size = New System.Drawing.Size(1206, 690)
+        Me.tabpgNotifications.Size = New System.Drawing.Size(902, 558)
         Me.tabpgNotifications.TabIndex = 3
         Me.tabpgNotifications.Text = "Notifications"
         Me.tabpgNotifications.UseVisualStyleBackColor = True
         '
         'VIEW_2
         '
-        Me.VIEW_2.Location = New System.Drawing.Point(265, 419)
+        Me.VIEW_2.Location = New System.Drawing.Point(199, 340)
+        Me.VIEW_2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.VIEW_2.Name = "VIEW_2"
-        Me.VIEW_2.Size = New System.Drawing.Size(162, 23)
+        Me.VIEW_2.Size = New System.Drawing.Size(122, 19)
         Me.VIEW_2.TabIndex = 3
         Me.VIEW_2.Text = "VIEW DETAILS"
         Me.VIEW_2.UseVisualStyleBackColor = True
@@ -782,10 +755,10 @@ Partial Class Form3
         Me.NOTIFICATIONS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.NOTIFICATIONS.ForeColor = System.Drawing.Color.Black
         Me.NOTIFICATIONS.HideSelection = False
-        Me.NOTIFICATIONS.Location = New System.Drawing.Point(177, 64)
-        Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NOTIFICATIONS.Location = New System.Drawing.Point(133, 52)
+        Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
-        Me.NOTIFICATIONS.Size = New System.Drawing.Size(807, 319)
+        Me.NOTIFICATIONS.Size = New System.Drawing.Size(606, 260)
         Me.NOTIFICATIONS.TabIndex = 2
         Me.NOTIFICATIONS.UseCompatibleStateImageBehavior = False
         Me.NOTIFICATIONS.View = System.Windows.Forms.View.Details
@@ -816,36 +789,40 @@ Partial Class Form3
         Me.TabPage1.Controls.Add(Me.APPROVE)
         Me.TabPage1.Controls.Add(Me.VIEW)
         Me.TabPage1.Controls.Add(Me.ADMIN)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Size = New System.Drawing.Size(1206, 690)
+        Me.TabPage1.Size = New System.Drawing.Size(902, 558)
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "HOME"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'DISAPPROVE
         '
-        Me.DISAPPROVE.Location = New System.Drawing.Point(646, 338)
+        Me.DISAPPROVE.Location = New System.Drawing.Point(484, 275)
+        Me.DISAPPROVE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DISAPPROVE.Name = "DISAPPROVE"
-        Me.DISAPPROVE.Size = New System.Drawing.Size(170, 55)
+        Me.DISAPPROVE.Size = New System.Drawing.Size(128, 45)
         Me.DISAPPROVE.TabIndex = 3
         Me.DISAPPROVE.Text = "DISAPPROVE"
         Me.DISAPPROVE.UseVisualStyleBackColor = True
         '
         'APPROVE
         '
-        Me.APPROVE.Location = New System.Drawing.Point(478, 345)
+        Me.APPROVE.Location = New System.Drawing.Point(358, 280)
+        Me.APPROVE.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.APPROVE.Name = "APPROVE"
-        Me.APPROVE.Size = New System.Drawing.Size(139, 52)
+        Me.APPROVE.Size = New System.Drawing.Size(104, 42)
         Me.APPROVE.TabIndex = 2
         Me.APPROVE.Text = "APPROVE"
         Me.APPROVE.UseVisualStyleBackColor = True
         '
         'VIEW
         '
-        Me.VIEW.Location = New System.Drawing.Point(333, 349)
+        Me.VIEW.Location = New System.Drawing.Point(250, 284)
+        Me.VIEW.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.VIEW.Name = "VIEW"
-        Me.VIEW.Size = New System.Drawing.Size(84, 44)
+        Me.VIEW.Size = New System.Drawing.Size(63, 36)
         Me.VIEW.TabIndex = 1
         Me.VIEW.Text = "VIEW"
         Me.VIEW.UseVisualStyleBackColor = True
@@ -854,9 +831,10 @@ Partial Class Form3
         '
         Me.ADMIN.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
         Me.ADMIN.HideSelection = False
-        Me.ADMIN.Location = New System.Drawing.Point(256, 25)
+        Me.ADMIN.Location = New System.Drawing.Point(192, 20)
+        Me.ADMIN.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ADMIN.Name = "ADMIN"
-        Me.ADMIN.Size = New System.Drawing.Size(572, 300)
+        Me.ADMIN.Size = New System.Drawing.Size(430, 244)
         Me.ADMIN.TabIndex = 0
         Me.ADMIN.UseCompatibleStateImageBehavior = False
         Me.ADMIN.View = System.Windows.Forms.View.Details
@@ -888,19 +866,19 @@ Partial Class Form3
         '
         'btnLogout
         '
-        Me.btnLogout.Location = New System.Drawing.Point(23, 364)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLogout.Location = New System.Drawing.Point(17, 296)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(176, 28)
+        Me.btnLogout.Size = New System.Drawing.Size(132, 23)
         Me.btnLogout.TabIndex = 5
         Me.btnLogout.Text = "LOGOUT"
         Me.btnLogout.UseVisualStyleBackColor = True
         '
         'Edit
         '
-        Me.Edit.Location = New System.Drawing.Point(81, 399)
+        Me.Edit.Location = New System.Drawing.Point(61, 324)
+        Me.Edit.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Edit.Name = "Edit"
-        Me.Edit.Size = New System.Drawing.Size(75, 23)
+        Me.Edit.Size = New System.Drawing.Size(56, 19)
         Me.Edit.TabIndex = 11
         Me.Edit.Text = "EDIT"
         Me.Edit.UseVisualStyleBackColor = True
@@ -908,36 +886,37 @@ Partial Class Form3
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(49, 63)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(37, 51)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Label1"
         '
         'BALANCES
         '
-        Me.BALANCES.Location = New System.Drawing.Point(81, 428)
+        Me.BALANCES.Location = New System.Drawing.Point(61, 348)
+        Me.BALANCES.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BALANCES.Name = "BALANCES"
-        Me.BALANCES.Size = New System.Drawing.Size(75, 23)
+        Me.BALANCES.Size = New System.Drawing.Size(56, 19)
         Me.BALANCES.TabIndex = 11
         Me.BALANCES.Text = "Balances"
         Me.BALANCES.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(52, 320)
+        Me.Button1.Location = New System.Drawing.Point(39, 260)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 23)
+        Me.Button1.Size = New System.Drawing.Size(93, 19)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "VIEW PROFILE"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1430, 748)
+        Me.ClientSize = New System.Drawing.Size(1072, 608)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BALANCES)
         Me.Controls.Add(Me.Label1)
@@ -947,7 +926,6 @@ Partial Class Form3
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.tabctrlMainTabs.ResumeLayout(False)
