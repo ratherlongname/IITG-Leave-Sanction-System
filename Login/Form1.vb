@@ -11,9 +11,24 @@
         'Vaibles storing the values the text from user
         Dim user_name As String = txtUsername.Text
         Dim password As String = txtPassword.Text
+        If user_name = "admin" Then
+            If password = "admin" Then
+                Me.Hide()
+                Form3.Show()
+                Form3.Label1.Text = "ADMIN"
+                Form3.Label2.Text = ""
+                Form3.Label3.Text = ""
+                Form3.Label4.Text = ""
+                Exit Sub
+            Else
+                MessageBox.Show("Incorrect Password")
+                Exit Sub
+            End If
+        End If
 
         If (user_name = "" Or password = "") Then
             MessageBox.Show("Please Enter the data", "NO DATA ENTERED")
+            Exit Sub
         Else
             Access.AddParam("@user", user_name)
             Access.AddParam("@pwd", password)
@@ -21,6 +36,10 @@
             Access.ExecQuery("SELECT * FROM Student_DB WHERE Username=@user and Password=@pwd")
 
             If Access.RecordCount > 0 Then
+                If Access.DBDT.Rows(0).Item("Approved") = "NO" Then
+                    MessageBox.Show("Your Registration Request has not been approved yet")
+                    Exit Sub
+                End If
                 Me.Hide()
                 Form3.Show()
                 Form3.Label1.Text = Access.DBDT.Rows(0).Item("Username")
@@ -34,6 +53,10 @@
                 Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username=@user and Password=@pwd")
 
                 If Access.RecordCount > 0 Then
+                    If Access.DBDT.Rows(0).Item("Approved") = "NO" Then
+                        MessageBox.Show("Your Registration Request has not been approved yet")
+                        Exit Sub
+                    End If
                     Me.Hide()
                     Form3.Show()
                     Form3.Label1.Text = Access.DBDT.Rows(0).Item("Username")
@@ -42,9 +65,11 @@
                     Form3.Label4.Text = ""
 
                 Else
-                    MsgBox("Invalid Username/ Password")
+                    MessageBox.Show("Invalid Username/ Password")
+                    Exit Sub
                 End If
             End If
         End If
     End Sub
+
 End Class

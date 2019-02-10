@@ -76,16 +76,27 @@ Partial Class Form3
         Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.DISAPPROVE = New System.Windows.Forms.Button()
+        Me.APPROVE = New System.Windows.Forms.Button()
+        Me.VIEW = New System.Windows.Forms.Button()
+        Me.ADMIN = New System.Windows.Forms.ListView()
+        Me.ColumnHeader11 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader12 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader13 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader14 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader15 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BALANCES = New System.Windows.Forms.Button()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabpgLeavesToApprove.SuspendLayout()
         Me.tabpgNotifications.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -127,6 +138,7 @@ Partial Class Form3
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgNewLeaves)
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgLeavesToApprove)
         Me.tabctrlMainTabs.Controls.Add(Me.tabpgNotifications)
+        Me.tabctrlMainTabs.Controls.Add(Me.TabPage1)
         Me.tabctrlMainTabs.Location = New System.Drawing.Point(203, 16)
         Me.tabctrlMainTabs.Margin = New System.Windows.Forms.Padding(4)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
@@ -586,6 +598,81 @@ Partial Class Form3
         Me.ColumnHeader9.Text = "Description"
         Me.ColumnHeader9.Width = 154
         '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.DISAPPROVE)
+        Me.TabPage1.Controls.Add(Me.APPROVE)
+        Me.TabPage1.Controls.Add(Me.VIEW)
+        Me.TabPage1.Controls.Add(Me.ADMIN)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Size = New System.Drawing.Size(1206, 690)
+        Me.TabPage1.TabIndex = 4
+        Me.TabPage1.Text = "HOME"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'DISAPPROVE
+        '
+        Me.DISAPPROVE.Location = New System.Drawing.Point(646, 338)
+        Me.DISAPPROVE.Name = "DISAPPROVE"
+        Me.DISAPPROVE.Size = New System.Drawing.Size(170, 55)
+        Me.DISAPPROVE.TabIndex = 3
+        Me.DISAPPROVE.Text = "DISAPPROVE"
+        Me.DISAPPROVE.UseVisualStyleBackColor = True
+        '
+        'APPROVE
+        '
+        Me.APPROVE.Location = New System.Drawing.Point(478, 345)
+        Me.APPROVE.Name = "APPROVE"
+        Me.APPROVE.Size = New System.Drawing.Size(139, 52)
+        Me.APPROVE.TabIndex = 2
+        Me.APPROVE.Text = "APPROVE"
+        Me.APPROVE.UseVisualStyleBackColor = True
+        '
+        'VIEW
+        '
+        Me.VIEW.Location = New System.Drawing.Point(333, 349)
+        Me.VIEW.Name = "VIEW"
+        Me.VIEW.Size = New System.Drawing.Size(84, 44)
+        Me.VIEW.TabIndex = 1
+        Me.VIEW.Text = "VIEW"
+        Me.VIEW.UseVisualStyleBackColor = True
+        '
+        'ADMIN
+        '
+        Me.ADMIN.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
+        Me.ADMIN.Location = New System.Drawing.Point(256, 25)
+        Me.ADMIN.Name = "ADMIN"
+        Me.ADMIN.Size = New System.Drawing.Size(572, 300)
+        Me.ADMIN.TabIndex = 0
+        Me.ADMIN.UseCompatibleStateImageBehavior = False
+        Me.ADMIN.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader11
+        '
+        Me.ColumnHeader11.Text = "USERNAME"
+        Me.ColumnHeader11.Width = 115
+        '
+        'ColumnHeader12
+        '
+        Me.ColumnHeader12.Text = "FIRST NAME"
+        Me.ColumnHeader12.Width = 119
+        '
+        'ColumnHeader13
+        '
+        Me.ColumnHeader13.Text = "LAST NAME"
+        Me.ColumnHeader13.Width = 105
+        '
+        'ColumnHeader14
+        '
+        Me.ColumnHeader14.Text = "DEPARTMENT"
+        Me.ColumnHeader14.Width = 117
+        '
+        'ColumnHeader15
+        '
+        Me.ColumnHeader15.Text = "TYPE OF USER"
+        Me.ColumnHeader15.Width = 146
+        '
         'btnLogout
         '
         Me.btnLogout.Location = New System.Drawing.Point(20, 244)
@@ -615,21 +702,21 @@ Partial Class Form3
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Label1"
         '
-        'Button1
+        'BALANCES
         '
-        Me.Button1.Location = New System.Drawing.Point(52, 401)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 11
-        Me.Button1.Text = "Balances"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BALANCES.Location = New System.Drawing.Point(52, 401)
+        Me.BALANCES.Name = "BALANCES"
+        Me.BALANCES.Size = New System.Drawing.Size(75, 23)
+        Me.BALANCES.TabIndex = 11
+        Me.BALANCES.Text = "Balances"
+        Me.BALANCES.UseVisualStyleBackColor = True
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1430, 748)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BALANCES)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Edit)
         Me.Controls.Add(Me.btnLogout)
@@ -648,6 +735,7 @@ Partial Class Form3
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabpgLeavesToApprove.ResumeLayout(False)
         Me.tabpgNotifications.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -690,7 +778,7 @@ Partial Class Form3
     Friend WithEvents Edit As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BALANCES As System.Windows.Forms.Button
     Friend WithEvents APPROVED As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
@@ -710,4 +798,14 @@ Partial Class Form3
     Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents ADMIN As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader11 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader12 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader13 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader14 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader15 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents DISAPPROVE As System.Windows.Forms.Button
+    Friend WithEvents APPROVE As System.Windows.Forms.Button
+    Friend WithEvents VIEW As System.Windows.Forms.Button
 End Class

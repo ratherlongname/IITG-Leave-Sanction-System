@@ -130,6 +130,11 @@ Public Class Form2
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
+        If uname = "admin" Then
+            MessageBox.Show("Username can't be admin")
+            Button2.PerformClick()
+            Exit Sub
+        End If
         'Validating the user Details NOT ALLOWING TO EMPTY data
         If uname = Nothing Then
             MessageBox.Show("Please Enter some Username")
@@ -362,8 +367,10 @@ Public Class Form2
                     Access.AddParam("@days_2", days_2)
                     Dim days_3 As Integer = 30
                     Access.AddParam("@days_3", days_3)
+                    Dim help As String = "NO"
+                    Access.AddParam("@help", help)
                     'Inerst query for the Student_DB
-                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum2, @days_2, @days_3)")
+                    Access.ExecQuery("INSERT INTO Student_DB([Username], [Password], [Roll_no], [Programme], [Department], [First_name], [Last_name], [Year_of_joining], [Days_of_stipend_cut], [TA_Superviser], [Guide], [List_of_leaves], [Academic], [Notification], [Ordinary], [Medical], [Approved])VALUES(@user, @pwd, @roll, @prog, @dept_stu, @fname, @lname, @y, @days, @ta, @guide, @dum, @days_1, @dum2, @days_2, @days_3, @help)")
 
                     Form1.Show()
                     Me.Close()
@@ -394,8 +401,10 @@ Public Class Form2
                     Access.AddParam("@days3", days_3)
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days1", days_1)
+                    Dim help As String = "NO"
+                    Access.AddParam("@help", help)
                     'Insert command for Faculty_DB 
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1)")
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1, @help)")
                     Form1.Show()
                     Me.Close()
                 End If
@@ -424,8 +433,10 @@ Public Class Form2
                     Access.AddParam("@days3", days_3)
                     Dim days_1 As Integer = 120
                     Access.AddParam("@days1", days_1)
+                    Dim help As String = "NO"
+                    Access.AddParam("@help", help)
                     'Insert Query for the HOD
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1)")
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, @help)")
                     Form1.Show()
                     Me.Close()
 

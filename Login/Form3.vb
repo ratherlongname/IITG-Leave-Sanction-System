@@ -5,7 +5,44 @@
 
     Private Sub Form3_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
-        If Label4.Text = Nothing Then
+        If Label1.Text = "ADMIN" Then
+            Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
+            Me.tabctrlMainTabs.TabPages.Remove(tabpgViewLeaves)
+            Me.tabctrlMainTabs.TabPages.Remove(tabpgNotifications)
+            Me.tabctrlMainTabs.TabPages.Remove(tabpgNewLeaves)
+            Me.BALANCES.Visible = False
+            Me.Edit.Visible = False
+
+            Dim help As String = "NO"
+            Access.ExecQuery("SELECT * FROM Student_DB WHERE Approved='" & help & "'")
+            If Access.RecordCount > 0 Then
+                For Each r As DataRow In Access.DBDT.Rows
+                    Dim dum As String = r(0)
+                    Dim dum2 As String = "STUDENT"
+                    Dim v As New ListViewItem(dum)
+                    v.SubItems.Add(r(5))
+                    v.SubItems.Add(r(6))
+                    v.SubItems.Add(r(4))
+                    v.SubItems.Add(dum2)
+                    ADMIN.Items.Add(v)
+                Next
+            End If
+
+            Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Approved='" & help & "'")
+            If Access.RecordCount > 0 Then
+                For Each r As DataRow In Access.DBDT.Rows
+                    Dim dum As String = r(0)
+                    Dim dum2 As String = "FACULTY"
+                    Dim v As New ListViewItem(dum)
+                    v.SubItems.Add(r(2))
+                    v.SubItems.Add(r(3))
+                    v.SubItems.Add(r(4))
+                    v.SubItems.Add(dum2)
+                    ADMIN.Items.Add(v)
+                Next
+            End If
+        End If
+        If Label4.Text <> Nothing Then
             Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
         End If
 
@@ -771,5 +808,51 @@
         'Opening the EDIT FORM
         Me.Close()
         Form2.Show()
+    End Sub
+
+    Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles VIEW.Click
+        'take that from selected list view rows
+        Dim dum As String = "vakul123"
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
+        If Access.RecordCount > 0 Then
+            'Getting all the old Deatails and filling into the EDIT FORM
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+            Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
+            Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
+            Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
+            Form4.PROGRAMME_TB.Text = Access.DBDT.Rows(0).Item("Programme")
+            Form4.TA_SUPERVISER_TB.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
+            Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
+            Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+            Form4.DESIGNATION.Visible = False
+        End If
+
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum & "'")
+        If Access.RecordCount > 0 Then
+            'Getting all the old Deatails and filling into the EDIT FORM
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+            Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
+            Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+            Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
+            Form4.ROLL_NO.Visible = False
+            Form4.YEAR_OF_JOINING.Visible = False
+            Form4.YEAR_OF_JOINING_TB.Visible = False
+            Form4.PROGRAMME_TB.Visible = False
+            Form4.PROGRAMME.Visible = False
+            Form4.TA_SUPERVISER.Visible = False
+            Form4.TA_SUPERVISER_TB.Visible = False
+            Form4.GUIDE.Visible = False
+            Form4.GUIDE.Visible = False
+
+        End If
+        Me.Hide()
+        Form4.Show()
+    End Sub
+
+    Private Sub APPROVE_Click(sender As Object, e As EventArgs) Handles APPROVE.Click
+        Dim dum As String = "vakul123"
+
     End Sub
 End Class
