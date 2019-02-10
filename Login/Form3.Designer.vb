@@ -22,6 +22,12 @@ Partial Class Form3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("A")
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("b")
+        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("c")
+        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("d")
+        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("e")
+        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("f")
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -45,6 +51,7 @@ Partial Class Form3
         Me.colhdrEndDate = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.colhdrStatus = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabpgNewLeaves = New System.Windows.Forms.TabPage()
+        Me.dgv = New System.Windows.Forms.DataGridView()
         Me.E_Date = New System.Windows.Forms.TextBox()
         Me.Date_Calc = New System.Windows.Forms.MonthCalendar()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -57,15 +64,17 @@ Partial Class Form3
         Me.Remark_Box = New System.Windows.Forms.RichTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
+        Me.APPROVED = New System.Windows.Forms.ListView()
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dgv = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabpgLeavesToApprove.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -111,7 +120,7 @@ Partial Class Form3
         Me.tabctrlMainTabs.Margin = New System.Windows.Forms.Padding(4)
         Me.tabctrlMainTabs.Name = "tabctrlMainTabs"
         Me.tabctrlMainTabs.SelectedIndex = 0
-        Me.tabctrlMainTabs.Size = New System.Drawing.Size(964, 719)
+        Me.tabctrlMainTabs.Size = New System.Drawing.Size(1214, 719)
         Me.tabctrlMainTabs.TabIndex = 4
         '
         'tabpgViewLeaves
@@ -130,7 +139,7 @@ Partial Class Form3
         Me.tabpgViewLeaves.Location = New System.Drawing.Point(4, 25)
         Me.tabpgViewLeaves.Margin = New System.Windows.Forms.Padding(4)
         Me.tabpgViewLeaves.Name = "tabpgViewLeaves"
-        Me.tabpgViewLeaves.Size = New System.Drawing.Size(956, 690)
+        Me.tabpgViewLeaves.Size = New System.Drawing.Size(1206, 690)
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
@@ -252,7 +261,7 @@ Partial Class Form3
         Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(236, 7)
         Me.lsviewViewLeavesListOfLeaves.Margin = New System.Windows.Forms.Padding(4)
         Me.lsviewViewLeavesListOfLeaves.Name = "lsviewViewLeavesListOfLeaves"
-        Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(581, 297)
+        Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(778, 389)
         Me.lsviewViewLeavesListOfLeaves.TabIndex = 0
         Me.lsviewViewLeavesListOfLeaves.UseCompatibleStateImageBehavior = False
         Me.lsviewViewLeavesListOfLeaves.View = System.Windows.Forms.View.Details
@@ -300,15 +309,24 @@ Partial Class Form3
         Me.tabpgNewLeaves.Location = New System.Drawing.Point(4, 25)
         Me.tabpgNewLeaves.Margin = New System.Windows.Forms.Padding(4)
         Me.tabpgNewLeaves.Name = "tabpgNewLeaves"
-        Me.tabpgNewLeaves.Size = New System.Drawing.Size(956, 690)
+        Me.tabpgNewLeaves.Size = New System.Drawing.Size(1206, 690)
         Me.tabpgNewLeaves.TabIndex = 1
         Me.tabpgNewLeaves.Text = "New Leaves"
         Me.tabpgNewLeaves.UseVisualStyleBackColor = True
         '
+        'dgv
+        '
+        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv.Location = New System.Drawing.Point(620, 158)
+        Me.dgv.Name = "dgv"
+        Me.dgv.RowTemplate.Height = 24
+        Me.dgv.Size = New System.Drawing.Size(240, 150)
+        Me.dgv.TabIndex = 22
+        '
         'E_Date
         '
         Me.E_Date.Enabled = False
-        Me.E_Date.Location = New System.Drawing.Point(263, 321)
+        Me.E_Date.Location = New System.Drawing.Point(263, 388)
         Me.E_Date.Margin = New System.Windows.Forms.Padding(4)
         Me.E_Date.Name = "E_Date"
         Me.E_Date.Size = New System.Drawing.Size(159, 22)
@@ -325,7 +343,7 @@ Partial Class Form3
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(44, 321)
+        Me.Label9.Location = New System.Drawing.Point(152, 393)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 17)
@@ -345,7 +363,7 @@ Partial Class Form3
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(44, 286)
+        Me.Label8.Location = New System.Drawing.Point(147, 336)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(91, 17)
@@ -365,7 +383,7 @@ Partial Class Form3
         'S_Date
         '
         Me.S_Date.Enabled = False
-        Me.S_Date.Location = New System.Drawing.Point(263, 286)
+        Me.S_Date.Location = New System.Drawing.Point(263, 333)
         Me.S_Date.Margin = New System.Windows.Forms.Padding(4)
         Me.S_Date.Name = "S_Date"
         Me.S_Date.Size = New System.Drawing.Size(159, 22)
@@ -383,7 +401,7 @@ Partial Class Form3
         '
         'Submit_new
         '
-        Me.Submit_new.Location = New System.Drawing.Point(319, 511)
+        Me.Submit_new.Location = New System.Drawing.Point(332, 608)
         Me.Submit_new.Margin = New System.Windows.Forms.Padding(4)
         Me.Submit_new.Name = "Submit_new"
         Me.Submit_new.Size = New System.Drawing.Size(152, 38)
@@ -393,7 +411,7 @@ Partial Class Form3
         '
         'Remark_Box
         '
-        Me.Remark_Box.Location = New System.Drawing.Point(263, 358)
+        Me.Remark_Box.Location = New System.Drawing.Point(249, 456)
         Me.Remark_Box.Margin = New System.Windows.Forms.Padding(4)
         Me.Remark_Box.Name = "Remark_Box"
         Me.Remark_Box.Size = New System.Drawing.Size(301, 117)
@@ -403,7 +421,7 @@ Partial Class Form3
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(44, 358)
+        Me.Label7.Location = New System.Drawing.Point(90, 477)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(112, 17)
@@ -412,20 +430,30 @@ Partial Class Form3
         '
         'tabpgLeavesToApprove
         '
+        Me.tabpgLeavesToApprove.Controls.Add(Me.APPROVED)
         Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 25)
         Me.tabpgLeavesToApprove.Margin = New System.Windows.Forms.Padding(4)
         Me.tabpgLeavesToApprove.Name = "tabpgLeavesToApprove"
-        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(956, 690)
+        Me.tabpgLeavesToApprove.Size = New System.Drawing.Size(1206, 690)
         Me.tabpgLeavesToApprove.TabIndex = 2
         Me.tabpgLeavesToApprove.Text = "Leaves to Approve"
         Me.tabpgLeavesToApprove.UseVisualStyleBackColor = True
+        '
+        'APPROVED
+        '
+        Me.APPROVED.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2, ListViewItem3, ListViewItem4, ListViewItem5, ListViewItem6})
+        Me.APPROVED.Location = New System.Drawing.Point(236, 72)
+        Me.APPROVED.Name = "APPROVED"
+        Me.APPROVED.Size = New System.Drawing.Size(572, 319)
+        Me.APPROVED.TabIndex = 0
+        Me.APPROVED.UseCompatibleStateImageBehavior = False
         '
         'tabpgNotifications
         '
         Me.tabpgNotifications.Location = New System.Drawing.Point(4, 25)
         Me.tabpgNotifications.Margin = New System.Windows.Forms.Padding(4)
         Me.tabpgNotifications.Name = "tabpgNotifications"
-        Me.tabpgNotifications.Size = New System.Drawing.Size(956, 690)
+        Me.tabpgNotifications.Size = New System.Drawing.Size(1206, 690)
         Me.tabpgNotifications.TabIndex = 3
         Me.tabpgNotifications.Text = "Notifications"
         Me.tabpgNotifications.UseVisualStyleBackColor = True
@@ -459,20 +487,21 @@ Partial Class Form3
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Label1"
         '
-        'dgv
+        'Button1
         '
-        Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Location = New System.Drawing.Point(620, 158)
-        Me.dgv.Name = "dgv"
-        Me.dgv.RowTemplate.Height = 24
-        Me.dgv.Size = New System.Drawing.Size(240, 150)
-        Me.dgv.TabIndex = 22
+        Me.Button1.Location = New System.Drawing.Point(52, 401)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 11
+        Me.Button1.Text = "Balances"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1180, 748)
+        Me.ClientSize = New System.Drawing.Size(1430, 748)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Edit)
         Me.Controls.Add(Me.btnLogout)
@@ -489,6 +518,7 @@ Partial Class Form3
         Me.tabpgNewLeaves.ResumeLayout(False)
         Me.tabpgNewLeaves.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabpgLeavesToApprove.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -533,4 +563,6 @@ Partial Class Form3
     Friend WithEvents Edit As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents APPROVED As System.Windows.Forms.ListView
 End Class
