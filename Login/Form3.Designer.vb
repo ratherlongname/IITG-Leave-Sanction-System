@@ -27,6 +27,13 @@ Partial Class Form3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tabctrlMainTabs = New System.Windows.Forms.TabControl()
         Me.tabpgViewLeaves = New System.Windows.Forms.TabPage()
+        Me.CANCELLED = New System.Windows.Forms.CheckBox()
+        Me.MEDICAL = New System.Windows.Forms.CheckBox()
+        Me.ACADEMIC = New System.Windows.Forms.CheckBox()
+        Me.ACCEPTED = New System.Windows.Forms.CheckBox()
+        Me.REJECTED = New System.Windows.Forms.CheckBox()
+        Me.PENDING = New System.Windows.Forms.CheckBox()
+        Me.ORDINARY = New System.Windows.Forms.CheckBox()
         Me.OLD_CHECKBOX = New System.Windows.Forms.RadioButton()
         Me.NEWEST_CHECKBOX = New System.Windows.Forms.RadioButton()
         Me.lblViewLeavesAscOrDesc = New System.Windows.Forms.Label()
@@ -65,17 +72,14 @@ Partial Class Form3
         Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.NOTIFICATIONS = New System.Windows.Forms.ListView()
+        Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader8 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader9 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ORDINARY = New System.Windows.Forms.CheckBox()
-        Me.PENDING = New System.Windows.Forms.CheckBox()
-        Me.REJECTED = New System.Windows.Forms.CheckBox()
-        Me.ACCEPTED = New System.Windows.Forms.CheckBox()
-        Me.ACADEMIC = New System.Windows.Forms.CheckBox()
-        Me.MEDICAL = New System.Windows.Forms.CheckBox()
-        Me.CANCELLED = New System.Windows.Forms.CheckBox()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
@@ -155,6 +159,76 @@ Partial Class Form3
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
+        '
+        'CANCELLED
+        '
+        Me.CANCELLED.AutoSize = True
+        Me.CANCELLED.Location = New System.Drawing.Point(68, 257)
+        Me.CANCELLED.Name = "CANCELLED"
+        Me.CANCELLED.Size = New System.Drawing.Size(92, 21)
+        Me.CANCELLED.TabIndex = 17
+        Me.CANCELLED.Text = "Cancelled"
+        Me.CANCELLED.UseVisualStyleBackColor = True
+        '
+        'MEDICAL
+        '
+        Me.MEDICAL.AutoSize = True
+        Me.MEDICAL.Location = New System.Drawing.Point(111, 123)
+        Me.MEDICAL.Name = "MEDICAL"
+        Me.MEDICAL.Size = New System.Drawing.Size(89, 21)
+        Me.MEDICAL.TabIndex = 16
+        Me.MEDICAL.Text = "MEDICAL"
+        Me.MEDICAL.UseVisualStyleBackColor = True
+        '
+        'ACADEMIC
+        '
+        Me.ACADEMIC.AutoSize = True
+        Me.ACADEMIC.Location = New System.Drawing.Point(111, 150)
+        Me.ACADEMIC.Name = "ACADEMIC"
+        Me.ACADEMIC.Size = New System.Drawing.Size(99, 21)
+        Me.ACADEMIC.TabIndex = 15
+        Me.ACADEMIC.Text = "ACADEMIC"
+        Me.ACADEMIC.UseVisualStyleBackColor = True
+        '
+        'ACCEPTED
+        '
+        Me.ACCEPTED.AutoSize = True
+        Me.ACCEPTED.Location = New System.Drawing.Point(68, 177)
+        Me.ACCEPTED.Name = "ACCEPTED"
+        Me.ACCEPTED.Size = New System.Drawing.Size(89, 21)
+        Me.ACCEPTED.TabIndex = 14
+        Me.ACCEPTED.Text = "Accepted"
+        Me.ACCEPTED.UseVisualStyleBackColor = True
+        '
+        'REJECTED
+        '
+        Me.REJECTED.AutoSize = True
+        Me.REJECTED.Location = New System.Drawing.Point(68, 203)
+        Me.REJECTED.Name = "REJECTED"
+        Me.REJECTED.Size = New System.Drawing.Size(86, 21)
+        Me.REJECTED.TabIndex = 13
+        Me.REJECTED.Text = "Rejected"
+        Me.REJECTED.UseVisualStyleBackColor = True
+        '
+        'PENDING
+        '
+        Me.PENDING.AutoSize = True
+        Me.PENDING.Location = New System.Drawing.Point(68, 230)
+        Me.PENDING.Name = "PENDING"
+        Me.PENDING.Size = New System.Drawing.Size(82, 21)
+        Me.PENDING.TabIndex = 12
+        Me.PENDING.Text = "Pending"
+        Me.PENDING.UseVisualStyleBackColor = True
+        '
+        'ORDINARY
+        '
+        Me.ORDINARY.AutoSize = True
+        Me.ORDINARY.Location = New System.Drawing.Point(111, 96)
+        Me.ORDINARY.Name = "ORDINARY"
+        Me.ORDINARY.Size = New System.Drawing.Size(102, 21)
+        Me.ORDINARY.TabIndex = 11
+        Me.ORDINARY.Text = "ORDINARY"
+        Me.ORDINARY.UseVisualStyleBackColor = True
         '
         'OLD_CHECKBOX
         '
@@ -482,12 +556,35 @@ Partial Class Form3
         '
         'NOTIFICATIONS
         '
-        Me.NOTIFICATIONS.Location = New System.Drawing.Point(235, 55)
+        Me.NOTIFICATIONS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
+        Me.NOTIFICATIONS.ForeColor = System.Drawing.Color.Black
+        Me.NOTIFICATIONS.Location = New System.Drawing.Point(177, 64)
+        Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
-        Me.NOTIFICATIONS.Size = New System.Drawing.Size(572, 319)
-        Me.NOTIFICATIONS.TabIndex = 1
+        Me.NOTIFICATIONS.Size = New System.Drawing.Size(807, 319)
+        Me.NOTIFICATIONS.TabIndex = 2
         Me.NOTIFICATIONS.UseCompatibleStateImageBehavior = False
         Me.NOTIFICATIONS.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader10
+        '
+        Me.ColumnHeader10.Text = "Date/Time"
+        Me.ColumnHeader10.Width = 84
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "LEAVE_ID"
+        Me.ColumnHeader7.Width = 98
+        '
+        'ColumnHeader8
+        '
+        Me.ColumnHeader8.Text = "REMARKS"
+        Me.ColumnHeader8.Width = 155
+        '
+        'ColumnHeader9
+        '
+        Me.ColumnHeader9.Text = "Description"
+        Me.ColumnHeader9.Width = 154
         '
         'btnLogout
         '
@@ -526,76 +623,6 @@ Partial Class Form3
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Balances"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ORDINARY
-        '
-        Me.ORDINARY.AutoSize = True
-        Me.ORDINARY.Location = New System.Drawing.Point(111, 96)
-        Me.ORDINARY.Name = "ORDINARY"
-        Me.ORDINARY.Size = New System.Drawing.Size(102, 21)
-        Me.ORDINARY.TabIndex = 11
-        Me.ORDINARY.Text = "ORDINARY"
-        Me.ORDINARY.UseVisualStyleBackColor = True
-        '
-        'PENDING
-        '
-        Me.PENDING.AutoSize = True
-        Me.PENDING.Location = New System.Drawing.Point(68, 230)
-        Me.PENDING.Name = "PENDING"
-        Me.PENDING.Size = New System.Drawing.Size(82, 21)
-        Me.PENDING.TabIndex = 12
-        Me.PENDING.Text = "Pending"
-        Me.PENDING.UseVisualStyleBackColor = True
-        '
-        'REJECTED
-        '
-        Me.REJECTED.AutoSize = True
-        Me.REJECTED.Location = New System.Drawing.Point(68, 203)
-        Me.REJECTED.Name = "REJECTED"
-        Me.REJECTED.Size = New System.Drawing.Size(86, 21)
-        Me.REJECTED.TabIndex = 13
-        Me.REJECTED.Text = "Rejected"
-        Me.REJECTED.UseVisualStyleBackColor = True
-        '
-        'ACCEPTED
-        '
-        Me.ACCEPTED.AutoSize = True
-        Me.ACCEPTED.Location = New System.Drawing.Point(68, 177)
-        Me.ACCEPTED.Name = "ACCEPTED"
-        Me.ACCEPTED.Size = New System.Drawing.Size(89, 21)
-        Me.ACCEPTED.TabIndex = 14
-        Me.ACCEPTED.Text = "Accepted"
-        Me.ACCEPTED.UseVisualStyleBackColor = True
-        '
-        'ACADEMIC
-        '
-        Me.ACADEMIC.AutoSize = True
-        Me.ACADEMIC.Location = New System.Drawing.Point(111, 150)
-        Me.ACADEMIC.Name = "ACADEMIC"
-        Me.ACADEMIC.Size = New System.Drawing.Size(99, 21)
-        Me.ACADEMIC.TabIndex = 15
-        Me.ACADEMIC.Text = "ACADEMIC"
-        Me.ACADEMIC.UseVisualStyleBackColor = True
-        '
-        'MEDICAL
-        '
-        Me.MEDICAL.AutoSize = True
-        Me.MEDICAL.Location = New System.Drawing.Point(111, 123)
-        Me.MEDICAL.Name = "MEDICAL"
-        Me.MEDICAL.Size = New System.Drawing.Size(89, 21)
-        Me.MEDICAL.TabIndex = 16
-        Me.MEDICAL.Text = "MEDICAL"
-        Me.MEDICAL.UseVisualStyleBackColor = True
-        '
-        'CANCELLED
-        '
-        Me.CANCELLED.AutoSize = True
-        Me.CANCELLED.Location = New System.Drawing.Point(68, 257)
-        Me.CANCELLED.Name = "CANCELLED"
-        Me.CANCELLED.Size = New System.Drawing.Size(92, 21)
-        Me.CANCELLED.TabIndex = 17
-        Me.CANCELLED.Text = "Cancelled"
-        Me.CANCELLED.UseVisualStyleBackColor = True
         '
         'Form3
         '
@@ -671,7 +698,6 @@ Partial Class Form3
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
     Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents NOTIFICATIONS As System.Windows.Forms.ListView
     Friend WithEvents CANCELLED As System.Windows.Forms.CheckBox
     Friend WithEvents MEDICAL As System.Windows.Forms.CheckBox
     Friend WithEvents ACADEMIC As System.Windows.Forms.CheckBox
@@ -679,4 +705,9 @@ Partial Class Form3
     Friend WithEvents REJECTED As System.Windows.Forms.CheckBox
     Friend WithEvents PENDING As System.Windows.Forms.CheckBox
     Friend WithEvents ORDINARY As System.Windows.Forms.CheckBox
+    Friend WithEvents NOTIFICATIONS As System.Windows.Forms.ListView
+    Protected Friend WithEvents ColumnHeader10 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader7 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader8 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader9 As System.Windows.Forms.ColumnHeader
 End Class

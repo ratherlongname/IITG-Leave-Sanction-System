@@ -77,6 +77,29 @@
         End If
     End Sub
 
+    Private Sub tabpgNotifications_Enter(sender As Object, e As EventArgs) Handles tabpgNotifications.Enter
+        'RefreshViewLeaves()
+        Dim user As String = Label1.Text
+        Dim i As Integer = 0
+        Access.ExecQuery("SELECT * FROM Leave_Update_DB WHERE Username='" & user & "'")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                Dim dum As String = r(0)
+                Dim v As New ListViewItem(dum)
+                v.SubItems.Add(r(4))
+                v.SubItems.Add(r(2))
+                Dim dum1 As String = ""
+                dum1 = dum1 + " Your Leave having Leave ID " + r(0) + " is " + r(5) + " by " + r(6)
+                v.SubItems.Add(dum1)
+                NOTIFICATIONS.Items.Add(v)
+            Next
+
+        Else
+            MessageBox.Show("No Notications!!!!")
+        End If
+
+    End Sub
+
 
     Private Sub btnViewLeavesRefresh_Click(sender As Object, e As EventArgs) Handles btnViewLeavesRefresh.Click
         RefreshViewLeaves()
@@ -680,7 +703,7 @@
             End If
 
         End If
-            MessageBox.Show("LEAVE APLLIED SUCCESSFULLY")
+        MessageBox.Show("LEAVE APLLIED SUCCESSFULLY")
     End Sub
 
     'This Button is for EDITING the profile
