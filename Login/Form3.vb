@@ -5,7 +5,7 @@
 
     Private Sub Form3_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
-        If Label4.Text = Nothing Then
+        If Label4.Text <> Nothing Then
             Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
         End If
 
@@ -35,34 +35,49 @@
 
     Private Sub tabpgLeavesToApprove_Enter(sender As Object, e As EventArgs) Handles tabpgLeavesToApprove.Enter
 
-        Dim user As String = Label1.Text
-        Access.ExecQuery("SELECT * FROM Leave_DB")
-        Dim str(Access.RecordCount) As Integer
-        Dim i As Integer = 0
-        Dim curr_i As Integer = 0
+        RefreshLeavestoApprove()
 
+    End Sub
+
+    Private Sub RefreshLeavestoApprove()
+
+        ' Clear existing listview
+        APPROVED.Items.Clear()
+
+        ' Get username of faculty
+        Dim user As String = Label1.Text
+
+        ' Query DB for all leaves
+        Access.ExecQuery("SELECT * FROM Leave_DB")
+
+        Dim i As Integer = 0
+
+        ' Populate listview
         If Access.RecordCount > 0 Then
+            ' Cycle through all leaves
             For Each r As DataRow In Access.DBDT.Rows
                 Dim s As String
                 Dim flag As Integer = 0
+                ' Get list of participating users for leave
                 s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
-                MessageBox.Show(s)
                 Dim s1 As String = ""
+
+                ' Extract usernames from list of participating users
                 For Each c As Char In s
                     If c <> "," And c <> " " Then
                         s1 = s1 + c
                     Else
                         If s1 = user Then
+                            ' Set flag = 1 if username matches username of logged in faculty
                             flag = 1
                             Exit For
                         End If
                         s1 = ""
                     End If
                 Next
+
                 If flag = 1 Then
-                    'MessageBox.Show(r(0))
-                    str(curr_i) = i
-                    curr_i = curr_i + 1
+                    ' Add leave to listview
                     Dim dum As String = r(6)
                     Dim v As New ListViewItem(dum)
                     v.SubItems.Add(r(0))
@@ -75,6 +90,8 @@
                 i = i + 1
             Next
         End If
+
+
     End Sub
 
     Private Sub tabpgNotifications_Enter(sender As Object, e As EventArgs) Handles tabpgNotifications.Enter
@@ -772,4 +789,81 @@
         Me.Close()
         Form2.Show()
     End Sub
+
+    Private Function APPROVED_SelectedItem() As ListViewItem
+        Dim selectedLeave As New ListViewItem
+        If APPROVED.SelectedItems.Count > 0 Then
+            selectedLeave = APPROVED.SelectedItems(0)
+        End If
+
+        Return selectedLeave
+    End Function
+
+
+    Private Sub btnLeavestobeApprovedView_Click(sender As Object, e As EventArgs) Handles btnLeavestobeApprovedView.Click
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = APPROVED_SelectedItem()
+
+        ' TODO
+    End Sub
+
+
+    Private Sub btnLeavestobeApprovedAccept_Click(sender As Object, e As EventArgs) Handles btnLeavestobeApprovedAccept.Click
+        AcceptReject(True)
+    End Sub
+
+    Private Sub btnLeavestobeApprovedReject_Click(sender As Object, e As EventArgs) Handles btnLeavestobeApprovedReject.Click
+        AcceptReject(False)
+    End Sub
+
+    Private Sub AcceptReject(isAccepted As Boolean)
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = APPROVED_SelectedItem()
+        If selectedLeave.SubItems(0).Text() = "" Then
+            MsgBox("No leave selected!")
+            Exit Sub
+        End If
+
+
+        Dim leave_ID As String = selectedLeave.SubItems(0).Text()
+        Dim update_ID As String = ""
+
+        
+
+        Dim date_Time As Date = System.DateTime.Now()
+        Dim user As String = selectedLeave.SubItems(1).Text()
+        Dim remark As String = richtxtboxLeavestobeApprovedRemarks.Text()
+
+        Dim status As String = ""
+        If isAccepted Then
+            status = "Accepted"
+        Else
+            status = "Rejected"
+        End If
+
+        Dim user_action As String = Label1.Text()
+
+        'Generating Update_ID
+        update_ID = user(0) + user(1) + user_action(0) + user_action(1)
+        Dim d As String = date_Time.ToString()
+        For Each c As Char In d
+            If c <> " " And c <> "-" And c <> ":" Then
+                update_ID = update_ID + c
+            End If
+        Next
+
+        'Adding parameters for the Insert query in Update DB
+        Access.AddParam("@LID", leave_ID)
+        Access.AddParam("@UID", update_ID)
+        Access.AddParam("@date", date_Time)
+        Access.AddParam("@user", user)
+        Access.AddParam("@remark", remark)
+        Access.AddParam("@status", status)
+        Access.AddParam("@user_act", user_action)
+        'Insert Command for the Update_DB
+        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
+        MsgBox("Leave status updated.")
+
+    End Sub
+
 End Class
