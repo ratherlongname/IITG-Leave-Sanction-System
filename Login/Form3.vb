@@ -1403,7 +1403,7 @@
             Form4.TA_SUPERVISER_TB.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
             Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
-            Form4.DESIGNATION.Visible = False
+            Form4.Label13.Text = "Roll No."
         End If
 
         Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
@@ -1414,15 +1414,16 @@
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
-            Form4.ROLL_NO.Visible = False
-            Form4.YEAR_OF_JOINING.Visible = False
+            Form4.Label13.Text = "Designation"
+            Form4.Label9.Visible = False
             Form4.YEAR_OF_JOINING_TB.Visible = False
             Form4.PROGRAMME_TB.Visible = False
-            Form4.PROGRAMME.Visible = False
-            Form4.TA_SUPERVISER.Visible = False
+            Form4.Label8.Visible = False
+            Form4.Label10.Visible = False
             Form4.TA_SUPERVISER_TB.Visible = False
-            Form4.GUIDE.Visible = False
-            Form4.GUIDE.Visible = False
+            Form4.Label11.Visible = False
+            Form4.GUIDE_TB.Visible = False
+
 
         End If
         Me.Hide()
@@ -1629,8 +1630,8 @@
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
             Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
@@ -1638,26 +1639,26 @@
             Form4.TA_SUPERVISER_TB.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
             Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
-            Form4.DESIGNATION.Visible = False
+            Form4.Label13.Text = "Roll No."
         End If
 
         Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
-            Form4.ROLL_NO.Visible = False
-            Form4.YEAR_OF_JOINING.Visible = False
+            Form4.Label13.Text = "Designation"
+            Form4.Label9.Visible = False
             Form4.YEAR_OF_JOINING_TB.Visible = False
             Form4.PROGRAMME_TB.Visible = False
-            Form4.PROGRAMME.Visible = False
-            Form4.TA_SUPERVISER.Visible = False
+            Form4.Label8.Visible = False
+            Form4.Label10.Visible = False
             Form4.TA_SUPERVISER_TB.Visible = False
-            Form4.GUIDE.Visible = False
-            Form4.GUIDE.Visible = False
+            Form4.Label11.Visible = False
+            Form4.GUIDE_TB.Visible = False
 
         End If
         Me.Hide()
