@@ -81,7 +81,7 @@ Partial Class Form2
         '
         Me.USERNAME.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.USERNAME.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.USERNAME.Location = New System.Drawing.Point(667, 225)
+        Me.USERNAME.Location = New System.Drawing.Point(657, 225)
         Me.USERNAME.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.USERNAME.Name = "USERNAME"
         Me.USERNAME.Size = New System.Drawing.Size(353, 30)
@@ -91,7 +91,7 @@ Partial Class Form2
         '
         Me.PASSWORD.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PASSWORD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PASSWORD.Location = New System.Drawing.Point(667, 262)
+        Me.PASSWORD.Location = New System.Drawing.Point(657, 262)
         Me.PASSWORD.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PASSWORD.Name = "PASSWORD"
         Me.PASSWORD.Size = New System.Drawing.Size(353, 30)
@@ -101,7 +101,7 @@ Partial Class Form2
         '
         Me.FIRST_NAME.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FIRST_NAME.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FIRST_NAME.Location = New System.Drawing.Point(667, 300)
+        Me.FIRST_NAME.Location = New System.Drawing.Point(657, 300)
         Me.FIRST_NAME.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FIRST_NAME.Name = "FIRST_NAME"
         Me.FIRST_NAME.Size = New System.Drawing.Size(353, 30)
@@ -111,7 +111,7 @@ Partial Class Form2
         '
         Me.LAST_NAME.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LAST_NAME.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAST_NAME.Location = New System.Drawing.Point(667, 337)
+        Me.LAST_NAME.Location = New System.Drawing.Point(657, 337)
         Me.LAST_NAME.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LAST_NAME.Name = "LAST_NAME"
         Me.LAST_NAME.Size = New System.Drawing.Size(353, 30)
@@ -121,7 +121,7 @@ Partial Class Form2
         '
         Me.YEAR.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.YEAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.YEAR.Location = New System.Drawing.Point(667, 438)
+        Me.YEAR.Location = New System.Drawing.Point(657, 438)
         Me.YEAR.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.YEAR.Name = "YEAR"
         Me.YEAR.Size = New System.Drawing.Size(353, 30)
@@ -131,7 +131,7 @@ Partial Class Form2
         '
         Me.ROLL_NO.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ROLL_NO.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ROLL_NO.Location = New System.Drawing.Point(667, 478)
+        Me.ROLL_NO.Location = New System.Drawing.Point(657, 478)
         Me.ROLL_NO.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ROLL_NO.Name = "ROLL_NO"
         Me.ROLL_NO.Size = New System.Drawing.Size(353, 30)
@@ -144,7 +144,7 @@ Partial Class Form2
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(482, 231)
+        Me.Label1.Location = New System.Drawing.Point(472, 231)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(93, 21)
         Me.Label1.TabIndex = 12
@@ -158,7 +158,7 @@ Partial Class Form2
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(487, 268)
+        Me.Label2.Location = New System.Drawing.Point(477, 268)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 21)
         Me.Label2.TabIndex = 13
@@ -172,7 +172,7 @@ Partial Class Form2
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(479, 306)
+        Me.Label3.Location = New System.Drawing.Point(469, 306)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(96, 21)
         Me.Label3.TabIndex = 14
@@ -186,7 +186,7 @@ Partial Class Form2
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(475, 343)
+        Me.Label4.Location = New System.Drawing.Point(465, 343)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 21)
         Me.Label4.TabIndex = 15
@@ -200,7 +200,7 @@ Partial Class Form2
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(526, 444)
+        Me.Label5.Location = New System.Drawing.Point(516, 444)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(49, 21)
         Me.Label5.TabIndex = 16
@@ -214,7 +214,7 @@ Partial Class Form2
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(504, 484)
+        Me.Label6.Location = New System.Drawing.Point(494, 484)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(71, 21)
         Me.Label6.TabIndex = 17
@@ -228,7 +228,7 @@ Partial Class Form2
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(470, 522)
+        Me.Label7.Location = New System.Drawing.Point(460, 522)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(105, 21)
         Me.Label7.TabIndex = 18
@@ -242,7 +242,7 @@ Partial Class Form2
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(456, 562)
+        Me.Label8.Location = New System.Drawing.Point(446, 562)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(119, 21)
         Me.Label8.TabIndex = 19
@@ -256,7 +256,7 @@ Partial Class Form2
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(514, 599)
+        Me.Label9.Location = New System.Drawing.Point(504, 599)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 21)
         Me.Label9.TabIndex = 20
@@ -270,7 +270,7 @@ Partial Class Form2
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(462, 638)
+        Me.Label10.Location = New System.Drawing.Point(452, 638)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(113, 21)
         Me.Label10.TabIndex = 21
@@ -284,7 +284,7 @@ Partial Class Form2
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label11.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(462, 444)
+        Me.Label11.Location = New System.Drawing.Point(452, 444)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(113, 21)
         Me.Label11.TabIndex = 22
@@ -298,7 +298,7 @@ Partial Class Form2
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label12.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(467, 484)
+        Me.Label12.Location = New System.Drawing.Point(457, 484)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(108, 21)
         Me.Label12.TabIndex = 23
@@ -312,7 +312,7 @@ Partial Class Form2
         Me.DESIGNATION.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DESIGNATION.FormattingEnabled = True
         Me.DESIGNATION.Items.AddRange(New Object() {"ADOAA", "Professor", "Associate Professor", "Assistant Professor"})
-        Me.DESIGNATION.Location = New System.Drawing.Point(667, 476)
+        Me.DESIGNATION.Location = New System.Drawing.Point(657, 476)
         Me.DESIGNATION.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DESIGNATION.Name = "DESIGNATION"
         Me.DESIGNATION.Size = New System.Drawing.Size(353, 33)
@@ -324,7 +324,7 @@ Partial Class Form2
         Me.Student_Checkbox.AutoSize = True
         Me.Student_Checkbox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Student_Checkbox.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Student_Checkbox.Location = New System.Drawing.Point(670, 396)
+        Me.Student_Checkbox.Location = New System.Drawing.Point(660, 396)
         Me.Student_Checkbox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Student_Checkbox.Name = "Student_Checkbox"
         Me.Student_Checkbox.Size = New System.Drawing.Size(85, 23)
@@ -337,7 +337,7 @@ Partial Class Form2
         Me.Faculty_Checkbox.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Faculty_Checkbox.AutoSize = True
         Me.Faculty_Checkbox.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Faculty_Checkbox.Location = New System.Drawing.Point(802, 396)
+        Me.Faculty_Checkbox.Location = New System.Drawing.Point(792, 396)
         Me.Faculty_Checkbox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Faculty_Checkbox.Name = "Faculty_Checkbox"
         Me.Faculty_Checkbox.Size = New System.Drawing.Size(82, 23)
@@ -352,7 +352,7 @@ Partial Class Form2
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(483, 395)
+        Me.Label13.Location = New System.Drawing.Point(473, 395)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(92, 21)
         Me.Label13.TabIndex = 27
@@ -367,7 +367,7 @@ Partial Class Form2
         Me.SUBMIT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SUBMIT.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SUBMIT.ForeColor = System.Drawing.SystemColors.InactiveBorder
-        Me.SUBMIT.Location = New System.Drawing.Point(867, 897)
+        Me.SUBMIT.Location = New System.Drawing.Point(857, 897)
         Me.SUBMIT.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SUBMIT.Name = "SUBMIT"
         Me.SUBMIT.Size = New System.Drawing.Size(155, 62)
@@ -382,7 +382,7 @@ Partial Class Form2
         Me.Label14.BackColor = System.Drawing.Color.Teal
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(343, 148)
+        Me.Label14.Location = New System.Drawing.Point(333, 148)
         Me.Label14.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(533, 30)
@@ -403,7 +403,7 @@ Partial Class Form2
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(1319, 57)
+        Me.TextBox1.Size = New System.Drawing.Size(1298, 57)
         Me.TextBox1.TabIndex = 32
         '
         'Label15
@@ -414,7 +414,7 @@ Partial Class Form2
         Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label15.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Teal
-        Me.Label15.Location = New System.Drawing.Point(342, 65)
+        Me.Label15.Location = New System.Drawing.Point(332, 65)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(197, 37)
         Me.Label15.TabIndex = 30
@@ -428,7 +428,7 @@ Partial Class Form2
         Me.lblLeaSanSys.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lblLeaSanSys.Font = New System.Drawing.Font("Century Gothic", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLeaSanSys.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.lblLeaSanSys.Location = New System.Drawing.Point(339, 25)
+        Me.lblLeaSanSys.Location = New System.Drawing.Point(329, 25)
         Me.lblLeaSanSys.Name = "lblLeaSanSys"
         Me.lblLeaSanSys.Size = New System.Drawing.Size(527, 47)
         Me.lblLeaSanSys.TabIndex = 29
@@ -482,7 +482,7 @@ Partial Class Form2
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.InactiveBorder
-        Me.Button1.Location = New System.Drawing.Point(667, 897)
+        Me.Button1.Location = New System.Drawing.Point(657, 897)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(155, 62)
@@ -496,7 +496,7 @@ Partial Class Form2
         Me.DEPARTMENT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DEPARTMENT.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DEPARTMENT.Items.AddRange(New Object() {"Biotechnology and sciences", "Chemical", "Department of Design", "Computer Science", "Chemistry", "Electrical", "Humanities and Social Sciences", "Physics", "Mathematics", "Mechanical", "Civil"})
-        Me.DEPARTMENT.Location = New System.Drawing.Point(666, 634)
+        Me.DEPARTMENT.Location = New System.Drawing.Point(656, 634)
         Me.DEPARTMENT.Margin = New System.Windows.Forms.Padding(4)
         Me.DEPARTMENT.Name = "DEPARTMENT"
         Me.DEPARTMENT.Size = New System.Drawing.Size(353, 33)
@@ -509,7 +509,7 @@ Partial Class Form2
         Me.PROGRAMME.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PROGRAMME.FormattingEnabled = True
         Me.PROGRAMME.Items.AddRange(New Object() {"M.Tech/M.Sc", "PhD"})
-        Me.PROGRAMME.Location = New System.Drawing.Point(667, 516)
+        Me.PROGRAMME.Location = New System.Drawing.Point(657, 516)
         Me.PROGRAMME.Margin = New System.Windows.Forms.Padding(4)
         Me.PROGRAMME.Name = "PROGRAMME"
         Me.PROGRAMME.Size = New System.Drawing.Size(353, 33)
@@ -520,7 +520,7 @@ Partial Class Form2
         Me.HOD_CheckBox.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.HOD_CheckBox.AutoSize = True
         Me.HOD_CheckBox.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HOD_CheckBox.Location = New System.Drawing.Point(939, 396)
+        Me.HOD_CheckBox.Location = New System.Drawing.Point(929, 396)
         Me.HOD_CheckBox.Margin = New System.Windows.Forms.Padding(4)
         Me.HOD_CheckBox.Name = "HOD_CheckBox"
         Me.HOD_CheckBox.Size = New System.Drawing.Size(63, 23)
@@ -534,7 +534,7 @@ Partial Class Form2
         Me.DEPARTMENT_FAC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.DEPARTMENT_FAC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DEPARTMENT_FAC.Items.AddRange(New Object() {"Biotechnology and sciences", "Chemical", "Department of Design", "Computer Science", "Chemistry", "Electrical", "Humanities and Social Sciences", "Physics", "Mathematics", "Mechanical", "Civil"})
-        Me.DEPARTMENT_FAC.Location = New System.Drawing.Point(667, 436)
+        Me.DEPARTMENT_FAC.Location = New System.Drawing.Point(657, 436)
         Me.DEPARTMENT_FAC.Margin = New System.Windows.Forms.Padding(4)
         Me.DEPARTMENT_FAC.Name = "DEPARTMENT_FAC"
         Me.DEPARTMENT_FAC.Size = New System.Drawing.Size(353, 33)
@@ -544,7 +544,7 @@ Partial Class Form2
         '
         Me.VALIDATION.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.VALIDATION.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VALIDATION.Location = New System.Drawing.Point(667, 793)
+        Me.VALIDATION.Location = New System.Drawing.Point(657, 793)
         Me.VALIDATION.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.VALIDATION.Name = "VALIDATION"
         Me.VALIDATION.Size = New System.Drawing.Size(353, 30)
@@ -557,7 +557,7 @@ Partial Class Form2
         Me.UPDATE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UPDATE.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UPDATE.ForeColor = System.Drawing.SystemColors.InactiveBorder
-        Me.UPDATE.Location = New System.Drawing.Point(867, 897)
+        Me.UPDATE.Location = New System.Drawing.Point(857, 897)
         Me.UPDATE.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UPDATE.Name = "UPDATE"
         Me.UPDATE.Size = New System.Drawing.Size(155, 62)
@@ -578,7 +578,7 @@ Partial Class Form2
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(328, 1731)
+        Me.TextBox2.Size = New System.Drawing.Size(328, 1912)
         Me.TextBox2.TabIndex = 34
         '
         'Label18
@@ -588,7 +588,7 @@ Partial Class Form2
         Me.Label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label18.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.LightCoral
-        Me.Label18.Location = New System.Drawing.Point(662, 767)
+        Me.Label18.Location = New System.Drawing.Point(652, 767)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(146, 21)
         Me.Label18.TabIndex = 47
@@ -603,7 +603,7 @@ Partial Class Form2
         Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label19.Location = New System.Drawing.Point(487, 716)
+        Me.Label19.Location = New System.Drawing.Point(477, 716)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(88, 21)
         Me.Label19.TabIndex = 48
@@ -620,7 +620,7 @@ Partial Class Form2
         Me.Button2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Image = Global.Login.My.Resources.Resources.refresh_300
-        Me.Button2.Location = New System.Drawing.Point(965, 703)
+        Me.Button2.Location = New System.Drawing.Point(955, 703)
         Me.Button2.Margin = New System.Windows.Forms.Padding(0)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(57, 50)
@@ -632,7 +632,7 @@ Partial Class Form2
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox2.BackColor = System.Drawing.Color.DarkSlateGray
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Location = New System.Drawing.Point(670, 703)
+        Me.PictureBox2.Location = New System.Drawing.Point(660, 703)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(295, 50)
@@ -643,7 +643,7 @@ Partial Class Form2
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(179, 14)
+        Me.PictureBox1.Location = New System.Drawing.Point(169, 14)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(135, 101)

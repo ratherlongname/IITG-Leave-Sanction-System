@@ -555,7 +555,7 @@
         'RefreshViewLeaves()
         Dim user As String = Label1.Text
         Access.AddParam("@user", user)
-        Access.ExecQuery("SELECT Notifications FROM Student_DB WHERE Username=@user")
+        Access.ExecQuery("SELECT Notification FROM Student_DB WHERE Username=@user")
         If Not Access.RecordCount > 0 Then
             Access.AddParam("@user", user)
             Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
@@ -571,14 +571,38 @@
                 If c <> "," Then
                     UID = UID + c
                 Else
+
+                    MessageBox.Show(UID)
                     Access.AddParam("@UID", UID)
-                    Access.ExecQuery("SELECT * FROM Leave_Update_ID WHERE Update_ID=@UID")
+                    Access.ExecQuery("SELECT * FROM Leave_Update_DB WHERE Update_ID=@UID")
 
                     Dim helper As String = Access.DBDT.Rows(0).Item("Date/Time")
                     Dim v As New ListViewItem(helper)
+                    Dim help2 As String = Access.DBDT.Rows(0).Item("Leave_ID")
                     v.SubItems.Add(Access.DBDT.Rows(0).Item("Leave_ID"))
                     v.SubItems.Add(Access.DBDT.Rows(0).Item("Remark"))
-                    v.SubItems.Add("description still needs to be generated")
+                    Dim description As String = Nothing
+                    Dim type As Integer = Access.DBDT.Rows(0).Item(7)
+                    Access.ExecQuery("SELECT * FROM Leave_DB WHERE Leave_ID='" & help2 & "'")
+                    Dim type_of_leave As String = Access.DBDT.Rows(0).Item("Type_of_Leave")
+                    If type = 1 Then
+                        description = "User " + Access.DBDT.Rows(0).Item(3) + "has applied for a leave with leave_id " + Access.DBDT.Rows(0).Item("Leave_ID")
+                    End If
+                    If type = 2 Then
+                        'our username
+                        Dim help6 As String = Label1.Text
+                        If help6 = Access.DBDT.Rows(0).Item(3) Then
+                            description = "Your leave with leave_ID " + Access.DBDT.Rows(0).Item("Leave_ID") + "has been " + Access.DBDT.Rows(0).Item(5) + "by " + Access.DBDT.Rows(0).Item(6)
+                        Else
+                            description = "Your colleague " + Access.DBDT.Rows(0).Item(6) + " has " + Access.DBDT.Rows(0).Item(5) + " the leave with leave_ID " + Access.DBDT.Rows(0).Item("Leave_ID")
+                        End If
+                    End If
+                    If type = 3 Then
+                        description = "User " + Access.DBDT.Rows(0).Item(3) + " has cancelled for the leave application with leave_ID " + Access.DBDT.Rows(0).Item("Leave_ID")
+                    End If
+                    v.SubItems.Add(description)
+                    NOTIFICATIONS.Items.Add(v)
+                    UID = Nothing
                 End If
             Next
         End If
@@ -952,29 +976,6 @@
             End If
 
         End If
-
-
-
-
-
-
-
-
-        'Access.ExecQuery("SELECT * FROM Leave_DB WHERE Username='" & Label1.Text & "'")
-        'If Access.RecordCount > 0 Then
-        '    For Each r As DataRow In Access.DBDT.Rows
-        '        Dim dum As String = r(1)
-        '        Dim v As New ListViewItem(dum)
-        '        v.SubItems.Add(r(6))
-        '        v.SubItems.Add(r(3))
-        '        v.SubItems.Add(r(4))
-        '        v.SubItems.Add(r(5))
-        '        v.SubItems.Add(r(2))
-        '        lsviewViewLeavesListOfLeaves.Items.Add(v)
-        '    Next
-        'End If
-        ' TODO
-
     End Sub
 
     Private Sub Date_Calc_DateChanged(sender As Object, e As DateRangeEventArgs) Handles Date_Calc.DateChanged
@@ -1012,17 +1013,28 @@
         Dim list_of_Update As String = l_id
         Dim list_of_participating_users As String = ""
 
-        Dim s As String = "HOD"
-        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & s & "'")
-        Dim hod As String = Access.DBDT.Rows(0).Item(0)
+        Dim hod As String
+        Access.AddParam("@desgn", "HOD")
+        Access.AddParam("@dept", Label3.Text())
+        Access.ExecQuery("SELECT Username FROM Faculty_DB WHERE Designation=@desgn and Department=@dept")
+        If Access.RecordCount > 0 Then
+            hod = Access.DBDT.Rows(0).Item("Username")
+        Else
+            MsgBox("HOD from your department isn't registered yet.")
+        End If
 
-        Dim s2 As String = "ADOAA"
-        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & s2 & "'")
-        Dim adoaa As String = Access.DBDT.Rows(0).Item("Username")
+        Dim adoaa As String
+        Access.AddParam("@desgn", "ADOAA")
+        Access.ExecQuery("SELECT Username FROM Faculty_DB WHERE Designation=@desgn")
+        If Access.RecordCount > 0 Then
+            adoaa = Access.DBDT.Rows(0).Item("Username")
+        Else
+            MsgBox("ADOAA isn't registered yet.")
+        End If
+
 
         Access.AddParam("@user", username)
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username=@user")
-
 
 
         'If the Student is logged in
@@ -1503,6 +1515,11 @@
             Form4.TA_SUPERVISER_TB.Visible = False
             Form4.Label11.Visible = False
             Form4.GUIDE_TB.Visible = False
+            Form4.Label18.Visible = False
+            Form4.Label21.Visible = False
+            Form4.Label23.Visible = False
+            Form4.Label19.Visible = False
+
 
 
         End If
@@ -1604,7 +1621,7 @@
 
         ' Check if leave is of student
         Access.AddParam("@user", user)
-        Access.ExecQuery("SELECT Notifications FROM Student_DB WHERE Username=@user")
+        Access.ExecQuery("SELECT Notification FROM Student_DB WHERE Username=@user")
         If Access.RecordCount > 0 Then
             ' It is a student's leave
             Dim notif As String
@@ -1830,7 +1847,10 @@
             Form4.TA_SUPERVISER_TB.Visible = False
             Form4.Label11.Visible = False
             Form4.GUIDE_TB.Visible = False
-
+            Form4.Label18.Visible = False
+            Form4.Label21.Visible = False
+            Form4.Label23.Visible = False
+            Form4.Label19.Visible = False
         End If
         Me.Hide()
         Form4.Show()
@@ -1894,9 +1914,5 @@
         End If
         Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         admin_refresh()
-    End Sub
-
-    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class
