@@ -63,13 +63,6 @@ Partial Class Form3
         Me.Remark_Box = New System.Windows.Forms.RichTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.tabpgLeavesToApprove = New System.Windows.Forms.TabPage()
-        Me.APPROVED = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabpgNotifications = New System.Windows.Forms.TabPage()
         Me.NOTIFICATIONS = New System.Windows.Forms.ListView()
         Me.ColumnHeader10 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -90,6 +83,18 @@ Partial Class Form3
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BALANCES = New System.Windows.Forms.Button()
+        Me.btnLeavestobeApprovedReject = New System.Windows.Forms.Button()
+        Me.richtxtboxLeavestobeApprovedRemarks = New System.Windows.Forms.RichTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnLeavestobeApprovedAccept = New System.Windows.Forms.Button()
+        Me.btnLeavestobeApprovedView = New System.Windows.Forms.Button()
+        Me.APPROVED = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
@@ -506,6 +511,11 @@ Partial Class Form3
         '
         'tabpgLeavesToApprove
         '
+        Me.tabpgLeavesToApprove.Controls.Add(Me.btnLeavestobeApprovedReject)
+        Me.tabpgLeavesToApprove.Controls.Add(Me.richtxtboxLeavestobeApprovedRemarks)
+        Me.tabpgLeavesToApprove.Controls.Add(Me.Label10)
+        Me.tabpgLeavesToApprove.Controls.Add(Me.btnLeavestobeApprovedAccept)
+        Me.tabpgLeavesToApprove.Controls.Add(Me.btnLeavestobeApprovedView)
         Me.tabpgLeavesToApprove.Controls.Add(Me.APPROVED)
         Me.tabpgLeavesToApprove.Location = New System.Drawing.Point(4, 25)
         Me.tabpgLeavesToApprove.Margin = New System.Windows.Forms.Padding(4)
@@ -514,46 +524,6 @@ Partial Class Form3
         Me.tabpgLeavesToApprove.TabIndex = 2
         Me.tabpgLeavesToApprove.Text = "Leaves to Approve"
         Me.tabpgLeavesToApprove.UseVisualStyleBackColor = True
-        '
-        'APPROVED
-        '
-        Me.APPROVED.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
-        Me.APPROVED.Location = New System.Drawing.Point(244, 54)
-        Me.APPROVED.Name = "APPROVED"
-        Me.APPROVED.Size = New System.Drawing.Size(572, 319)
-        Me.APPROVED.TabIndex = 0
-        Me.APPROVED.UseCompatibleStateImageBehavior = False
-        Me.APPROVED.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "LEAVE_ID"
-        Me.ColumnHeader1.Width = 85
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "APPLICANT"
-        Me.ColumnHeader2.Width = 93
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "DATE/TIME APPLIED"
-        Me.ColumnHeader3.Width = 97
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "START DATE"
-        Me.ColumnHeader4.Width = 137
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "END DATE"
-        Me.ColumnHeader5.Width = 84
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "TYPE OF LEAVE"
-        Me.ColumnHeader6.Width = 267
         '
         'tabpgNotifications
         '
@@ -711,6 +681,98 @@ Partial Class Form3
         Me.BALANCES.Text = "Balances"
         Me.BALANCES.UseVisualStyleBackColor = True
         '
+        'btnLeavestobeApprovedReject
+        '
+        Me.btnLeavestobeApprovedReject.Location = New System.Drawing.Point(527, 605)
+        Me.btnLeavestobeApprovedReject.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedReject.Name = "btnLeavestobeApprovedReject"
+        Me.btnLeavestobeApprovedReject.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedReject.TabIndex = 25
+        Me.btnLeavestobeApprovedReject.Text = "Reject"
+        Me.btnLeavestobeApprovedReject.UseVisualStyleBackColor = True
+        '
+        'richtxtboxLeavestobeApprovedRemarks
+        '
+        Me.richtxtboxLeavestobeApprovedRemarks.Location = New System.Drawing.Point(398, 461)
+        Me.richtxtboxLeavestobeApprovedRemarks.Margin = New System.Windows.Forms.Padding(4)
+        Me.richtxtboxLeavestobeApprovedRemarks.Name = "richtxtboxLeavestobeApprovedRemarks"
+        Me.richtxtboxLeavestobeApprovedRemarks.Size = New System.Drawing.Size(301, 117)
+        Me.richtxtboxLeavestobeApprovedRemarks.TabIndex = 23
+        Me.richtxtboxLeavestobeApprovedRemarks.Text = ""
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(274, 464)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(116, 17)
+        Me.Label10.TabIndex = 24
+        Me.Label10.Text = "Remarks (if any):"
+        '
+        'btnLeavestobeApprovedAccept
+        '
+        Me.btnLeavestobeApprovedAccept.Location = New System.Drawing.Point(419, 605)
+        Me.btnLeavestobeApprovedAccept.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedAccept.Name = "btnLeavestobeApprovedAccept"
+        Me.btnLeavestobeApprovedAccept.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedAccept.TabIndex = 22
+        Me.btnLeavestobeApprovedAccept.Text = "Accept"
+        Me.btnLeavestobeApprovedAccept.UseVisualStyleBackColor = True
+        '
+        'btnLeavestobeApprovedView
+        '
+        Me.btnLeavestobeApprovedView.Location = New System.Drawing.Point(179, 384)
+        Me.btnLeavestobeApprovedView.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLeavestobeApprovedView.Name = "btnLeavestobeApprovedView"
+        Me.btnLeavestobeApprovedView.Size = New System.Drawing.Size(100, 28)
+        Me.btnLeavestobeApprovedView.TabIndex = 21
+        Me.btnLeavestobeApprovedView.Text = "View"
+        Me.btnLeavestobeApprovedView.UseVisualStyleBackColor = True
+        '
+        'APPROVED
+        '
+        Me.APPROVED.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
+        Me.APPROVED.FullRowSelect = True
+        Me.APPROVED.Location = New System.Drawing.Point(179, 58)
+        Me.APPROVED.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.APPROVED.MultiSelect = False
+        Me.APPROVED.Name = "APPROVED"
+        Me.APPROVED.Size = New System.Drawing.Size(852, 319)
+        Me.APPROVED.TabIndex = 20
+        Me.APPROVED.UseCompatibleStateImageBehavior = False
+        Me.APPROVED.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "LEAVE_ID"
+        Me.ColumnHeader1.Width = 85
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "APPLICANT"
+        Me.ColumnHeader2.Width = 93
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "DATE/TIME APPLIED"
+        Me.ColumnHeader3.Width = 97
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "START DATE"
+        Me.ColumnHeader4.Width = 137
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "END DATE"
+        Me.ColumnHeader5.Width = 84
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "TYPE OF LEAVE"
+        Me.ColumnHeader6.Width = 267
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -734,6 +796,7 @@ Partial Class Form3
         Me.tabpgNewLeaves.PerformLayout()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabpgLeavesToApprove.ResumeLayout(False)
+        Me.tabpgLeavesToApprove.PerformLayout()
         Me.tabpgNotifications.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -779,13 +842,6 @@ Partial Class Form3
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dgv As System.Windows.Forms.DataGridView
     Friend WithEvents BALANCES As System.Windows.Forms.Button
-    Friend WithEvents APPROVED As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
     Friend WithEvents CANCELLED As System.Windows.Forms.CheckBox
     Friend WithEvents MEDICAL As System.Windows.Forms.CheckBox
     Friend WithEvents ACADEMIC As System.Windows.Forms.CheckBox
@@ -808,4 +864,16 @@ Partial Class Form3
     Friend WithEvents DISAPPROVE As System.Windows.Forms.Button
     Friend WithEvents APPROVE As System.Windows.Forms.Button
     Friend WithEvents VIEW As System.Windows.Forms.Button
+    Friend WithEvents btnLeavestobeApprovedReject As System.Windows.Forms.Button
+    Friend WithEvents richtxtboxLeavestobeApprovedRemarks As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents btnLeavestobeApprovedAccept As System.Windows.Forms.Button
+    Friend WithEvents btnLeavestobeApprovedView As System.Windows.Forms.Button
+    Friend WithEvents APPROVED As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader5 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader6 As System.Windows.Forms.ColumnHeader
 End Class
