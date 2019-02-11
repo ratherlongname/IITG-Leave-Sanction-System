@@ -13,7 +13,7 @@
             Me.BALANCES.Visible = False
             Me.Edit.Visible = False
 
-            Dim help As String = "NO"
+            Dim help As String = "PENDING"
             Access.ExecQuery("SELECT * FROM Student_DB WHERE Approved='" & help & "'")
             If Access.RecordCount > 0 Then
                 For Each r As DataRow In Access.DBDT.Rows
@@ -1426,8 +1426,20 @@
         End If
 
         Dim username As String = dum.SubItems(0).Text()
-
-        ' TODO
+        Dim help As String = "YES"
+        Dim dum2 As New ListViewItem
+        dum2 = ADMIN_SelectedItem()
+        If dum2.SubItems(4).Text() = "" Then
+            MsgBox("No entry selected!")
+            Exit Sub
+        End If
+        Dim type As String = dum.SubItems(4).Text()
+        If type = "FACULTY" Then
+            Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        Else
+            Access.ExecQuery("UPDATE Student_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        End If
+        Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
     End Sub
 
     'FOR LEAVES TO BE APPROVED
@@ -1672,4 +1684,29 @@
 
         Return selectedEntry
     End Function
+
+    Private Sub DISAPPROVE_Click(sender As Object, e As EventArgs) Handles DISAPPROVE.Click
+        Dim dum As New ListViewItem
+        dum = ADMIN_SelectedItem()
+        If dum.SubItems(0).Text() = "" Then
+            MsgBox("No entry selected!")
+            Exit Sub
+        End If
+
+        Dim username As String = dum.SubItems(0).Text()
+        Dim help As String = "NO"
+        Dim dum2 As New ListViewItem
+        dum2 = ADMIN_SelectedItem()
+        If dum2.SubItems(4).Text() = "" Then
+            MsgBox("No entry selected!")
+            Exit Sub
+        End If
+        Dim type As String = dum.SubItems(4).Text()
+        If type = "FACULTY" Then
+            Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        Else
+            Access.ExecQuery("UPDATE Student_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        End If
+        Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+    End Sub
 End Class

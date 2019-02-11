@@ -854,7 +854,7 @@ Partial Class Form3
         '
         Me.ADMIN.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
         Me.ADMIN.HideSelection = False
-        Me.ADMIN.Location = New System.Drawing.Point(256, 25)
+        Me.ADMIN.Location = New System.Drawing.Point(296, 22)
         Me.ADMIN.Name = "ADMIN"
         Me.ADMIN.Size = New System.Drawing.Size(572, 300)
         Me.ADMIN.TabIndex = 0
