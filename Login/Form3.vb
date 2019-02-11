@@ -3,48 +3,52 @@
     Dim Start_Date As Date
     Dim End_Date As Date
 
+    Private Sub admin_refresh()
+        ADMIN.Items.Clear()
+        Dim help As String = "PENDING"
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Approved='" & help & "'")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                Dim dum As String = r(0)
+                Dim dum2 As String = "STUDENT"
+                Dim v As New ListViewItem(dum)
+                v.SubItems.Add(r(5))
+                v.SubItems.Add(r(6))
+                v.SubItems.Add(r(4))
+                v.SubItems.Add(dum2)
+                ADMIN.Items.Add(v)
+            Next
+        End If
+
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Approved='" & help & "'")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                Dim dum As String = r(0)
+                Dim dum2 As String = "FACULTY"
+                Dim v As New ListViewItem(dum)
+                v.SubItems.Add(r(2))
+                v.SubItems.Add(r(3))
+                v.SubItems.Add(r(4))
+                v.SubItems.Add(dum2)
+                ADMIN.Items.Add(v)
+            Next
+        End If
+    End Sub
     Private Sub Form3_Shown(sender As Object, e As EventArgs) Handles Me.Shown
 
         If Label1.Text = "ADMIN" Then
+            Me.VIEW_3.Visible = False
             Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
             Me.tabctrlMainTabs.TabPages.Remove(tabpgViewLeaves)
             Me.tabctrlMainTabs.TabPages.Remove(tabpgNotifications)
             Me.tabctrlMainTabs.TabPages.Remove(tabpgNewLeaves)
             Me.BALANCES.Visible = False
             Me.Edit.Visible = False
-
-            Dim help As String = "PENDING"
-            Access.ExecQuery("SELECT * FROM Student_DB WHERE Approved='" & help & "'")
-            If Access.RecordCount > 0 Then
-                For Each r As DataRow In Access.DBDT.Rows
-                    Dim dum As String = r(0)
-                    Dim dum2 As String = "STUDENT"
-                    Dim v As New ListViewItem(dum)
-                    v.SubItems.Add(r(5))
-                    v.SubItems.Add(r(6))
-                    v.SubItems.Add(r(4))
-                    v.SubItems.Add(dum2)
-                    ADMIN.Items.Add(v)
-                Next
-            End If
-
-            Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Approved='" & help & "'")
-            If Access.RecordCount > 0 Then
-                For Each r As DataRow In Access.DBDT.Rows
-                    Dim dum As String = r(0)
-                    Dim dum2 As String = "FACULTY"
-                    Dim v As New ListViewItem(dum)
-                    v.SubItems.Add(r(2))
-                    v.SubItems.Add(r(3))
-                    v.SubItems.Add(r(4))
-                    v.SubItems.Add(dum2)
-                    ADMIN.Items.Add(v)
-                Next
-            End If
+            admin_refresh()
         Else
             Me.tabctrlMainTabs.TabPages.Remove(TabPage1)
         End If
-        If Label4.Text <> "M.Tech/M.Sc" And Label4.Text <> "PhD" Then
+        If Label4.Text = "M.Tech/M.Sc" Or Label4.Text = "PhD" Then
             Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
         End If
 
@@ -993,7 +997,6 @@
                 l_id = l_id + c
             End If
         Next
-        'MessageBox.Show(l_id)
         Dim list_of_Update As String = l_id
         Dim list_of_participating_users As String = ""
 
@@ -1012,65 +1015,65 @@
 
         'If the Student is logged in
         If Access.RecordCount > 0 Then
-            'Adding TA Superviser and guide in list of participating users
             Dim ta As String = Access.DBDT.Rows(0).Item("TA_Superviser")
             Dim guide As String = Access.DBDT.Rows(0).Item("Guide")
             Dim BALANCE_LEFT As Integer = Access.DBDT.Rows(0).Item(type)
-            If type = "Ordinary" Then
-                If BALANCE_LEFT < number_of_days Then
-                    MessageBox.Show("Can't apply for ordinary leave")
-                    Exit Sub
-                Else
-                    Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Ordinary=" & help & " WHERE Username='" & username & "'")
-                End If
-            ElseIf type = "Medical" Then
-                If BALANCE_LEFT < number_of_days Then
-                    MessageBox.Show("Can't apply for medical leave")
-                    Exit Sub
-                Else
-                    Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Medical=" & help & " WHERE Username='" & username & "'")
-                End If
+
+            If number_of_days > BALANCE_LEFT Then
+                Dim helper As Integer = number_of_days - BALANCE_LEFT
+                MessageBox.Show("Stipend will be cut for " & helper & " days.")
+
+                Access.AddParam("@user", username)
+                Access.AddParam("@zero", 0)
+                Dim query As String = "UPDATE Student_DB SET " + type + "=@zero WHERE Username=@user"
+                Access.ExecQuery(query)
+
+                Access.AddParam("@user", username)
+                Access.ExecQuery("SELECT Days_of_stipend_cut FROM Student_DB WHERE Username=@user")
+                Dim stipend As Integer = Access.DBDT.Rows(0).Item(0)
+                stipend = stipend + helper
+
+                Access.AddParam("@user", username)
+                Access.AddParam("@stip", stipend)
+                Access.ExecQuery("UPDATE Student_DB SET Days_of_stipend_cut=@stip WHERE Username=@user")
+
             Else
-                If BALANCE_LEFT < number_of_days Then
-                    MessageBox.Show("Can't apply for academic leave")
-                    Exit Sub
-                Else
-                    Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Academic=" & help & " WHERE Username='" & username & "'")
-                End If
+                Dim helper As Integer = BALANCE_LEFT - number_of_days
+
+                Access.AddParam("@user", username)
+                Access.AddParam("@val", helper)
+                Dim query As String = "UPDATE Student_DB SET " + type + "=@val WHERE Username=@user"
+                Access.ExecQuery(query)
+
             End If
 
 
             If ta <> "" Then
                 list_of_participating_users = list_of_participating_users + ta + ","
-                Dim help_3 As String = ta
-                Access.AddParam("@help_3", help_3)
-                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
-                Dim help_4 As String = Nothing
+                Access.AddParam("@ta", ta)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@ta")
+                Dim listofincoming As String = Nothing
                 If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
-                    help_4 = l_id + ","
+                    listofincoming = l_id + ","
                 Else
-                    help_4 = Access.DBDT.Rows(0).Item(0)
-                    help_4 = help_4 + l_id + ","
+                    listofincoming = Access.DBDT.Rows(0).Item(0)
+                    listofincoming = listofincoming + l_id + ","
                 End If
-                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & listofincoming & "' WHERE Username='" & ta & "'")
             End If
 
             If guide <> "" Then
                 list_of_participating_users = list_of_participating_users + guide + ","
-                Dim help_3 As String = guide
-                Access.AddParam("@help_3", help_3)
-                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
-                Dim help_4 As String = Nothing
+                Access.AddParam("@guide", guide)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@guide")
+                Dim listofincoming As String = Nothing
                 If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
-                    help_4 = l_id + ","
+                    listofincoming = l_id + ","
                 Else
-                    help_4 = Access.DBDT.Rows(0).Item(0)
-                    help_4 = help_4 + l_id + ","
+                    listofincoming = Access.DBDT.Rows(0).Item(0)
+                    listofincoming = listofincoming + l_id + ","
                 End If
-                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & listofincoming & "' WHERE Username='" & guide & "'")
             End If
 
             'Deciding the UPSTREAM of leave by checking leave duration and type of leave
@@ -1104,6 +1107,7 @@
                     Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
             End If
+
             If Type_Of_Leave.Text = "Medical" Then
                 If number_of_days > 15 Then
                     list_of_participating_users = list_of_participating_users + hod + ","
@@ -1164,6 +1168,7 @@
                     Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
             End If
+
             'Entering the Data into the Leave DataBase
             Access.AddParam("@user2", username)
             Access.AddParam("@date2", d)
@@ -1189,6 +1194,32 @@
             Access.AddParam("@dum2", dum2)
             Access.AddParam("@user4", username)
             Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4)")
+
+            ' Send notification to all participating users
+            Dim participant As String = ""
+            For Each c In list_of_participating_users
+                If c <> "," Then
+                    participant = participant + c
+                Else
+                    Access.AddParam("@user", participant)
+                    Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
+
+                    Dim notif As String
+
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        notif = l_id + ","
+                    Else
+                        notif = Access.DBDT.Rows(0).Item(0)
+                        notif = notif + l_id + ","
+                    End If
+
+                    Access.AddParam("@notif", notif)
+                    Access.AddParam("@user", participant)
+                    Access.ExecQuery("UPDATE Faculty_DB SET Notifications=@notif WHERE Username=@user")
+                    participant = ""
+                End If
+            Next
+
         Else
             'For the case when Faculty is Logged in
             Access.AddParam("@user2", username)
@@ -1278,6 +1309,22 @@
                 'Insert Command for the Update_DB
                 Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4)")
 
+                ' Send notification to all participating users
+                Dim participant As String = ""
+                For Each c In list_of_participating_users
+                    If c <> "," Then
+                        participant = participant + c
+                    Else
+                        Access.AddParam("@user", participant)
+                        Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
+                        Dim notif As String = Access.DBDT.Rows(0).Item(0)
+                        notif = notif + l_id + ","
+                        Access.AddParam("@notif", notif)
+                        Access.AddParam("@user", participant)
+                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications=@notif WHERE Username=@user")
+                        participant = ""
+                    End If
+                Next
             End If
 
         End If
@@ -1449,11 +1496,12 @@
         End If
         Dim type As String = dum.SubItems(4).Text()
         If type = "FACULTY" Then
-            Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+            Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         Else
-            Access.ExecQuery("UPDATE Student_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+            Access.ExecQuery("UPDATE Student_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         End If
-        Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
+        admin_refresh()
     End Sub
 
     'FOR LEAVES TO BE APPROVED
@@ -1624,7 +1672,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VIEW_3.Click
         'take that from selected list view rows
         Dim dum As String = Label1.Text()
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
@@ -1717,10 +1765,11 @@
         End If
         Dim type As String = dum.SubItems(4).Text()
         If type = "FACULTY" Then
-            Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+            Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         Else
-            Access.ExecQuery("UPDATE Student_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+            Access.ExecQuery("UPDATE Student_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         End If
-        Access.ExecQuery("UPDATE Faculty_DB SET Approved=" & help & " WHERE Username ='" & username & "'")
+        Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
+        admin_refresh()
     End Sub
 End Class

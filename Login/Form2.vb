@@ -7,7 +7,11 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Button2.PerformClick()
-
+        If USERNAME.Enabled = False Then
+            SUBMIT.Visible = False
+        Else
+            UPDATE.Visible = False
+        End If
         'Making appropriate controls hidden
         If HOD_CheckBox.Checked = False Then
             Label11.Visible = False
@@ -404,7 +408,9 @@ Public Class Form2
                     Dim help As String = "PENDING"
                     Access.AddParam("@help", help)
                     'Insert command for Faculty_DB 
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1, @help)")
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1, '" & help & "')")
+                    TA_SUPERVISER.Items.Add(uname)
+                    GUIDE.Items.Add(uname)
                     Form1.Show()
                     Me.Close()
                 End If
@@ -436,7 +442,9 @@ Public Class Form2
                     Dim help As String = "PENDING"
                     Access.AddParam("@help", help)
                     'Insert Query for the HOD
-                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, @help)")
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, '" & help & "')")
+                    TA_SUPERVISER.Items.Add(uname)
+                    GUIDE.Items.Add(uname)
                     Form1.Show()
                     Me.Close()
 

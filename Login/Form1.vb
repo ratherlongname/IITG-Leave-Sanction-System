@@ -36,7 +36,7 @@
             Access.ExecQuery("SELECT * FROM Student_DB WHERE Username=@user and Password=@pwd")
 
             If Access.RecordCount > 0 Then
-                If Access.DBDT.Rows(0).Item("Approved") = "NO" Then
+                If Access.DBDT.Rows(0).Item("Approved") = "PENDING" Then
                     MessageBox.Show("Your Registration Request has not been approved yet")
                     Exit Sub
                 End If
@@ -53,7 +53,7 @@
                 Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username=@user and Password=@pwd")
 
                 If Access.RecordCount > 0 Then
-                    If Access.DBDT.Rows(0).Item("Approved") = "NO" Then
+                    If Access.DBDT.Rows(0).Item("Approved") = "PENDING" Then
                         MessageBox.Show("Your Registration Request has not been approved yet")
                         Exit Sub
                     End If
@@ -69,37 +69,5 @@
                 End If
             End If
         End If
-    End Sub
-
-    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
-
-    End Sub
-
-    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
-
-    End Sub
-
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub lblLeaSanSys_Click(sender As Object, e As EventArgs) Handles lblLeaSanSys.Click
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

@@ -107,7 +107,7 @@ Partial Class Form3
         Me.Edit = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BALANCES = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.VIEW_3 = New System.Windows.Forms.Button()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
@@ -924,21 +924,21 @@ Partial Class Form3
         Me.BALANCES.Text = "Balances"
         Me.BALANCES.UseVisualStyleBackColor = True
         '
-        'Button1
+        'VIEW_3
         '
-        Me.Button1.Location = New System.Drawing.Point(52, 320)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 23)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "VIEW PROFILE"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.VIEW_3.Location = New System.Drawing.Point(52, 320)
+        Me.VIEW_3.Name = "VIEW_3"
+        Me.VIEW_3.Size = New System.Drawing.Size(124, 23)
+        Me.VIEW_3.TabIndex = 4
+        Me.VIEW_3.Text = "VIEW PROFILE"
+        Me.VIEW_3.UseVisualStyleBackColor = True
         '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1430, 748)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.VIEW_3)
         Me.Controls.Add(Me.BALANCES)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Edit)
@@ -1043,7 +1043,7 @@ Partial Class Form3
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents DROPBOX_2 As System.Windows.Forms.ComboBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents VIEW_3 As System.Windows.Forms.Button
     Friend WithEvents btnViewLeavesCancel As System.Windows.Forms.Button
     Friend WithEvents VIEW_2 As System.Windows.Forms.Button
     Friend WithEvents btnViewLeavesView As System.Windows.Forms.Button
