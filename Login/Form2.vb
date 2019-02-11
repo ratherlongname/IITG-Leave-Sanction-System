@@ -5,69 +5,6 @@ Public Class Form2
     Dim str As String = Nothing
 
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Access.ExecQuery("SELECT * FROM Faculty_DB")
-        If Access.RecordCount > 0 Then
-            For Each r As DataRow In Access.DBDT.Rows
-                If r(8) <> "HOD" And r(8) <> "ADOAA" Then
-                    Me.TA_SUPERVISER.Items.Add(r(0))
-                    Me.GUIDE.Items.Add(r(0))
-                End If
-            Next
-        End If
-        Button2.PerformClick()
-        If USERNAME.Enabled = False Then
-            SUBMIT.Visible = False
-        Else
-            UPDATE.Visible = False
-        End If
-        'Making appropriate controls hidden
-        If HOD_CheckBox.Checked = False Then
-            Label11.Visible = False
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
-        If HOD_CheckBox.Checked = True Then
-            Student_Checkbox.Checked = False
-            Faculty_Checkbox.Checked = False
-            Label11.Visible = True
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = False
-        End If
-
-        If Student_Checkbox.Checked = False Then
-            Label5.Visible = False
-            Label6.Visible = False
-            Label7.Visible = False
-            Label8.Visible = False
-            Label9.Visible = False
-            Label10.Visible = False
-            YEAR.Visible = False
-            ROLL_NO.Visible = False
-            PROGRAMME.Visible = False
-            DEPARTMENT.Visible = False
-            TA_SUPERVISER.Visible = False
-            GUIDE.Visible = False
-        End If
-
-        If Faculty_Checkbox.Checked = False Then
-            Label11.Visible = False
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
-
-        If Faculty_Checkbox.Checked = True Then
-            Label11.Visible = True
-            Label12.Visible = True
-            DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = True
-        End If
-
-    End Sub
-
     'handling the case when student checkbox is Selected
     Private Sub Student_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Student_Checkbox.CheckedChanged
         'Making appropriate controls hidden
@@ -511,6 +448,62 @@ Public Class Form2
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If USERNAME.Enabled = False Then
+            Dim username_2 As String = USERNAME.Text()
+
+
+            Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & username_2 & "'")
+            If Access.RecordCount > 0 Then
+                'Getting all the old Deatails and filling into the EDIT FORM
+                Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name") + " " + Access.DBDT.Rows(0).Item("Last_name")
+                Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+                Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+                Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
+                Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
+                Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
+                Form4.PROGRAMME_TB.Text = Access.DBDT.Rows(0).Item("Programme")
+                Form4.TA_SUPERVISER_TB.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
+                Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
+                Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+                Form4.Label13.Text = "Roll No."
+                Form4.Label7.Text = Access.DBDT.Rows(0).Item("Programme")
+                Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
+
+            End If
+
+            Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & username_2 & "'")
+            If Access.RecordCount > 0 Then
+                'Getting all the old Deatails and filling into the EDIT FORM
+                Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name") + " " + Access.DBDT.Rows(0).Item("Last_Name")
+                Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+                Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+                Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
+                Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+                Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
+                Form4.Label13.Text = "Designation"
+                Form4.Label9.Visible = False
+                Form4.YEAR_OF_JOINING_TB.Visible = False
+                Form4.PROGRAMME_TB.Visible = False
+                Form4.Label8.Visible = False
+                Form4.Label10.Visible = False
+                Form4.TA_SUPERVISER_TB.Visible = False
+                Form4.Label11.Visible = False
+                Form4.GUIDE_TB.Visible = False
+                Form4.Label18.Visible = False
+                Form4.Label21.Visible = False
+                Form4.Label23.Visible = False
+                Form4.Label19.Visible = False
+                Form4.Label7.Text = Access.DBDT.Rows(0).Item("Designation")
+                Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
+
+
+
+            End If
+            Me.Close()
+            Form4.Show()
+            Exit Sub
+        End If
+
         Me.Close()
         Form1.txtPassword.Text = Nothing
         Form1.Show()
@@ -758,5 +751,67 @@ Public Class Form2
 
     Private Sub VALIDATION_MouseMove(sender As Object, e As MouseEventArgs) Handles VALIDATION.MouseMove
         VALIDATION.Focus()
+    End Sub
+
+    Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Access.ExecQuery("SELECT * FROM Faculty_DB")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                If r(8) <> "HOD" And r(8) <> "ADOAA" Then
+                    Me.TA_SUPERVISER.Items.Add(r(0))
+                    Me.GUIDE.Items.Add(r(0))
+                End If
+            Next
+        End If
+        Button2.PerformClick()
+        If USERNAME.Enabled = False Then
+            SUBMIT.Visible = False
+        Else
+            UPDATE.Visible = False
+        End If
+        'Making appropriate controls hidden
+        If HOD_CheckBox.Checked = False Then
+            Label11.Visible = False
+            Label12.Visible = False
+            DEPARTMENT_FAC.Visible = False
+            DESIGNATION.Visible = False
+        End If
+        If HOD_CheckBox.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            Label11.Visible = True
+            Label12.Visible = False
+            DEPARTMENT_FAC.Visible = True
+            DESIGNATION.Visible = False
+        End If
+
+        If Student_Checkbox.Checked = False Then
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            YEAR.Visible = False
+            ROLL_NO.Visible = False
+            PROGRAMME.Visible = False
+            DEPARTMENT.Visible = False
+            TA_SUPERVISER.Visible = False
+            GUIDE.Visible = False
+        End If
+
+        If Faculty_Checkbox.Checked = False Then
+            Label11.Visible = False
+            Label12.Visible = False
+            DEPARTMENT_FAC.Visible = False
+            DESIGNATION.Visible = False
+        End If
+
+        If Faculty_Checkbox.Checked = True Then
+            Label11.Visible = True
+            Label12.Visible = True
+            DEPARTMENT_FAC.Visible = True
+            DESIGNATION.Visible = True
+        End If
     End Sub
 End Class

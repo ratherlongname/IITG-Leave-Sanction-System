@@ -59,12 +59,15 @@
     ' View Profile Button
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VIEW_3.Click
         'take that from selected list view rows
-        Dim dum As String = Label1.Text()
-        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
+        Dim username As String = Label1.Text
+
+
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & username & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name") + " " + Access.DBDT.Rows(0).Item("Last_name")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
             Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
@@ -73,13 +76,17 @@
             Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.Label13.Text = "Roll No."
+            Form4.Label7.Text = Access.DBDT.Rows(0).Item("Programme")
+            Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
+
         End If
 
-        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum & "'")
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & username & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name") + " " + Access.DBDT.Rows(0).Item("Last_Name")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
@@ -96,6 +103,11 @@
             Form4.Label21.Visible = False
             Form4.Label23.Visible = False
             Form4.Label19.Visible = False
+            Form4.Label7.Text = Access.DBDT.Rows(0).Item("Designation")
+            Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
+
+
+
         End If
         Me.Hide()
         Form4.Show()
@@ -118,6 +130,7 @@
             Exit Sub
         End If
 
+        Form4.Button1.Visible = False
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
@@ -1910,4 +1923,7 @@
         Type_Of_Leave.SelectedIndex = 0
         Remark_Box.Clear()
     End Sub
+
+
+
 End Class

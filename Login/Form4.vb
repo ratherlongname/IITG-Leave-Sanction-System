@@ -5,7 +5,15 @@
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
+        Access.ExecQuery("SELECT * FROM Faculty_DB")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                If r(8) <> "HOD" And r(8) <> "ADOAA" Then
+                    Form2.TA_SUPERVISER.Items.Add(r(0))
+                    Form2.GUIDE.Items.Add(r(0))
+                End If
+            Next
+        End If
         'Not making username Editable
         Form2.USERNAME.Text = Form3.Label1.Text
         Form2.USERNAME.Enabled = False
@@ -56,14 +64,19 @@
                 Form2.ROLL_NO.Text = Access.DBDT.Rows(0).Item("Roll_no")
                 Form2.YEAR.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
 
+
                 Dim index1 As Integer = Form2.PROGRAMME.FindString(Access.DBDT.Rows(0).Item("Programme"))
                 Dim index2 As Integer = Form2.TA_SUPERVISER.FindString(Access.DBDT.Rows(0).Item("TA_Superviser"))
                 Dim index3 As Integer = Form2.GUIDE.FindString(Access.DBDT.Rows(0).Item("Guide"))
                 Dim index4 As Integer = Form2.DEPARTMENT.FindString(Access.DBDT.Rows(0).Item("Department"))
+
+
                 Form2.PROGRAMME.SelectedIndex = index1
                 Form2.TA_SUPERVISER.SelectedIndex = index2
                 Form2.GUIDE.SelectedIndex = index3
                 Form2.DEPARTMENT.SelectedIndex = index4
+
+
 
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
                 Form2.PASSWORD.Enabled = False
