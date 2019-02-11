@@ -27,6 +27,9 @@ Partial Class Form3
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tabctrlMainTabs = New System.Windows.Forms.TabControl()
         Me.tabpgViewLeaves = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.btnViewLeavesView = New System.Windows.Forms.Button()
+        Me.richtxtboxViewLeaves = New System.Windows.Forms.RichTextBox()
         Me.btnViewLeavesCancel = New System.Windows.Forms.Button()
         Me.CANCELLED = New System.Windows.Forms.CheckBox()
         Me.MEDICAL = New System.Windows.Forms.CheckBox()
@@ -105,9 +108,6 @@ Partial Class Form3
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BALANCES = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.richtxtboxViewLeaves = New System.Windows.Forms.RichTextBox()
-        Me.btnViewLeavesView = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.tabctrlMainTabs.SuspendLayout()
         Me.tabpgViewLeaves.SuspendLayout()
         Me.tabpgNewLeaves.SuspendLayout()
@@ -191,6 +191,34 @@ Partial Class Form3
         Me.tabpgViewLeaves.TabIndex = 0
         Me.tabpgViewLeaves.Text = "View Leaves"
         Me.tabpgViewLeaves.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(304, 285)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(128, 17)
+        Me.Label12.TabIndex = 26
+        Me.Label12.Text = "REMARKS(IF ANY)"
+        '
+        'btnViewLeavesView
+        '
+        Me.btnViewLeavesView.Location = New System.Drawing.Point(841, 382)
+        Me.btnViewLeavesView.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewLeavesView.Name = "btnViewLeavesView"
+        Me.btnViewLeavesView.Size = New System.Drawing.Size(100, 28)
+        Me.btnViewLeavesView.TabIndex = 25
+        Me.btnViewLeavesView.Text = "View"
+        Me.btnViewLeavesView.UseVisualStyleBackColor = True
+        '
+        'richtxtboxViewLeaves
+        '
+        Me.richtxtboxViewLeaves.Location = New System.Drawing.Point(439, 279)
+        Me.richtxtboxViewLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.richtxtboxViewLeaves.Name = "richtxtboxViewLeaves"
+        Me.richtxtboxViewLeaves.Size = New System.Drawing.Size(301, 117)
+        Me.richtxtboxViewLeaves.TabIndex = 24
+        Me.richtxtboxViewLeaves.Text = ""
         '
         'btnViewLeavesCancel
         '
@@ -353,6 +381,7 @@ Partial Class Form3
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lsviewViewLeavesListOfLeaves.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colhdrDateTimeOfApplication, Me.colhdrLeaveID, Me.colhdrTypeOfLeave, Me.colhdrStartDate, Me.colhdrEndDate, Me.colhdrStatus})
         Me.lsviewViewLeavesListOfLeaves.FullRowSelect = True
+        Me.lsviewViewLeavesListOfLeaves.HideSelection = False
         Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(236, 7)
         Me.lsviewViewLeavesListOfLeaves.Margin = New System.Windows.Forms.Padding(4)
         Me.lsviewViewLeavesListOfLeaves.Name = "lsviewViewLeavesListOfLeaves"
@@ -437,6 +466,7 @@ Partial Class Form3
         '
         'Type_Of_Leave
         '
+        Me.Type_Of_Leave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Type_Of_Leave.FormattingEnabled = True
         Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
         Me.Type_Of_Leave.Location = New System.Drawing.Point(263, 17)
@@ -686,6 +716,7 @@ Partial Class Form3
         '
         Me.APPROVED.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5, Me.ColumnHeader6})
         Me.APPROVED.FullRowSelect = True
+        Me.APPROVED.HideSelection = False
         Me.APPROVED.Location = New System.Drawing.Point(255, 41)
         Me.APPROVED.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.APPROVED.MultiSelect = False
@@ -750,6 +781,7 @@ Partial Class Form3
         '
         Me.NOTIFICATIONS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.NOTIFICATIONS.ForeColor = System.Drawing.Color.Black
+        Me.NOTIFICATIONS.HideSelection = False
         Me.NOTIFICATIONS.Location = New System.Drawing.Point(177, 64)
         Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
@@ -821,6 +853,7 @@ Partial Class Form3
         'ADMIN
         '
         Me.ADMIN.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader11, Me.ColumnHeader12, Me.ColumnHeader13, Me.ColumnHeader14, Me.ColumnHeader15})
+        Me.ADMIN.HideSelection = False
         Me.ADMIN.Location = New System.Drawing.Point(256, 25)
         Me.ADMIN.Name = "ADMIN"
         Me.ADMIN.Size = New System.Drawing.Size(572, 300)
@@ -899,34 +932,6 @@ Partial Class Form3
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "VIEW PROFILE"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'richtxtboxViewLeaves
-        '
-        Me.richtxtboxViewLeaves.Location = New System.Drawing.Point(439, 279)
-        Me.richtxtboxViewLeaves.Margin = New System.Windows.Forms.Padding(4)
-        Me.richtxtboxViewLeaves.Name = "richtxtboxViewLeaves"
-        Me.richtxtboxViewLeaves.Size = New System.Drawing.Size(301, 117)
-        Me.richtxtboxViewLeaves.TabIndex = 24
-        Me.richtxtboxViewLeaves.Text = ""
-        '
-        'btnViewLeavesView
-        '
-        Me.btnViewLeavesView.Location = New System.Drawing.Point(841, 382)
-        Me.btnViewLeavesView.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnViewLeavesView.Name = "btnViewLeavesView"
-        Me.btnViewLeavesView.Size = New System.Drawing.Size(100, 28)
-        Me.btnViewLeavesView.TabIndex = 25
-        Me.btnViewLeavesView.Text = "View"
-        Me.btnViewLeavesView.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(304, 285)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(128, 17)
-        Me.Label12.TabIndex = 26
-        Me.Label12.Text = "REMARKS(IF ANY)"
         '
         'Form3
         '

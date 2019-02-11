@@ -57,6 +57,12 @@
         REJECTED.Checked = True
         PENDING.Checked = True
         CANCELLED.Checked = True
+        ORDINARY_2.Checked = True
+        MEDICAL_2.Checked = True
+        ACADEMIC_2.Checked = True
+        DROPBOX_2.SelectedIndex = 0
+        NEWEST_2.Checked = True
+        NEWEST_CHECKBOX.Checked = True
 
         RefreshViewLeaves()
 
@@ -1039,35 +1045,123 @@
 
             If ta <> "" Then
                 list_of_participating_users = list_of_participating_users + ta + ","
+                Dim help_3 As String = ta
+                Access.AddParam("@help_3", help_3)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                Dim help_4 As String = Nothing
+                If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                    help_4 = l_id + ","
+                Else
+                    help_4 = Access.DBDT.Rows(0).Item(0)
+                    help_4 = help_4 + l_id + ","
+                End If
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
             End If
 
             If guide <> "" Then
                 list_of_participating_users = list_of_participating_users + guide + ","
+                Dim help_3 As String = guide
+                Access.AddParam("@help_3", help_3)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                Dim help_4 As String = Nothing
+                If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                    help_4 = l_id + ","
+                Else
+                    help_4 = Access.DBDT.Rows(0).Item(0)
+                    help_4 = help_4 + l_id + ","
+                End If
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
             End If
 
             'Deciding the UPSTREAM of leave by checking leave duration and type of leave
             If Type_Of_Leave.Text = "Ordinary" Then
                 If number_of_days > 15 Then
                     list_of_participating_users = list_of_participating_users + hod + ","
+                    Dim help_3 As String = hod
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
                 If number_of_days > 30 Then
                     list_of_participating_users = list_of_participating_users + adoaa + ","
+                    Dim help_3 As String = adoaa
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
             End If
             If Type_Of_Leave.Text = "Medical" Then
                 If number_of_days > 15 Then
                     list_of_participating_users = list_of_participating_users + hod + ","
+                    Dim help_3 As String = hod
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
                 If number_of_days > 30 Then
                     list_of_participating_users = list_of_participating_users + adoaa + ","
+                    Dim help_3 As String = adoaa
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
             End If
             If Type_Of_Leave.Text = "Academic" Then
                 If number_of_days > 15 Then
                     list_of_participating_users = list_of_participating_users + hod + ","
+                    Dim help_3 As String = hod
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
                 If number_of_days > 30 Then
                     list_of_participating_users = list_of_participating_users + adoaa + ","
+                    Dim help_3 As String = adoaa
+                    Access.AddParam("@help_3", help_3)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_4 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_4 = l_id + ","
+                    Else
+                        help_4 = Access.DBDT.Rows(0).Item(0)
+                        help_4 = help_4 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
                 End If
             End If
             'Entering the Data into the Leave DataBase
@@ -1102,8 +1196,32 @@
             If Access.RecordCount > 0 Then
                 'Adding HOD and ADOAA in list of participating Users
                 list_of_participating_users = list_of_participating_users + hod + ","
+
+                Dim help_3 As String = hod
+                Access.AddParam("@help_3", help_3)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                Dim help_4 As String = Nothing
+                If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                    help_4 = l_id + ","
+                Else
+                    help_4 = Access.DBDT.Rows(0).Item(0)
+                    help_4 = help_4 + l_id + ","
+                End If
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_4 & "' WHERE Username='" & help_3 & "'")
+
                 If number_of_days > 30 Then
                     list_of_participating_users = list_of_participating_users + adoaa + ","
+                    Dim help_5 As String = hod
+                    Access.AddParam("@help_3", help_5)
+                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+                    Dim help_6 As String = Nothing
+                    If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                        help_6 = l_id + ","
+                    Else
+                        help_6 = Access.DBDT.Rows(0).Item(0)
+                        help_6 = help_6 + l_id + ","
+                    End If
+                    Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_6 & "' WHERE Username='" & help_5 & "'")
                 End If
 
                 Dim BALANCE_LEFT As Integer = Access.DBDT.Rows(0).Item(type)
@@ -1406,7 +1524,13 @@
         Dim selectedLeave As New ListViewItem
         selectedLeave = viewleaves_SelectedItem()
 
-        ' TODO
+        Form5.txtDateTime.Text() = selectedLeave.SubItems(0).Text()
+        Form5.txtLeaveID.Text() = selectedLeave.SubItems(1).Text()
+        Form5.txtTypeofLeave.Text() = selectedLeave.SubItems(2).Text()
+        Form5.txtStartDate.Text() = selectedLeave.SubItems(3).Text()
+        Form5.txtEndDate.Text() = selectedLeave.SubItems(4).Text()
+        Form5.txtCurrentStatus.Text() = selectedLeave.SubItems(5).Text()
+        Form5.Show()
     End Sub
 
     Private Function viewleaves_SelectedItem() As ListViewItem
