@@ -43,9 +43,9 @@
                 Me.Hide()
                 Form3.Show()
                 Form3.Label1.Text = Access.DBDT.Rows(0).Item("Username")
-                Form3.Label2.Text = Access.DBDT.Rows(0).Item("Department")
-                Form3.Label3.Text = Access.DBDT.Rows(0).Item("Programme")
-                Form3.Label4.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
+                Form3.Label2.Text = Access.DBDT.Rows(0).Item("First_name") + " " + Access.DBDT.Rows(0).Item("Last_name")
+                Form3.Label3.Text = Access.DBDT.Rows(0).Item("Department")
+                Form3.Label4.Text = Access.DBDT.Rows(0).Item("Programme")
             Else
                 Access.AddParam("@user", user_name)
                 Access.AddParam("@pwd", password)
@@ -60,10 +60,9 @@
                     Me.Hide()
                     Form3.Show()
                     Form3.Label1.Text = Access.DBDT.Rows(0).Item("Username")
-                    Form3.Label2.Text = Access.DBDT.Rows(0).Item("Department")
-                    Form3.Label3.Text = Access.DBDT.Rows(0).Item("Designation")
-                    Form3.Label4.Text = ""
-
+                    Form3.Label2.Text = Access.DBDT.Rows(0).Item("First_Name") + Access.DBDT.Rows(0).Item("Last_Name")
+                    Form3.Label3.Text = Access.DBDT.Rows(0).Item("Department")
+                    Form3.Label4.Text = Access.DBDT.Rows(0).Item("Designation")
                 Else
                     MessageBox.Show("Invalid Username/ Password")
                     Exit Sub

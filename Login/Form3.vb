@@ -41,8 +41,10 @@
                     ADMIN.Items.Add(v)
                 Next
             End If
+        Else
+            Me.tabctrlMainTabs.TabPages.Remove(TabPage1)
         End If
-        If Label4.Text <> Nothing Then
+        If Label4.Text <> "M.Tech/M.Sc" And Label4.Text <> "PhD" Then
             Me.tabctrlMainTabs.TabPages.Remove(tabpgLeavesToApprove)
         End If
 
@@ -71,64 +73,471 @@
     End Sub
 
     Private Sub tabpgLeavesToApprove_Enter(sender As Object, e As EventArgs) Handles tabpgLeavesToApprove.Enter
-
         RefreshLeavestoApprove()
-
     End Sub
 
     Private Sub RefreshLeavestoApprove()
-
         ' Clear existing listview
         APPROVED.Items.Clear()
 
-        ' Get username of faculty
-        Dim user As String = Label1.Text
 
-        ' Query DB for all leaves
-        Access.ExecQuery("SELECT * FROM Leave_DB")
-
-        Dim i As Integer = 0
-
-        ' Populate listview
-        If Access.RecordCount > 0 Then
-            ' Cycle through all leaves
-            For Each r As DataRow In Access.DBDT.Rows
-                Dim s As String
-                Dim flag As Integer = 0
-                ' Get list of participating users for leave
-                s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
-                Dim s1 As String = ""
-
-                ' Extract usernames from list of participating users
-                For Each c As Char In s
-                    If c <> "," And c <> " " Then
-                        s1 = s1 + c
-                    Else
-                        If s1 = user Then
-                            ' Set flag = 1 if username matches username of logged in faculty
-                            flag = 1
-                            Exit For
-                        End If
-                        s1 = ""
-                    End If
-                Next
-
-                If flag = 1 Then
-                    ' Add leave to listview
-                    Dim dum As String = r(6)
-                    Dim v As New ListViewItem(dum)
-                    v.SubItems.Add(r(0))
-                    v.SubItems.Add(r(1))
-                    v.SubItems.Add(r(4))
-                    v.SubItems.Add(r(5))
-                    v.SubItems.Add(r(3))
-                    APPROVED.Items.Add(v)
+        If NEWEST_2.Checked = True Then
+            If DROPBOX_2.Text = "Date / Time Applied" Then
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY_2.Checked = True Then
+                    dummy1 = "Ordinary"
                 End If
-                i = i + 1
-            Next
+                If MEDICAL_2.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC_2.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [Date/Time Applied] DESC")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            ElseIf DROPBOX_2.Text = "Start Date" Then
+
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY_2.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL_2.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC_2.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [Start_Date] DESC")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            ElseIf DROPBOX_2.Text = "End Date" Then
+
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY_2.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL_2.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC_2.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [End_Date] DESC")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            Else
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY_2.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL_2.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC_2.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "')")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            End If
+
+
+        Else
+            If DROPBOX_2.Text = "Date / Time Applied" Then
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [Date/Time Applied]")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            ElseIf DROPBOX_2.Text = "Start Date" Then
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [Start_Date]")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            ElseIf DROPBOX_2.Text = "End Date" Then
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "') ORDER BY [End_Date]")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            Else
+                'FOR TYPE
+                Dim dummy1 As String = ""
+                Dim dummy2 As String = ""
+                Dim dummy3 As String = ""
+                If ORDINARY.Checked = True Then
+                    dummy1 = "Ordinary"
+                End If
+                If MEDICAL.Checked = True Then
+                    dummy2 = "Medical"
+                End If
+                If ACADEMIC.Checked = True Then
+                    dummy3 = "Academic"
+                End If
+                Access.ExecQuery("SELECT * FROM Leave_DB WHERE Type_of_Leave IN ('" & dummy1 & "','" & dummy2 & "','" & dummy3 & "')")
+                Dim i As Integer = 0
+                ' Get username of faculty
+                Dim user As String = Label1.Text
+                ' Populate listview
+                If Access.RecordCount > 0 Then
+                    ' Cycle through all leaves
+                    For Each r As DataRow In Access.DBDT.Rows
+                        Dim s As String
+                        Dim flag As Integer = 0
+                        ' Get list of participating users for leave
+                        s = Access.DBDT.Rows(i).Item("List_of_Participating_Users")
+                        Dim s1 As String = ""
+
+                        ' Extract usernames from list of participating users
+                        For Each c As Char In s
+                            If c <> "," And c <> " " Then
+                                s1 = s1 + c
+                            Else
+                                If s1 = user Then
+                                    ' Set flag = 1 if username matches username of logged in faculty
+                                    flag = 1
+                                    Exit For
+                                End If
+                                s1 = ""
+                            End If
+                        Next
+
+                        If flag = 1 Then
+                            ' Add leave to listview
+                            Dim dum As String = r(6)
+                            Dim v As New ListViewItem(dum)
+                            v.SubItems.Add(r(0))
+                            v.SubItems.Add(r(1))
+                            v.SubItems.Add(r(4))
+                            v.SubItems.Add(r(5))
+                            v.SubItems.Add(r(3))
+                            APPROVED.Items.Add(v)
+                        End If
+                        i = i + 1
+                    Next
+                End If
+            End If
         End If
-
-
     End Sub
 
     Private Sub tabpgNotifications_Enter(sender As Object, e As EventArgs) Handles tabpgNotifications.Enter
@@ -155,9 +564,6 @@
     End Sub
 
 
-    Private Sub btnViewLeavesRefresh_Click(sender As Object, e As EventArgs) Handles btnViewLeavesRefresh.Click
-        RefreshViewLeaves()
-    End Sub
 
     Private Sub RefreshViewLeaves()
         ' CLEAR EXISTING DATA IN LISTVIEW
@@ -957,5 +1363,166 @@
 
     Private Sub ACCEPTED_Click(sender As Object, e As EventArgs) Handles ACCEPTED.Click
         RefreshViewLeaves()
+    End Sub
+
+    Private Sub MEDICAL_Click(sender As Object, e As EventArgs) Handles MEDICAL.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub PENDING_Click(sender As Object, e As EventArgs) Handles PENDING.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub REJECTED_Click(sender As Object, e As EventArgs) Handles REJECTED.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub ACADEMIC_Click(sender As Object, e As EventArgs) Handles ACADEMIC.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub SORT_DROPBOX_Click(sender As Object, e As EventArgs) Handles SORT_DROPBOX.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub CANCELLED_Click(sender As Object, e As EventArgs) Handles CANCELLED.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub ORDINARY_Click(sender As Object, e As EventArgs) Handles ORDINARY.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub NEWEST_CHECKBOX_Click(sender As Object, e As EventArgs) Handles NEWEST_CHECKBOX.Click
+        RefreshViewLeaves()
+    End Sub
+
+    Private Sub OLD_CHECKBOX_Click(sender As Object, e As EventArgs) Handles OLD_CHECKBOX.Click
+        RefreshViewLeaves()
+    End Sub
+
+
+    Private Sub btnViewLeavesView_Click(sender As Object, e As EventArgs) Handles btnViewLeavesView.Click
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = viewleaves_SelectedItem()
+
+        ' TODO
+    End Sub
+
+    Private Function viewleaves_SelectedItem() As ListViewItem
+        Dim selectedLeave As New ListViewItem
+        If lsviewViewLeavesListOfLeaves.SelectedItems.Count > 0 Then
+            selectedLeave = lsviewViewLeavesListOfLeaves.SelectedItems(0)
+        End If
+
+        Return selectedLeave
+    End Function
+
+    Private Sub btnViewLeavesCancel_Click(sender As Object, e As EventArgs) Handles btnViewLeavesCancel.Click
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = viewleaves_SelectedItem()
+        If selectedLeave.SubItems(1).Text() = "" Then
+            MsgBox("No leave selected!")
+            Exit Sub
+        End If
+
+        Dim leave_ID As String = selectedLeave.SubItems(0).Text()
+        Dim update_ID As String = ""
+
+        Dim date_Time As Date = System.DateTime.Now()
+        Dim user As String = Label1.Text()
+        Dim remark As String = richtxtboxViewLeaves.Text()
+
+        Dim status As String = "Cancelled"
+
+        Dim user_action As String = user
+
+        'Generating Update_ID
+        update_ID = user(0) + user(1) + user_action(0) + user_action(1)
+        Dim d As String = date_Time.ToString()
+        For Each c As Char In d
+            If c <> " " And c <> "-" And c <> ":" Then
+                update_ID = update_ID + c
+            End If
+        Next
+
+        'Adding parameters for the Insert query in Update DB
+        Access.AddParam("@LID", leave_ID)
+        Access.AddParam("@UID", update_ID)
+        Access.AddParam("@date", date_Time)
+        Access.AddParam("@user", user)
+        Access.AddParam("@remark", remark)
+        Access.AddParam("@status", status)
+        Access.AddParam("@user_act", user_action)
+        'Insert Command for the Update_DB
+        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
+        MsgBox("Leave status updated.")
+        richtxtboxViewLeaves.Clear()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'take that from selected list view rows
+        Dim dum As String = "vakul123"
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
+        If Access.RecordCount > 0 Then
+            'Getting all the old Deatails and filling into the EDIT FORM
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+            Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
+            Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
+            Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
+            Form4.PROGRAMME_TB.Text = Access.DBDT.Rows(0).Item("Programme")
+            Form4.TA_SUPERVISER_TB.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
+            Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
+            Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+            Form4.DESIGNATION.Visible = False
+        End If
+
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum & "'")
+        If Access.RecordCount > 0 Then
+            'Getting all the old Deatails and filling into the EDIT FORM
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+            Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
+            Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
+            Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
+            Form4.ROLL_NO.Visible = False
+            Form4.YEAR_OF_JOINING.Visible = False
+            Form4.YEAR_OF_JOINING_TB.Visible = False
+            Form4.PROGRAMME_TB.Visible = False
+            Form4.PROGRAMME.Visible = False
+            Form4.TA_SUPERVISER.Visible = False
+            Form4.TA_SUPERVISER_TB.Visible = False
+            Form4.GUIDE.Visible = False
+            Form4.GUIDE.Visible = False
+
+        End If
+        Me.Hide()
+        Form4.Show()
+    End Sub
+
+    Private Sub ACADEMIC_2_Click(sender As Object, e As EventArgs) Handles ACADEMIC_2.Click
+        RefreshLeavestoApprove()
+    End Sub
+
+    Private Sub MEDICAL_2_Click(sender As Object, e As EventArgs) Handles MEDICAL_2.Click
+        RefreshLeavestoApprove()
+    End Sub
+
+    Private Sub ORDINARY_2_Click(sender As Object, e As EventArgs) Handles ORDINARY_2.Click
+        RefreshLeavestoApprove()
+    End Sub
+
+    Private Sub DROPBOX_2_Click(sender As Object, e As EventArgs) Handles DROPBOX_2.Click
+        RefreshLeavestoApprove()
+    End Sub
+
+    Private Sub NEWEST_2_Click(sender As Object, e As EventArgs) Handles NEWEST_2.Click
+        RefreshLeavestoApprove()
+    End Sub
+
+    Private Sub OLDEST_2_Click(sender As Object, e As EventArgs) Handles OLDEST_2.Click
+        RefreshLeavestoApprove()
     End Sub
 End Class
