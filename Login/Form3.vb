@@ -554,22 +554,33 @@
     Private Sub tabpgNotifications_Enter(sender As Object, e As EventArgs) Handles tabpgNotifications.Enter
         'RefreshViewLeaves()
         Dim user As String = Label1.Text
-        Dim i As Integer = 0
-        Access.ExecQuery("SELECT * FROM Leave_Update_DB WHERE Username='" & user & "'")
-        If Access.RecordCount > 0 Then
-            For Each r As DataRow In Access.DBDT.Rows
-                Dim dum As String = r(0)
-                Dim v As New ListViewItem(dum)
-                v.SubItems.Add(r(4))
-                v.SubItems.Add(r(2))
-                Dim dum1 As String = ""
-                dum1 = dum1 + " Your Leave having Leave ID " + r(0) + " is " + r(5) + " by " + r(6)
-                v.SubItems.Add(dum1)
-                NOTIFICATIONS.Items.Add(v)
-            Next
+        Access.AddParam("@user", user)
+        Access.ExecQuery("SELECT Notifications FROM Student_DB WHERE Username=@user")
+        If Not Access.RecordCount > 0 Then
+            Access.AddParam("@user", user)
+            Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
+        End If
 
+        If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+            MsgBox("No notifications!")
         Else
-            MessageBox.Show("No Notications!!!!")
+            Dim notif As String = Access.DBDT.Rows(0).Item(0)
+            Dim UID As String = ""
+
+            For Each c In notif
+                If c <> "," Then
+                    UID = UID + c
+                Else
+                    Access.AddParam("@UID", UID)
+                    Access.ExecQuery("SELECT * FROM Leave_Update_ID WHERE Update_ID=@UID")
+
+                    Dim helper As String = Access.DBDT.Rows(0).Item("Date/Time")
+                    Dim v As New ListViewItem(helper)
+                    v.SubItems.Add(Access.DBDT.Rows(0).Item("Leave_ID"))
+                    v.SubItems.Add(Access.DBDT.Rows(0).Item("Remark"))
+                    v.SubItems.Add("description still needs to be generated")
+                End If
+            Next
         End If
 
     End Sub
@@ -1194,7 +1205,9 @@
             Access.AddParam("@dum", dum)
             Access.AddParam("@dum2", dum2)
             Access.AddParam("@user4", username)
-            Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4)")
+            Dim type_2 As Integer = 1
+            Access.AddParam("@type2", type_2)
+            Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4, @type2)")
 
             ' Send notification to all participating users
             Dim participant As String = ""
@@ -1243,7 +1256,7 @@
 
                 If number_of_days > 30 Then
                     list_of_participating_users = list_of_participating_users + adoaa + ","
-                    Dim help_5 As String = hod
+                    Dim help_5 As String = adoaa
                     Access.AddParam("@help_3", help_5)
                     Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
                     Dim help_6 As String = Nothing
@@ -1256,6 +1269,7 @@
                     Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & help_6 & "' WHERE Username='" & help_5 & "'")
                 End If
 
+                Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & username & "'")
                 Dim BALANCE_LEFT As Integer = Access.DBDT.Rows(0).Item(type)
                 If type = "Ordinary" Then
                     If BALANCE_LEFT < number_of_days Then
@@ -1307,8 +1321,10 @@
                 Access.AddParam("@dum", dum)
                 Access.AddParam("@dum2", dum2)
                 Access.AddParam("@user4", username)
+                Dim type_3 As Integer = 1
+                Access.AddParam("@type3", type_3)
                 'Insert Command for the Update_DB
-                Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4)")
+                Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4, @type3)")
 
                 ' Send notification to all participating users
                 Dim participant As String = ""
@@ -1318,8 +1334,13 @@
                     Else
                         Access.AddParam("@user", participant)
                         Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
-                        Dim notif As String = Access.DBDT.Rows(0).Item(0)
-                        notif = notif + l_id + ","
+                        Dim notif As String = Nothing
+                        If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+                            notif = l_id + ","
+                        Else
+                            notif = Access.DBDT.Rows(0).Item(0)
+                            notif = notif + l_id + ","
+                        End If
                         Access.AddParam("@notif", notif)
                         Access.AddParam("@user", participant)
                         Access.ExecQuery("UPDATE Faculty_DB SET Notifications=@notif WHERE Username=@user")
@@ -1571,10 +1592,72 @@
         Access.AddParam("@remark", remark)
         Access.AddParam("@status", status)
         Access.AddParam("@user_act", user_action)
+        Dim type2 As Integer = 2
+        Access.AddParam("@type2", type2)
         'Insert Command for the Update_DB
-        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
+        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act, @type2)")
         MsgBox("Leave status updated.")
         richtxtboxLeavestobeApprovedRemarks.Clear()
+
+        ' new stuff to be copied
+        ' SEND NOTIFICATION TO ALL OWNER OF LEAVE
+
+        ' Check if leave is of student
+        Access.AddParam("@user", user)
+        Access.ExecQuery("SELECT Notifications FROM Student_DB WHERE Username=@user")
+        If Access.RecordCount > 0 Then
+            ' It is a student's leave
+            Dim notif As String
+
+            If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                notif = update_ID + ","
+            Else
+                notif = Access.DBDT.Rows(0).Item(0)
+                notif = notif + update_ID + ","
+            End If
+        Else
+            Access.AddParam("@user", user)
+            Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
+
+            If Access.RecordCount > 0 Then
+                ' It is a faculty's leave
+                Dim notif As String
+
+                If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                    notif = update_ID + ","
+                Else
+                    notif = Access.DBDT.Rows(0).Item(0)
+                    notif = notif + update_ID + ","
+                End If
+            End If
+        End If
+
+
+        ' SEND NOTIFICATION TO ALL PARTICIPATING USERS
+        Access.AddParam("@LID", leave_ID)
+        Access.ExecQuery("SELECT List_of_Participating_Users FROM Leave_DB WHERE Leave_ID=@LID")
+        Dim all_part_user As String = Access.DBDT.Rows(0).Item(0)
+        Dim part_user As String = ""
+
+        For Each c In all_part_user
+            If c <> "," Then
+                part_user = part_user + c
+            Else
+                Access.AddParam("@user", part_user)
+                Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username=@user")
+                Dim notif As String
+
+                If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
+                    notif = update_ID + ","
+                Else
+                    notif = Access.DBDT.Rows(0).Item(0)
+                    notif = notif + update_ID + ","
+                End If
+                part_user = ""
+            End If
+
+        Next
+        ' till here
 
     End Sub
 
@@ -1677,8 +1760,36 @@
         Access.AddParam("@remark", remark)
         Access.AddParam("@status", status)
         Access.AddParam("@user_act", user_action)
+        Dim type2 As Integer = 3
+        Access.AddParam("@type2", type2)
         'Insert Command for the Update_DB
-        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act)")
+        Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act, @type2)")
+        Access.ExecQuery("SELECT List_of_Participating_Users FROM Leave_DB WHERE Leave_ID='" & leave_ID & "'")
+        If Access.RecordCount > 0 Then
+            If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+            Else
+                Dim help2 As String = Access.DBDT.Rows(0).Item(0)
+                Dim words As String() = help2.Split(New Char() {","c})
+
+                ' Use For Each loop over words and display them
+
+                Dim word As String
+                For Each word In words
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & word & "'")
+                    If Access.RecordCount > 0 Then
+                        Dim noti As String = Nothing
+                        If (IsDBNull(Access.DBDT.Rows(0).Item(7))) Then
+                            noti = update_ID + ","
+                        Else
+                            noti = Access.DBDT.Rows(0).Item(7)
+                            noti = noti + update_ID + ","
+                        End If
+                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & noti & "' WHERE Uername='" & word & "'")
+                    End If
+                Next
+            End If
+        End If
+
         MsgBox("Leave status updated.")
         richtxtboxViewLeaves.Clear()
 
@@ -1783,5 +1894,9 @@
         End If
         Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         admin_refresh()
+    End Sub
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
