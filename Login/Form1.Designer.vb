@@ -111,7 +111,7 @@ Partial Class Form1
         Me.Label4.BackColor = System.Drawing.Color.Teal
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(261, 115)
+        Me.Label4.Location = New System.Drawing.Point(261, 120)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(533, 30)
@@ -132,7 +132,7 @@ Partial Class Form1
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(1132, 33)
+        Me.TextBox1.Size = New System.Drawing.Size(1132, 44)
         Me.TextBox1.TabIndex = 17
         '
         'Label5

@@ -3,4 +3,5 @@
         Me.Hide()
         Form3.Show()
     End Sub
+
 End Class
