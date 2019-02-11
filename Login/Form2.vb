@@ -701,4 +701,16 @@ Public Class Form2
         End Try
 
     End Sub
+
+    Private Sub DEPARTMENT_FAC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DEPARTMENT_FAC.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub VALIDATION_TextChanged(sender As Object, e As EventArgs) Handles VALIDATION.TextChanged
+
+    End Sub
+
+    Private Sub PASSWORD_TextChanged(sender As Object, e As EventArgs) Handles PASSWORD.TextChanged
+
+    End Sub
 End Class

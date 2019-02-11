@@ -165,6 +165,9 @@
     <Content Include="DataBase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\e.png" />
+    <None Include="Resources\d.png" />
+    <None Include="Resources\c.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
