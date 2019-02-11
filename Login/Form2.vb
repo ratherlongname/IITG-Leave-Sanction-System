@@ -6,6 +6,15 @@ Public Class Form2
 
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Access.ExecQuery("SELECT * FROM Faculty_DB")
+        If Access.RecordCount > 0 Then
+            For Each r As DataRow In Access.DBDT.Rows
+                If r(8) <> "HOD" And r(8) <> "ADOAA" Then
+                    Me.TA_SUPERVISER.Items.Add(r(0))
+                    Me.GUIDE.Items.Add(r(0))
+                End If
+            Next
+        End If
         Button2.PerformClick()
         If USERNAME.Enabled = False Then
             SUBMIT.Visible = False
@@ -115,6 +124,7 @@ Public Class Form2
 
     Private Sub SUBMIT_Click(sender As Object, e As EventArgs) Handles SUBMIT.Click
         'Storing Data in variables 
+
         Dim flag As Integer = 0
         Dim fname As String = FIRST_NAME.Text
         Dim lname As String = LAST_NAME.Text
@@ -266,6 +276,12 @@ Public Class Form2
                 Exit Sub
             End If
 
+            If ta = guide_2 Then
+                MessageBox.Show("TA Superviser and Guide can't be the same individual")
+                Button2.PerformClick()
+                Exit Sub
+            End If
+
             'VALIDATION OF YEAR , RANGE = 0000-9999
             For Each c As Char In y
                 If (Char.IsNumber(c)) Then
@@ -409,8 +425,6 @@ Public Class Form2
                     Access.AddParam("@help", help)
                     'Insert command for Faculty_DB 
                     Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg, @days_2, @days_3, @days_1, '" & help & "')")
-                    TA_SUPERVISER.Items.Add(uname)
-                    GUIDE.Items.Add(uname)
                     Form1.Show()
                     Me.Close()
                 End If
@@ -443,8 +457,6 @@ Public Class Form2
                     Access.AddParam("@help", help)
                     'Insert Query for the HOD
                     Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, '" & help & "')")
-                    TA_SUPERVISER.Items.Add(uname)
-                    GUIDE.Items.Add(uname)
                     Form1.Show()
                     Me.Close()
 
@@ -493,6 +505,7 @@ Public Class Form2
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+        Form1.txtPassword.Text = Nothing
         Form1.Show()
     End Sub
 
@@ -707,18 +720,6 @@ Public Class Form2
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
-    End Sub
-
-    Private Sub DEPARTMENT_FAC_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DEPARTMENT_FAC.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub VALIDATION_TextChanged(sender As Object, e As EventArgs) Handles VALIDATION.TextChanged
-
-    End Sub
-
-    Private Sub PASSWORD_TextChanged(sender As Object, e As EventArgs) Handles PASSWORD.TextChanged
 
     End Sub
 End Class
