@@ -498,15 +498,15 @@ Public Class Form2
     'CODE FOR GENERATING THE CAPTCHA
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim NumCaptcha As String = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-        str = ""
+        Str = ""
         Dim R As New Random
         For i As Integer = 0 To 5
-            str = str + NumCaptcha(R.Next(0, 60))
+            Str = Str + NumCaptcha(R.Next(0, 60))
         Next
         Dim b As New Bitmap(141, 36, Imaging.PixelFormat.Format32bppArgb)
         Dim g As Graphics = Graphics.FromImage(b)
         Dim Hb As New HatchBrush(HatchStyle.DottedDiamond, Color.FromArgb(255, 128, 0), Color.Black)
-        g.DrawString(str, New Font("Arial", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
+        g.DrawString(Str, New Font("Arial", 16, FontStyle.Strikeout, GraphicsUnit.Point), Brushes.White, 5, 5)
         PictureBox2.Image = b
     End Sub
 
@@ -748,7 +748,7 @@ Public Class Form2
         LAST_NAME.Focus()
     End Sub
 
-    Private Sub YEAR_MouseMove(sender As Object, e As MouseEventArgs) Handles YEAR.MouseMove
+    Private Sub YEAR_MouseMove(sender As Object, e As MouseEventArgs) Handles Year.MouseMove
         YEAR.Focus()
     End Sub
 

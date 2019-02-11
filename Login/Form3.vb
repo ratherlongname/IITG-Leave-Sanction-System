@@ -695,10 +695,11 @@
     Private Sub btnViewLeavesCancel_Click(sender As Object, e As EventArgs) Handles btnViewLeavesCancel.Click
         Dim selectedLeave As New ListViewItem
         selectedLeave = viewleaves_SelectedItem()
-        If selectedLeave.SubItems(1).Text() = "" Then
-            MsgBox("No leave selected!")
+        If selectedLeave.SubItems(0).Text() = "" Then
+            MessageBox.Show("No Entry Selected.")
             Exit Sub
         End If
+
 
         If selectedLeave.SubItems(5).Text() <> "Pending" Then
             MsgBox("Leave cannot be cancelled")
@@ -760,22 +761,49 @@
                         End If
                         Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & noti & "' WHERE Username='" & word & "'")
                     End If
-                    Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username='" & word & "'")
-                    If Access.RecordCount > 0 Then
-                        Dim s As String = Access.DBDT.Rows(0).Item(0)
-                        Dim words_2 As String() = s.Split(New Char() {","c})
-                        Dim append As String = Nothing
-                        Dim word_2 As String = Nothing
-                        For Each word_2 In words_2
-                            If word_2 = leave_ID Then
-                            Else
-                                append = append + word_2 + ","
-                            End If
-                        Next
-                        Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & append & "' WHERE Username='" & user & "'")
-                    End If
                 Next
             End If
+        End If
+
+
+        ' REMOVE THIS Leave_ID from list of incoming of all participating users
+        Access.ExecQuery("SELECT List_of_Participating_Users FROM Leave_DB WHERE Leave_ID='" & leave_ID & "'")
+
+        If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+        Else
+            Dim help2 As String = Access.DBDT.Rows(0).Item(0)
+            Dim words As String() = help2.Split(New Char() {","c})
+
+            ' Use For Each loop over words and display them
+
+            Dim word As String
+            For Each word In words
+                MsgBox(word)
+                Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username='" & word & "'")
+                If Access.RecordCount > 0 Then
+
+
+                    Dim s As String = Nothing
+                    If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+                    Else
+                        s = Access.DBDT.Rows(0).Item(0)
+                        Dim newLOIL As String = ""
+                        Dim temp_LID As String = ""
+                        For Each c As Char In s
+                            If c <> "," Then
+                                temp_LID = temp_LID + c
+                            Else
+                                If temp_LID = leave_ID Then
+                                Else
+                                    newLOIL = newLOIL + temp_LID + ","
+                                End If
+                                temp_LID = ""
+                            End If
+                        Next
+                        Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & newLOIL & "' WHERE Username='" & word & "'")
+                    End If
+                End If
+            Next
         End If
 
 
@@ -1200,8 +1228,13 @@
         Access.AddParam("@user", Label1.Text())
         Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@user")
         Dim loil As String = ""
+
         If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
             MsgBox("No leaves to be approved!")
+            Exit Sub
+        ElseIf Access.DBDT.Rows(0).Item(0) = "" Then
+            MsgBox("No leaves to be approved!")
+            Exit Sub
         Else
             loil = Access.DBDT.Rows(0).Item(0)
         End If
@@ -1656,20 +1689,32 @@
             End If
 
         Next
+
+        ' UPDATE CURRENT STATUS
         updateCurrentStatus(leave_ID)
-        Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username='" & user & "'")
+
+        ' REMOVE THIS LEAVE ID FROM INCOMING LEAVES OF LOGGED IN FACULTY
+        Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username='" & user_action & "'")
         If Access.RecordCount > 0 Then
-            Dim s As String = Access.DBDT.Rows(0).Item(0)
-            Dim words As String() = s.Split(New Char() {","c})
-            Dim append As String = Nothing
-            Dim word As String = Nothing
-            For Each word In words
-                If word = leave_ID Then
-                Else
-                    append = append + word + ","
-                End If
-            Next
-            Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & append & "' WHERE Username='" & user & "'")
+            Dim s As String = Nothing
+            If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+            Else
+                s = Access.DBDT.Rows(0).Item(0)
+                Dim newLOIL As String = ""
+                Dim temp_LID As String = ""
+                For Each c As Char In s
+                    If c <> "," Then
+                        temp_LID = temp_LID + c
+                    Else
+                        If temp_LID = leave_ID Then
+                        Else
+                            newLOIL = newLOIL + temp_LID + ","
+                        End If
+                        temp_LID = ""
+                    End If
+                Next
+                Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & newLOIL & "' WHERE Username='" & user_action & "'")
+            End If
         End If
         RefreshLeavestoApprove()
         ' till here
@@ -1707,17 +1752,21 @@
         Access.AddParam("@LID", leave_ID)
         Access.ExecQuery("SELECT Username_Action, Updated_Status FROM Leave_Update_DB WHERE Leave_ID=@LID")
         If Access.RecordCount > 0 Then
+            MsgBox("entered ros of dbdt")
             For Each r In Access.DBDT.Rows
                 If r("Updated_Status") = "Rejected" Then
+                    MsgBox("rejection found")
                     new_current_status = "Rejected"
                     Exit For
                 ElseIf r("Updated_Status") = "Accepted" Then
+                    MsgBox("counting accepts")
                     total_number_of_accepts += 1
                 End If
             Next
 
             ' Check if pending OR accepted
             If new_current_status <> "Rejected" Then
+                MsgBox("not rejected, checking if pending or accepted")
                 Access.AddParam("@LID", leave_ID)
                 Access.ExecQuery("SELECT List_of_Participating_Users FROM Leave_DB WHERE Leave_ID=@LID")
                 Dim lopu As String = Access.DBDT.Rows(0).Item(0)
@@ -1737,9 +1786,7 @@
             End If
 
             ' update current status in db
-            Access.AddParam("@LID", leave_ID)
-            Access.AddParam("@status", new_current_status)
-            Access.ExecQuery("UPDATE Leave_DB SET Current_Status=@status WHERE Leave_ID=@LID")
+            Access.ExecQuery("UPDATE Leave_DB SET Current_Status='" & new_current_status & "' WHERE Leave_ID='" & leave_ID & "'")
         Else
             MsgBox("Error in updating current status of leave. No updateIDs found corresponding to this leaveID.")
         End If
@@ -1839,5 +1886,28 @@
 
     Private Sub richtxtboxLeavestobeApprovedRemarks_TextChanged(sender As Object, e As EventArgs) Handles richtxtboxLeavestobeApprovedRemarks.TextChanged
         Label10.Hide()
+    End Sub
+
+    Private Sub lsviewViewLeavesListOfLeaves_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsviewViewLeavesListOfLeaves.SelectedIndexChanged
+        Dim selectedLeave As New ListViewItem
+        selectedLeave = viewleaves_SelectedItem()
+        If selectedLeave.SubItems(0).Text() = "" Then
+            Exit Sub
+        End If
+
+        Access.AddParam("@LID", selectedLeave.SubItems(1).Text())
+        Access.ExecQuery("SELECT Remarks FROM Leave_DB WHERE Leave_ID=@LID")
+        If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
+        Else
+            richtxtboxViewLeaves.Text() = Access.DBDT.Rows(0).Item(0)
+        End If
+
+
+    End Sub
+
+    Private Sub tabpgNewLeaves_Enter(sender As Object, e As EventArgs) Handles tabpgNewLeaves.Enter
+        Date_Calc.SetSelectionRange(CDate(System.DateTime.Now), CDate(System.DateTime.Now))
+        Type_Of_Leave.SelectedIndex = 0
+        Remark_Box.Clear()
     End Sub
 End Class
