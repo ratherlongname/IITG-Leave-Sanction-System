@@ -1022,7 +1022,7 @@
                     Exit Sub
                 Else
                     Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Ordinary=" & help & "")
+                    Access.ExecQuery("UPDATE Student_DB SET Ordinary=" & help & " WHERE Username='" & username & "'")
                 End If
             ElseIf type = "Medical" Then
                 If BALANCE_LEFT < number_of_days Then
@@ -1030,7 +1030,7 @@
                     Exit Sub
                 Else
                     Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Medical=" & help & "")
+                    Access.ExecQuery("UPDATE Student_DB SET Medical=" & help & " WHERE Username='" & username & "'")
                 End If
             Else
                 If BALANCE_LEFT < number_of_days Then
@@ -1038,7 +1038,7 @@
                     Exit Sub
                 Else
                     Dim help As Integer = BALANCE_LEFT - number_of_days
-                    Access.ExecQuery("UPDATE Student_DB SET Academic=" & help & "")
+                    Access.ExecQuery("UPDATE Student_DB SET Academic=" & help & " WHERE Username='" & username & "'")
                 End If
             End If
 
@@ -1231,7 +1231,7 @@
                         Exit Sub
                     Else
                         Dim help As Integer = BALANCE_LEFT - number_of_days
-                        Access.ExecQuery("UPDATE Student_DB SET Ordinary=" & help & "")
+                        Access.ExecQuery("UPDATE Faculty_DB SET Ordinary=" & help & " WHERE Username ='" & username & "'")
                     End If
                 ElseIf type = "Medical" Then
                     If BALANCE_LEFT < number_of_days Then
@@ -1239,7 +1239,7 @@
                         Exit Sub
                     Else
                         Dim help As Integer = BALANCE_LEFT - number_of_days
-                        Access.ExecQuery("UPDATE Student_DB SET Medical=" & help & "")
+                        Access.ExecQuery("UPDATE Faculty_DB SET Medical=" & help & " WHERE Username ='" & username & "'")
                     End If
                 Else
                     If BALANCE_LEFT < number_of_days Then
@@ -1247,7 +1247,7 @@
                         Exit Sub
                     Else
                         Dim help As Integer = BALANCE_LEFT - number_of_days
-                        Access.ExecQuery("UPDATE Student_DB SET Academic=" & help & "")
+                        Access.ExecQuery("UPDATE Faculty_DB SET Academic=" & help & " WHERE Username ='" & username & "'")
                     End If
                 End If
 
@@ -1369,11 +1369,16 @@
         ' TODO
     End Sub
 
-    'FOR ADMIN
     Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles VIEW.Click
         'take that from selected list view rows
-        Dim dum As String = "vakul123"
-        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
+        Dim dum As New ListViewItem
+        dum = ADMIN_SelectedItem()
+        If dum.SubItems(0).Text() = "" Then
+            MsgBox("No entry selected!")
+            Exit Sub
+        End If
+
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
             Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
@@ -1388,7 +1393,7 @@
             Form4.DESIGNATION.Visible = False
         End If
 
-        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum & "'")
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
             Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
@@ -1413,8 +1418,16 @@
 
     'FOR ADMIN
     Private Sub APPROVE_Click(sender As Object, e As EventArgs) Handles APPROVE.Click
-        Dim dum As String = "vakul123"
+        Dim dum As New ListViewItem
+        dum = ADMIN_SelectedItem()
+        If dum.SubItems(0).Text() = "" Then
+            MsgBox("No entry selected!")
+            Exit Sub
+        End If
 
+        Dim username As String = dum.SubItems(0).Text()
+
+        ' TODO
     End Sub
 
     'FOR LEAVES TO BE APPROVED
@@ -1587,7 +1600,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'take that from selected list view rows
-        Dim dum As String = "vakul123"
+        Dim dum As String = Label1.Text()
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
@@ -1649,4 +1662,14 @@
     Private Sub OLDEST_2_Click(sender As Object, e As EventArgs) Handles OLDEST_2.Click
         RefreshLeavestoApprove()
     End Sub
+    'FOR ADMIN
+
+    Private Function ADMIN_SelectedItem() As ListViewItem
+        Dim selectedEntry As New ListViewItem
+        If ADMIN.SelectedItems.Count > 0 Then
+            selectedEntry = ADMIN.SelectedItems(0)
+        End If
+
+        Return selectedEntry
+    End Function
 End Class
