@@ -46,7 +46,7 @@ Partial Class Form5
         '
         Me.lsviewDetailLeaveView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Update_ID, Me.Date_Time, Me.User_Action, Me.Action, Me.Remark})
         Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(17, 116)
-        Me.lsviewDetailLeaveView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lsviewDetailLeaveView.Margin = New System.Windows.Forms.Padding(4)
         Me.lsviewDetailLeaveView.Name = "lsviewDetailLeaveView"
         Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(763, 404)
         Me.lsviewDetailLeaveView.TabIndex = 0
@@ -56,22 +56,27 @@ Partial Class Form5
         'Update_ID
         '
         Me.Update_ID.Text = "Update ID"
+        Me.Update_ID.Width = 138
         '
         'Date_Time
         '
         Me.Date_Time.Text = "Date / Time"
+        Me.Date_Time.Width = 112
         '
         'User_Action
         '
         Me.User_Action.Text = "Username"
+        Me.User_Action.Width = 211
         '
         'Action
         '
         Me.Action.Text = "Action"
+        Me.Action.Width = 272
         '
         'Remark
         '
         Me.Remark.Text = "Remark"
+        Me.Remark.Width = 423
         '
         'Label1
         '
@@ -136,7 +141,7 @@ Partial Class Form5
         'txtDateTime
         '
         Me.txtDateTime.Location = New System.Drawing.Point(164, 7)
-        Me.txtDateTime.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDateTime.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDateTime.Name = "txtDateTime"
         Me.txtDateTime.ReadOnly = True
         Me.txtDateTime.Size = New System.Drawing.Size(132, 22)
@@ -145,7 +150,7 @@ Partial Class Form5
         'txtEndDate
         '
         Me.txtEndDate.Location = New System.Drawing.Point(509, 66)
-        Me.txtEndDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtEndDate.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEndDate.Name = "txtEndDate"
         Me.txtEndDate.ReadOnly = True
         Me.txtEndDate.Size = New System.Drawing.Size(132, 22)
@@ -154,7 +159,7 @@ Partial Class Form5
         'txtStartDate
         '
         Me.txtStartDate.Location = New System.Drawing.Point(509, 37)
-        Me.txtStartDate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtStartDate.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStartDate.Name = "txtStartDate"
         Me.txtStartDate.ReadOnly = True
         Me.txtStartDate.Size = New System.Drawing.Size(132, 22)
@@ -163,7 +168,7 @@ Partial Class Form5
         'txtCurrentStatus
         '
         Me.txtCurrentStatus.Location = New System.Drawing.Point(509, 7)
-        Me.txtCurrentStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCurrentStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCurrentStatus.Name = "txtCurrentStatus"
         Me.txtCurrentStatus.ReadOnly = True
         Me.txtCurrentStatus.Size = New System.Drawing.Size(132, 22)
@@ -172,7 +177,7 @@ Partial Class Form5
         'txtTypeofLeave
         '
         Me.txtTypeofLeave.Location = New System.Drawing.Point(164, 66)
-        Me.txtTypeofLeave.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTypeofLeave.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTypeofLeave.Name = "txtTypeofLeave"
         Me.txtTypeofLeave.ReadOnly = True
         Me.txtTypeofLeave.Size = New System.Drawing.Size(132, 22)
@@ -181,7 +186,7 @@ Partial Class Form5
         'txtLeaveID
         '
         Me.txtLeaveID.Location = New System.Drawing.Point(164, 37)
-        Me.txtLeaveID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtLeaveID.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLeaveID.Name = "txtLeaveID"
         Me.txtLeaveID.ReadOnly = True
         Me.txtLeaveID.Size = New System.Drawing.Size(132, 22)
@@ -205,7 +210,7 @@ Partial Class Form5
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lsviewDetailLeaveView)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form5"
         Me.Text = "Form5"
         Me.ResumeLayout(False)
