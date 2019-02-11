@@ -1361,12 +1361,25 @@
         Return selectedLeave
     End Function
 
-    'FOR LEAVES TO BE APPROVED
     Private Sub btnLeavestobeApprovedView_Click(sender As Object, e As EventArgs) Handles btnLeavestobeApprovedView.Click
         Dim selectedLeave As New ListViewItem
         selectedLeave = APPROVED_SelectedItem()
+        If selectedLeave.SubItems(0).Text() = "" Then
+            MsgBox("No Leave selected!")
+            Exit Sub
+        End If
 
-        ' TODO
+        Access.AddParam("@LID", selectedLeave.SubItems(0).Text())
+        Access.ExecQuery("SELECT Current_Status FROM Leave_DB WHERE Leave_ID=@LID")
+
+        Form5.txtDateTime.Text() = selectedLeave.SubItems(2).Text()
+        Form5.txtLeaveID.Text() = selectedLeave.SubItems(0).Text()
+        Form5.txtTypeofLeave.Text() = selectedLeave.SubItems(5).Text()
+        Form5.txtStartDate.Text() = selectedLeave.SubItems(3).Text()
+        Form5.txtEndDate.Text() = selectedLeave.SubItems(4).Text()
+        Form5.txtCurrentStatus.Text() = Access.DBDT.Rows(0).Item(0)
+        Form5.Show()
+
     End Sub
 
     Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles VIEW.Click
