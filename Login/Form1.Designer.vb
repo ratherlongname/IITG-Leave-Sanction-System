@@ -34,17 +34,17 @@ Partial Class Form1
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -217,6 +217,30 @@ Partial Class Form1
         Me.Panel3.Size = New System.Drawing.Size(30, 30)
         Me.Panel3.TabIndex = 25
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.White
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.user_teal
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 5)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 23
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.White
+        Me.PictureBox3.Image = Global.Login.My.Resources.Resources.primary_password1
+        Me.PictureBox3.Location = New System.Drawing.Point(42, 153)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 24
+        Me.PictureBox3.TabStop = False
+        '
         'Label3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -256,30 +280,6 @@ Partial Class Form1
         Me.Label1.Text = "New here?"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.user_teal
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 5)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(22, 22)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 23
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.White
-        Me.PictureBox3.Image = Global.Login.My.Resources.Resources.primary_password1
-        Me.PictureBox3.Location = New System.Drawing.Point(42, 153)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox3.TabIndex = 24
-        Me.PictureBox3.TabStop = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -310,14 +310,14 @@ Partial Class Form1
         Me.MinimumSize = New System.Drawing.Size(1080, 718)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Welcome"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -28,4 +28,8 @@
         Close()
         Form3.Show()
     End Sub
+
+    Private Sub lsviewDetailLeaveView_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsviewDetailLeaveView.SelectedIndexChanged
+
+    End Sub
 End Class

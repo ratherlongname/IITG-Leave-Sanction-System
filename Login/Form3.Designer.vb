@@ -447,7 +447,6 @@ Partial Class Form3
         '
         Me.lsviewViewLeavesListOfLeaves.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lsviewViewLeavesListOfLeaves.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lsviewViewLeavesListOfLeaves.CheckBoxes = True
         Me.lsviewViewLeavesListOfLeaves.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.colhdrDateTimeOfApplication, Me.colhdrLeaveID, Me.colhdrTypeOfLeave, Me.colhdrStartDate, Me.colhdrEndDate, Me.colhdrStatus})
         Me.lsviewViewLeavesListOfLeaves.FullRowSelect = True
         Me.lsviewViewLeavesListOfLeaves.HideSelection = False
@@ -1302,10 +1301,11 @@ Partial Class Form3
         Me.Controls.Add(Me.tabctrlMainTabs)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form3"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form3"
+        Me.Text = "Dashboard"
         Me.tabctrlMainTabs.ResumeLayout(False)
         Me.tabpgViewLeaves.ResumeLayout(False)
         Me.tabpgViewLeaves.PerformLayout()

@@ -622,11 +622,12 @@ Partial Class Form4
         Me.Controls.Add(Me.lblLeaSanSys)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.Panel2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form4"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form4"
+        Me.Text = "Profile"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.back_Button, System.ComponentModel.ISupportInitialize).EndInit()

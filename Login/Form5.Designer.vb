@@ -30,19 +30,6 @@ Partial Class Form5
         Me.User_Action = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Action = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Remark = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtDateTime = New System.Windows.Forms.TextBox()
-        Me.txtEndDate = New System.Windows.Forms.TextBox()
-        Me.txtStartDate = New System.Windows.Forms.TextBox()
-        Me.txtCurrentStatus = New System.Windows.Forms.TextBox()
-        Me.txtTypeofLeave = New System.Windows.Forms.TextBox()
-        Me.txtLeaveID = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.lblLeaSanSys = New System.Windows.Forms.Label()
@@ -54,7 +41,18 @@ Partial Class Form5
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.txtDateTime = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtLeaveID = New System.Windows.Forms.TextBox()
+        Me.txtTypeofLeave = New System.Windows.Forms.TextBox()
+        Me.txtCurrentStatus = New System.Windows.Forms.TextBox()
+        Me.txtStartDate = New System.Windows.Forms.TextBox()
+        Me.txtEndDate = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,9 +60,11 @@ Partial Class Form5
         '
         'lsviewDetailLeaveView
         '
-        Me.lsviewDetailLeaveView.BackColor = System.Drawing.Color.White
+        Me.lsviewDetailLeaveView.BackColor = System.Drawing.Color.Gainsboro
+        Me.lsviewDetailLeaveView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lsviewDetailLeaveView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Update_ID, Me.Date_Time, Me.User_Action, Me.Action, Me.Remark})
-        Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(228, 294)
+        Me.lsviewDetailLeaveView.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(228, 278)
         Me.lsviewDetailLeaveView.Name = "lsviewDetailLeaveView"
         Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(824, 358)
         Me.lsviewDetailLeaveView.TabIndex = 0
@@ -95,153 +95,6 @@ Partial Class Form5
         '
         Me.Remark.Text = "Remark"
         Me.Remark.Width = 369
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(151, 20)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Date / Time Applied:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(407, 66)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "End Date:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(407, 33)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 20)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Start Date:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(407, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(117, 20)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Current Status:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(3, 66)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 20)
-        Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Type of Leave:"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(3, 33)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(77, 20)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Leave ID:"
-        '
-        'txtDateTime
-        '
-        Me.txtDateTime.BackColor = System.Drawing.Color.White
-        Me.txtDateTime.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtDateTime.Location = New System.Drawing.Point(205, 3)
-        Me.txtDateTime.Name = "txtDateTime"
-        Me.txtDateTime.ReadOnly = True
-        Me.txtDateTime.Size = New System.Drawing.Size(196, 19)
-        Me.txtDateTime.TabIndex = 7
-        '
-        'txtEndDate
-        '
-        Me.txtEndDate.BackColor = System.Drawing.Color.White
-        Me.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtEndDate.Location = New System.Drawing.Point(609, 69)
-        Me.txtEndDate.Name = "txtEndDate"
-        Me.txtEndDate.ReadOnly = True
-        Me.txtEndDate.Size = New System.Drawing.Size(196, 19)
-        Me.txtEndDate.TabIndex = 8
-        '
-        'txtStartDate
-        '
-        Me.txtStartDate.BackColor = System.Drawing.Color.White
-        Me.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtStartDate.Location = New System.Drawing.Point(609, 36)
-        Me.txtStartDate.Name = "txtStartDate"
-        Me.txtStartDate.ReadOnly = True
-        Me.txtStartDate.Size = New System.Drawing.Size(196, 19)
-        Me.txtStartDate.TabIndex = 9
-        '
-        'txtCurrentStatus
-        '
-        Me.txtCurrentStatus.BackColor = System.Drawing.Color.White
-        Me.txtCurrentStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCurrentStatus.Location = New System.Drawing.Point(609, 3)
-        Me.txtCurrentStatus.Name = "txtCurrentStatus"
-        Me.txtCurrentStatus.ReadOnly = True
-        Me.txtCurrentStatus.Size = New System.Drawing.Size(196, 19)
-        Me.txtCurrentStatus.TabIndex = 10
-        '
-        'txtTypeofLeave
-        '
-        Me.txtTypeofLeave.BackColor = System.Drawing.Color.White
-        Me.txtTypeofLeave.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTypeofLeave.Location = New System.Drawing.Point(205, 69)
-        Me.txtTypeofLeave.Name = "txtTypeofLeave"
-        Me.txtTypeofLeave.ReadOnly = True
-        Me.txtTypeofLeave.Size = New System.Drawing.Size(196, 19)
-        Me.txtTypeofLeave.TabIndex = 11
-        '
-        'txtLeaveID
-        '
-        Me.txtLeaveID.BackColor = System.Drawing.Color.White
-        Me.txtLeaveID.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtLeaveID.Location = New System.Drawing.Point(205, 36)
-        Me.txtLeaveID.Name = "txtLeaveID"
-        Me.txtLeaveID.ReadOnly = True
-        Me.txtLeaveID.Size = New System.Drawing.Size(196, 19)
-        Me.txtLeaveID.TabIndex = 12
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.White
-        Me.TableLayoutPanel1.ColumnCount = 4
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label6, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtEndDate, 3, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtStartDate, 3, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtCurrentStatus, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtTypeofLeave, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtLeaveID, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label4, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label3, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 2, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtDateTime, 1, 0)
-        Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(244, 169)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 3
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(808, 101)
-        Me.TableLayoutPanel1.TabIndex = 36
         '
         'Label15
         '
@@ -343,13 +196,13 @@ Partial Class Form5
         'btnBack
         '
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.Teal
+        Me.btnBack.BackColor = System.Drawing.Color.DarkSlateGray
         Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBack.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBack.ForeColor = System.Drawing.Color.White
-        Me.btnBack.Location = New System.Drawing.Point(973, 101)
+        Me.btnBack.Location = New System.Drawing.Point(946, 101)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(86, 46)
         Me.btnBack.TabIndex = 47
@@ -380,28 +233,164 @@ Partial Class Form5
         Me.PictureBox1.TabIndex = 42
         Me.PictureBox1.TabStop = False
         '
+        'txtDateTime
+        '
+        Me.txtDateTime.BackColor = System.Drawing.Color.White
+        Me.txtDateTime.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtDateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDateTime.Location = New System.Drawing.Point(408, 177)
+        Me.txtDateTime.Name = "txtDateTime"
+        Me.txtDateTime.ReadOnly = True
+        Me.txtDateTime.Size = New System.Drawing.Size(196, 19)
+        Me.txtDateTime.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(635, 229)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(81, 20)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "End Date:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(635, 203)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(87, 20)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Start Date:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(635, 177)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(117, 20)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Current Status:"
+        '
+        'txtLeaveID
+        '
+        Me.txtLeaveID.BackColor = System.Drawing.Color.White
+        Me.txtLeaveID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtLeaveID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLeaveID.Location = New System.Drawing.Point(408, 203)
+        Me.txtLeaveID.Name = "txtLeaveID"
+        Me.txtLeaveID.ReadOnly = True
+        Me.txtLeaveID.Size = New System.Drawing.Size(196, 19)
+        Me.txtLeaveID.TabIndex = 12
+        '
+        'txtTypeofLeave
+        '
+        Me.txtTypeofLeave.BackColor = System.Drawing.Color.White
+        Me.txtTypeofLeave.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtTypeofLeave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTypeofLeave.Location = New System.Drawing.Point(408, 229)
+        Me.txtTypeofLeave.Name = "txtTypeofLeave"
+        Me.txtTypeofLeave.ReadOnly = True
+        Me.txtTypeofLeave.Size = New System.Drawing.Size(196, 19)
+        Me.txtTypeofLeave.TabIndex = 11
+        '
+        'txtCurrentStatus
+        '
+        Me.txtCurrentStatus.BackColor = System.Drawing.Color.White
+        Me.txtCurrentStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtCurrentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCurrentStatus.Location = New System.Drawing.Point(774, 177)
+        Me.txtCurrentStatus.Name = "txtCurrentStatus"
+        Me.txtCurrentStatus.ReadOnly = True
+        Me.txtCurrentStatus.Size = New System.Drawing.Size(196, 19)
+        Me.txtCurrentStatus.TabIndex = 10
+        '
+        'txtStartDate
+        '
+        Me.txtStartDate.BackColor = System.Drawing.Color.White
+        Me.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtStartDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtStartDate.Location = New System.Drawing.Point(774, 203)
+        Me.txtStartDate.Name = "txtStartDate"
+        Me.txtStartDate.ReadOnly = True
+        Me.txtStartDate.Size = New System.Drawing.Size(196, 19)
+        Me.txtStartDate.TabIndex = 9
+        '
+        'txtEndDate
+        '
+        Me.txtEndDate.BackColor = System.Drawing.Color.White
+        Me.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtEndDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEndDate.Location = New System.Drawing.Point(774, 229)
+        Me.txtEndDate.Name = "txtEndDate"
+        Me.txtEndDate.ReadOnly = True
+        Me.txtEndDate.Size = New System.Drawing.Size(196, 19)
+        Me.txtEndDate.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(240, 229)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(112, 20)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Type of Leave:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(240, 203)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(77, 20)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "Leave ID:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(240, 177)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(151, 20)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Date / Time Applied:"
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1064, 681)
+        Me.Controls.Add(Me.txtEndDate)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtStartDate)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtCurrentStatus)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtTypeofLeave)
         Me.Controls.Add(Me.HScrollBar1)
+        Me.Controls.Add(Me.txtLeaveID)
         Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.txtDateTime)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.lblLeaSanSys)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.lsviewDetailLeaveView)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form5"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form5"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.Text = "Application Viewer"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -411,24 +400,11 @@ Partial Class Form5
 
     End Sub
     Friend WithEvents lsviewDetailLeaveView As System.Windows.Forms.ListView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents txtDateTime As System.Windows.Forms.TextBox
-    Friend WithEvents txtEndDate As System.Windows.Forms.TextBox
-    Friend WithEvents txtStartDate As System.Windows.Forms.TextBox
-    Friend WithEvents txtCurrentStatus As System.Windows.Forms.TextBox
-    Friend WithEvents txtTypeofLeave As System.Windows.Forms.TextBox
-    Friend WithEvents txtLeaveID As System.Windows.Forms.TextBox
     Friend WithEvents Update_ID As System.Windows.Forms.ColumnHeader
     Friend WithEvents Date_Time As System.Windows.Forms.ColumnHeader
     Friend WithEvents User_Action As System.Windows.Forms.ColumnHeader
     Friend WithEvents Action As System.Windows.Forms.ColumnHeader
     Friend WithEvents Remark As System.Windows.Forms.ColumnHeader
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents Label15 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label16 As Label
@@ -440,4 +416,16 @@ Partial Class Form5
     Friend WithEvents btnBack As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents HScrollBar1 As HScrollBar
+    Friend WithEvents txtDateTime As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtLeaveID As TextBox
+    Friend WithEvents txtTypeofLeave As TextBox
+    Friend WithEvents txtCurrentStatus As TextBox
+    Friend WithEvents txtStartDate As TextBox
+    Friend WithEvents txtEndDate As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label1 As Label
 End Class
