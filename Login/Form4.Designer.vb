@@ -61,14 +61,14 @@ Partial Class Form4
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.back_Button = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -141,12 +141,12 @@ Partial Class Form4
         Me.TextBox3.BackColor = System.Drawing.Color.DarkSlateGray
         Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox3.Enabled = False
-        Me.TextBox3.Location = New System.Drawing.Point(0, 143)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 2)
+        Me.TextBox3.Location = New System.Drawing.Point(-2, 152)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(0)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(1067, 174)
+        Me.TextBox3.Size = New System.Drawing.Size(1067, 164)
         Me.TextBox3.TabIndex = 39
         '
         'Label7
@@ -156,7 +156,7 @@ Partial Class Form4
         Me.Label7.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(335, 215)
+        Me.Label7.Location = New System.Drawing.Point(335, 220)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 17)
         Me.Label7.TabIndex = 45
@@ -168,11 +168,11 @@ Partial Class Form4
         Me.FULLNAME_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FULLNAME_TB.AutoSize = True
         Me.FULLNAME_TB.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.FULLNAME_TB.Font = New System.Drawing.Font("Century Gothic", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FULLNAME_TB.Font = New System.Drawing.Font("Century Gothic", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FULLNAME_TB.ForeColor = System.Drawing.Color.White
         Me.FULLNAME_TB.Location = New System.Drawing.Point(333, 185)
         Me.FULLNAME_TB.Name = "FULLNAME_TB"
-        Me.FULLNAME_TB.Size = New System.Drawing.Size(121, 25)
+        Me.FULLNAME_TB.Size = New System.Drawing.Size(118, 26)
         Me.FULLNAME_TB.TabIndex = 50
         Me.FULLNAME_TB.Text = "Full Name"
         Me.FULLNAME_TB.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -551,30 +551,6 @@ Partial Class Form4
         Me.Panel3.Size = New System.Drawing.Size(1067, 369)
         Me.Panel3.TabIndex = 55
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox2.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.a
-        Me.PictureBox2.Location = New System.Drawing.Point(120, 185)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(90, 90)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 54
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(284, 11)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(102, 96)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 33
-        Me.PictureBox1.TabStop = False
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.DarkSlateGray
@@ -594,12 +570,36 @@ Partial Class Form4
         Me.back_Button.BackColor = System.Drawing.Color.DarkSlateGray
         Me.back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.back_Button.Image = Global.Login.My.Resources.Resources.back_50
-        Me.back_Button.Location = New System.Drawing.Point(929, 205)
+        Me.back_Button.Location = New System.Drawing.Point(929, 209)
         Me.back_Button.Name = "back_Button"
-        Me.back_Button.Size = New System.Drawing.Size(36, 35)
+        Me.back_Button.Size = New System.Drawing.Size(25, 25)
         Me.back_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.back_Button.TabIndex = 75
         Me.back_Button.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox2.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.PictureBox2.Image = Global.Login.My.Resources.Resources.a
+        Me.PictureBox2.Location = New System.Drawing.Point(120, 176)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(90, 90)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 54
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(284, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(102, 96)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 33
+        Me.PictureBox1.TabStop = False
         '
         'Form4
         '
@@ -625,12 +625,13 @@ Partial Class Form4
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(1080, 720)
         Me.Name = "Form4"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form4"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout
 

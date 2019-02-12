@@ -722,4 +722,33 @@ Public Class Form2
         End Try
 
     End Sub
+
+    Private Sub USERNAME_MouseMove(sender As Object, e As MouseEventArgs) Handles USERNAME.MouseMove
+        USERNAME.Focus()
+    End Sub
+
+    Private Sub PASSWORD_MouseMove(sender As Object, e As MouseEventArgs) Handles PASSWORD.MouseMove
+        PASSWORD.Focus()
+    End Sub
+
+    Private Sub FIRST_NAME_MouseMove(sender As Object, e As MouseEventArgs) Handles FIRST_NAME.MouseMove
+        FIRST_NAME.Focus()
+    End Sub
+
+    Private Sub LAST_NAME_MouseMove(sender As Object, e As MouseEventArgs) Handles LAST_NAME.MouseMove
+        LAST_NAME.Focus()
+    End Sub
+
+    Private Sub YEAR_MouseMove(sender As Object, e As MouseEventArgs) Handles YEAR.MouseMove
+        YEAR.Focus()
+    End Sub
+
+    Private Sub ROLL_NO_MouseMove(sender As Object, e As MouseEventArgs) Handles ROLL_NO.MouseMove
+        ROLL_NO.Focus()
+    End Sub
+
+    Private Sub VALIDATION_MouseMove(sender As Object, e As MouseEventArgs) Handles VALIDATION.MouseMove
+        VALIDATION.Focus()
+    End Sub
+
 End Class

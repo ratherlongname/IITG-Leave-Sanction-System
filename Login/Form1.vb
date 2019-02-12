@@ -70,4 +70,24 @@
             End If
         End If
     End Sub
+
+    Private Sub txtPassword_MouseMove(sender As Object, e As MouseEventArgs) Handles txtPassword.MouseMove
+        txtPassword.Focus()
+    End Sub
+
+    Private Sub txtUsername_MouseMove(sender As Object, e As MouseEventArgs) Handles txtUsername.MouseMove
+        txtUsername.Focus()
+    End Sub
+
+    Private Sub txtUsername_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUsername.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            btnLogin_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub txtPassword_KeyUp(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyUp
+        If e.KeyCode = Keys.Enter Then
+            btnLogin_Click(sender, e)
+        End If
+    End Sub
 End Class
