@@ -54,7 +54,7 @@
     End Sub
 
     ' Profile Edit Button
-    
+
 
     ' View Profile Button
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VIEW_3.Click
@@ -109,7 +109,7 @@
 
     ' ADMIN PAGE
     ' View Button
-    Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles View.Click
+    Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles VIEW.Click
         'take that from selected list view rows
         Dim dum As New ListViewItem
         dum = ADMIN_SelectedItem()
@@ -200,19 +200,15 @@
 
         Dim username As String = dum.SubItems(0).Text()
         Dim help As String = "NO"
-        Dim dum2 As New ListViewItem
-        dum2 = ADMIN_SelectedItem()
-        If dum2.SubItems(4).Text() = "" Then
-            MsgBox("No entry selected!")
-            Exit Sub
-        End If
+
         Dim type As String = dum.SubItems(4).Text()
         If type = "FACULTY" Then
-            Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
+            Access.AddParam("@user", username)
+            Access.ExecQuery("DELETE FROM Faculty_DB WHERE Username=@user")
         Else
-            Access.ExecQuery("UPDATE Student_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
+            Access.AddParam("@user", username)
+            Access.ExecQuery("DELETE FROM Student_DB WHERE Username=@user")
         End If
-        Access.ExecQuery("UPDATE Faculty_DB SET Approved='" & help & "' WHERE Username ='" & username & "'")
         admin_refresh()
     End Sub
 

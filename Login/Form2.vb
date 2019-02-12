@@ -430,7 +430,14 @@ Public Class Form2
                 End If
 
                 If HOD_CheckBox.Checked = True Then
+
                     Dim desg_2 As String = "HOD"
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & desg_2 & "' and Department='" & dept_fac & "'")
+                    If Access.RecordCount > 0 Then
+                        MessageBox.Show("HOD of this Department Already exists")
+                        Button2.PerformClick()
+                        Exit Sub
+                    End If
                     'Adding Parameters
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
@@ -533,6 +540,7 @@ Public Class Form2
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
+
 
         If pwd = Nothing Then
             MessageBox.Show("Please Enter the Password")
