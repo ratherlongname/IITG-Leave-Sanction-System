@@ -553,12 +553,13 @@ Partial Class Form4
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(827, 205)
+        Me.Button1.Location = New System.Drawing.Point(798, 205)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 35)
         Me.Button1.TabIndex = 74
@@ -567,10 +568,11 @@ Partial Class Form4
         '
         'back_Button
         '
+        Me.back_Button.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.back_Button.BackColor = System.Drawing.Color.DarkSlateGray
         Me.back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.back_Button.Image = Global.Login.My.Resources.Resources.back_50
-        Me.back_Button.Location = New System.Drawing.Point(929, 209)
+        Me.back_Button.Location = New System.Drawing.Point(900, 209)
         Me.back_Button.Name = "back_Button"
         Me.back_Button.Size = New System.Drawing.Size(25, 25)
         Me.back_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

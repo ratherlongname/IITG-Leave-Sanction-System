@@ -67,7 +67,7 @@ Partial Class Form1
         '
         'btnSignUp
         '
-        Me.btnSignUp.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnSignUp.BackColor = System.Drawing.Color.OrangeRed
         Me.btnSignUp.FlatAppearance.BorderSize = 0
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -75,7 +75,7 @@ Partial Class Form1
         Me.btnSignUp.Location = New System.Drawing.Point(560, 119)
         Me.btnSignUp.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(192, 32)
+        Me.btnSignUp.Size = New System.Drawing.Size(192, 54)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "SIGNUP"
         Me.btnSignUp.UseVisualStyleBackColor = False
@@ -297,7 +297,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1064, 681)
+        Me.ClientSize = New System.Drawing.Size(1064, 679)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label4)

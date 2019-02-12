@@ -59,12 +59,13 @@ Partial Class Form5
         '
         'lsviewDetailLeaveView
         '
+        Me.lsviewDetailLeaveView.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lsviewDetailLeaveView.BackColor = System.Drawing.Color.Gainsboro
         Me.lsviewDetailLeaveView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lsviewDetailLeaveView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Update_ID, Me.Date_Time, Me.User_Action, Me.Action, Me.Remark})
         Me.lsviewDetailLeaveView.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsviewDetailLeaveView.FullRowSelect = True
-        Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(228, 278)
+        Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(227, 278)
         Me.lsviewDetailLeaveView.MultiSelect = False
         Me.lsviewDetailLeaveView.Name = "lsviewDetailLeaveView"
         Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(824, 391)
@@ -197,7 +198,7 @@ Partial Class Form5
         'btnBack
         '
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnBack.BackColor = System.Drawing.Color.OrangeRed
         Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -229,10 +230,11 @@ Partial Class Form5
         '
         'txtDateTime
         '
+        Me.txtDateTime.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtDateTime.BackColor = System.Drawing.Color.White
         Me.txtDateTime.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDateTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDateTime.Location = New System.Drawing.Point(408, 177)
+        Me.txtDateTime.Location = New System.Drawing.Point(407, 177)
         Me.txtDateTime.Name = "txtDateTime"
         Me.txtDateTime.ReadOnly = True
         Me.txtDateTime.Size = New System.Drawing.Size(196, 19)
@@ -240,9 +242,10 @@ Partial Class Form5
         '
         'Label2
         '
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(635, 229)
+        Me.Label2.Location = New System.Drawing.Point(634, 229)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 20)
         Me.Label2.TabIndex = 2
@@ -250,9 +253,10 @@ Partial Class Form5
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(635, 203)
+        Me.Label3.Location = New System.Drawing.Point(634, 203)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 20)
         Me.Label3.TabIndex = 3
@@ -260,9 +264,10 @@ Partial Class Form5
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(635, 177)
+        Me.Label4.Location = New System.Drawing.Point(634, 177)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(117, 20)
         Me.Label4.TabIndex = 4
@@ -270,10 +275,11 @@ Partial Class Form5
         '
         'txtLeaveID
         '
+        Me.txtLeaveID.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtLeaveID.BackColor = System.Drawing.Color.White
         Me.txtLeaveID.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtLeaveID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLeaveID.Location = New System.Drawing.Point(408, 203)
+        Me.txtLeaveID.Location = New System.Drawing.Point(407, 203)
         Me.txtLeaveID.Name = "txtLeaveID"
         Me.txtLeaveID.ReadOnly = True
         Me.txtLeaveID.Size = New System.Drawing.Size(196, 19)
@@ -281,10 +287,11 @@ Partial Class Form5
         '
         'txtTypeofLeave
         '
+        Me.txtTypeofLeave.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtTypeofLeave.BackColor = System.Drawing.Color.White
         Me.txtTypeofLeave.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtTypeofLeave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTypeofLeave.Location = New System.Drawing.Point(408, 229)
+        Me.txtTypeofLeave.Location = New System.Drawing.Point(407, 229)
         Me.txtTypeofLeave.Name = "txtTypeofLeave"
         Me.txtTypeofLeave.ReadOnly = True
         Me.txtTypeofLeave.Size = New System.Drawing.Size(196, 19)
@@ -292,10 +299,11 @@ Partial Class Form5
         '
         'txtCurrentStatus
         '
+        Me.txtCurrentStatus.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtCurrentStatus.BackColor = System.Drawing.Color.White
         Me.txtCurrentStatus.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCurrentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrentStatus.Location = New System.Drawing.Point(774, 177)
+        Me.txtCurrentStatus.Location = New System.Drawing.Point(773, 177)
         Me.txtCurrentStatus.Name = "txtCurrentStatus"
         Me.txtCurrentStatus.ReadOnly = True
         Me.txtCurrentStatus.Size = New System.Drawing.Size(196, 19)
@@ -303,10 +311,11 @@ Partial Class Form5
         '
         'txtStartDate
         '
+        Me.txtStartDate.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtStartDate.BackColor = System.Drawing.Color.White
         Me.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtStartDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStartDate.Location = New System.Drawing.Point(774, 203)
+        Me.txtStartDate.Location = New System.Drawing.Point(773, 203)
         Me.txtStartDate.Name = "txtStartDate"
         Me.txtStartDate.ReadOnly = True
         Me.txtStartDate.Size = New System.Drawing.Size(196, 19)
@@ -314,10 +323,11 @@ Partial Class Form5
         '
         'txtEndDate
         '
+        Me.txtEndDate.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtEndDate.BackColor = System.Drawing.Color.White
         Me.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEndDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEndDate.Location = New System.Drawing.Point(774, 229)
+        Me.txtEndDate.Location = New System.Drawing.Point(773, 229)
         Me.txtEndDate.Name = "txtEndDate"
         Me.txtEndDate.ReadOnly = True
         Me.txtEndDate.Size = New System.Drawing.Size(196, 19)
@@ -325,9 +335,10 @@ Partial Class Form5
         '
         'Label5
         '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(240, 229)
+        Me.Label5.Location = New System.Drawing.Point(239, 229)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(112, 20)
         Me.Label5.TabIndex = 5
@@ -335,9 +346,10 @@ Partial Class Form5
         '
         'Label6
         '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(240, 203)
+        Me.Label6.Location = New System.Drawing.Point(239, 203)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(77, 20)
         Me.Label6.TabIndex = 6
@@ -345,9 +357,10 @@ Partial Class Form5
         '
         'Label1
         '
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(240, 177)
+        Me.Label1.Location = New System.Drawing.Point(239, 177)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(151, 20)
         Me.Label1.TabIndex = 1
