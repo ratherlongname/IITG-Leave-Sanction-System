@@ -3,7 +3,13 @@
 
     Private Sub Form5_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Dim LeaveID As String = txtLeaveID.Text()
-
+        Access.ExecQuery("SELECT * FROM Leave_DB WHERE Leave_ID='" & LeaveID & "'")
+        txtDateTime.Text = Access.DBDT.Rows(0).Item("Date/Time Applied")
+        txtStartDate.Text = Access.DBDT.Rows(0).Item("Start_Date")
+        txtEndDate.Text = Access.DBDT.Rows(0).Item("End_Date")
+        txtCurrentStatus.Text = Access.DBDT.Rows(0).Item("Current_Status")
+        txtTypeofLeave.Text = Access.DBDT.Rows(0).Item("Type_of_Leave")
+        txtLeaveID.Text = Access.DBDT.Rows(0).Item("Leave_ID")
         Access.AddParam("@LID", LeaveID)
         Access.ExecQuery("SELECT * FROM Leave_Update_DB WHERE Leave_ID=@LID ORDER BY [Date/Time] DESC")
 

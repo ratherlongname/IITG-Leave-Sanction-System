@@ -384,6 +384,7 @@ Partial Class Form3
         Me.lsviewViewLeavesListOfLeaves.HideSelection = False
         Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(236, 7)
         Me.lsviewViewLeavesListOfLeaves.Margin = New System.Windows.Forms.Padding(4)
+        Me.lsviewViewLeavesListOfLeaves.MultiSelect = False
         Me.lsviewViewLeavesListOfLeaves.Name = "lsviewViewLeavesListOfLeaves"
         Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(621, 258)
         Me.lsviewViewLeavesListOfLeaves.TabIndex = 0
@@ -781,9 +782,11 @@ Partial Class Form3
         '
         Me.NOTIFICATIONS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.NOTIFICATIONS.ForeColor = System.Drawing.Color.Black
+        Me.NOTIFICATIONS.FullRowSelect = True
         Me.NOTIFICATIONS.HideSelection = False
         Me.NOTIFICATIONS.Location = New System.Drawing.Point(177, 64)
         Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NOTIFICATIONS.MultiSelect = False
         Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
         Me.NOTIFICATIONS.Size = New System.Drawing.Size(807, 319)
         Me.NOTIFICATIONS.TabIndex = 2
