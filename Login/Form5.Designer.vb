@@ -177,7 +177,7 @@ Partial Class Form5
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(47, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(124, 19)
+        Me.Label7.Size = New System.Drawing.Size(125, 19)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Appliation Details"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -197,7 +197,7 @@ Partial Class Form5
         'btnBack
         '
         Me.btnBack.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnBack.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnBack.BackColor = System.Drawing.Color.OrangeRed
         Me.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnBack.FlatAppearance.BorderSize = 0
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -218,7 +218,7 @@ Partial Class Form5
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.logo4
         Me.PictureBox1.Location = New System.Drawing.Point(211, 4)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
