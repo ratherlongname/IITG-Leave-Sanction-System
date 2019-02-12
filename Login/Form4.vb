@@ -6,9 +6,9 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'Not making username Editable
-        Form2.USERNAME.Text = Label1.Text
+        Form2.USERNAME.Text = Form3.Label1.Text
         Form2.USERNAME.Enabled = False
-        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & Label1.Text & "'")
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & Form3.Label1.Text & "'")
         'if the faculty is logged in (Includes the case of HOD
         If Access.RecordCount > 0 Then
 
@@ -41,7 +41,7 @@
 
             'If The student is logged in
         Else
-            Access.AddParam("@user2", Label1.Text)
+            Access.AddParam("@user2", Form3.Label1.Text)
             Access.ExecQuery("SELECT * FROM Student_DB WHERE Username=@user2")
             If Access.RecordCount > 0 Then
                 'Getting all the old Deatails and filling into the EDIT FORM
