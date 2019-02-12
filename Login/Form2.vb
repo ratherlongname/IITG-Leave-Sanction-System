@@ -207,8 +207,8 @@ Public Class Form2
                 Button2.PerformClick()
                 Exit Sub
             End If
-            If ta = Nothing And guide_2 = Nothing Then
-                MessageBox.Show("Please Mention either your TA Superviser or Guide")
+            If ta = Nothing Or guide_2 = Nothing Then
+                MessageBox.Show("Please Mention both your TA Superviser and Guide")
                 Button2.PerformClick()
                 Exit Sub
             End If
@@ -644,8 +644,8 @@ Public Class Form2
                 Button2.PerformClick()
                 Exit Sub
             End If
-            If ta = Nothing And guide_2 = Nothing Then
-                MessageBox.Show("Please Mention either your TA Superviser or Guide")
+            If ta = Nothing Or guide_2 = Nothing Then
+                MessageBox.Show("Please Mention both your TA Superviser or Guide")
                 Button2.PerformClick()
                 Exit Sub
             End If

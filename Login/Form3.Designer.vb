@@ -231,10 +231,10 @@ Partial Class Form3
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.White
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.CadetBlue
-        Me.Label12.Location = New System.Drawing.Point(31, 323)
+        Me.Label12.Location = New System.Drawing.Point(33, 327)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(116, 19)
         Me.Label12.TabIndex = 13
@@ -259,10 +259,12 @@ Partial Class Form3
         'richtxtboxViewLeaves
         '
         Me.richtxtboxViewLeaves.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.richtxtboxViewLeaves.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.richtxtboxViewLeaves.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.richtxtboxViewLeaves.Cursor = System.Windows.Forms.Cursors.Default
         Me.richtxtboxViewLeaves.Location = New System.Drawing.Point(26, 323)
         Me.richtxtboxViewLeaves.Margin = New System.Windows.Forms.Padding(0)
         Me.richtxtboxViewLeaves.Name = "richtxtboxViewLeaves"
+        Me.richtxtboxViewLeaves.ReadOnly = True
         Me.richtxtboxViewLeaves.Size = New System.Drawing.Size(528, 100)
         Me.richtxtboxViewLeaves.TabIndex = 1
         Me.richtxtboxViewLeaves.Text = ""
@@ -449,6 +451,7 @@ Partial Class Form3
         Me.lsviewViewLeavesListOfLeaves.FullRowSelect = True
         Me.lsviewViewLeavesListOfLeaves.HideSelection = False
         Me.lsviewViewLeavesListOfLeaves.Location = New System.Drawing.Point(26, 87)
+        Me.lsviewViewLeavesListOfLeaves.MultiSelect = False
         Me.lsviewViewLeavesListOfLeaves.Name = "lsviewViewLeavesListOfLeaves"
         Me.lsviewViewLeavesListOfLeaves.Size = New System.Drawing.Size(794, 224)
         Me.lsviewViewLeavesListOfLeaves.TabIndex = 0
@@ -955,9 +958,11 @@ Partial Class Form3
         Me.NOTIFICATIONS.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.NOTIFICATIONS.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader10, Me.ColumnHeader7, Me.ColumnHeader8, Me.ColumnHeader9})
         Me.NOTIFICATIONS.ForeColor = System.Drawing.Color.Black
+        Me.NOTIFICATIONS.FullRowSelect = True
         Me.NOTIFICATIONS.HideSelection = False
         Me.NOTIFICATIONS.Location = New System.Drawing.Point(24, 44)
         Me.NOTIFICATIONS.Margin = New System.Windows.Forms.Padding(2)
+        Me.NOTIFICATIONS.MultiSelect = False
         Me.NOTIFICATIONS.Name = "NOTIFICATIONS"
         Me.NOTIFICATIONS.Size = New System.Drawing.Size(802, 289)
         Me.NOTIFICATIONS.TabIndex = 2

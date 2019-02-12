@@ -763,13 +763,13 @@
 
                 Dim word As String
                 For Each word In words
-                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & word & "'")
+                    Access.ExecQuery("SELECT Notifications FROM Faculty_DB WHERE Username='" & word & "'")
                     If Access.RecordCount > 0 Then
                         Dim noti As String = Nothing
-                        If (IsDBNull(Access.DBDT.Rows(0).Item(7))) Then
+                        If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
                             noti = update_ID + ","
                         Else
-                            noti = Access.DBDT.Rows(0).Item(7)
+                            noti = Access.DBDT.Rows(0).Item(0)
                             noti = noti + update_ID + ","
                         End If
                         Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & noti & "' WHERE Username='" & word & "'")
@@ -877,6 +877,8 @@
             hod = Access.DBDT.Rows(0).Item("Username")
         Else
             MsgBox("HOD from your department isn't registered yet.")
+            MsgBox("Leave Not Submitted")
+            Exit Sub
         End If
 
         Dim adoaa As String
@@ -886,6 +888,8 @@
             adoaa = Access.DBDT.Rows(0).Item("Username")
         Else
             MsgBox("ADOAA isn't registered yet.")
+            MsgBox("Leave Not Submitted")
+            Exit Sub
         End If
 
 
@@ -898,14 +902,16 @@
             Dim ta As String = Access.DBDT.Rows(0).Item("TA_Superviser")
             Dim guide As String = Access.DBDT.Rows(0).Item("Guide")
             Dim BALANCE_LEFT As Integer = Access.DBDT.Rows(0).Item(type)
+            'MessageBox.Show("balance left" + BALANCE_LEFT.ToString)
+            'MessageBox.Show("no. of days" + number_of_days.ToString)
+
 
             If number_of_days > BALANCE_LEFT Then
                 Dim helper As Integer = number_of_days - BALANCE_LEFT
                 MessageBox.Show("Stipend will be cut for " & helper & " days.")
+                Dim zero As Integer = 0
 
-                Access.AddParam("@user", username)
-                Access.AddParam("@zero", 0)
-                Dim query As String = "UPDATE Student_DB SET " + type + "=@zero WHERE Username=@user"
+                Dim query As String = "UPDATE Student_DB SET " + type + "=" & zero & " WHERE Username='" + username + "'"
                 Access.ExecQuery(query)
 
                 Access.AddParam("@user", username)
@@ -913,16 +919,13 @@
                 Dim stipend As Integer = Access.DBDT.Rows(0).Item(0)
                 stipend = stipend + helper
 
-                Access.AddParam("@user", username)
-                Access.AddParam("@stip", stipend)
-                Access.ExecQuery("UPDATE Student_DB SET Days_of_stipend_cut=@stip WHERE Username=@user")
+                Access.ExecQuery("UPDATE Student_DB SET Days_of_stipend_cut=" & stipend & " WHERE Username='" & username & "'")
 
             Else
                 Dim helper As Integer = BALANCE_LEFT - number_of_days
 
-                Access.AddParam("@user", username)
-                Access.AddParam("@val", helper)
-                Dim query As String = "UPDATE Student_DB SET " + type + "=@val WHERE Username=@user"
+                
+                Dim query As String = "UPDATE Student_DB SET " + type + "=" & helper & " WHERE Username='" & username & "'"
                 Access.ExecQuery(query)
 
             End If
@@ -1095,9 +1098,7 @@
                         notif = notif + l_id + ","
                     End If
 
-                    Access.AddParam("@notif", notif)
-                    Access.AddParam("@user", participant)
-                    Access.ExecQuery("UPDATE Faculty_DB SET Notifications=@notif WHERE Username=@user")
+                    Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & notif & "' WHERE Username='" & participant & "'")
                     participant = ""
                 End If
             Next
@@ -1209,9 +1210,7 @@
                             notif = Access.DBDT.Rows(0).Item(0)
                             notif = notif + l_id + ","
                         End If
-                        Access.AddParam("@notif", notif)
-                        Access.AddParam("@user", participant)
-                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications=@notif WHERE Username=@user")
+                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & notif & "' WHERE Username='" & participant & "'")
                         participant = ""
                     End If
                 Next

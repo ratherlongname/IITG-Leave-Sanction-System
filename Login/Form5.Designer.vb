@@ -63,7 +63,9 @@ Partial Class Form5
         Me.lsviewDetailLeaveView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lsviewDetailLeaveView.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Update_ID, Me.Date_Time, Me.User_Action, Me.Action, Me.Remark})
         Me.lsviewDetailLeaveView.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lsviewDetailLeaveView.FullRowSelect = True
         Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(228, 278)
+        Me.lsviewDetailLeaveView.MultiSelect = False
         Me.lsviewDetailLeaveView.Name = "lsviewDetailLeaveView"
         Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(824, 391)
         Me.lsviewDetailLeaveView.TabIndex = 0
@@ -175,7 +177,7 @@ Partial Class Form5
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(47, 11)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(125, 19)
+        Me.Label7.Size = New System.Drawing.Size(124, 19)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Appliation Details"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
