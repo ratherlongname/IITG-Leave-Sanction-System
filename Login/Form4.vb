@@ -81,8 +81,10 @@
         Form2.Show()
     End Sub
 
-    Private Sub back_Button_Click(sender As Object, e As EventArgs) Handles back_Button.Click
+    Private Sub back_Button_Click(sender As Object, e As EventArgs)
         Close()
         Form3.Show()
     End Sub
+
+
 End Class

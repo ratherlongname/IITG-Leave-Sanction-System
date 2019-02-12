@@ -41,6 +41,7 @@ Partial Class Form4
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.back_Button = New System.Windows.Forms.Button()
         Me.OPT_TB = New System.Windows.Forms.Label()
         Me.TA_SUPERVISER_TB = New System.Windows.Forms.Label()
         Me.YEAR_OF_JOINING_TB = New System.Windows.Forms.Label()
@@ -62,11 +63,9 @@ Partial Class Form4
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.back_Button = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -206,7 +205,7 @@ Partial Class Form4
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(222, 54)
+        Me.Label1.Location = New System.Drawing.Point(222, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 21)
         Me.Label1.TabIndex = 30
@@ -217,7 +216,7 @@ Partial Class Form4
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(222, 85)
+        Me.Label2.Location = New System.Drawing.Point(222, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 21)
         Me.Label2.TabIndex = 42
@@ -228,7 +227,7 @@ Partial Class Form4
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(222, 116)
+        Me.Label3.Location = New System.Drawing.Point(222, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(89, 21)
         Me.Label3.TabIndex = 43
@@ -239,7 +238,7 @@ Partial Class Form4
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(222, 147)
+        Me.Label6.Location = New System.Drawing.Point(222, 120)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(99, 21)
         Me.Label6.TabIndex = 44
@@ -250,7 +249,7 @@ Partial Class Form4
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(222, 209)
+        Me.Label8.Location = New System.Drawing.Point(222, 182)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(96, 21)
         Me.Label8.TabIndex = 46
@@ -261,7 +260,7 @@ Partial Class Form4
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(222, 302)
+        Me.Label11.Location = New System.Drawing.Point(222, 275)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 21)
         Me.Label11.TabIndex = 49
@@ -272,7 +271,7 @@ Partial Class Form4
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(222, 240)
+        Me.Label9.Location = New System.Drawing.Point(222, 213)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(118, 21)
         Me.Label9.TabIndex = 47
@@ -283,7 +282,7 @@ Partial Class Form4
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(222, 271)
+        Me.Label10.Location = New System.Drawing.Point(222, 244)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(111, 21)
         Me.Label10.TabIndex = 48
@@ -295,6 +294,7 @@ Partial Class Form4
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.White
+        Me.Panel1.Controls.Add(Me.back_Button)
         Me.Panel1.Controls.Add(Me.OPT_TB)
         Me.Panel1.Controls.Add(Me.TA_SUPERVISER_TB)
         Me.Panel1.Controls.Add(Me.YEAR_OF_JOINING_TB)
@@ -327,13 +327,27 @@ Partial Class Form4
         Me.Panel1.Size = New System.Drawing.Size(807, 401)
         Me.Panel1.TabIndex = 52
         '
+        'back_Button
+        '
+        Me.back_Button.BackColor = System.Drawing.Color.Tomato
+        Me.back_Button.FlatAppearance.BorderSize = 0
+        Me.back_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.back_Button.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.back_Button.ForeColor = System.Drawing.Color.White
+        Me.back_Button.Location = New System.Drawing.Point(301, 326)
+        Me.back_Button.Name = "back_Button"
+        Me.back_Button.Size = New System.Drawing.Size(228, 49)
+        Me.back_Button.TabIndex = 74
+        Me.back_Button.Text = "BACK"
+        Me.back_Button.UseVisualStyleBackColor = False
+        '
         'OPT_TB
         '
         Me.OPT_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.OPT_TB.AutoSize = True
         Me.OPT_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OPT_TB.ForeColor = System.Drawing.Color.Black
-        Me.OPT_TB.Location = New System.Drawing.Point(495, 178)
+        Me.OPT_TB.Location = New System.Drawing.Point(495, 151)
         Me.OPT_TB.Name = "OPT_TB"
         Me.OPT_TB.Size = New System.Drawing.Size(94, 21)
         Me.OPT_TB.TabIndex = 73
@@ -345,7 +359,7 @@ Partial Class Form4
         Me.TA_SUPERVISER_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TA_SUPERVISER_TB.AutoSize = True
         Me.TA_SUPERVISER_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TA_SUPERVISER_TB.Location = New System.Drawing.Point(495, 271)
+        Me.TA_SUPERVISER_TB.Location = New System.Drawing.Point(495, 244)
         Me.TA_SUPERVISER_TB.Name = "TA_SUPERVISER_TB"
         Me.TA_SUPERVISER_TB.Size = New System.Drawing.Size(107, 21)
         Me.TA_SUPERVISER_TB.TabIndex = 71
@@ -356,7 +370,7 @@ Partial Class Form4
         Me.YEAR_OF_JOINING_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.YEAR_OF_JOINING_TB.AutoSize = True
         Me.YEAR_OF_JOINING_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.YEAR_OF_JOINING_TB.Location = New System.Drawing.Point(495, 240)
+        Me.YEAR_OF_JOINING_TB.Location = New System.Drawing.Point(495, 213)
         Me.YEAR_OF_JOINING_TB.Name = "YEAR_OF_JOINING_TB"
         Me.YEAR_OF_JOINING_TB.Size = New System.Drawing.Size(111, 21)
         Me.YEAR_OF_JOINING_TB.TabIndex = 70
@@ -367,7 +381,7 @@ Partial Class Form4
         Me.GUIDE_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GUIDE_TB.AutoSize = True
         Me.GUIDE_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GUIDE_TB.Location = New System.Drawing.Point(495, 302)
+        Me.GUIDE_TB.Location = New System.Drawing.Point(495, 275)
         Me.GUIDE_TB.Name = "GUIDE_TB"
         Me.GUIDE_TB.Size = New System.Drawing.Size(51, 21)
         Me.GUIDE_TB.TabIndex = 72
@@ -378,7 +392,7 @@ Partial Class Form4
         Me.PROGRAMME_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PROGRAMME_TB.AutoSize = True
         Me.PROGRAMME_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PROGRAMME_TB.Location = New System.Drawing.Point(495, 209)
+        Me.PROGRAMME_TB.Location = New System.Drawing.Point(495, 182)
         Me.PROGRAMME_TB.Name = "PROGRAMME_TB"
         Me.PROGRAMME_TB.Size = New System.Drawing.Size(94, 21)
         Me.PROGRAMME_TB.TabIndex = 69
@@ -389,7 +403,7 @@ Partial Class Form4
         Me.DEPARTMENT_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.DEPARTMENT_TB.AutoSize = True
         Me.DEPARTMENT_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DEPARTMENT_TB.Location = New System.Drawing.Point(495, 147)
+        Me.DEPARTMENT_TB.Location = New System.Drawing.Point(495, 120)
         Me.DEPARTMENT_TB.Name = "DEPARTMENT_TB"
         Me.DEPARTMENT_TB.Size = New System.Drawing.Size(95, 21)
         Me.DEPARTMENT_TB.TabIndex = 68
@@ -400,7 +414,7 @@ Partial Class Form4
         Me.LAST_NAME_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LAST_NAME_TB.AutoSize = True
         Me.LAST_NAME_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LAST_NAME_TB.Location = New System.Drawing.Point(495, 116)
+        Me.LAST_NAME_TB.Location = New System.Drawing.Point(495, 89)
         Me.LAST_NAME_TB.Name = "LAST_NAME_TB"
         Me.LAST_NAME_TB.Size = New System.Drawing.Size(85, 21)
         Me.LAST_NAME_TB.TabIndex = 67
@@ -411,7 +425,7 @@ Partial Class Form4
         Me.FIRST_NAME_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.FIRST_NAME_TB.AutoSize = True
         Me.FIRST_NAME_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FIRST_NAME_TB.Location = New System.Drawing.Point(495, 85)
+        Me.FIRST_NAME_TB.Location = New System.Drawing.Point(495, 58)
         Me.FIRST_NAME_TB.Name = "FIRST_NAME_TB"
         Me.FIRST_NAME_TB.Size = New System.Drawing.Size(87, 21)
         Me.FIRST_NAME_TB.TabIndex = 66
@@ -422,7 +436,7 @@ Partial Class Form4
         Me.USERNAME_TB.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.USERNAME_TB.AutoSize = True
         Me.USERNAME_TB.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.USERNAME_TB.Location = New System.Drawing.Point(495, 54)
+        Me.USERNAME_TB.Location = New System.Drawing.Point(495, 27)
         Me.USERNAME_TB.Name = "USERNAME_TB"
         Me.USERNAME_TB.Size = New System.Drawing.Size(81, 21)
         Me.USERNAME_TB.TabIndex = 65
@@ -433,7 +447,7 @@ Partial Class Form4
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(404, 271)
+        Me.Label23.Location = New System.Drawing.Point(404, 244)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(15, 21)
         Me.Label23.TabIndex = 64
@@ -444,7 +458,7 @@ Partial Class Form4
         Me.Label21.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(404, 240)
+        Me.Label21.Location = New System.Drawing.Point(404, 213)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(15, 21)
         Me.Label21.TabIndex = 62
@@ -455,7 +469,7 @@ Partial Class Form4
         Me.Label20.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(404, 178)
+        Me.Label20.Location = New System.Drawing.Point(404, 151)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(15, 21)
         Me.Label20.TabIndex = 61
@@ -466,7 +480,7 @@ Partial Class Form4
         Me.Label19.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(404, 302)
+        Me.Label19.Location = New System.Drawing.Point(404, 275)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(15, 21)
         Me.Label19.TabIndex = 60
@@ -477,7 +491,7 @@ Partial Class Form4
         Me.Label18.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(404, 209)
+        Me.Label18.Location = New System.Drawing.Point(404, 182)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(15, 21)
         Me.Label18.TabIndex = 59
@@ -488,7 +502,7 @@ Partial Class Form4
         Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(404, 85)
+        Me.Label17.Location = New System.Drawing.Point(404, 58)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(15, 21)
         Me.Label17.TabIndex = 58
@@ -499,7 +513,7 @@ Partial Class Form4
         Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(404, 116)
+        Me.Label16.Location = New System.Drawing.Point(404, 89)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(15, 21)
         Me.Label16.TabIndex = 57
@@ -510,7 +524,7 @@ Partial Class Form4
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(404, 147)
+        Me.Label15.Location = New System.Drawing.Point(404, 120)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(15, 21)
         Me.Label15.TabIndex = 56
@@ -521,7 +535,7 @@ Partial Class Form4
         Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(404, 54)
+        Me.Label14.Location = New System.Drawing.Point(404, 27)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(15, 21)
         Me.Label14.TabIndex = 55
@@ -533,7 +547,7 @@ Partial Class Form4
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Corbel", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(222, 178)
+        Me.Label13.Location = New System.Drawing.Point(222, 151)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(97, 21)
         Me.Label13.TabIndex = 54
@@ -565,18 +579,6 @@ Partial Class Form4
         Me.Button1.Text = "Edit Profile"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'back_Button
-        '
-        Me.back_Button.BackColor = System.Drawing.Color.DarkSlateGray
-        Me.back_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.back_Button.Image = Global.Login.My.Resources.Resources.back_50
-        Me.back_Button.Location = New System.Drawing.Point(929, 209)
-        Me.back_Button.Name = "back_Button"
-        Me.back_Button.Size = New System.Drawing.Size(25, 25)
-        Me.back_Button.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.back_Button.TabIndex = 75
-        Me.back_Button.TabStop = False
-        '
         'PictureBox2
         '
         Me.PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -592,7 +594,7 @@ Partial Class Form4
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.logo4
         Me.PictureBox1.Location = New System.Drawing.Point(284, 11)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
@@ -607,7 +609,6 @@ Partial Class Form4
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1064, 681)
-        Me.Controls.Add(Me.back_Button)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
@@ -630,7 +631,6 @@ Partial Class Form4
         Me.Text = "Profile"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.back_Button, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -678,5 +678,5 @@ End Sub
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Button1 As Button
-    Friend WithEvents back_Button As PictureBox
+    Friend WithEvents back_Button As Button
 End Class

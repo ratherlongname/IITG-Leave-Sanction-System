@@ -235,7 +235,7 @@ Partial Class Form3
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.White
         Me.Label12.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.CadetBlue
+        Me.Label12.ForeColor = System.Drawing.Color.Tomato
         Me.Label12.Location = New System.Drawing.Point(31, 323)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(115, 19)
@@ -619,7 +619,7 @@ Partial Class Form3
         Me.Label17.AutoSize = True
         Me.Label17.BackColor = System.Drawing.Color.White
         Me.Label17.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.CadetBlue
+        Me.Label17.ForeColor = System.Drawing.Color.Tomato
         Me.Label17.Location = New System.Drawing.Point(223, 50)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(209, 19)
@@ -634,7 +634,7 @@ Partial Class Form3
         Me.Panel9.ForeColor = System.Drawing.Color.GhostWhite
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(220, 43)
+        Me.Panel9.Size = New System.Drawing.Size(224, 43)
         Me.Panel9.TabIndex = 21
         '
         'Label5
@@ -658,10 +658,10 @@ Partial Class Form3
         '
         'Type_Of_Leave
         '
-        Me.Type_Of_Leave.BackColor = System.Drawing.Color.Teal
+        Me.Type_Of_Leave.BackColor = System.Drawing.Color.Tomato
         Me.Type_Of_Leave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Type_Of_Leave.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Type_Of_Leave.ForeColor = System.Drawing.Color.White
+        Me.Type_Of_Leave.ForeColor = System.Drawing.Color.Black
         Me.Type_Of_Leave.FormattingEnabled = True
         Me.Type_Of_Leave.Items.AddRange(New Object() {"Ordinary", "Medical", "Academic"})
         Me.Type_Of_Leave.Location = New System.Drawing.Point(42, 98)
@@ -671,12 +671,12 @@ Partial Class Form3
         '
         'Panel10
         '
-        Me.Panel10.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel10.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.Panel10.Controls.Add(Me.Label7)
         Me.Panel10.ForeColor = System.Drawing.Color.GhostWhite
-        Me.Panel10.Location = New System.Drawing.Point(217, 0)
+        Me.Panel10.Location = New System.Drawing.Point(220, 0)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(446, 43)
+        Me.Panel10.Size = New System.Drawing.Size(443, 43)
         Me.Panel10.TabIndex = 22
         '
         'Label7
@@ -717,7 +717,7 @@ Partial Class Form3
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.White
-        Me.Label10.ForeColor = System.Drawing.Color.Teal
+        Me.Label10.ForeColor = System.Drawing.Color.Tomato
         Me.Label10.Location = New System.Drawing.Point(22, 317)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(119, 19)
@@ -1125,7 +1125,7 @@ Partial Class Form3
         'BALANCES
         '
         Me.BALANCES.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BALANCES.BackColor = System.Drawing.Color.Teal
+        Me.BALANCES.BackColor = System.Drawing.Color.Tomato
         Me.BALANCES.FlatAppearance.BorderSize = 0
         Me.BALANCES.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BALANCES.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1275,7 +1275,7 @@ Partial Class Form3
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.logo4
         Me.PictureBox1.Location = New System.Drawing.Point(212, 9)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"

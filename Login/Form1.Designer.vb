@@ -33,19 +33,19 @@ Partial Class Form1
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnLogin
@@ -57,7 +57,7 @@ Partial Class Form1
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.btnLogin.Location = New System.Drawing.Point(42, 201)
+        Me.btnLogin.Location = New System.Drawing.Point(55, 201)
         Me.btnLogin.Margin = New System.Windows.Forms.Padding(0)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(412, 43)
@@ -67,15 +67,15 @@ Partial Class Form1
         '
         'btnSignUp
         '
-        Me.btnSignUp.BackColor = System.Drawing.Color.DarkSlateGray
+        Me.btnSignUp.BackColor = System.Drawing.Color.Tomato
         Me.btnSignUp.FlatAppearance.BorderSize = 0
         Me.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSignUp.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSignUp.ForeColor = System.Drawing.SystemColors.InactiveBorder
-        Me.btnSignUp.Location = New System.Drawing.Point(560, 119)
+        Me.btnSignUp.ForeColor = System.Drawing.Color.White
+        Me.btnSignUp.Location = New System.Drawing.Point(560, 129)
         Me.btnSignUp.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSignUp.Name = "btnSignUp"
-        Me.btnSignUp.Size = New System.Drawing.Size(192, 32)
+        Me.btnSignUp.Size = New System.Drawing.Size(194, 47)
         Me.btnSignUp.TabIndex = 0
         Me.btnSignUp.Text = "SIGNUP"
         Me.btnSignUp.UseVisualStyleBackColor = False
@@ -83,18 +83,19 @@ Partial Class Form1
         'TextBox6
         '
         Me.TextBox6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.TextBox6.BackColor = System.Drawing.Color.White
         Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox6.Enabled = False
         Me.TextBox6.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TextBox6.Location = New System.Drawing.Point(316, 114)
+        Me.TextBox6.Location = New System.Drawing.Point(329, 114)
         Me.TextBox6.Margin = New System.Windows.Forms.Padding(1, 2, 2, 2)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(138, 30)
         Me.TextBox6.TabIndex = 22
         Me.TextBox6.TabStop = False
-        Me.TextBox6.Text = "@iitg.ac.in"
+        Me.TextBox6.Text = " @iitg.ac.in"
         '
         'Label4
         '
@@ -164,7 +165,7 @@ Partial Class Form1
         Me.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtPassword.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(72, 153)
+        Me.txtPassword.Location = New System.Drawing.Point(85, 153)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -184,7 +185,7 @@ Partial Class Form1
         Me.txtUsername.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsername.ForeColor = System.Drawing.SystemColors.Desktop
         Me.txtUsername.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.txtUsername.Location = New System.Drawing.Point(72, 114)
+        Me.txtUsername.Location = New System.Drawing.Point(85, 114)
         Me.txtUsername.Margin = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -208,15 +209,6 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(523, 333)
         Me.Panel1.TabIndex = 27
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.PictureBox2)
-        Me.Panel3.Location = New System.Drawing.Point(42, 114)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(30, 30)
-        Me.Panel3.TabIndex = 25
-        '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.White
@@ -233,7 +225,7 @@ Partial Class Form1
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.White
         Me.PictureBox3.Image = Global.Login.My.Resources.Resources.primary_password1
-        Me.PictureBox3.Location = New System.Drawing.Point(42, 153)
+        Me.PictureBox3.Location = New System.Drawing.Point(55, 153)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
@@ -247,7 +239,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkSlateGray
-        Me.Label3.Location = New System.Drawing.Point(184, 74)
+        Me.Label3.Location = New System.Drawing.Point(197, 74)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(165, 23)
@@ -271,7 +263,7 @@ Partial Class Form1
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(610, 96)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
@@ -283,7 +275,7 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Image = Global.Login.My.Resources.Resources.logo4
         Me.PictureBox1.Location = New System.Drawing.Point(251, 9)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
@@ -291,6 +283,15 @@ Partial Class Form1
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Location = New System.Drawing.Point(55, 114)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(30, 30)
+        Me.Panel3.TabIndex = 25
         '
         'Form1
         '
@@ -313,12 +314,12 @@ Partial Class Form1
         Me.Text = "Welcome"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
