@@ -2217,9 +2217,10 @@
                     Dim type As Integer = Access.DBDT.Rows(0).Item(7)
                     Dim status As String = Access.DBDT.Rows(0).Item("Updated_Status")
                     Dim user_action As String = Access.DBDT.Rows(0).Item("Username_Action")
+                    'MessageBox.Show(help2)
                     Access.ExecQuery("SELECT * FROM Leave_DB WHERE Leave_ID='" & help2 & "'")
-
-                    Dim type_of_leave As String = Access.DBDT.Rows(0).Item("Type_of_Leave")
+                    'MessageBox.Show(Access.RecordCount)
+                    Dim type_of_leave As String = Access.DBDT.Rows(0).Item(3)
 
                     If type = 1 Then
 
@@ -2301,4 +2302,23 @@
 
 
 
+    Private Sub BALANCES_Click(sender As Object, e As EventArgs) Handles BALANCES.Click
+        Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & Label1.Text & "'")
+        If Access.RecordCount > 0 Then
+            Dim acad As Integer = Access.DBDT.Rows(0).Item("Academic")
+            Dim med As Integer = Access.DBDT.Rows(0).Item("Medical")
+            Dim ord As Integer = Access.DBDT.Rows(0).Item("Ordinary")
+            Dim a As String = "Academic : " + acad.ToString + Environment.NewLine + "Medical : " + med.ToString + Environment.NewLine + "Ordinary : " + ord.ToString
+            MessageBox.Show(a)
+        End If
+        Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & Label1.Text & "'")
+        If Access.RecordCount > 0 Then
+            Dim acad As Integer = Access.DBDT.Rows(0).Item("Academic")
+            Dim med As Integer = Access.DBDT.Rows(0).Item("Medical")
+            Dim ord As Integer = Access.DBDT.Rows(0).Item("Ordinary")
+            Dim a As String = "Academic : " + acad.ToString + Environment.NewLine + "Medical : " + med.ToString + Environment.NewLine + "Ordinary : " + ord.ToString
+            MessageBox.Show(a)
+
+        End If
+    End Sub
 End Class
