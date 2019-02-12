@@ -845,11 +845,12 @@
     Private Sub Submit_new_Click(sender As Object, e As EventArgs) Handles Submit_new.Click
         'Getting all the Required Inputs fr database
         End_Date = CDate(End_Date.ToShortDateString)
+        Start_Date = CDate(Start_Date.ToShortDateString)
         Dim D1 As Date = Start_Date
         Dim D2 As Date = End_Date
         'Calculating The duration of leave
         Dim difference As TimeSpan = D2.Subtract(D1)
-        Dim number_of_days As Integer = difference.TotalDays
+        Dim number_of_days As Integer = difference.TotalDays + 1
         Dim remark As String = Remark_Box.Text
         Dim type As String = Type_Of_Leave.Text
         Dim status As String = "Pending"
@@ -917,7 +918,6 @@
         Access.AddParam("@user", username)
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username=@user")
 
-
         'If the Student is logged in
         If Access.RecordCount > 0 Then
             Dim ta As String = Access.DBDT.Rows(0).Item("TA_Superviser")
@@ -980,13 +980,18 @@
                 Access.ExecQuery("UPDATE Faculty_DB SET List_of_Incoming_Leaves='" & listofincoming & "' WHERE Username='" & guide & "'")
             End If
 
+
+
+
             'Deciding the UPSTREAM of leave by checking leave duration and type of leave
             If Type_Of_Leave.Text = "Ordinary" Then
                 If number_of_days > 15 Then
                     list_of_participating_users = list_of_participating_users + hod + ","
                     Dim help_3 As String = hod
                     Access.AddParam("@help_3", help_3)
+
                     Access.ExecQuery("SELECT List_of_Incoming_Leaves FROM Faculty_DB WHERE Username=@help_3")
+
                     Dim help_4 As String = Nothing
                     If (IsDBNull(Access.DBDT.Rows(0).Item(0))) Then
                         help_4 = l_id + ","
@@ -1085,9 +1090,10 @@
             Access.AddParam("@lopu", list_of_participating_users)
             Access.AddParam("@leave_log", list_of_Update)
             Access.AddParam("@remarks", remark)
+         
             'Insert Query to insert into the Leave DATABASE
             Access.ExecQuery("INSERT INTO Leave_DB([Username], [Date/Time Applied], [Current_Status], [Type_of_Leave], [Start_Date], [End_Date], [Leave_ID], [List_of_Participating_Users], [Leave_Log], [Remarks])VALUES(@user2, @date2, @current, @type2, @start_d, @end_d, @leave_id, @lopu, @leave_log, @remarks)")
-
+        
             'Entering the data into the update DataBase
             Access.AddParam("@leave_id2", l_id)
             Access.AddParam("@leave_id3", l_id)
@@ -1101,6 +1107,7 @@
             Dim type_2 As Integer = 1
             Access.AddParam("@type2", type_2)
             Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@leave_id2, @leave_id3, @date3, @user3, @dum, @dum2, @user4, @type2)")
+
 
             ' Send notification to all participating users
             Dim participant As String = ""

@@ -16,7 +16,15 @@
         End If
         'Not making username Editable
         Form2.USERNAME.Text = Form3.Label1.Text
+
         Form2.USERNAME.Enabled = False
+
+
+        
+
+        Form2.PASSWORD.Enabled = False
+        Form2.PASSWORD.PasswordChar = "*"
+
         Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & Form3.Label1.Text & "'")
         'if the faculty is logged in (Includes the case of HOD
         If Access.RecordCount > 0 Then
@@ -24,33 +32,35 @@
             Form2.FIRST_NAME.Text = Access.DBDT.Rows(0).Item("First_Name")
             Form2.LAST_NAME.Text = Access.DBDT.Rows(0).Item("Last_Name")
             'FOR Faculties which are not HOD
-            If Access.DBDT.Rows(0).Item("Designation") <> "HOD" Then
+            If Access.DBDT.Rows(0).Item("Designation") <> "HOD" And Access.DBDT.Rows(0).Item("Designation") <> "DOAA" And Access.DBDT.Rows(0).Item("Designation") <> "ADOAA" And Access.DBDT.Rows(0).Item("Designation") <> "Director" Then
                 Form2.Faculty_Checkbox.Checked = True
-                Form2.Student_Checkbox.Enabled = False
-                Form2.HOD_CheckBox.Enabled = False
 
                 Dim index2 As Integer = Form2.DEPARTMENT_FAC.FindString(Access.DBDT.Rows(0).Item("Department"))
                 Form2.DEPARTMENT_FAC.SelectedIndex = index2
-
                 Dim index As Integer = Form2.DESIGNATION.FindString(Access.DBDT.Rows(0).Item("Designation"))
                 Form2.DESIGNATION.SelectedIndex = index
-
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
-                Form2.PASSWORD.Enabled = False
-                Form2.PASSWORD.PasswordChar = "*"
-                Form2.DEPARTMENT_FAC.Visible = True
-                Form2.DESIGNATION.Visible = True
 
                 'For The HOD
             Else
                 Form2.DEPARTMENT_FAC.SelectedText = Access.DBDT.Rows(0).Item("Department")
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
-                Form2.PASSWORD.Enabled = False
-                Form2.PASSWORD.PasswordChar = "*"
-                Form2.HOD_CheckBox.Checked = True
-                Form2.Student_Checkbox.Enabled = False
-                Form2.Faculty_Checkbox.Enabled = False
-                Form2.DEPARTMENT_FAC.Visible = True
+
+                If Access.DBDT.Rows(0).Item("Designation") = "HOD" Then
+                    Form2.HOD_CheckBox.Checked = True
+                End If
+                If Access.DBDT.Rows(0).Item("Designation") = "ADOAA" Then
+                    Form2.ADOAA.Checked = True
+                End If
+
+                If Access.DBDT.Rows(0).Item("Designation") = "DOAA" Then
+                    Form2.DOAA.Checked = True
+
+                End If
+                If Access.DBDT.Rows(0).Item("Designation") = "Director" Then
+                    Form2.DIRECTOR.Checked = True
+                End If
+
             End If
 
             'If The student is logged in
@@ -76,18 +86,19 @@
                 Form2.GUIDE.SelectedIndex = index3
                 Form2.DEPARTMENT.SelectedIndex = index4
 
-
-
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
-                Form2.PASSWORD.Enabled = False
-                Form2.PASSWORD.PasswordChar = "*"
                 Form2.Student_Checkbox.Checked = True
-                Form2.Faculty_Checkbox.Enabled = False
-                Form2.HOD_CheckBox.Enabled = False
-
             End If
 
         End If
+
+        Form2.Student_Checkbox.Enabled = False
+        Form2.HOD_CheckBox.Enabled = False
+        Form2.DOAA.Enabled = False
+        Form2.ADOAA.Enabled = False
+        Form2.DIRECTOR.Enabled = False
+        Form2.Faculty_Checkbox.Enabled = False
+
 
         'Opening the EDIT FORM
         Me.Close()

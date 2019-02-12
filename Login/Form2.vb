@@ -32,6 +32,11 @@ Public Class Form2
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
+        If Student_Checkbox.Checked = False And HOD_CheckBox.Checked = False And Faculty_Checkbox.Checked = False And ADOAA.Checked = False And DOAA.Checked = False And DIRECTOR.Checked = False Then
+            MessageBox.Show("Please select your user type")
+            Button2.PerformClick()
+            Exit Sub
+        End If
         If uname = "admin" Then
             MessageBox.Show("Username can't be admin")
             Button2.PerformClick()
@@ -812,8 +817,10 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Student_Checkbox.Checked = True
 
+        If USERNAME.Enabled = True Then
+            Student_Checkbox.Checked = True
+        End If
         Access.ExecQuery("SELECT * FROM Faculty_DB")
         If Access.RecordCount > 0 Then
             For Each r As DataRow In Access.DBDT.Rows
@@ -1010,5 +1017,4 @@ Public Class Form2
             GUIDE.Visible = False
         End If
     End Sub
-
 End Class
