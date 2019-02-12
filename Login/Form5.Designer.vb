@@ -90,12 +90,12 @@ Partial Class Form5
         'Action
         '
         Me.Action.Text = "Action"
-        Me.Action.Width = 98
+        Me.Action.Width = 96
         '
         'Remark
         '
         Me.Remark.Text = "Remark"
-        Me.Remark.Width = 369
+        Me.Remark.Width = 348
         '
         'Label15
         '

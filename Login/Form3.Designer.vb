@@ -982,12 +982,12 @@ Partial Class Form3
         'ColumnHeader8
         '
         Me.ColumnHeader8.Text = "REMARKS"
-        Me.ColumnHeader8.Width = 290
+        Me.ColumnHeader8.Width = 131
         '
         'ColumnHeader9
         '
         Me.ColumnHeader9.Text = "Description"
-        Me.ColumnHeader9.Width = 280
+        Me.ColumnHeader9.Width = 440
         '
         'TabPage1
         '

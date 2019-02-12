@@ -6,58 +6,9 @@ Public Class Form2
 
 
     'handling the case when student checkbox is Selected
-    Private Sub Student_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Student_Checkbox.CheckedChanged
-        'Making appropriate controls hidden
-        If Student_Checkbox.Checked = False Then
-            Label5.Visible = False
-            Label6.Visible = False
-            Label7.Visible = False
-            Label8.Visible = False
-            Label9.Visible = False
-            Label10.Visible = False
-            YEAR.Visible = False
-            ROLL_NO.Visible = False
-            PROGRAMME.Visible = False
-            DEPARTMENT.Visible = False
-            TA_SUPERVISER.Visible = False
-            GUIDE.Visible = False
-        End If
+    
 
-        If Student_Checkbox.Checked = True Then
-            Faculty_Checkbox.Checked = False
-            HOD_CheckBox.Checked = False
-            Label5.Visible = True
-            Label6.Visible = True
-            Label7.Visible = True
-            Label8.Visible = True
-            Label9.Visible = True
-            Label10.Visible = True
-            YEAR.Visible = True
-            ROLL_NO.Visible = True
-            PROGRAMME.Visible = True
-            DEPARTMENT.Visible = True
-            TA_SUPERVISER.Visible = True
-            GUIDE.Visible = True
-        End If
-    End Sub
-
-    Private Sub Faculty_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Faculty_Checkbox.CheckedChanged
-        'Making Appropriate Controls Hidden
-        If Faculty_Checkbox.Checked = False Then
-            Label11.Visible = False
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
-        If Faculty_Checkbox.Checked = True Then
-            Student_Checkbox.Checked = False
-            HOD_CheckBox.Checked = False
-            Label11.Visible = True
-            Label12.Visible = True
-            DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = True
-        End If
-    End Sub
+    
 
     Private Sub SUBMIT_Click(sender As Object, e As EventArgs) Handles SUBMIT.Click
         'Storing Data in variables 
@@ -405,6 +356,129 @@ Public Class Form2
                     Me.Close()
 
                 End If
+
+                If ADOAA.Checked = True Then
+
+                    Dim desg_2 As String = "ADOAA"
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & desg_2 & "' and Department='" & dept_fac & "'")
+                    If Access.RecordCount > 0 Then
+                        MessageBox.Show("HOD of this Department Already exists")
+                        Button2.PerformClick()
+                        Exit Sub
+                    End If
+                    'Adding Parameters
+                    Access.AddParam("@user", uname)
+                    Access.AddParam("@pwd", pwd)
+                    Access.AddParam("@fname", fname)
+                    Access.AddParam("@lname", lname)
+                    Access.AddParam("@dept", dept_fac)
+                    Dim dum As String = Nothing
+                    dum = ""
+                    Access.AddParam("@dum", dum)
+                    Dim dum2 As String = Nothing
+                    dum2 = ""
+                    Access.AddParam("@dum2", dum2)
+                    Dim dum3 As String = Nothing
+                    dum3 = ""
+                    Access.AddParam("@dum3", dum3)
+                    Access.AddParam("@desg", desg_2)
+                    Dim days_2 As Integer = 15
+                    Access.AddParam("@days2", days_2)
+                    Dim days_3 As Integer = 30
+                    Access.AddParam("@days3", days_3)
+                    Dim days_1 As Integer = 120
+                    Access.AddParam("@days1", days_1)
+                    Dim help As String = "PENDING"
+                    Access.AddParam("@help", help)
+                    'Insert Query for the HOD
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, '" & help & "')")
+                    Form1.Show()
+                    Me.Close()
+
+                End If
+
+                If DOAA.Checked = True Then
+
+                    Dim desg_2 As String = "DOAA"
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & desg_2 & "' and Department='" & dept_fac & "'")
+                    If Access.RecordCount > 0 Then
+                        MessageBox.Show("HOD of this Department Already exists")
+                        Button2.PerformClick()
+                        Exit Sub
+                    End If
+                    'Adding Parameters
+                    Access.AddParam("@user", uname)
+                    Access.AddParam("@pwd", pwd)
+                    Access.AddParam("@fname", fname)
+                    Access.AddParam("@lname", lname)
+                    Access.AddParam("@dept", dept_fac)
+                    Dim dum As String = Nothing
+                    dum = ""
+                    Access.AddParam("@dum", dum)
+                    Dim dum2 As String = Nothing
+                    dum2 = ""
+                    Access.AddParam("@dum2", dum2)
+                    Dim dum3 As String = Nothing
+                    dum3 = ""
+                    Access.AddParam("@dum3", dum3)
+                    Access.AddParam("@desg", desg_2)
+                    Dim days_2 As Integer = 15
+                    Access.AddParam("@days2", days_2)
+                    Dim days_3 As Integer = 30
+                    Access.AddParam("@days3", days_3)
+                    Dim days_1 As Integer = 120
+                    Access.AddParam("@days1", days_1)
+                    Dim help As String = "PENDING"
+                    Access.AddParam("@help", help)
+                    'Insert Query for the HOD
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, '" & help & "')")
+                    Form1.Show()
+                    Me.Close()
+
+                End If
+
+                If DIRECTOR.Checked = True Then
+
+                    Dim desg_2 As String = "Director"
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & desg_2 & "' and Department='" & dept_fac & "'")
+                    If Access.RecordCount > 0 Then
+                        MessageBox.Show("HOD of this Department Already exists")
+                        Button2.PerformClick()
+                        Exit Sub
+                    End If
+                    'Adding Parameters
+                    Access.AddParam("@user", uname)
+                    Access.AddParam("@pwd", pwd)
+                    Access.AddParam("@fname", fname)
+                    Access.AddParam("@lname", lname)
+                    Access.AddParam("@dept", dept_fac)
+                    Dim dum As String = Nothing
+                    dum = ""
+                    Access.AddParam("@dum", dum)
+                    Dim dum2 As String = Nothing
+                    dum2 = ""
+                    Access.AddParam("@dum2", dum2)
+                    Dim dum3 As String = Nothing
+                    dum3 = ""
+                    Access.AddParam("@dum3", dum3)
+                    Access.AddParam("@desg", desg_2)
+                    Dim days_2 As Integer = 15
+                    Access.AddParam("@days2", days_2)
+                    Dim days_3 As Integer = 30
+                    Access.AddParam("@days3", days_3)
+                    Dim days_1 As Integer = 120
+                    Access.AddParam("@days1", days_1)
+                    Dim help As String = "PENDING"
+                    Access.AddParam("@help", help)
+                    'Insert Query for the HOD
+                    Access.ExecQuery("INSERT INTO Faculty_DB([Username], [Password], [First_Name], [Last_Name],  [Department], [List_of_Leaves_Applied], [Notifications], [List_of_Incoming_Leaves], [Designation], [Ordinary], [Medical], [Academic], [Approved])VALUES(@user, @pwd, @fname, @lname, @dept, @dum, @dum2, @dum3, @desg_2, @days_2, @days_3, @days_1, '" & help & "')")
+                    Form1.Show()
+                    Me.Close()
+
+                End If
+
+
+
             End If
 
         Catch ex As Exception
@@ -414,23 +488,7 @@ Public Class Form2
 
     End Sub
 
-    Private Sub HOD_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles HOD_CheckBox.CheckedChanged
-        'Making appropriate controls hidden
-        If HOD_CheckBox.Checked = False Then
-            Label11.Visible = False
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
-        If HOD_CheckBox.Checked = True Then
-            Student_Checkbox.Checked = False
-            Faculty_Checkbox.Checked = False
-            Label11.Visible = True
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = False
-        End If
-    End Sub
+    
 
     'CODE FOR GENERATING THE CAPTCHA
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -754,10 +812,12 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
+
         Access.ExecQuery("SELECT * FROM Faculty_DB")
         If Access.RecordCount > 0 Then
             For Each r As DataRow In Access.DBDT.Rows
-                If r(8) <> "HOD" And r(8) <> "ADOAA" Then
+                If r(8) <> "HOD" And r(8) <> "ADOAA" And r(8) <> "DOAA" And r(8) <> "Director" Then
                     Me.TA_SUPERVISER.Items.Add(r(0))
                     Me.GUIDE.Items.Add(r(0))
                 End If
@@ -769,49 +829,186 @@ Public Class Form2
         Else
             UPDATE.Visible = False
         End If
+        
+    End Sub
+
+    Private Sub Student_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Student_Checkbox.CheckedChanged
         'Making appropriate controls hidden
-        If HOD_CheckBox.Checked = False Then
+
+        If Student_Checkbox.Checked = True Then
+
+            Student_Checkbox.Checked = True
+            Faculty_Checkbox.Checked = False
+            HOD_CheckBox.Checked = False
+            DOAA.Checked = False
+            ADOAA.Checked = False
+            DIRECTOR.Checked = False
+
+            Label5.Visible = True
+            Label6.Visible = True
+            Label7.Visible = True
+            Label8.Visible = True
+            Label9.Visible = True
+            Label10.Visible = True
             Label11.Visible = False
             Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
-        If HOD_CheckBox.Checked = True Then
-            Student_Checkbox.Checked = False
-            Faculty_Checkbox.Checked = False
-            Label11.Visible = True
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = False
-        End If
 
-        If Student_Checkbox.Checked = False Then
+            YEAR.Visible = True
+            ROLL_NO.Visible = True
+            PROGRAMME.Visible = True
+            DEPARTMENT.Visible = True
+            DESIGNATION.Visible = False
+            DEPARTMENT_FAC.Visible = False
+            TA_SUPERVISER.Visible = True
+            GUIDE.Visible = True
+
+        End If
+    End Sub
+
+    Private Sub Faculty_Checkbox_CheckedChanged(sender As Object, e As EventArgs) Handles Faculty_Checkbox.CheckedChanged
+        'Making Appropriate Controls Hidden
+        If Faculty_Checkbox.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = True
+            HOD_CheckBox.Checked = False
+            DOAA.Checked = False
+            ADOAA.Checked = False
+            DIRECTOR.Checked = False
+
             Label5.Visible = False
             Label6.Visible = False
             Label7.Visible = False
             Label8.Visible = False
             Label9.Visible = False
             Label10.Visible = False
+            Label11.Visible = True
+            Label12.Visible = True
+
             YEAR.Visible = False
             ROLL_NO.Visible = False
             PROGRAMME.Visible = False
             DEPARTMENT.Visible = False
+            DESIGNATION.Visible = True
+            DEPARTMENT_FAC.Visible = True
             TA_SUPERVISER.Visible = False
             GUIDE.Visible = False
         End If
+    End Sub
 
-        If Faculty_Checkbox.Checked = False Then
-            Label11.Visible = False
-            Label12.Visible = False
-            DEPARTMENT_FAC.Visible = False
-            DESIGNATION.Visible = False
-        End If
+    Private Sub HOD_CheckBox_CheckedChanged(sender As Object, e As EventArgs) Handles HOD_CheckBox.CheckedChanged
+        If HOD_CheckBox.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            HOD_CheckBox.Checked = True
+            DOAA.Checked = False
+            ADOAA.Checked = False
+            DIRECTOR.Checked = False
 
-        If Faculty_Checkbox.Checked = True Then
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
             Label11.Visible = True
-            Label12.Visible = True
+            Label12.Visible = False
+
+            YEAR.Visible = False
+            ROLL_NO.Visible = False
+            PROGRAMME.Visible = False
+            DEPARTMENT.Visible = False
+            DESIGNATION.Visible = False
             DEPARTMENT_FAC.Visible = True
-            DESIGNATION.Visible = True
+            TA_SUPERVISER.Visible = False
+            GUIDE.Visible = False
         End If
     End Sub
+
+    Private Sub ADOAA_CheckedChanged(sender As Object, e As EventArgs) Handles ADOAA.CheckedChanged
+        If ADOAA.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            HOD_CheckBox.Checked = False
+            DOAA.Checked = False
+            ADOAA.Checked = True
+            DIRECTOR.Checked = False
+
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label11.Visible = True
+            Label12.Visible = False
+
+            YEAR.Visible = False
+            ROLL_NO.Visible = False
+            PROGRAMME.Visible = False
+            DEPARTMENT.Visible = False
+            DESIGNATION.Visible = False
+            DEPARTMENT_FAC.Visible = True
+            TA_SUPERVISER.Visible = False
+            GUIDE.Visible = False
+        End If
+    End Sub
+
+    Private Sub DOAA_CheckedChanged(sender As Object, e As EventArgs) Handles DOAA.CheckedChanged
+        If DOAA.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            HOD_CheckBox.Checked = False
+            DOAA.Checked = True
+            ADOAA.Checked = False
+            DIRECTOR.Checked = False
+
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label11.Visible = True
+            Label12.Visible = False
+
+            YEAR.Visible = False
+            ROLL_NO.Visible = False
+            PROGRAMME.Visible = False
+            DEPARTMENT.Visible = False
+            DESIGNATION.Visible = False
+            DEPARTMENT_FAC.Visible = True
+            TA_SUPERVISER.Visible = False
+            GUIDE.Visible = False
+        End If
+    End Sub
+
+    Private Sub DIRECTOR_CheckedChanged(sender As Object, e As EventArgs) Handles DIRECTOR.CheckedChanged
+        If DIRECTOR.Checked = True Then
+            Student_Checkbox.Checked = False
+            Faculty_Checkbox.Checked = False
+            HOD_CheckBox.Checked = False
+            DOAA.Checked = False
+            ADOAA.Checked = False
+            DIRECTOR.Checked = True
+
+            Label5.Visible = False
+            Label6.Visible = False
+            Label7.Visible = False
+            Label8.Visible = False
+            Label9.Visible = False
+            Label10.Visible = False
+            Label11.Visible = True
+            Label12.Visible = False
+
+            YEAR.Visible = False
+            ROLL_NO.Visible = False
+            PROGRAMME.Visible = False
+            DEPARTMENT.Visible = False
+            DESIGNATION.Visible = False
+            DEPARTMENT_FAC.Visible = True
+            TA_SUPERVISER.Visible = False
+            GUIDE.Visible = False
+        End If
+    End Sub
+
 End Class
