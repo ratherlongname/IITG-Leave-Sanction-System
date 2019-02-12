@@ -121,8 +121,9 @@
         Access.ExecQuery("SELECT * FROM Student_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_name") + " " + Access.DBDT.Rows(0).Item("Last_name")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_name")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Roll_no")
             Form4.YEAR_OF_JOINING_TB.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
@@ -131,13 +132,17 @@
             Form4.GUIDE_TB.Text = Access.DBDT.Rows(0).Item("Guide")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.Label13.Text = "Roll No."
+            Form4.Label7.Text = Access.DBDT.Rows(0).Item("Programme")
+            Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
+
         End If
 
         Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Username='" & dum.SubItems(0).Text() & "'")
         If Access.RecordCount > 0 Then
             'Getting all the old Deatails and filling into the EDIT FORM
-            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
-            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
+            Form4.FULLNAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name") + " " + Access.DBDT.Rows(0).Item("Last_Name")
+            Form4.USERNAME_TB.Text = Access.DBDT.Rows(0).Item("Username")
+            Form4.FIRST_NAME_TB.Text = Access.DBDT.Rows(0).Item("First_Name")
             Form4.LAST_NAME_TB.Text = Access.DBDT.Rows(0).Item("Last_Name")
             Form4.DEPARTMENT_TB.Text = Access.DBDT.Rows(0).Item("Department")
             Form4.OPT_TB.Text = Access.DBDT.Rows(0).Item("Designation")
@@ -154,6 +159,8 @@
             Form4.Label21.Visible = False
             Form4.Label23.Visible = False
             Form4.Label19.Visible = False
+            Form4.Label7.Text = Access.DBDT.Rows(0).Item("Designation")
+            Form4.Label12.Text = Access.DBDT.Rows(0).Item("Department")
 
 
 
@@ -705,7 +712,12 @@
             Exit Sub
         End If
 
-        Dim leave_ID As String = selectedLeave.SubItems(0).Text()
+        If selectedLeave.SubItems(5).Text() <> "Pending" Then
+            MsgBox("Leave cannot be cancelled")
+            Exit Sub
+        End If
+
+        Dim leave_ID As String = selectedLeave.SubItems(1).Text()
         Dim update_ID As String = ""
 
         Dim date_Time As Date = System.DateTime.Now()
@@ -737,6 +749,7 @@
         Access.AddParam("@type2", type2)
         'Insert Command for the Update_DB
         Access.ExecQuery("INSERT INTO Leave_Update_DB([Leave_ID], [Update_ID], [Date/Time], [Username], [Remark], [Updated_Status], [Username_Action], [Type])VALUES(@LID, @UID, @date, @user, @remark, @status, @user_act, @type2)")
+        ' Add notification for all participating users
         Access.ExecQuery("SELECT List_of_Participating_Users FROM Leave_DB WHERE Leave_ID='" & leave_ID & "'")
         If Access.RecordCount > 0 Then
             If IsDBNull(Access.DBDT.Rows(0).Item(0)) Then
@@ -757,14 +770,21 @@
                             noti = Access.DBDT.Rows(0).Item(7)
                             noti = noti + update_ID + ","
                         End If
-                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & noti & "' WHERE Uername='" & word & "'")
+                        Access.ExecQuery("UPDATE Faculty_DB SET Notifications='" & noti & "' WHERE Username='" & word & "'")
                     End If
                 Next
             End If
         End If
 
+
+        ' UPDATE CURRENT STATUS TO CANCELLED
+
+        Access.AddParam("@LID", leave_ID)
+        Access.AddParam("@status", status)
+        Access.ExecQuery("UPDATE Leave_DB SET Current_Status='" & status & "' WHERE Leave_ID='" & leave_ID & "'")
         MsgBox("Leave status updated.")
         richtxtboxViewLeaves.Clear()
+        RefreshViewLeaves()
 
     End Sub
 

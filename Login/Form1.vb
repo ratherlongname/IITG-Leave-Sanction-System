@@ -19,6 +19,10 @@
                 Form3.Label2.Text = ""
                 Form3.Label3.Text = ""
                 Form3.Label4.Text = ""
+                Form3.Panel2.Visible = False
+                Form3.Panel4.Visible = False
+                Form3.Panel5.Visible = False
+
                 Exit Sub
             Else
                 MessageBox.Show("Incorrect Password")
