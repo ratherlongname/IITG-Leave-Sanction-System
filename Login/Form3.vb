@@ -1711,5 +1711,15 @@
         admin_refresh()
     End Sub
 
+    Private Sub Panel10_Paint(sender As Object, e As PaintEventArgs) Handles Panel10.Paint
 
+    End Sub
+
+    Private Sub BALANCES_Click(sender As Object, e As EventArgs) Handles BALANCES.Click
+
+    End Sub
+
+    Private Sub richtxtboxLeavestobeApprovedRemarks_TextChanged(sender As Object, e As EventArgs) Handles richtxtboxLeavestobeApprovedRemarks.TextChanged
+
+    End Sub
 End Class
