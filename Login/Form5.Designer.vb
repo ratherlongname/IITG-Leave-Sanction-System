@@ -39,7 +39,6 @@ Partial Class Form5
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.HScrollBar1 = New System.Windows.Forms.HScrollBar()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtDateTime = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -66,7 +65,7 @@ Partial Class Form5
         Me.lsviewDetailLeaveView.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsviewDetailLeaveView.Location = New System.Drawing.Point(228, 278)
         Me.lsviewDetailLeaveView.Name = "lsviewDetailLeaveView"
-        Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(824, 358)
+        Me.lsviewDetailLeaveView.Size = New System.Drawing.Size(824, 391)
         Me.lsviewDetailLeaveView.TabIndex = 0
         Me.lsviewDetailLeaveView.UseCompatibleStateImageBehavior = False
         Me.lsviewDetailLeaveView.View = System.Windows.Forms.View.Details
@@ -213,13 +212,6 @@ Partial Class Form5
         '
         Me.NotifyIcon1.Text = "NotifyIcon1"
         Me.NotifyIcon1.Visible = True
-        '
-        'HScrollBar1
-        '
-        Me.HScrollBar1.Location = New System.Drawing.Point(0, 655)
-        Me.HScrollBar1.Name = "HScrollBar1"
-        Me.HScrollBar1.Size = New System.Drawing.Size(1065, 27)
-        Me.HScrollBar1.TabIndex = 48
         '
         'PictureBox1
         '
@@ -372,7 +364,6 @@ Partial Class Form5
         Me.Controls.Add(Me.txtCurrentStatus)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtTypeofLeave)
-        Me.Controls.Add(Me.HScrollBar1)
         Me.Controls.Add(Me.txtLeaveID)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.txtDateTime)
@@ -415,7 +406,6 @@ Partial Class Form5
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnBack As Button
     Friend WithEvents NotifyIcon1 As NotifyIcon
-    Friend WithEvents HScrollBar1 As HScrollBar
     Friend WithEvents txtDateTime As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
