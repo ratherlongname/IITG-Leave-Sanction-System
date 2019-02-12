@@ -812,7 +812,7 @@ Public Class Form2
     End Sub
 
     Private Sub Form2_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-
+        Student_Checkbox.Checked = True
 
         Access.ExecQuery("SELECT * FROM Faculty_DB")
         If Access.RecordCount > 0 Then
