@@ -54,7 +54,7 @@
     End Sub
 
     ' Profile Edit Button
-    
+
 
     ' View Profile Button
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VIEW_3.Click
@@ -109,7 +109,7 @@
 
     ' ADMIN PAGE
     ' View Button
-    Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles View.Click
+    Private Sub VIEW_Click(sender As Object, e As EventArgs) Handles VIEW.Click
         'take that from selected list view rows
         Dim dum As New ListViewItem
         dum = ADMIN_SelectedItem()

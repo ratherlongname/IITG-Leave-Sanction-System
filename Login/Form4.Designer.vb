@@ -156,7 +156,7 @@ Partial Class Form4
         Me.Label7.BackColor = System.Drawing.Color.DarkSlateGray
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(463, 212)
+        Me.Label7.Location = New System.Drawing.Point(335, 215)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(85, 17)
         Me.Label7.TabIndex = 45
@@ -170,7 +170,7 @@ Partial Class Form4
         Me.FULLNAME_TB.BackColor = System.Drawing.Color.DarkSlateGray
         Me.FULLNAME_TB.Font = New System.Drawing.Font("Century Gothic", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FULLNAME_TB.ForeColor = System.Drawing.Color.White
-        Me.FULLNAME_TB.Location = New System.Drawing.Point(332, 205)
+        Me.FULLNAME_TB.Location = New System.Drawing.Point(333, 185)
         Me.FULLNAME_TB.Name = "FULLNAME_TB"
         Me.FULLNAME_TB.Size = New System.Drawing.Size(121, 25)
         Me.FULLNAME_TB.TabIndex = 50
