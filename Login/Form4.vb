@@ -5,6 +5,7 @@
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         'Not making username Editable
         Form2.USERNAME.Text = Form3.Label1.Text
         Form2.USERNAME.Enabled = False
@@ -19,8 +20,13 @@
                 Form2.Faculty_Checkbox.Checked = True
                 Form2.Student_Checkbox.Enabled = False
                 Form2.HOD_CheckBox.Enabled = False
-                Form2.DEPARTMENT_FAC.Text = Access.DBDT.Rows(0).Item("Department")
-                Form2.DESIGNATION.Text = Access.DBDT.Rows(0).Item("Designation")
+
+                Dim index2 As Integer = Form2.DEPARTMENT_FAC.FindString(Access.DBDT.Rows(0).Item("Department"))
+                Form2.DEPARTMENT_FAC.SelectedIndex = index2
+
+                Dim index As Integer = Form2.DESIGNATION.FindString(Access.DBDT.Rows(0).Item("Designation"))
+                Form2.DESIGNATION.SelectedIndex = index
+
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
                 Form2.PASSWORD.Enabled = False
                 Form2.PASSWORD.PasswordChar = "*"
@@ -29,7 +35,7 @@
 
                 'For The HOD
             Else
-                Form2.DEPARTMENT_FAC.Text = Access.DBDT.Rows(0).Item("Department")
+                Form2.DEPARTMENT_FAC.SelectedText = Access.DBDT.Rows(0).Item("Department")
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
                 Form2.PASSWORD.Enabled = False
                 Form2.PASSWORD.PasswordChar = "*"
@@ -49,10 +55,16 @@
                 Form2.LAST_NAME.Text = Access.DBDT.Rows(0).Item("Last_name")
                 Form2.ROLL_NO.Text = Access.DBDT.Rows(0).Item("Roll_no")
                 Form2.YEAR.Text = Access.DBDT.Rows(0).Item("Year_of_joining")
-                Form2.PROGRAMME.Text = Access.DBDT.Rows(0).Item("Programme")
-                Form2.TA_SUPERVISER.Text = Access.DBDT.Rows(0).Item("TA_Superviser")
-                Form2.GUIDE.Text = Access.DBDT.Rows(0).Item("Guide")
-                Form2.DEPARTMENT.Text = Access.DBDT.Rows(0).Item("Department")
+
+                Dim index1 As Integer = Form2.PROGRAMME.FindString(Access.DBDT.Rows(0).Item("Programme"))
+                Dim index2 As Integer = Form2.TA_SUPERVISER.FindString(Access.DBDT.Rows(0).Item("TA_Superviser"))
+                Dim index3 As Integer = Form2.GUIDE.FindString(Access.DBDT.Rows(0).Item("Guide"))
+                Dim index4 As Integer = Form2.DEPARTMENT.FindString(Access.DBDT.Rows(0).Item("Department"))
+                Form2.PROGRAMME.SelectedIndex = index1
+                Form2.TA_SUPERVISER.SelectedIndex = index2
+                Form2.GUIDE.SelectedIndex = index3
+                Form2.DEPARTMENT.SelectedIndex = index4
+
                 Form2.PASSWORD.Text = Access.DBDT.Rows(0).Item("Password")
                 Form2.PASSWORD.Enabled = False
                 Form2.PASSWORD.PasswordChar = "*"
@@ -70,7 +82,7 @@
     End Sub
 
     Private Sub back_Button_Click(sender As Object, e As EventArgs) Handles back_Button.Click
-        Close()
+        Me.Hide()
         Form3.Show()
     End Sub
 

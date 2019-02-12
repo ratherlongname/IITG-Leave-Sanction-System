@@ -430,7 +430,14 @@ Public Class Form2
                 End If
 
                 If HOD_CheckBox.Checked = True Then
+
                     Dim desg_2 As String = "HOD"
+                    Access.ExecQuery("SELECT * FROM Faculty_DB WHERE Designation='" & desg_2 & "' and Department='" & dept_fac & "'")
+                    If Access.RecordCount > 0 Then
+                        MessageBox.Show("HOD of this Department Already exists")
+                        Button2.PerformClick()
+                        Exit Sub
+                    End If
                     'Adding Parameters
                     Access.AddParam("@user", uname)
                     Access.AddParam("@pwd", pwd)
@@ -533,6 +540,7 @@ Public Class Form2
         lname = lname.Trim()
         roll = roll.Trim()
         y = y.Trim()
+
 
         If pwd = Nothing Then
             MessageBox.Show("Please Enter the Password")
@@ -720,35 +728,8 @@ Public Class Form2
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
+        Form1.Show()
+        Form1.txtPassword.Text = Nothing
+        Me.Hide()
     End Sub
-
-    Private Sub USERNAME_MouseMove(sender As Object, e As MouseEventArgs) Handles USERNAME.MouseMove
-        USERNAME.Focus()
-    End Sub
-
-    Private Sub PASSWORD_MouseMove(sender As Object, e As MouseEventArgs) Handles PASSWORD.MouseMove
-        PASSWORD.Focus()
-    End Sub
-
-    Private Sub FIRST_NAME_MouseMove(sender As Object, e As MouseEventArgs) Handles FIRST_NAME.MouseMove
-        FIRST_NAME.Focus()
-    End Sub
-
-    Private Sub LAST_NAME_MouseMove(sender As Object, e As MouseEventArgs) Handles LAST_NAME.MouseMove
-        LAST_NAME.Focus()
-    End Sub
-
-    Private Sub YEAR_MouseMove(sender As Object, e As MouseEventArgs) Handles YEAR.MouseMove
-        YEAR.Focus()
-    End Sub
-
-    Private Sub ROLL_NO_MouseMove(sender As Object, e As MouseEventArgs) Handles ROLL_NO.MouseMove
-        ROLL_NO.Focus()
-    End Sub
-
-    Private Sub VALIDATION_MouseMove(sender As Object, e As MouseEventArgs) Handles VALIDATION.MouseMove
-        VALIDATION.Focus()
-    End Sub
-
 End Class
