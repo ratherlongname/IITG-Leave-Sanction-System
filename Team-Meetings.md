@@ -100,3 +100,109 @@ A log of all the team meetings held, including meeting attendees and work discus
 * It displays the basic info on the same page.
 * It contains an panel which by default shows the old leaves.
 * When other option is selected , a new information is diplayed in panel.
+
+## 04<sup>nd</sup> February 2019
+
+### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Shivam Bansal
+* Hansraj Patel
+* Tikaram Meena
+
+#### 1 New Features Added
+##### 1.1 Captcha
+* Captcha was added to distinguish human from machine input.
+* Added from internet.
+
+##### 1.2 Notifications
+* To display notifications we decided to add a new column type.It holds only three values.
+
+##### 1.3 Edit Profile
+* If user wants to edit his/her profile. He/She can edit using this button.
+
+#### 2 New Suggestions
+##### 2.1 Database Table for Admin
+* Database table for Admin was one of the suggestions.
+* Later the idea was dropped because we gave database exception to a perticular user who will be called as superuser.Which means superuser is a user with exception in database.
+
+##### 2.2 Tabs
+* Use different tabs instead of different forms to reduce number of forms.
+
+#### 3 Tasks Completed
+##### 3.1 Form1
+* Finalised Form1 which is login form1(By Lucky Singh).
+
+##### 3.2 GUI of Form1 & Form2
+* GUI of Form1 & Form2 almost completed(By Hansraj Patel and Kapil Jangid).
+
+#### 4 Tasks in Running
+
+##### 4.1 Form2
+* Vakul Gupta and Shivam were handling backhand of Form2.
+
+##### 4.2 Form3
+* Form3 rough design and buttons created(By Lucky and Kapil).
+
+## 07<sup>nd</sup> February 2019
+
+### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Shivam Bansal
+* Hansraj Patel
+* Tikaram Meena
+
+#### 1 New Features Added
+##### 1.1 Update Button in Form2
+* To update new entered data in database table.
+
+##### 1.2 View Profile
+* If any user wants to see is profile.All basic information of user will be displayed here.
+* Basic information of that user will be shown in Form4.
+
+##### 1.3 Form4
+* Form4 was added to display a user's  profile.
+
+#### 2 Task Completed
+##### 2.1 Form4
+* Backhand (By Vakul and Lucky)
+* GUI of Form4 completed(By Hansraj).
+
+##### 2.2 Form2
+* Backhand (By Vakul).
+
+#### 3 Tasks in Running
+##### 3.1 Form3
+* Backhand (By Shivam and Tikaram).
+
+##### 3.2 Form5
+* Backhand (By Lucky).
+
+## 11<sup>nd</sup> February 2019
+
+### Attendees
+* Kapil Jangid
+* Lucky Singh
+* Vakul Gupta
+* Shivam Bansal
+* Hansraj Patel
+* Tikaram Meena
+
+#### 1 Task Completed
+##### 1.1  User Documentation
+* Final User Documentation (By Tikaram Meena).
+
+##### 1.2 Technical Documentation
+* Final Technical Documentation (By Kapil and Lucky).
+
+##### 1.3 Finalisation
+* Merging and finalsing Design and code(All Members).
+
+##### 1.4 GUI of all forms
+* Finalised(By Hansraj).
+
+#### 2 Debug
+* tried corner cases.
