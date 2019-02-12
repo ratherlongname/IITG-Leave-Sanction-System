@@ -1829,4 +1829,15 @@
 
         Form5.Show()
     End Sub
+    Private Sub richtxtboxViewLeaves_TextChanged(sender As Object, e As EventArgs) Handles richtxtboxViewLeaves.TextChanged
+        Label12.Hide()
+    End Sub
+
+    Private Sub Remark_Box_TextChanged(sender As Object, e As EventArgs) Handles Remark_Box.TextChanged
+        Label17.Hide()
+    End Sub
+
+    Private Sub richtxtboxLeavestobeApprovedRemarks_TextChanged(sender As Object, e As EventArgs) Handles richtxtboxLeavestobeApprovedRemarks.TextChanged
+        Label10.Hide()
+    End Sub
 End Class

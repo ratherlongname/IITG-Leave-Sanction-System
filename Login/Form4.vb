@@ -82,8 +82,7 @@
     End Sub
 
     Private Sub back_Button_Click(sender As Object, e As EventArgs) Handles back_Button.Click
-        Me.Hide()
+        Close()
         Form3.Show()
     End Sub
-
 End Class
